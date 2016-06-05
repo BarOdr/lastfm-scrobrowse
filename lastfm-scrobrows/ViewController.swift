@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var pwdTextField: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var rememberMeSwitch: UISwitch!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var currentUser: LastfmUser?
@@ -44,13 +45,15 @@ class ViewController: UIViewController {
             API.sharedInstance.logIn(currentUser!) { userSecret, username in
                 
                 if userSecret != "" && username != "" {
-                    NSUserDefaults.standardUserDefaults().setValue(userSecret, forKey: STORED_USER_SECRET_KEY)
-                    NSUserDefaults.standardUserDefaults().setValue(username, forKey: STORED_USERNAME)
+                    if self.rememberMeSwitch.on {
+                        NSUserDefaults.standardUserDefaults().setValue(userSecret, forKey: STORED_USER_SECRET_KEY)
+                        NSUserDefaults.standardUserDefaults().setValue(username, forKey: STORED_USERNAME)
+                    }
                     self.activityIndicator.stopAnimating()
                     self.performSegueWithIdentifier("MainMenu", sender: nil)
                 } else {
                     self.activityIndicator.stopAnimating()
-                    self.showErrorAlert("Something went wrong.", msg: "Make sure you enter correct username and password")
+                    self.showErrorAlert("Oops! Something went wrong", msg: "Make sure you enter correct username and password")
                     self.clearTextFields()
                     self.loginBtn.userInteractionEnabled = true
                 }

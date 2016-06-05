@@ -30,8 +30,8 @@
                                             <constraint firstAttribute="height" constant="78" id="giK-jp-kFN"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NBT-79-1pL">
-                                        <rect key="frame" x="30" y="445" width="315" height="132"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NBT-79-1pL">
+                                        <rect key="frame" x="30" y="445" width="315" height="155"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last.fm username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bvl-Oq-Gl6" customClass="LoginTextField" customModule="lastfm_scrobrows" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="30"/>
@@ -75,16 +75,40 @@
                                                     <constraint firstAttribute="height" constant="1" id="mhW-it-adx"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ra3-6v-Wep">
-                                                <rect key="frame" x="0.0" y="102" width="315" height="30"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                                <state key="normal" title="Log in">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="attemptLogin" destination="BYZ-38-t0r" eventType="touchUpInside" id="XRn-qZ-ZcF"/>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="08m-UJ-XCI">
+                                                <rect key="frame" x="0.0" y="102" width="315" height="53"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Hqh-mF-wZN">
+                                                        <rect key="frame" x="0.0" y="0.0" width="158" height="53"/>
+                                                        <subviews>
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Mp-q7-Hcx">
+                                                                <rect key="frame" x="55" y="0.0" width="51" height="31"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="31" id="7Px-9Q-I2k"/>
+                                                                    <constraint firstAttribute="width" constant="49" id="ROR-PX-Hu0"/>
+                                                                </constraints>
+                                                                <color key="onTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </switch>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Remember me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdv-Co-02y">
+                                                                <rect key="frame" x="36" y="37" width="86" height="16"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ra3-6v-Wep">
+                                                        <rect key="frame" x="158" y="0.0" width="158" height="53"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                        <state key="normal" title="Log in">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="attemptLogin" destination="BYZ-38-t0r" eventType="touchUpInside" id="XRn-qZ-ZcF"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="v8y-gt-uo9">
@@ -116,6 +140,7 @@
                         <outlet property="activityIndicator" destination="v8y-gt-uo9" id="ADw-SZ-gmO"/>
                         <outlet property="loginBtn" destination="Ra3-6v-Wep" id="uH7-ig-RUO"/>
                         <outlet property="pwdTextField" destination="jTa-AC-9iQ" id="VDY-ko-qlX"/>
+                        <outlet property="rememberMeSwitch" destination="8Mp-q7-Hcx" id="I8a-Jv-T2t"/>
                         <outlet property="usernameTextField" destination="bvl-Oq-Gl6" id="VMz-97-KiF"/>
                         <segue destination="hih-uE-fyj" kind="show" identifier="MainMenu" id="LqZ-TD-ScD"/>
                     </connections>

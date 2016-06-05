@@ -32,7 +32,7 @@ class LoginManager: NSObject {
                     }
                     if let userName = json["session"]["name"].string {
                         currentUserName = userName
-                        print("Username isssssss \(userName)")
+                        print("Current user is: \(currentUserName)")
                     }
                     completion(userSecret: userSecretKey, userName: currentUserName)
                 }
