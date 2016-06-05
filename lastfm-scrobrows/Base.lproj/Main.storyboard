@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loginbg" translatesAutoresizingMaskIntoConstraints="NO" id="zUi-mE-5e9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginbg3" translatesAutoresizingMaskIntoConstraints="NO" id="Utg-Ue-Nik">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GXz-Jv-aN8">
@@ -30,8 +30,11 @@
                                             <constraint firstAttribute="height" constant="78" id="giK-jp-kFN"/>
                                         </constraints>
                                     </imageView>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="v8y-gt-uo9">
+                                        <rect key="frame" x="177" y="585" width="20" height="20"/>
+                                    </activityIndicatorView>
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NBT-79-1pL">
-                                        <rect key="frame" x="30" y="445" width="315" height="155"/>
+                                        <rect key="frame" x="30" y="413" width="315" height="155"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last.fm username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bvl-Oq-Gl6" customClass="LoginTextField" customModule="lastfm_scrobrows" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="30"/>
@@ -111,28 +114,43 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="v8y-gt-uo9">
-                                        <rect key="frame" x="177" y="585" width="20" height="20"/>
-                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.7359105603448276" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="3BY-du-1V4" firstAttribute="top" secondItem="GXz-Jv-aN8" secondAttribute="top" constant="129" id="61z-0i-vkW"/>
+                                    <constraint firstAttribute="bottom" secondItem="v8y-gt-uo9" secondAttribute="bottom" constant="62" id="9aX-Bz-3XX"/>
+                                    <constraint firstItem="v8y-gt-uo9" firstAttribute="centerX" secondItem="GXz-Jv-aN8" secondAttribute="centerX" id="Aum-i3-JDD"/>
                                     <constraint firstItem="3BY-du-1V4" firstAttribute="centerX" secondItem="GXz-Jv-aN8" secondAttribute="centerX" id="BgL-WO-JZV"/>
+                                    <constraint firstItem="NBT-79-1pL" firstAttribute="leading" secondItem="GXz-Jv-aN8" secondAttribute="leading" constant="30" id="F4S-im-Zag"/>
+                                    <constraint firstItem="v8y-gt-uo9" firstAttribute="top" secondItem="NBT-79-1pL" secondAttribute="bottom" constant="17" id="RYS-JN-GYu"/>
                                     <constraint firstItem="NBT-79-1pL" firstAttribute="leading" secondItem="GXz-Jv-aN8" secondAttribute="leading" constant="30" id="SFu-As-fBE"/>
                                     <constraint firstItem="v8y-gt-uo9" firstAttribute="top" secondItem="NBT-79-1pL" secondAttribute="bottom" constant="8" id="VYR-mn-vjL"/>
                                     <constraint firstAttribute="trailing" secondItem="NBT-79-1pL" secondAttribute="trailing" constant="30" id="pkN-nR-mvW"/>
                                     <constraint firstAttribute="bottom" secondItem="NBT-79-1pL" secondAttribute="bottom" constant="90" id="thG-4K-gJ6"/>
                                     <constraint firstItem="v8y-gt-uo9" firstAttribute="centerX" secondItem="GXz-Jv-aN8" secondAttribute="centerX" id="tuS-zE-IGm"/>
+                                    <constraint firstAttribute="trailing" secondItem="NBT-79-1pL" secondAttribute="trailing" constant="30" id="yK6-9I-Wxf"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="SFu-As-fBE"/>
+                                        <exclude reference="pkN-nR-mvW"/>
+                                        <exclude reference="thG-4K-gJ6"/>
+                                        <exclude reference="VYR-mn-vjL"/>
+                                        <exclude reference="tuS-zE-IGm"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Utg-Ue-Nik" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="D8U-Xw-eQ9"/>
                             <constraint firstAttribute="trailing" secondItem="GXz-Jv-aN8" secondAttribute="trailing" id="ZiD-iD-GnZ"/>
+                            <constraint firstItem="Utg-Ue-Nik" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eU0-rf-Qmy"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GXz-Jv-aN8" secondAttribute="bottom" id="kOt-Sj-Lb2"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Utg-Ue-Nik" secondAttribute="bottom" id="n1J-oD-KlO"/>
                             <constraint firstItem="GXz-Jv-aN8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nDv-o4-QdD"/>
                             <constraint firstItem="GXz-Jv-aN8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="oX9-HZ-BfZ"/>
+                            <constraint firstAttribute="trailing" secondItem="Utg-Ue-Nik" secondAttribute="trailing" id="tFc-hn-T06"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -170,6 +188,6 @@
     </scenes>
     <resources>
         <image name="last-logo-white" width="900" height="269"/>
-        <image name="loginbg" width="684" height="1024"/>
+        <image name="loginbg3" width="1958" height="1208"/>
     </resources>
 </document>

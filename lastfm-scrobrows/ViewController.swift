@@ -46,6 +46,7 @@ class ViewController: UIViewController {
                 
                 if userSecret != "" && username != "" {
                     if self.rememberMeSwitch.on {
+                        print("Username and key saved.")
                         NSUserDefaults.standardUserDefaults().setValue(userSecret, forKey: STORED_USER_SECRET_KEY)
                         NSUserDefaults.standardUserDefaults().setValue(username, forKey: STORED_USERNAME)
                     }
