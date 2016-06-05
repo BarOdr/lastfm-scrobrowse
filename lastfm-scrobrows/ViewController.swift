@@ -8,12 +8,18 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
 
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var pwdTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
 
+    @IBAction func attemptLogin() {
+        print("Will attemptLogin")
+    }
 }
-

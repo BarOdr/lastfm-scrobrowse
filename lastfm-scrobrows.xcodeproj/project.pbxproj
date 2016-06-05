@@ -12,6 +12,7 @@
 		CC1A72881D043E6A00DB04BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC1A72861D043E6A00DB04BC /* Main.storyboard */; };
 		CC1A728A1D043E6A00DB04BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC1A72891D043E6A00DB04BC /* Assets.xcassets */; };
 		CC1A728D1D043E6A00DB04BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC1A728B1D043E6A00DB04BC /* LaunchScreen.storyboard */; };
+		CC1A729C1D045AE100DB04BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC1A729B1D045AE100DB04BC /* GoogleService-Info.plist */; };
 		E7AC1EFF62CE36C1F7D0A0EC /* Pods_lastfm_scrobrows.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3F720B321E04120BDCC17E /* Pods_lastfm_scrobrows.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		CC1A72891D043E6A00DB04BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC1A728C1D043E6A00DB04BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC1A728E1D043E6A00DB04BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC1A729B1D045AE100DB04BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				CC1A72861D043E6A00DB04BC /* Main.storyboard */,
 				CC1A728B1D043E6A00DB04BC /* LaunchScreen.storyboard */,
 				CC1A728E1D043E6A00DB04BC /* Info.plist */,
+				CC1A729B1D045AE100DB04BC /* GoogleService-Info.plist */,
 			);
 			path = "lastfm-scrobrows";
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC1A728D1D043E6A00DB04BC /* LaunchScreen.storyboard in Resources */,
+				CC1A729C1D045AE100DB04BC /* GoogleService-Info.plist in Resources */,
 				CC1A728A1D043E6A00DB04BC /* Assets.xcassets in Resources */,
 				CC1A72881D043E6A00DB04BC /* Main.storyboard in Resources */,
 			);

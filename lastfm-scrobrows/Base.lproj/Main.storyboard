@@ -14,13 +14,130 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loginbg" translatesAutoresizingMaskIntoConstraints="NO" id="zUi-mE-5e9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GXz-Jv-aN8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="last-logo-white" translatesAutoresizingMaskIntoConstraints="NO" id="3BY-du-1V4">
+                                        <rect key="frame" x="67" y="129" width="240" height="78"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="O8Q-CX-yc9"/>
+                                            <constraint firstAttribute="height" constant="78" id="giK-jp-kFN"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NBT-79-1pL">
+                                        <rect key="frame" x="30" y="445" width="315" height="132"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last.fm username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bvl-Oq-Gl6" customClass="LoginTextField" customModule="lastfm_scrobrows" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="315" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="8wh-ac-5CG"/>
+                                                </constraints>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                                        <color key="value" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gtl-LS-aaC">
+                                                <rect key="frame" x="0.0" y="40" width="315" height="1"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="rUe-uE-hXd"/>
+                                                </constraints>
+                                            </view>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last.fm password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jTa-AC-9iQ" customClass="LoginTextField" customModule="lastfm_scrobrows" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="51" width="315" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="Vwa-d4-ppm"/>
+                                                </constraints>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                                        <color key="value" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rGa-pm-SKI">
+                                                <rect key="frame" x="0.0" y="91" width="315" height="1"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="mhW-it-adx"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ra3-6v-Wep">
+                                                <rect key="frame" x="0.0" y="102" width="315" height="30"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal" title="Log in">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="attemptLogin" destination="BYZ-38-t0r" eventType="touchUpInside" id="XRn-qZ-ZcF"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.7359105603448276" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="3BY-du-1V4" firstAttribute="top" secondItem="GXz-Jv-aN8" secondAttribute="top" constant="129" id="61z-0i-vkW"/>
+                                    <constraint firstItem="3BY-du-1V4" firstAttribute="centerX" secondItem="GXz-Jv-aN8" secondAttribute="centerX" id="BgL-WO-JZV"/>
+                                    <constraint firstItem="NBT-79-1pL" firstAttribute="leading" secondItem="GXz-Jv-aN8" secondAttribute="leading" constant="30" id="SFu-As-fBE"/>
+                                    <constraint firstAttribute="trailing" secondItem="NBT-79-1pL" secondAttribute="trailing" constant="30" id="pkN-nR-mvW"/>
+                                    <constraint firstAttribute="bottom" secondItem="NBT-79-1pL" secondAttribute="bottom" constant="90" id="thG-4K-gJ6"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="GXz-Jv-aN8" secondAttribute="trailing" id="ZiD-iD-GnZ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GXz-Jv-aN8" secondAttribute="bottom" id="kOt-Sj-Lb2"/>
+                            <constraint firstItem="GXz-Jv-aN8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nDv-o4-QdD"/>
+                            <constraint firstItem="GXz-Jv-aN8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="oX9-HZ-BfZ"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="pwdTextField" destination="jTa-AC-9iQ" id="VDY-ko-qlX"/>
+                        <outlet property="usernameTextField" destination="bvl-Oq-Gl6" id="VMz-97-KiF"/>
+                        <segue destination="hih-uE-fyj" kind="show" identifier="MainMenu" id="LqZ-TD-ScD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="302.5" y="360.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="609-Sa-SI6">
+            <objects>
+                <viewController id="hih-uE-fyj" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YWk-nM-XmQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="fMy-Jx-aqv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="84U-Di-rdV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BeL-Y0-VA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="878.5" y="360.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="last-logo-white" width="900" height="269"/>
+        <image name="loginbg" width="684" height="1024"/>
+    </resources>
 </document>
