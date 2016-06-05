@@ -13,6 +13,10 @@
 		CC1A728A1D043E6A00DB04BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC1A72891D043E6A00DB04BC /* Assets.xcassets */; };
 		CC1A728D1D043E6A00DB04BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC1A728B1D043E6A00DB04BC /* LaunchScreen.storyboard */; };
 		CC1A729C1D045AE100DB04BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC1A729B1D045AE100DB04BC /* GoogleService-Info.plist */; };
+		CC1A72A21D04651C00DB04BC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1A72A11D04651C00DB04BC /* Constants.swift */; };
+		CC1A72A51D04695F00DB04BC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1A72A41D04695F00DB04BC /* API.swift */; };
+		CC1A72A71D046A1A00DB04BC /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1A72A61D046A1A00DB04BC /* LoginManager.swift */; };
+		CC1A72A91D0483A600DB04BC /* LastfmUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1A72A81D0483A600DB04BC /* LastfmUser.swift */; };
 		E7AC1EFF62CE36C1F7D0A0EC /* Pods_lastfm_scrobrows.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3F720B321E04120BDCC17E /* Pods_lastfm_scrobrows.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +32,10 @@
 		CC1A728C1D043E6A00DB04BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC1A728E1D043E6A00DB04BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC1A729B1D045AE100DB04BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CC1A72A11D04651C00DB04BC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CC1A72A41D04695F00DB04BC /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		CC1A72A61D046A1A00DB04BC /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		CC1A72A81D0483A600DB04BC /* LastfmUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastfmUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +88,7 @@
 		CC1A72811D043E6A00DB04BC /* lastfm-scrobrows */ = {
 			isa = PBXGroup;
 			children = (
+				CC1A72A31D0468C500DB04BC /* API */,
 				CC1A72981D043F6F00DB04BC /* Utilities */,
 				CC1A72971D043F5A00DB04BC /* Resources */,
 				CC1A72961D043F5600DB04BC /* Model */,
@@ -112,6 +121,7 @@
 		CC1A72961D043F5600DB04BC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CC1A72A81D0483A600DB04BC /* LastfmUser.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -127,8 +137,18 @@
 		CC1A72981D043F6F00DB04BC /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				CC1A72A11D04651C00DB04BC /* Constants.swift */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		CC1A72A31D0468C500DB04BC /* API */ = {
+			isa = PBXGroup;
+			children = (
+				CC1A72A41D04695F00DB04BC /* API.swift */,
+				CC1A72A61D046A1A00DB04BC /* LoginManager.swift */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,8 +275,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC1A72A71D046A1A00DB04BC /* LoginManager.swift in Sources */,
 				CC1A72851D043E6A00DB04BC /* ViewController.swift in Sources */,
+				CC1A72A91D0483A600DB04BC /* LastfmUser.swift in Sources */,
 				CC1A72831D043E6A00DB04BC /* AppDelegate.swift in Sources */,
+				CC1A72A51D04695F00DB04BC /* API.swift in Sources */,
+				CC1A72A21D04651C00DB04BC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>CryptoSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-lastfm-scrobrows.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1D77ECCC8B6D9BD13F7F5FF939058D7D</key>
+		<key>34C073D448A23CA3A97EA55CC489BD6F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4CE155E72A999C5103687D01663DFC8B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>586BC906ACEED52B7213217BF9A44431</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F20654B868CDA09D72CE271BF54B8402</key>
 		<dict>
 			<key>primary</key>
 			<true/>
