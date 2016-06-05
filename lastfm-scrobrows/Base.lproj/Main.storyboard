@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -24,16 +25,23 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="last-logo-white" translatesAutoresizingMaskIntoConstraints="NO" id="3BY-du-1V4">
-                                        <rect key="frame" x="67" y="129" width="240" height="78"/>
+                                        <rect key="frame" x="102" y="136" width="170" height="36"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="IK2-R7-oL0"/>
                                             <constraint firstAttribute="width" constant="240" id="O8Q-CX-yc9"/>
+                                            <constraint firstAttribute="width" constant="170" id="UJA-H1-aaw"/>
                                             <constraint firstAttribute="height" constant="78" id="giK-jp-kFN"/>
+                                            <constraint firstAttribute="height" constant="36" id="oSe-rm-6cC"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="IK2-R7-oL0"/>
+                                                <exclude reference="O8Q-CX-yc9"/>
+                                                <exclude reference="giK-jp-kFN"/>
+                                            </mask>
+                                        </variation>
                                     </imageView>
-                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="v8y-gt-uo9">
-                                        <rect key="frame" x="177" y="585" width="20" height="20"/>
-                                    </activityIndicatorView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NBT-79-1pL">
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NBT-79-1pL">
                                         <rect key="frame" x="30" y="413" width="315" height="155"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last.fm username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bvl-Oq-Gl6" customClass="LoginTextField" customModule="lastfm_scrobrows" customModuleProvider="target">
@@ -114,6 +122,71 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="v8y-gt-uo9">
+                                        <rect key="frame" x="177" y="585" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTh-cu-2zY">
+                                        <rect key="frame" x="8" y="12" width="54" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="58K-bs-igb"/>
+                                            <constraint firstAttribute="width" constant="54" id="t51-Vp-AEA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="Log out">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCROWSE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHu-WK-yDs">
+                                        <rect key="frame" x="64" y="67" width="246.5" height="61"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49" id="2wL-Gf-RA8"/>
+                                            <constraint firstAttribute="height" constant="61" id="UCj-XB-dhA"/>
+                                            <constraint firstAttribute="width" constant="222" id="aSR-mm-n9q"/>
+                                            <constraint firstAttribute="width" constant="246.5" id="lhI-Gj-hY9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="53"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="2wL-Gf-RA8"/>
+                                                <exclude reference="aSR-mm-n9q"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="RkD-6B-0oV">
+                                        <rect key="frame" x="30" y="277" width="315" height="114"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpK-bY-mm0" customClass="MainControlButton" customModule="lastfm_scrobrows" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="315" height="37"/>
+                                                <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
+                                                <state key="normal" title="Scrobble my tracks">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="scrobbleTracks:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nDe-3L-wXy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGj-kp-GbV" customClass="MainControlButton" customModule="lastfm_scrobrows" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="77" width="315" height="37"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.5" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
+                                                <state key="normal" title="Discover some music!">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="goToLibrary:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aNg-aF-06h"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="gpK-bY-mm0" secondAttribute="trailing" id="C7u-NX-cWj"/>
+                                            <constraint firstItem="gpK-bY-mm0" firstAttribute="leading" secondItem="RkD-6B-0oV" secondAttribute="leadingMargin" id="EsW-q3-Fxd"/>
+                                            <constraint firstItem="cGj-kp-GbV" firstAttribute="leading" secondItem="RkD-6B-0oV" secondAttribute="leading" id="blR-QL-uZY"/>
+                                            <constraint firstAttribute="trailing" secondItem="cGj-kp-GbV" secondAttribute="trailing" id="gUg-Ce-bjb"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.7359105603448276" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -122,19 +195,35 @@
                                     <constraint firstItem="v8y-gt-uo9" firstAttribute="centerX" secondItem="GXz-Jv-aN8" secondAttribute="centerX" id="Aum-i3-JDD"/>
                                     <constraint firstItem="3BY-du-1V4" firstAttribute="centerX" secondItem="GXz-Jv-aN8" secondAttribute="centerX" id="BgL-WO-JZV"/>
                                     <constraint firstItem="NBT-79-1pL" firstAttribute="leading" secondItem="GXz-Jv-aN8" secondAttribute="leading" constant="30" id="F4S-im-Zag"/>
+                                    <constraint firstItem="RkD-6B-0oV" firstAttribute="leading" secondItem="GXz-Jv-aN8" secondAttribute="leading" constant="30" id="I7v-ab-XYz"/>
+                                    <constraint firstItem="3BY-du-1V4" firstAttribute="top" secondItem="bHu-WK-yDs" secondAttribute="bottom" constant="8" id="Nch-qd-TdF"/>
+                                    <constraint firstItem="RkD-6B-0oV" firstAttribute="centerX" secondItem="NBT-79-1pL" secondAttribute="centerX" id="OF8-qW-3i9"/>
                                     <constraint firstItem="v8y-gt-uo9" firstAttribute="top" secondItem="NBT-79-1pL" secondAttribute="bottom" constant="17" id="RYS-JN-GYu"/>
                                     <constraint firstItem="NBT-79-1pL" firstAttribute="leading" secondItem="GXz-Jv-aN8" secondAttribute="leading" constant="30" id="SFu-As-fBE"/>
+                                    <constraint firstItem="bHu-WK-yDs" firstAttribute="top" secondItem="GXz-Jv-aN8" secondAttribute="top" constant="67" id="SyD-fj-Z1W"/>
                                     <constraint firstItem="v8y-gt-uo9" firstAttribute="top" secondItem="NBT-79-1pL" secondAttribute="bottom" constant="8" id="VYR-mn-vjL"/>
+                                    <constraint firstItem="qTh-cu-2zY" firstAttribute="leading" secondItem="GXz-Jv-aN8" secondAttribute="leading" constant="8" id="dMc-R4-fXL"/>
+                                    <constraint firstItem="RkD-6B-0oV" firstAttribute="centerY" secondItem="GXz-Jv-aN8" secondAttribute="centerY" id="gdh-1P-5DU"/>
+                                    <constraint firstItem="qTh-cu-2zY" firstAttribute="top" secondItem="GXz-Jv-aN8" secondAttribute="top" constant="12" id="gxM-O3-bD4"/>
+                                    <constraint firstItem="RkD-6B-0oV" firstAttribute="centerY" secondItem="NBT-79-1pL" secondAttribute="centerY" id="k4S-Y0-Bgl"/>
+                                    <constraint firstItem="NBT-79-1pL" firstAttribute="top" secondItem="RkD-6B-0oV" secondAttribute="bottom" constant="23" id="kBO-ls-Td5"/>
+                                    <constraint firstItem="RkD-6B-0oV" firstAttribute="centerX" secondItem="GXz-Jv-aN8" secondAttribute="centerX" id="kdK-fo-Add"/>
+                                    <constraint firstItem="bHu-WK-yDs" firstAttribute="centerX" secondItem="GXz-Jv-aN8" secondAttribute="centerX" id="lMa-dz-vbD"/>
                                     <constraint firstAttribute="trailing" secondItem="NBT-79-1pL" secondAttribute="trailing" constant="30" id="pkN-nR-mvW"/>
+                                    <constraint firstItem="3BY-du-1V4" firstAttribute="top" secondItem="bHu-WK-yDs" secondAttribute="bottom" constant="8" id="tHe-9X-EQg"/>
                                     <constraint firstAttribute="bottom" secondItem="NBT-79-1pL" secondAttribute="bottom" constant="90" id="thG-4K-gJ6"/>
                                     <constraint firstItem="v8y-gt-uo9" firstAttribute="centerX" secondItem="GXz-Jv-aN8" secondAttribute="centerX" id="tuS-zE-IGm"/>
                                     <constraint firstAttribute="trailing" secondItem="NBT-79-1pL" secondAttribute="trailing" constant="30" id="yK6-9I-Wxf"/>
+                                    <constraint firstAttribute="trailing" secondItem="RkD-6B-0oV" secondAttribute="trailing" constant="30" id="zgM-RK-WxX"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="61z-0i-vkW"/>
+                                        <exclude reference="tHe-9X-EQg"/>
                                         <exclude reference="SFu-As-fBE"/>
                                         <exclude reference="pkN-nR-mvW"/>
                                         <exclude reference="thG-4K-gJ6"/>
+                                        <exclude reference="gdh-1P-5DU"/>
                                         <exclude reference="VYR-mn-vjL"/>
                                         <exclude reference="tuS-zE-IGm"/>
                                     </mask>
@@ -157,6 +246,9 @@
                     <connections>
                         <outlet property="activityIndicator" destination="v8y-gt-uo9" id="ADw-SZ-gmO"/>
                         <outlet property="loginBtn" destination="Ra3-6v-Wep" id="uH7-ig-RUO"/>
+                        <outlet property="loginControlsStackView" destination="NBT-79-1pL" id="Q8a-iw-LV4"/>
+                        <outlet property="logoutBtn" destination="qTh-cu-2zY" id="CGL-Kj-PG5"/>
+                        <outlet property="mainControlsStack" destination="RkD-6B-0oV" id="pej-0z-DOP"/>
                         <outlet property="pwdTextField" destination="jTa-AC-9iQ" id="VDY-ko-qlX"/>
                         <outlet property="rememberMeSwitch" destination="8Mp-q7-Hcx" id="I8a-Jv-T2t"/>
                         <outlet property="usernameTextField" destination="bvl-Oq-Gl6" id="VMz-97-KiF"/>

@@ -17,21 +17,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var rememberMeSwitch: UISwitch!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var loginControlsStackView: UIStackView!
+    @IBOutlet weak var mainControlsStack: UIStackView!
+    @IBOutlet weak var logoutBtn: UIButton!
     
     var currentUser: LastfmUser?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginControlsStackView.hidden = false
+        mainControlsStack.hidden = true
 
     }
     
     override func viewDidAppear(animated: Bool) {
         
         clearTextFields()
-//        loginBtn.userInteractionEnabled = true
-//        if NSUserDefaults.standardUserDefaults().valueForKey(STORED_USER_SECRET_KEY) != nil {
-//            performSegueWithIdentifier("MainMenu", sender: nil)
-//        }
+
     }
 
     @IBAction func attemptLogin() {
@@ -39,6 +41,7 @@ class ViewController: UIViewController {
         if let userName = usernameTextField.text where userName != "", let pwd = pwdTextField.text where pwd != "" {
             
             loginBtn.userInteractionEnabled = false
+            activityIndicator.fadeIn(0.3)
             activityIndicator.startAnimating()
             currentUser = LastfmUser(name: userName, password: pwd)
             
@@ -50,9 +53,17 @@ class ViewController: UIViewController {
                         NSUserDefaults.standardUserDefaults().setValue(userSecret, forKey: STORED_USER_SECRET_KEY)
                         NSUserDefaults.standardUserDefaults().setValue(username, forKey: STORED_USERNAME)
                     }
+                    self.activityIndicator.fadeOut(0.3)
                     self.activityIndicator.stopAnimating()
-                    self.performSegueWithIdentifier("MainMenu", sender: nil)
+                    self.loginControlsStackView.fadeOut(0.5)
+                    self.mainControlsStack.alpha = 0.0
+                    self.mainControlsStack.hidden = false
+                    self.mainControlsStack.userInteractionEnabled = true
+                    self.mainControlsStack.fadeIn(0.5)
+                    self.logoutBtn.fadeIn(0.5)
+                    
                 } else {
+                    
                     self.activityIndicator.stopAnimating()
                     self.showErrorAlert("Oops! Something went wrong", msg: "Make sure you enter correct username and password")
                     self.clearTextFields()
@@ -72,5 +83,17 @@ class ViewController: UIViewController {
     func clearTextFields() {
         usernameTextField.text = ""
         pwdTextField.text = ""
+    }
+    
+    func showControlsIfLogged() {
+        
+    }
+    
+    @IBAction func goToLibrary(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func scrobbleTracks(sender: UIButton) {
+        
     }
 }
