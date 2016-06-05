@@ -12,9 +12,13 @@
 		CC1A72881D043E6A00DB04BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC1A72861D043E6A00DB04BC /* Main.storyboard */; };
 		CC1A728A1D043E6A00DB04BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC1A72891D043E6A00DB04BC /* Assets.xcassets */; };
 		CC1A728D1D043E6A00DB04BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC1A728B1D043E6A00DB04BC /* LaunchScreen.storyboard */; };
+		E7AC1EFF62CE36C1F7D0A0EC /* Pods_lastfm_scrobrows.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3F720B321E04120BDCC17E /* Pods_lastfm_scrobrows.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04CBC53AC2C950E910B08A25 /* Pods-lastfm-scrobrows.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lastfm-scrobrows.release.xcconfig"; path = "Pods/Target Support Files/Pods-lastfm-scrobrows/Pods-lastfm-scrobrows.release.xcconfig"; sourceTree = "<group>"; };
+		1DEEFF49114902E85207202F /* Pods-lastfm-scrobrows.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lastfm-scrobrows.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lastfm-scrobrows/Pods-lastfm-scrobrows.debug.xcconfig"; sourceTree = "<group>"; };
+		6E3F720B321E04120BDCC17E /* Pods_lastfm_scrobrows.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lastfm_scrobrows.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC1A727F1D043E6A00DB04BC /* lastfm-scrobrows.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "lastfm-scrobrows.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC1A72821D043E6A00DB04BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC1A72841D043E6A00DB04BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7AC1EFF62CE36C1F7D0A0EC /* Pods_lastfm_scrobrows.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16BF3BB9FBA7A7881E562273 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6E3F720B321E04120BDCC17E /* Pods_lastfm_scrobrows.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B1F9C3B0839901A0AD0E72C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1DEEFF49114902E85207202F /* Pods-lastfm-scrobrows.debug.xcconfig */,
+				04CBC53AC2C950E910B08A25 /* Pods-lastfm-scrobrows.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CC1A72761D043E6A00DB04BC = {
 			isa = PBXGroup;
 			children = (
 				CC1A72811D043E6A00DB04BC /* lastfm-scrobrows */,
 				CC1A72801D043E6A00DB04BC /* Products */,
+				9B1F9C3B0839901A0AD0E72C /* Pods */,
+				16BF3BB9FBA7A7881E562273 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +78,54 @@
 		CC1A72811D043E6A00DB04BC /* lastfm-scrobrows */ = {
 			isa = PBXGroup;
 			children = (
+				CC1A72981D043F6F00DB04BC /* Utilities */,
+				CC1A72971D043F5A00DB04BC /* Resources */,
+				CC1A72961D043F5600DB04BC /* Model */,
+				CC1A72951D043F5300DB04BC /* View */,
+				CC1A72941D043F4D00DB04BC /* Controller */,
 				CC1A72821D043E6A00DB04BC /* AppDelegate.swift */,
-				CC1A72841D043E6A00DB04BC /* ViewController.swift */,
 				CC1A72861D043E6A00DB04BC /* Main.storyboard */,
-				CC1A72891D043E6A00DB04BC /* Assets.xcassets */,
 				CC1A728B1D043E6A00DB04BC /* LaunchScreen.storyboard */,
 				CC1A728E1D043E6A00DB04BC /* Info.plist */,
 			);
 			path = "lastfm-scrobrows";
+			sourceTree = "<group>";
+		};
+		CC1A72941D043F4D00DB04BC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CC1A72841D043E6A00DB04BC /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		CC1A72951D043F5300DB04BC /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		CC1A72961D043F5600DB04BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CC1A72971D043F5A00DB04BC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CC1A72891D043E6A00DB04BC /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		CC1A72981D043F6F00DB04BC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +135,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CC1A72911D043E6A00DB04BC /* Build configuration list for PBXNativeTarget "lastfm-scrobrows" */;
 			buildPhases = (
+				523CEBD5BD8BF85035556825 /* 📦 Check Pods Manifest.lock */,
 				CC1A727B1D043E6A00DB04BC /* Sources */,
 				CC1A727C1D043E6A00DB04BC /* Frameworks */,
 				CC1A727D1D043E6A00DB04BC /* Resources */,
+				452FC6A3315A128B23FB5B0F /* 📦 Embed Pods Frameworks */,
+				B1B72BACA5A8C3CB0F3E4DC5 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +197,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		452FC6A3315A128B23FB5B0F /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lastfm-scrobrows/Pods-lastfm-scrobrows-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		523CEBD5BD8BF85035556825 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B1B72BACA5A8C3CB0F3E4DC5 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lastfm-scrobrows/Pods-lastfm-scrobrows-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CC1A727B1D043E6A00DB04BC /* Sources */ = {
@@ -250,6 +365,7 @@
 		};
 		CC1A72921D043E6A00DB04BC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DEEFF49114902E85207202F /* Pods-lastfm-scrobrows.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "lastfm-scrobrows/Info.plist";
@@ -261,6 +377,7 @@
 		};
 		CC1A72931D043E6A00DB04BC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04CBC53AC2C950E910B08A25 /* Pods-lastfm-scrobrows.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "lastfm-scrobrows/Info.plist";
@@ -289,6 +406,7 @@
 				CC1A72931D043E6A00DB04BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
