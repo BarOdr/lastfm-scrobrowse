@@ -17,9 +17,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var rememberMeSwitch: UISwitch!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var loginControlsStackView: UIStackView!
+    @IBOutlet weak var allControlsStackView: UIStackView!
     @IBOutlet weak var mainControlsStack: UIStackView!
     @IBOutlet weak var logoutBtn: UIButton!
+    @IBOutlet weak var loginControlsStackView: UIStackView!
     
     var currentUser: LastfmUser?
     
@@ -55,11 +56,9 @@ class ViewController: UIViewController {
                     }
                     self.activityIndicator.fadeOut(0.3)
                     self.activityIndicator.stopAnimating()
-                    self.loginControlsStackView.fadeOut(0.5)
-                    self.mainControlsStack.alpha = 0.0
+                    self.loginControlsStackView.hidden = true
                     self.mainControlsStack.hidden = false
                     self.mainControlsStack.userInteractionEnabled = true
-                    self.mainControlsStack.fadeIn(0.5)
                     self.logoutBtn.fadeIn(0.5)
                     
                 } else {
@@ -95,5 +94,9 @@ class ViewController: UIViewController {
     
     @IBAction func scrobbleTracks(sender: UIButton) {
         
+    }
+    
+    @IBAction func logoutBtnPressed(sender: AnyObject) {
+
     }
 }

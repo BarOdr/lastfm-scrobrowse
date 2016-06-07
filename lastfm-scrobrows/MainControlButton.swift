@@ -11,9 +11,8 @@ import UIKit
 class MainControlButton: UIButton {
 
     override func awakeFromNib() {
-        
+                
         layer.cornerRadius = 5
-        
     }
 
 }
