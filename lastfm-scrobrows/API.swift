@@ -25,13 +25,27 @@ class API: NSObject {
         loginManager = LoginManager()
     }
     
-    func logIn(user: LastfmUser, completion: DownloadComplete) {
-        loginManager.logIn(user, completion: completion)
+    /**
+     This method sends a POST request to Last.fm API to obtain user secret key (default key lifetime: infinite by default). You can then use the obtained secret key as well as the username in the trailing closure
+     
+     - parameter user: an object of type LastfmUser
+     - parameter completion: completion handler of type (userSecret: String, userName: String) -> Void. Typealias: DownloadComplete
+     */
+    
+    func logInAttempt(user: LastfmUser, completion: DownloadComplete) {
+        loginManager.logInAttempt(user, completion: completion)
     }
     
-    func createUser() {
-        return loginManager.createUser()
+    /**
+     This method creates api_sig - hash string  required by the Last.fm API as one of the authentication request parameters. As the documentation says, the api_sig string (before hash) should be of form:
+     - api_keyxxxxxxxxmethodauth.getMobileSessionpasswordxxxxxxxusernamexxxxxxxxmysecret
+     
+     - parameter user: An object of type LastfmUser
+     - parameter method: The method name string for mobile authentication. You should use LASTFM_GET_MOBILE SESSION. Should the authentication string requirements ever change, make the necessary changes.
+     - returns: a 32-character hexadecimal md5 hash to use as the api_sig parameter of Last.fm authentication request
+     */
+    
+    func saveUser(username: String, userSecretKey: String) {
+        return loginManager.saveUser(username, userSecretKey: userSecretKey)
     }
-    
-    
 }

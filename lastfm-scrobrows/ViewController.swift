@@ -26,9 +26,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginControlsStackView.hidden = false
-        mainControlsStack.hidden = true
-
+        
+        showLoginControls()
+        hideMainControls()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -42,28 +42,23 @@ class ViewController: UIViewController {
         if let userName = usernameTextField.text where userName != "", let pwd = pwdTextField.text where pwd != "" {
             
             loginBtn.userInteractionEnabled = false
-            activityIndicator.fadeIn(0.3)
-            activityIndicator.startAnimating()
+            
+            indicateActivity()
+            
             currentUser = LastfmUser(name: userName, password: pwd)
             
-            API.sharedInstance.logIn(currentUser!) { userSecret, username in
+            API.sharedInstance.logInAttempt(currentUser!) { userSecret, username in
                 
-                if userSecret != "" && username != "" {
+                if  username != "" && userSecret != "" {
                     if self.rememberMeSwitch.on {
-                        print("Username and key saved.")
-                        NSUserDefaults.standardUserDefaults().setValue(userSecret, forKey: STORED_USER_SECRET_KEY)
-                        NSUserDefaults.standardUserDefaults().setValue(username, forKey: STORED_USERNAME)
+                        API.sharedInstance.saveUser(username, userSecretKey: userSecret)
                     }
-                    self.activityIndicator.fadeOut(0.3)
-                    self.activityIndicator.stopAnimating()
-                    self.loginControlsStackView.hidden = true
-                    self.mainControlsStack.hidden = false
-                    self.mainControlsStack.userInteractionEnabled = true
-                    self.logoutBtn.fadeIn(0.5)
+                    self.stopIndicatingActivity()
+                    self.hideLoginControls()
+                    self.showMainControls()
                     
                 } else {
-                    
-                    self.activityIndicator.stopAnimating()
+                    self.stopIndicatingActivity()
                     self.showErrorAlert("Oops! Something went wrong", msg: "Make sure you enter correct username and password")
                     self.clearTextFields()
                     self.loginBtn.userInteractionEnabled = true
@@ -73,28 +68,8 @@ class ViewController: UIViewController {
     }
     
     /**
-     
-     This method shows an UIAlertController with a custom title and message to the user.
-     
-     - Parameter title: The title of the alert.
-     - Parameter msg: Message to display to the user
-     
-    */
-    func showErrorAlert(title: String, msg: String) {
-        let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.Alert)
-        let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
-        alert.addAction(action)
-        presentViewController(alert, animated: true, completion: nil)
-    }
-    
-    func clearTextFields() {
-        usernameTextField.text = ""
-        pwdTextField.text = ""
-    }
-    
-    func showControlsIfLogged() {
-        
-    }
+     This method takes the user to their library.
+     */
     
     @IBAction func goToLibrary(sender: AnyObject) {
         
@@ -105,6 +80,97 @@ class ViewController: UIViewController {
     }
     
     @IBAction func logoutBtnPressed(sender: AnyObject) {
-
+        
+    }
+    
+    /**
+     This method shows an UIAlertController with a custom title and message to the user.
+     
+     - Parameter title: The title of the alert.
+     - Parameter msg: Message to display to the user
+     */
+    
+    func showErrorAlert(title: String, msg: String) {
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.Alert)
+        let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alert.addAction(action)
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    /**
+     This method clears username and password text fields.
+     */
+    
+    func clearTextFields() {
+        usernameTextField.text = ""
+        pwdTextField.text = ""
+    }
+    
+    /**
+     This method shows main controls:
+     - "Scrobble my tracks" button
+     - "Discover music" button
+     
+     by showing the appropiate stack view.
+     */
+    
+    func showMainControls() {
+        self.mainControlsStack.hidden = false
+        self.mainControlsStack.userInteractionEnabled = true
+        self.logoutBtn.fadeIn(0.5)
+    }
+    
+    /**
+     This method hides main controls:
+     - "Scrobble my tracks" button
+     - "Discover music" button
+     
+     by hiding the appropiate stack view.
+     */
+    
+    func hideMainControls() {
+        self.mainControlsStack.hidden = true
+    }
+    
+    /**
+     This method shows login controls:
+     - username input text field
+     - user password input text field
+     
+     by showing the appropiate stack view.
+    */
+    
+    func showLoginControls() {
+        self.loginControlsStackView.hidden = false
+    }
+    
+    /**
+     This method hides login controls:
+     - username input text field
+     - user password input text field
+     
+     by hiding the appropiate stack view.
+     */
+    
+    func hideLoginControls() {
+        self.loginControlsStackView.hidden = true
+    }
+    
+    /** 
+     This method shows the activity indicator and starts its animation.
+    */
+    
+    func indicateActivity() {
+        activityIndicator.fadeIn(0.3)
+        activityIndicator.startAnimating()
+    }
+    
+    /**
+     This method shows the activity indicator and stops its animation.
+     */
+    
+    func stopIndicatingActivity() {
+        self.activityIndicator.fadeOut(0.3)
+        self.activityIndicator.stopAnimating()
     }
 }
