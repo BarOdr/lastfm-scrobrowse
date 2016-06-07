@@ -59,7 +59,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCROWSE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHu-WK-yDs">
-                                        <rect key="frame" x="64" y="67" width="246.5" height="61"/>
+                                        <rect key="frame" x="64" y="67" width="247" height="61"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="49" id="2wL-Gf-RA8"/>
                                             <constraint firstAttribute="height" constant="61" id="UCj-XB-dhA"/>

@@ -72,6 +72,14 @@ class ViewController: UIViewController {
         }
     }
     
+    /**
+     
+     This method shows an UIAlertController with a custom title and message to the user.
+     
+     - Parameter title: The title of the alert.
+     - Parameter msg: Message to display to the user
+     
+    */
     func showErrorAlert(title: String, msg: String) {
         let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.Alert)
         let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
