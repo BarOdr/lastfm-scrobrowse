@@ -248,7 +248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="302.5" y="360.5"/>
+            <point key="canvasLocation" x="-290.5" y="330.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="609-Sa-SI6">
@@ -261,16 +261,148 @@
                     <view key="view" contentMode="scaleToFill" id="84U-Di-rdV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mXX-Pa-oTz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7j-LZ-EAX">
+                                        <rect key="frame" x="8" y="8" width="54" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="54" id="cNO-dr-pha"/>
+                                            <constraint firstAttribute="height" constant="30" id="q5M-jd-2WU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="Log out">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="logoutBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1A4-U3-WYq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.8840144231" green="0.8840144231" blue="0.8840144231" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="n7j-LZ-EAX" firstAttribute="top" secondItem="mXX-Pa-oTz" secondAttribute="top" constant="8" id="ObQ-y2-PcC"/>
+                                    <constraint firstAttribute="height" constant="50" id="yDg-Rz-yeA"/>
+                                    <constraint firstItem="n7j-LZ-EAX" firstAttribute="leading" secondItem="mXX-Pa-oTz" secondAttribute="leading" constant="8" id="zZM-Uj-uB7"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="116" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="byR-9o-HpW">
+                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="116" id="l57-gC-4n7">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="116"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l57-gC-4n7" id="49y-n1-kW8">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="115.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="sampleartist" translatesAutoresizingMaskIntoConstraints="NO" id="gIY-lX-BDj">
+                                                    <rect key="frame" x="8" y="8" width="100" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="5RI-7b-vQ2"/>
+                                                        <constraint firstAttribute="width" constant="100" id="ONs-Vv-3LV"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Selah Sue" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="4rT-vR-M1B">
+                                                    <rect key="frame" x="116" y="8" width="251" height="33.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="26"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="326.4k" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="fUu-NM-lIr">
+                                                    <rect key="frame" x="143" y="38" width="60" height="21.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="326.4k" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="bho-w8-f4l">
+                                                    <rect key="frame" x="143" y="55" width="55" height="21.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Top album:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="46C-di-Suy">
+                                                    <rect key="frame" x="196" y="57" width="69" height="21.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Raggamufin" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="1uF-Hy-zzv">
+                                                    <rect key="frame" x="296" y="38" width="71" height="21.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reason (2015)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="7Dm-by-8F3">
+                                                    <rect key="frame" x="268" y="55" width="99" height="21.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="soul | female vocalist | jazz | belgian | songwriter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="8hH-IN-d6r">
+                                                    <rect key="frame" x="116" y="89" width="251" height="18.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="H7M-Qa-Xe6">
+                                                    <rect key="frame" x="116" y="77" width="93" height="17"/>
+                                                    <string key="text">Related Tags
+soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pXf-Tb-KM8">
+                                                    <rect key="frame" x="187" y="41" width="1" height="35.5"/>
+                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="1" id="pYj-Vy-mbX"/>
+                                                    </constraints>
+                                                </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="listeners" translatesAutoresizingMaskIntoConstraints="NO" id="b7P-UN-bfR">
+                                                    <rect key="frame" x="116" y="40" width="15" height="15"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="scrobbles" translatesAutoresizingMaskIntoConstraints="NO" id="hp4-vQ-RE6">
+                                                    <rect key="frame" x="116" y="57" width="15" height="15"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Top track:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="NFi-wO-U0a">
+                                                    <rect key="frame" x="196" y="38" width="69" height="21.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mXX-Pa-oTz" firstAttribute="top" secondItem="84U-Di-rdV" secondAttribute="top" id="6JZ-Jy-9Nu"/>
+                            <constraint firstItem="mXX-Pa-oTz" firstAttribute="leading" secondItem="84U-Di-rdV" secondAttribute="leading" id="6td-3h-yQs"/>
+                            <constraint firstItem="byR-9o-HpW" firstAttribute="top" secondItem="mXX-Pa-oTz" secondAttribute="bottom" id="aVE-dt-ixV"/>
+                            <constraint firstItem="fMy-Jx-aqv" firstAttribute="top" secondItem="byR-9o-HpW" secondAttribute="bottom" id="iBZ-ac-shc"/>
+                            <constraint firstItem="byR-9o-HpW" firstAttribute="leading" secondItem="84U-Di-rdV" secondAttribute="leading" id="n6Z-CI-A2L"/>
+                            <constraint firstAttribute="trailing" secondItem="byR-9o-HpW" secondAttribute="trailing" id="nLn-8O-VMf"/>
+                            <constraint firstAttribute="trailing" secondItem="mXX-Pa-oTz" secondAttribute="trailing" id="uvh-On-b7K"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BeL-Y0-VA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="827.5" y="360.5"/>
+            <point key="canvasLocation" x="362.5" y="330.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="last-logo-white" width="900" height="269"/>
+        <image name="listeners" width="100" height="100"/>
         <image name="loginbg3" width="1958" height="1208"/>
+        <image name="sampleartist" width="836" height="844"/>
+        <image name="scrobbles" width="100" height="100"/>
     </resources>
 </document>
