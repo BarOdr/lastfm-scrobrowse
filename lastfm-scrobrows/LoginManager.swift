@@ -52,6 +52,7 @@ class LoginManager: NSObject {
         let requestString = "https://ws.audioscrobbler.com/2.0/?format=json&password=\(pwd)&username=\(username)&api_key=\(LASTFM_API_KEY)&api_sig=\(hash)&method=\(LASTFM_GET_MOBILE_SESSION)"
         return requestString
     }
+    
     /**
      This method saves the logged in user's username and secret key to NSUserDefaults, accordingly for keys:
      - STORED_USERNAME string constant
@@ -69,6 +70,7 @@ class LoginManager: NSObject {
     func saveUser(username: String, userSecretKey: String) {
         NSUserDefaults.standardUserDefaults().setValue(userSecretKey, forKey: STORED_USER_SECRET_KEY)
         NSUserDefaults.standardUserDefaults().setValue(username, forKey: STORED_USERNAME)
+        print("Username and secret saved to NSUserDefaults")
     }
     
     /**

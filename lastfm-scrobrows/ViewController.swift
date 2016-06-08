@@ -9,9 +9,14 @@
 import UIKit
 import CryptoSwift
 
+let loginFailedMessageTitle = "Oops! Something went wrong"
+let loginFailedMessage = "Make sure you enter correct username and password"
 
 class ViewController: UIViewController {
 
+    
+    // @IBOutlets 
+    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var pwdTextField: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
@@ -21,6 +26,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var mainControlsStack: UIStackView!
     @IBOutlet weak var logoutBtn: UIButton!
     @IBOutlet weak var loginControlsStackView: UIStackView!
+    
+    // Variables
     
     var currentUser: LastfmUser?
     
@@ -37,33 +44,12 @@ class ViewController: UIViewController {
 
     }
 
-    @IBAction func attemptLogin() {
+    @IBAction func loginBtnPressed() {
         
         if let userName = usernameTextField.text where userName != "", let pwd = pwdTextField.text where pwd != "" {
             
-            loginBtn.userInteractionEnabled = false
+            attemptLogin(userName, password: pwd)
             
-            indicateActivity()
-            
-            currentUser = LastfmUser(name: userName, password: pwd)
-            
-            API.sharedInstance.logInAttempt(currentUser!) { userSecret, username in
-                
-                if  username != "" && userSecret != "" {
-                    if self.rememberMeSwitch.on {
-                        API.sharedInstance.saveUser(username, userSecretKey: userSecret)
-                    }
-                    self.stopIndicatingActivity()
-                    self.hideLoginControls()
-                    self.showMainControls()
-                    
-                } else {
-                    self.stopIndicatingActivity()
-                    self.showErrorAlert("Oops! Something went wrong", msg: "Make sure you enter correct username and password")
-                    self.clearTextFields()
-                    self.loginBtn.userInteractionEnabled = true
-                }
-            }
         }
     }
     
@@ -81,6 +67,65 @@ class ViewController: UIViewController {
     
     @IBAction func logoutBtnPressed(sender: AnyObject) {
         
+    }
+    
+    /**
+     This method performs a login attempt, provided that the user entered their login and password. The request is generated and sent to Last.fm API. In case of success, the user is logged in. If the user had set the "Remember me" switch to "on" position, their username and secret key is saved to NSUserDefaults. In case of failure, a proper UIAlertView is presented to the user, suggesting checking the credentials and trying again.
+     
+     - parameter username: User name (String)
+     - parameter password: User password (String)
+    */
+    
+    func attemptLogin(username: String, password: String) {
+        
+        loginBtn.userInteractionEnabled = false
+        
+        indicateActivity()
+        
+        currentUser = LastfmUser(name: username, password: password)
+        
+        API.sharedInstance.logInAttempt(currentUser!) { userSecret, username in
+            
+            if  username != "" && userSecret != "" {
+                self.loginSucceeded(username, userSecretKey: userSecret)
+                
+            } else {
+                self.loginFailed(loginFailedMessageTitle, message: loginFailedMessage)
+            }
+        }
+    }
+    
+    /**
+    This method performs some tasks after a successful login attempt:
+     - saves user's username and secret key to NSUserDefaults after a successful login (if the user had expressed the wish to stay logged in),
+     - turns of the activity indicator, hides login controls and shows the main controls.
+     
+     - parameter username: User name (String)
+     - parameter userSecretKey: User secret key (String)
+    */
+    
+    func loginSucceeded(username: String, userSecretKey: String) {
+        if self.rememberMeSwitch.on {
+            API.sharedInstance.saveUser(username, userSecretKey: userSecretKey)
+        }
+        self.stopIndicatingActivity()
+        self.hideLoginControls()
+        self.showMainControls()
+    }
+    
+    /**
+     This method performs some tasks after a failed login attempt:
+     - stops the activity indicator,
+     - shows an UIAlertView to the user
+     - clears the text fields (user input)
+     - enables user interaction on login button
+    */
+    
+    func loginFailed(messageTitle: String, message: String) {
+        self.stopIndicatingActivity()
+        self.showErrorAlert(messageTitle, msg: message)
+        self.clearTextFields()
+        self.loginBtn.userInteractionEnabled = true
     }
     
     /**
@@ -173,4 +218,6 @@ class ViewController: UIViewController {
         self.activityIndicator.fadeOut(0.3)
         self.activityIndicator.stopAnimating()
     }
+    
+
 }
