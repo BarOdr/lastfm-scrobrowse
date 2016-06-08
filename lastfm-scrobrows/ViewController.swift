@@ -99,7 +99,7 @@ class ViewController: UIViewController {
         
         indicateActivity()
         
-        currentUser = LastfmUser(name: username, password: password)
+        currentUser = LastfmUser(name: username, secret: password)
         
         API.sharedInstance.logInAttempt(currentUser!) { userSecret, username in
             

@@ -11,20 +11,20 @@ import Foundation
 class LastfmUser {
     
     private var _username: String!
-    private var _password: String!
+    private var _secret: String!
     
     
     var username: String {
         return _username
     }
     
-    var password: String {
-        return _password
+    var secret: String {
+        return _secret
     }
     
-    init(name: String, password: String) {
+    init(name: String, secret: String) {
         self._username = name
-        self._password = password
+        self._secret = secret
         
     }
 }
