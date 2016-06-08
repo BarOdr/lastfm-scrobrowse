@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="lastfm_scrobrows" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="BYZ-38-t0r" customClass="ViewController" customModule="lastfm_scrobrows" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -253,7 +253,7 @@
         <!--Artist ListVC-->
         <scene sceneID="609-Sa-SI6">
             <objects>
-                <viewController id="hih-uE-fyj" customClass="ArtistListVC" customModule="lastfm_scrobrows" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ArtistListVC" id="hih-uE-fyj" customClass="ArtistListVC" customModule="lastfm_scrobrows" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YWk-nM-XmQ"/>
                         <viewControllerLayoutGuide type="bottom" id="fMy-Jx-aqv"/>
@@ -272,10 +272,11 @@
                                             <constraint firstAttribute="height" constant="30" id="q5M-jd-2WU"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                        <state key="normal" title="Log out">
+                                        <state key="normal" title="Back">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="backBtnPressed:" destination="hih-uE-fyj" eventType="touchUpInside" id="FGz-T0-pIS"/>
                                             <action selector="logoutBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1A4-U3-WYq"/>
                                         </connections>
                                     </button>
@@ -369,13 +370,13 @@
                                                             <rect key="frame" x="56" y="0.0" width="112" height="32"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Top track:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="NFi-wO-U0a">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="58" height="16"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="58" height="17"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Top album:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="46C-di-Suy">
-                                                                    <rect key="frame" x="0.0" y="16" width="65" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="17" width="65" height="16"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
@@ -472,10 +473,13 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                             <constraint firstAttribute="trailing" secondItem="mXX-Pa-oTz" secondAttribute="trailing" id="uvh-On-b7K"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="byR-9o-HpW" id="G1W-Kv-yIF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BeL-Y0-VA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="362.5" y="330.5"/>
+            <point key="canvasLocation" x="309.5" y="330.5"/>
         </scene>
     </scenes>
     <resources>

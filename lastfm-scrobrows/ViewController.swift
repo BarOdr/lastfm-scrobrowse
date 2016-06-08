@@ -34,14 +34,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        showLoginControls()
-        hideMainControls()
+
     }
     
     override func viewDidAppear(animated: Bool) {
         
         clearTextFields()
-
+        
+        if userLoggedIn() {
+            hideLoginControls()
+            showMainControls()
+        } else {
+            showLoginControls()
+            hideMainControls()
+        }
     }
 
     @IBAction func loginBtnPressed() {
@@ -58,7 +64,7 @@ class ViewController: UIViewController {
      */
     
     @IBAction func goToLibrary(sender: AnyObject) {
-        
+        goToLibrary()
     }
     
     @IBAction func scrobbleTracks(sender: UIButton) {
@@ -66,7 +72,18 @@ class ViewController: UIViewController {
     }
     
     @IBAction func logoutBtnPressed(sender: AnyObject) {
-        
+        API.sharedInstance.logOut()
+        showLoginControls()
+        hideMainControls()
+    }
+    
+    /** 
+     This method instatiates and presents ArtistListVC
+     */
+    
+    func goToLibrary() {
+        let artistListVC = storyboard?.instantiateViewControllerWithIdentifier("ArtistListVC")
+        presentViewController(artistListVC!, animated: true, completion: nil)
     }
     
     /**
@@ -93,6 +110,8 @@ class ViewController: UIViewController {
                 self.loginFailed(loginFailedMessageTitle, message: loginFailedMessage)
             }
         }
+        
+        loginBtn.userInteractionEnabled = true
     }
     
     /**
@@ -217,7 +236,24 @@ class ViewController: UIViewController {
     func stopIndicatingActivity() {
         self.activityIndicator.fadeOut(0.3)
         self.activityIndicator.stopAnimating()
+        userLoggedIn()
     }
+
+     /**
+     This method checks if user credentials:
+     - user's secet key
+     - user's username
+     are stored in NSUserDefaults.
+     - returns: Bool
+     */
     
+    func userLoggedIn() -> Bool {
+        if NSUserDefaults.standardUserDefaults().valueForKey(STORED_USER_SECRET_KEY) != nil
+        && NSUserDefaults.standardUserDefaults().valueForKey(STORED_USERNAME) != nil {
+            return true
+        } else {
+            return false
+        }
+    }
 
 }

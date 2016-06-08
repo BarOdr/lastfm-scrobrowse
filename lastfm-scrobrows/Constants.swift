@@ -22,3 +22,4 @@ let LASTFM_GET_MOBILE_SESSION = "auth.getMobileSession"
 //Typealiases
 
 typealias DownloadComplete = (userSecret: String, userName: String) -> Void
+typealias CompletionHandler = () -> ()

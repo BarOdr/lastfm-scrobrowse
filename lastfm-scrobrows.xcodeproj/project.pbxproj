@@ -21,6 +21,9 @@
 		CC1A72B21D04EFE200DB04BC /* MainControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1A72B11D04EFE200DB04BC /* MainControlButton.swift */; };
 		CC8844071D0849C2007E9FB6 /* ArtistListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8844061D0849C2007E9FB6 /* ArtistListVC.swift */; };
 		CC8844091D084AA9007E9FB6 /* ArtistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8844081D084AA9007E9FB6 /* ArtistCell.swift */; };
+		CC88440B1D087C44007E9FB6 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC88440A1D087C44007E9FB6 /* Artist.swift */; };
+		CC88440D1D087D8B007E9FB6 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC88440C1D087D8B007E9FB6 /* Track.swift */; };
+		CC88440F1D087D93007E9FB6 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC88440E1D087D93007E9FB6 /* Album.swift */; };
 		E7AC1EFF62CE36C1F7D0A0EC /* Pods_lastfm_scrobrows.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3F720B321E04120BDCC17E /* Pods_lastfm_scrobrows.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +47,9 @@
 		CC1A72B11D04EFE200DB04BC /* MainControlButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainControlButton.swift; sourceTree = "<group>"; };
 		CC8844061D0849C2007E9FB6 /* ArtistListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistListVC.swift; sourceTree = "<group>"; };
 		CC8844081D084AA9007E9FB6 /* ArtistCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistCell.swift; sourceTree = "<group>"; };
+		CC88440A1D087C44007E9FB6 /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		CC88440C1D087D8B007E9FB6 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		CC88440E1D087D93007E9FB6 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				CC1A72A81D0483A600DB04BC /* LastfmUser.swift */,
+				CC88440A1D087C44007E9FB6 /* Artist.swift */,
+				CC88440C1D087D8B007E9FB6 /* Track.swift */,
+				CC88440E1D087D93007E9FB6 /* Album.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -287,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC88440F1D087D93007E9FB6 /* Album.swift in Sources */,
 				CC1A72A71D046A1A00DB04BC /* LoginManager.swift in Sources */,
 				CC1A72B01D04DF8700DB04BC /* UIViewExtensions.swift in Sources */,
 				CC1A72851D043E6A00DB04BC /* ViewController.swift in Sources */,
@@ -297,6 +307,8 @@
 				CC1A72A51D04695F00DB04BC /* API.swift in Sources */,
 				CC8844091D084AA9007E9FB6 /* ArtistCell.swift in Sources */,
 				CC1A72A21D04651C00DB04BC /* Constants.swift in Sources */,
+				CC88440B1D087C44007E9FB6 /* Artist.swift in Sources */,
+				CC88440D1D087D8B007E9FB6 /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

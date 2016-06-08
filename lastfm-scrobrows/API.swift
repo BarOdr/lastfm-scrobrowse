@@ -24,7 +24,14 @@ class API: NSObject {
     override init() {
         loginManager = LoginManager()
     }
+    /**
+     This method removes user credentials from NSUserDefaults. Use this method to clean user data after logging out.
+     - parameter CompletionHandler: allows you to perform some tasks when the logout is complete.
+     */
     
+    func logOut() {
+        return loginManager.logOut()
+    }
     /**
      This method sends a POST request to Last.fm API to obtain user secret key (default key lifetime: infinite by default). You can then use the obtained secret key as well as the username in the trailing closure
      

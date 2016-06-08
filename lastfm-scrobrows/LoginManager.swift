@@ -38,6 +38,26 @@ class LoginManager: NSObject {
         }
     }
     
+    /** 
+     This method removes user credentials from NSUserDefaults. Use this method to clean user data after logging out.
+     - parameter CompletionHandler: allows you to perform some tasks when the logout is complete.
+     */
+    
+    func logOut() {
+        cleanUserDataFromDefaults()
+    }
+    
+    /**
+     This method removes user credentials from NSUserDefaults. Use this method to clean user data after logging out.
+     - parameter This function has no parameters
+    */
+    
+    func cleanUserDataFromDefaults() {
+        NSUserDefaults.standardUserDefaults().setObject(nil, forKey: STORED_USERNAME)
+        NSUserDefaults.standardUserDefaults().setObject(nil, forKey: STORED_USER_SECRET_KEY)
+        NSUserDefaults.standardUserDefaults().synchronize()
+        print("User data removed from NSUserDefaults")
+    }
     /**
      This method creates a request string for user authentication. The API key is inserted automatically; should it ever change, it will adapt to the new key as specified in API_KEY constant.
      - parameter username: Username (String)
@@ -70,6 +90,7 @@ class LoginManager: NSObject {
     func saveUser(username: String, userSecretKey: String) {
         NSUserDefaults.standardUserDefaults().setValue(userSecretKey, forKey: STORED_USER_SECRET_KEY)
         NSUserDefaults.standardUserDefaults().setValue(username, forKey: STORED_USERNAME)
+        NSUserDefaults.standardUserDefaults().synchronize()
         print("Username and secret saved to NSUserDefaults")
     }
     
