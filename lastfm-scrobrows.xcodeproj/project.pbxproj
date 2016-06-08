@@ -19,6 +19,8 @@
 		CC1A72A91D0483A600DB04BC /* LastfmUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1A72A81D0483A600DB04BC /* LastfmUser.swift */; };
 		CC1A72B01D04DF8700DB04BC /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1A72AF1D04DF8700DB04BC /* UIViewExtensions.swift */; };
 		CC1A72B21D04EFE200DB04BC /* MainControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1A72B11D04EFE200DB04BC /* MainControlButton.swift */; };
+		CC8844071D0849C2007E9FB6 /* ArtistListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8844061D0849C2007E9FB6 /* ArtistListVC.swift */; };
+		CC8844091D084AA9007E9FB6 /* ArtistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8844081D084AA9007E9FB6 /* ArtistCell.swift */; };
 		E7AC1EFF62CE36C1F7D0A0EC /* Pods_lastfm_scrobrows.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3F720B321E04120BDCC17E /* Pods_lastfm_scrobrows.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +42,8 @@
 		CC1A72A81D0483A600DB04BC /* LastfmUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastfmUser.swift; sourceTree = "<group>"; };
 		CC1A72AF1D04DF8700DB04BC /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		CC1A72B11D04EFE200DB04BC /* MainControlButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainControlButton.swift; sourceTree = "<group>"; };
+		CC8844061D0849C2007E9FB6 /* ArtistListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistListVC.swift; sourceTree = "<group>"; };
+		CC8844081D084AA9007E9FB6 /* ArtistCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				CC1A72841D043E6A00DB04BC /* ViewController.swift */,
+				CC8844061D0849C2007E9FB6 /* ArtistListVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 			children = (
 				CC1A72AF1D04DF8700DB04BC /* UIViewExtensions.swift */,
 				CC1A72B11D04EFE200DB04BC /* MainControlButton.swift */,
+				CC8844081D084AA9007E9FB6 /* ArtistCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -284,10 +290,12 @@
 				CC1A72A71D046A1A00DB04BC /* LoginManager.swift in Sources */,
 				CC1A72B01D04DF8700DB04BC /* UIViewExtensions.swift in Sources */,
 				CC1A72851D043E6A00DB04BC /* ViewController.swift in Sources */,
+				CC8844071D0849C2007E9FB6 /* ArtistListVC.swift in Sources */,
 				CC1A72A91D0483A600DB04BC /* LastfmUser.swift in Sources */,
 				CC1A72B21D04EFE200DB04BC /* MainControlButton.swift in Sources */,
 				CC1A72831D043E6A00DB04BC /* AppDelegate.swift in Sources */,
 				CC1A72A51D04695F00DB04BC /* API.swift in Sources */,
+				CC8844091D084AA9007E9FB6 /* ArtistCell.swift in Sources */,
 				CC1A72A21D04651C00DB04BC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

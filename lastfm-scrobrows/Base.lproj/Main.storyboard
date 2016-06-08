@@ -250,10 +250,10 @@
             </objects>
             <point key="canvasLocation" x="-290.5" y="330.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Artist ListVC-->
         <scene sceneID="609-Sa-SI6">
             <objects>
-                <viewController id="hih-uE-fyj" sceneMemberID="viewController">
+                <viewController id="hih-uE-fyj" customClass="ArtistListVC" customModule="lastfm_scrobrows" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YWk-nM-XmQ"/>
                         <viewControllerLayoutGuide type="bottom" id="fMy-Jx-aqv"/>
@@ -291,7 +291,7 @@
                                 <rect key="frame" x="0.0" y="50" width="375" height="617"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArtistCell" rowHeight="116" id="l57-gC-4n7">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArtistCell" rowHeight="116" id="l57-gC-4n7" customClass="ArtistCell" customModule="lastfm_scrobrows" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="116"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l57-gC-4n7" id="49y-n1-kW8">
@@ -448,6 +448,15 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="artistImage" destination="gIY-lX-BDj" id="Bht-1h-Abh"/>
+                                            <outlet property="artistNameLabel" destination="4rT-vR-M1B" id="93Z-zY-4eq"/>
+                                            <outlet property="listenersCountLabel" destination="fUu-NM-lIr" id="n1Y-LT-m96"/>
+                                            <outlet property="scrobblesCountLabel" destination="bho-w8-f4l" id="bML-9o-ezm"/>
+                                            <outlet property="topAlbumLabel" destination="7Dm-by-8F3" id="uCj-6E-LLC"/>
+                                            <outlet property="topTagsLabel" destination="8hH-IN-d6r" id="wKK-pH-FMY"/>
+                                            <outlet property="topTrackLabel" destination="1uF-Hy-zzv" id="dcJ-y8-Xtu"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
