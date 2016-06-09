@@ -26,7 +26,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var mainControlsStack: UIStackView!
     @IBOutlet weak var logoutBtn: UIButton!
     @IBOutlet weak var loginControlsStackView: UIStackView!
-    
+    @IBOutlet weak var userAvatarImage: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
     // Variables
     
     var currentUser: LastfmUser?
@@ -72,6 +73,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func logoutBtnPressed(sender: AnyObject) {
+        clearTextFields()
         API.sharedInstance.logOut()
         showLoginControls()
         hideMainControls()
@@ -99,9 +101,7 @@ class ViewController: UIViewController {
         
         indicateActivity()
         
-        currentUser = LastfmUser(name: username, secret: password)
-        
-        API.sharedInstance.logInAttempt(currentUser!) { userSecret, username in
+        API.sharedInstance.logInAttempt(username, password: password) { userSecret, username in
             
             if  username != "" && userSecret != "" {
                 self.loginSucceeded(username, userSecretKey: userSecret)
@@ -174,6 +174,7 @@ class ViewController: UIViewController {
      This method shows main controls:
      - "Scrobble my tracks" button
      - "Discover music" button
+     - User avatar
      
      by showing the appropiate stack view.
      */
@@ -182,6 +183,10 @@ class ViewController: UIViewController {
         self.mainControlsStack.hidden = false
         self.mainControlsStack.userInteractionEnabled = true
         self.logoutBtn.fadeIn(0.5)
+        self.userAvatarImage.hidden = false
+        self.userAvatarImage.fadeIn(0.5)
+        self.userNameLabel.hidden = false
+        self.userNameLabel.fadeIn(0.5)
     }
     
     /**
@@ -194,6 +199,8 @@ class ViewController: UIViewController {
     
     func hideMainControls() {
         self.mainControlsStack.hidden = true
+        self.userAvatarImage.fadeOut(0.5)
+        self.userNameLabel.fadeOut(0.5)
     }
     
     /**

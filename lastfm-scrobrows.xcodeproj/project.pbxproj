@@ -19,6 +19,7 @@
 		CC1A72A91D0483A600DB04BC /* LastfmUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1A72A81D0483A600DB04BC /* LastfmUser.swift */; };
 		CC1A72B01D04DF8700DB04BC /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1A72AF1D04DF8700DB04BC /* UIViewExtensions.swift */; };
 		CC1A72B21D04EFE200DB04BC /* MainControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1A72B11D04EFE200DB04BC /* MainControlButton.swift */; };
+		CC50D16F1D09AF430081C0BC /* UserAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50D16E1D09AF430081C0BC /* UserAvatarImageView.swift */; };
 		CC8844071D0849C2007E9FB6 /* ArtistListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8844061D0849C2007E9FB6 /* ArtistListVC.swift */; };
 		CC8844091D084AA9007E9FB6 /* ArtistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8844081D084AA9007E9FB6 /* ArtistCell.swift */; };
 		CC88440B1D087C44007E9FB6 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC88440A1D087C44007E9FB6 /* Artist.swift */; };
@@ -46,6 +47,7 @@
 		CC1A72A81D0483A600DB04BC /* LastfmUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastfmUser.swift; sourceTree = "<group>"; };
 		CC1A72AF1D04DF8700DB04BC /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		CC1A72B11D04EFE200DB04BC /* MainControlButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainControlButton.swift; sourceTree = "<group>"; };
+		CC50D16E1D09AF430081C0BC /* UserAvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAvatarImageView.swift; sourceTree = "<group>"; };
 		CC8844061D0849C2007E9FB6 /* ArtistListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistListVC.swift; sourceTree = "<group>"; };
 		CC8844081D084AA9007E9FB6 /* ArtistCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistCell.swift; sourceTree = "<group>"; };
 		CC88440A1D087C44007E9FB6 /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				CC1A72AF1D04DF8700DB04BC /* UIViewExtensions.swift */,
 				CC1A72B11D04EFE200DB04BC /* MainControlButton.swift */,
 				CC8844081D084AA9007E9FB6 /* ArtistCell.swift */,
+				CC50D16E1D09AF430081C0BC /* UserAvatarImageView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				CC1A72851D043E6A00DB04BC /* ViewController.swift in Sources */,
 				CC8844071D0849C2007E9FB6 /* ArtistListVC.swift in Sources */,
 				CC1A72A91D0483A600DB04BC /* LastfmUser.swift in Sources */,
+				CC50D16F1D09AF430081C0BC /* UserAvatarImageView.swift in Sources */,
 				CC1A72B21D04EFE200DB04BC /* MainControlButton.swift in Sources */,
 				CC1A72831D043E6A00DB04BC /* AppDelegate.swift in Sources */,
 				CC1A72A51D04695F00DB04BC /* API.swift in Sources */,

@@ -20,17 +20,14 @@ class LoginManager: NSObject {
      - parameter completion: completion handler of type (userSecret: String, userName: String) -> Void. Typealias: DownloadComplete
     */
     
-    func logInAttempt(user: LastfmUser, completion: DownloadComplete) {
-        let hash = requestHash(user, method: LASTFM_GET_MOBILE_SESSION)
-        let requestString: String
-        requestString = createLoginRequestString(user.username, pwd: user.password, hash: hash, method: LASTFM_GET_MOBILE_SESSION)
-        
-        Alamofire.request(.POST, requestString).response { (request, response, data, error) in
+    func logInAttempt(username: String, password: String, completion: UserLoginComplete) {
+        let hash = requestHash(username, password: password, method: LASTFM_GET_MOBILE_SESSION)
+        Alamofire.request(.POST, LASTFM_BASE_URL, parameters: ["username": username, "password": password, "api_key": LASTFM_API_KEY, "api_sig": hash, "method": LASTFM_GET_MOBILE_SESSION, "format": "json"]).response { (request, response, data, error) in
             
             if error == nil {
                 if let data = data {
                     let userSecretKey = self.getUserSecretFromJSON(data)
-                    completion(userSecret: userSecretKey, userName: user.username)
+                    completion(userSecret: userSecretKey, userName: username)
                 }
             } else {
                 print("error: \(error)")
@@ -68,11 +65,6 @@ class LoginManager: NSObject {
      - returns: Request string (String)
     */
     
-    func createLoginRequestString(username: String, pwd: String, hash: String, method: String) -> String {
-        let requestString = "https://ws.audioscrobbler.com/2.0/?format=json&password=\(pwd)&username=\(username)&api_key=\(LASTFM_API_KEY)&api_sig=\(hash)&method=\(LASTFM_GET_MOBILE_SESSION)"
-        return requestString
-    }
-    
     /**
      This method saves the logged in user's username and secret key to NSUserDefaults, accordingly for keys:
      - STORED_USERNAME string constant
@@ -103,9 +95,9 @@ class LoginManager: NSObject {
      - returns: a 32-character hexadecimal md5 hash to use as the api_sig parameter of Last.fm authentication request
     */
     
-    func requestHash(user: LastfmUser, method: String) -> String {
-        let username = user.username
-        let password = user.password
+    func requestHash(username: String, password: String, method: String) -> String {
+        let username = username
+        let password = password
         let requestUrlStr = "api_key\(LASTFM_API_KEY)method\(method)password\(password)username\(username)\(LASTFM_SECRET)"
         let hash = requestUrlStr.md5()
         return hash

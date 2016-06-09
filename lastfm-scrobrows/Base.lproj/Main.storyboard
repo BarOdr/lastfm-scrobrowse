@@ -42,7 +42,7 @@
                                         </variation>
                                     </imageView>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="v8y-gt-uo9">
-                                        <rect key="frame" x="177" y="585" width="20" height="20"/>
+                                        <rect key="frame" x="177" y="417" width="20" height="20"/>
                                     </activityIndicatorView>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTh-cu-2zY">
                                         <rect key="frame" x="8" y="12" width="65" height="30"/>
@@ -76,148 +76,172 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NBT-79-1pL">
-                                        <rect key="frame" x="30" y="416" width="315" height="152"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SS3-Mr-v9M">
+                                        <rect key="frame" x="30" y="445" width="315" height="152"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SS3-Mr-v9M">
+                                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="RkD-6B-0oV">
+                                                <rect key="frame" x="0.0" y="0.0" width="315" height="0.0"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpK-bY-mm0" customClass="MainControlButton" customModule="lastfm_scrobrows" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="315" height="0.0"/>
+                                                        <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
+                                                        <state key="normal" title="Scrobble my tracks">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="scrobbleTracks:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nDe-3L-wXy"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGj-kp-GbV" customClass="MainControlButton" customModule="lastfm_scrobrows" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="315" height="0.0"/>
+                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.5" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
+                                                        <state key="normal" title="Discover some music!">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="goToLibrary:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aNg-aF-06h"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="gpK-bY-mm0" secondAttribute="trailing" priority="999" id="C7u-NX-cWj"/>
+                                                    <constraint firstItem="gpK-bY-mm0" firstAttribute="leading" secondItem="RkD-6B-0oV" secondAttribute="leadingMargin" priority="999" id="EsW-q3-Fxd"/>
+                                                    <constraint firstItem="cGj-kp-GbV" firstAttribute="leading" secondItem="RkD-6B-0oV" secondAttribute="leading" priority="999" id="blR-QL-uZY"/>
+                                                    <constraint firstAttribute="trailing" secondItem="cGj-kp-GbV" secondAttribute="trailing" priority="999" id="gUg-Ce-bjb"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CZs-tz-QOc">
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="152"/>
                                                 <subviews>
-                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="RkD-6B-0oV">
-                                                        <rect key="frame" x="0.0" y="0.0" width="315" height="0.0"/>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last.fm username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bvl-Oq-Gl6" customClass="LoginTextField" customModule="lastfm_scrobrows" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="315" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="8wh-ac-5CG"/>
+                                                        </constraints>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                                                <color key="value" red="0.88235294117647056" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gtl-LS-aaC">
+                                                        <rect key="frame" x="0.0" y="40" width="315" height="1"/>
+                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="rUe-uE-hXd"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last.fm password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jTa-AC-9iQ" customClass="LoginTextField" customModule="lastfm_scrobrows" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="51" width="315" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="Vwa-d4-ppm"/>
+                                                        </constraints>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                                                <color key="value" red="0.88235294117647056" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rGa-pm-SKI">
+                                                        <rect key="frame" x="0.0" y="91" width="315" height="1"/>
+                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="mhW-it-adx"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="08m-UJ-XCI">
+                                                        <rect key="frame" x="0.0" y="102" width="315" height="50"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpK-bY-mm0" customClass="MainControlButton" customModule="lastfm_scrobrows" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="315" height="0.0"/>
-                                                                <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="0.5" colorSpace="calibratedRGB"/>
-                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
-                                                                <state key="normal" title="Scrobble my tracks">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Hqh-mF-wZN">
+                                                                <rect key="frame" x="0.0" y="0.0" width="158" height="50"/>
+                                                                <subviews>
+                                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Mp-q7-Hcx">
+                                                                        <rect key="frame" x="55" y="0.0" width="51" height="31"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="31" id="7Px-9Q-I2k"/>
+                                                                            <constraint firstAttribute="width" constant="49" id="ROR-PX-Hu0"/>
+                                                                        </constraints>
+                                                                        <color key="onTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    </switch>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdv-Co-02y">
+                                                                        <rect key="frame" x="36" y="37" width="86" height="13"/>
+                                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ra3-6v-Wep">
+                                                                <rect key="frame" x="158" y="0.0" width="158" height="50"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                                <state key="normal" title="Log in">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="scrobbleTracks:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nDe-3L-wXy"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGj-kp-GbV" customClass="MainControlButton" customModule="lastfm_scrobrows" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="315" height="0.0"/>
-                                                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.5" colorSpace="calibratedWhite"/>
-                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
-                                                                <state key="normal" title="Discover some music!">
-                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="goToLibrary:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aNg-aF-06h"/>
+                                                                    <action selector="loginBtnPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="JAt-74-uVN"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailingMargin" secondItem="gpK-bY-mm0" secondAttribute="trailing" priority="999" id="C7u-NX-cWj"/>
-                                                            <constraint firstItem="gpK-bY-mm0" firstAttribute="leading" secondItem="RkD-6B-0oV" secondAttribute="leadingMargin" priority="999" id="EsW-q3-Fxd"/>
-                                                            <constraint firstItem="cGj-kp-GbV" firstAttribute="leading" secondItem="RkD-6B-0oV" secondAttribute="leading" priority="999" id="blR-QL-uZY"/>
-                                                            <constraint firstAttribute="trailing" secondItem="cGj-kp-GbV" secondAttribute="trailing" priority="999" id="gUg-Ce-bjb"/>
+                                                            <constraint firstAttribute="height" constant="50" id="JDg-AQ-REc"/>
                                                         </constraints>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CZs-tz-QOc">
-                                                        <rect key="frame" x="0.0" y="0.0" width="315" height="152"/>
-                                                        <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last.fm username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bvl-Oq-Gl6" customClass="LoginTextField" customModule="lastfm_scrobrows" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="315" height="30"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="30" id="8wh-ac-5CG"/>
-                                                                </constraints>
-                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
-                                                                        <color key="value" red="0.88235294117647056" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </textField>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gtl-LS-aaC">
-                                                                <rect key="frame" x="0.0" y="40" width="315" height="1"/>
-                                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="1" id="rUe-uE-hXd"/>
-                                                                </constraints>
-                                                            </view>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last.fm password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jTa-AC-9iQ" customClass="LoginTextField" customModule="lastfm_scrobrows" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="51" width="315" height="30"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="30" id="Vwa-d4-ppm"/>
-                                                                </constraints>
-                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
-                                                                        <color key="value" red="0.88235294117647056" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </textField>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rGa-pm-SKI">
-                                                                <rect key="frame" x="0.0" y="91" width="315" height="1"/>
-                                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="1" id="mhW-it-adx"/>
-                                                                </constraints>
-                                                            </view>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="08m-UJ-XCI">
-                                                                <rect key="frame" x="0.0" y="102" width="315" height="50"/>
-                                                                <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Hqh-mF-wZN">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="158" height="50"/>
-                                                                        <subviews>
-                                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Mp-q7-Hcx">
-                                                                                <rect key="frame" x="55" y="0.0" width="51" height="31"/>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="height" constant="31" id="7Px-9Q-I2k"/>
-                                                                                    <constraint firstAttribute="width" constant="49" id="ROR-PX-Hu0"/>
-                                                                                </constraints>
-                                                                                <color key="onTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                            </switch>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdv-Co-02y">
-                                                                                <rect key="frame" x="36" y="37" width="86" height="13"/>
-                                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
-                                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ra3-6v-Wep">
-                                                                        <rect key="frame" x="158" y="0.0" width="158" height="50"/>
-                                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                                                        <state key="normal" title="Log in">
-                                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                        </state>
-                                                                        <connections>
-                                                                            <action selector="loginBtnPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="JAt-74-uVN"/>
-                                                                        </connections>
-                                                                    </button>
-                                                                </subviews>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="50" id="JDg-AQ-REc"/>
-                                                                </constraints>
-                                                            </stackView>
-                                                        </subviews>
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
                                     </stackView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleartist" translatesAutoresizingMaskIntoConstraints="NO" id="Pto-d1-LgO" customClass="UserAvatarImageView" customModule="lastfm_scrobrows" customModuleProvider="target">
+                                        <rect key="frame" x="123" y="180" width="128" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="RGQ-bn-i9T"/>
+                                            <constraint firstAttribute="width" constant="128" id="kPh-Ip-tlZ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, Fez1979" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="tq8-MD-ON3">
+                                        <rect key="frame" x="69" y="316" width="237" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="LFq-LI-pNa"/>
+                                            <constraint firstAttribute="width" constant="237" id="QkG-Ju-mhZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.7359105603448276" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="tq8-MD-ON3" firstAttribute="top" secondItem="Pto-d1-LgO" secondAttribute="bottom" constant="8" id="1DT-QI-IMT"/>
+                                    <constraint firstItem="Pto-d1-LgO" firstAttribute="centerX" secondItem="GXz-Jv-aN8" secondAttribute="centerX" id="5tW-qx-X9J"/>
                                     <constraint firstAttribute="bottom" secondItem="v8y-gt-uo9" secondAttribute="bottom" constant="62" id="9aX-Bz-3XX"/>
                                     <constraint firstItem="v8y-gt-uo9" firstAttribute="centerX" secondItem="GXz-Jv-aN8" secondAttribute="centerX" id="Aum-i3-JDD"/>
                                     <constraint firstItem="3BY-du-1V4" firstAttribute="centerX" secondItem="GXz-Jv-aN8" secondAttribute="centerX" id="BgL-WO-JZV"/>
-                                    <constraint firstItem="NBT-79-1pL" firstAttribute="leading" secondItem="GXz-Jv-aN8" secondAttribute="leading" constant="30" id="F4S-im-Zag"/>
+                                    <constraint firstAttribute="trailing" secondItem="SS3-Mr-v9M" secondAttribute="trailing" constant="30" id="N7I-Rc-qte"/>
                                     <constraint firstItem="3BY-du-1V4" firstAttribute="top" secondItem="bHu-WK-yDs" secondAttribute="bottom" constant="8" id="Nch-qd-TdF"/>
-                                    <constraint firstItem="v8y-gt-uo9" firstAttribute="top" secondItem="NBT-79-1pL" secondAttribute="bottom" constant="17" id="RYS-JN-GYu"/>
+                                    <constraint firstAttribute="bottom" secondItem="SS3-Mr-v9M" secondAttribute="bottom" constant="70" id="NdZ-CJ-DaJ"/>
+                                    <constraint firstItem="SS3-Mr-v9M" firstAttribute="top" secondItem="v8y-gt-uo9" secondAttribute="bottom" constant="8" id="O5S-sP-xCd"/>
                                     <constraint firstItem="bHu-WK-yDs" firstAttribute="top" secondItem="GXz-Jv-aN8" secondAttribute="top" constant="67" id="SyD-fj-Z1W"/>
+                                    <constraint firstItem="tq8-MD-ON3" firstAttribute="centerX" secondItem="GXz-Jv-aN8" secondAttribute="centerX" id="TN4-YQ-jSX"/>
+                                    <constraint firstItem="SS3-Mr-v9M" firstAttribute="leading" secondItem="GXz-Jv-aN8" secondAttribute="leading" constant="30" id="VbK-08-JFN"/>
+                                    <constraint firstItem="Pto-d1-LgO" firstAttribute="top" secondItem="3BY-du-1V4" secondAttribute="bottom" constant="8" id="YWr-Yq-uRL"/>
+                                    <constraint firstItem="v8y-gt-uo9" firstAttribute="centerY" secondItem="GXz-Jv-aN8" secondAttribute="centerY" id="adQ-xO-zvE"/>
                                     <constraint firstItem="qTh-cu-2zY" firstAttribute="leading" secondItem="GXz-Jv-aN8" secondAttribute="leading" constant="8" id="dMc-R4-fXL"/>
                                     <constraint firstItem="qTh-cu-2zY" firstAttribute="top" secondItem="GXz-Jv-aN8" secondAttribute="top" constant="12" id="gxM-O3-bD4"/>
                                     <constraint firstItem="bHu-WK-yDs" firstAttribute="centerX" secondItem="GXz-Jv-aN8" secondAttribute="centerX" id="lMa-dz-vbD"/>
-                                    <constraint firstAttribute="trailing" secondItem="NBT-79-1pL" secondAttribute="trailing" constant="30" id="yK6-9I-Wxf"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9aX-Bz-3XX"/>
+                                        <exclude reference="adQ-xO-zvE"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -242,6 +266,8 @@
                         <outlet property="mainControlsStack" destination="RkD-6B-0oV" id="pej-0z-DOP"/>
                         <outlet property="pwdTextField" destination="jTa-AC-9iQ" id="VDY-ko-qlX"/>
                         <outlet property="rememberMeSwitch" destination="8Mp-q7-Hcx" id="I8a-Jv-T2t"/>
+                        <outlet property="userAvatarImage" destination="Pto-d1-LgO" id="WwL-BO-IKR"/>
+                        <outlet property="userNameLabel" destination="tq8-MD-ON3" id="QV2-xv-Zqf"/>
                         <outlet property="usernameTextField" destination="bvl-Oq-Gl6" id="VMz-97-KiF"/>
                         <segue destination="hih-uE-fyj" kind="show" identifier="MainMenu" id="LqZ-TD-ScD"/>
                     </connections>
@@ -266,7 +292,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7j-LZ-EAX">
-                                        <rect key="frame" x="8" y="8" width="54" height="30"/>
+                                        <rect key="frame" x="8" y="22" width="54" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="54" id="cNO-dr-pha"/>
                                             <constraint firstAttribute="height" constant="30" id="q5M-jd-2WU"/>
@@ -284,9 +310,15 @@
                                 <color key="backgroundColor" red="0.8840144231" green="0.8840144231" blue="0.8840144231" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="n7j-LZ-EAX" firstAttribute="top" secondItem="mXX-Pa-oTz" secondAttribute="top" constant="8" id="ObQ-y2-PcC"/>
+                                    <constraint firstAttribute="bottom" secondItem="n7j-LZ-EAX" secondAttribute="bottom" constant="8" id="Z2K-1v-7ok"/>
                                     <constraint firstAttribute="height" constant="60" id="yDg-Rz-yeA"/>
                                     <constraint firstItem="n7j-LZ-EAX" firstAttribute="leading" secondItem="mXX-Pa-oTz" secondAttribute="leading" constant="8" id="zZM-Uj-uB7"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ObQ-y2-PcC"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="116" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="byR-9o-HpW">
                                 <rect key="frame" x="0.0" y="60" width="375" height="607"/>

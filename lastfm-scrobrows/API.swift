@@ -39,8 +39,8 @@ class API: NSObject {
      - parameter completion: completion handler of type (userSecret: String, userName: String) -> Void. Typealias: DownloadComplete
      */
     
-    func logInAttempt(user: LastfmUser, completion: DownloadComplete) {
-        loginManager.logInAttempt(user, completion: completion)
+    func logInAttempt(username: String, password: String, completion: UserLoginComplete) {
+        loginManager.logInAttempt(username, password: password, completion: completion)
     }
     
     /**
