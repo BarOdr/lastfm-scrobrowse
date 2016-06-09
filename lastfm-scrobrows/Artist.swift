@@ -14,6 +14,7 @@ class Artist {
     private var _artistImgUrl: String!
     private var _listenersCount: Int!
     private var _scrobblesCount: Int!
+    private var _userPlaycount: Int?
     private var _topTracks: [Track]!
     private var _topAlbums: [Album]!
     private var _relatedTags: [String]?
@@ -47,6 +48,10 @@ class Artist {
         return _scrobblesCount
     }
     
+    var userPlaycount: Int {
+        return _userPlaycount!
+    }
+    
     var topTracks: [Track] {
         return _topTracks
     }
@@ -69,7 +74,22 @@ class Artist {
         return _biography!
     }
     
+    /** 
+     Use this initializer for parse method userGetTopArtists
+     */
     
+    init(name: String, userPlaycount: Int, imageUrl: String) {
+        self._artistName = name
+        self._userPlaycount = userPlaycount
+        self._artistImgUrl = imageUrl
+    }
     
+    /**
+     Use this initializer for parse method userGetTopTracks or other track related parse methods for "Artist" field where you only provide the artist name for a track object.
+     */
+    
+    init(name: String) {
+        self._artistName = name
+    }
     
 }

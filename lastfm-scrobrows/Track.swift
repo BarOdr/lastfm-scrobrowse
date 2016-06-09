@@ -10,28 +10,44 @@ import Foundation
 
 class Track {
     
-    private var _trackName: String!
-    private var _userPlayCount = 0
-    private var _overallPlayCount = 0
-    private var _userLove = false
+    private var _trackName: String?
+    private var _userPlayCount: String?
+    private var _overallPlayCount: Int?
+    private var _userLove: Bool?
+    private var _duration: String?
+    private var _artist: Artist?
     
     var trackName: String {
         if _trackName == nil {
             _trackName = ""
         }
-        return _trackName
+        return _trackName!
     }
     
     var userLove: Bool {
-        return _userLove
+        return _userLove!
     }
     
-    var userPlayCount: Int {
-        return _userPlayCount
+    var userPlayCount: String {
+        return _userPlayCount!
     }
     
     var overallPlayCount: Int {
-        return _overallPlayCount
+        return _overallPlayCount!
     }
     
+    var artist: Artist {
+        return _artist!
+    }
+    
+    /**
+     Use this initializer for parse method userGetTopArtists
+     */
+    
+    init(trackname: String, duration: String, userPlaycount: String, artistName: Artist) {
+        self._trackName = trackname
+        self._duration = duration
+        self._userPlayCount = userPlaycount
+        self._artist = artist
+    }
 }

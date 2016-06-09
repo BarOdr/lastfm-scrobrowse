@@ -10,35 +10,53 @@ import Foundation
 
 class Album {
     
-    private var _albumName: String!
-    private var _tracks: [Track]!
-    private var _runningTime: String!
-    private var _userPlayCount = 0
-    private var _overallPlayCount = 0
-    private var _coverUrl: String!
+    private var _albumName: String?
+    private var _albumArtist: String?
+    private var _tracks: [Track]?
+    private var _releaseDate: String?
+    private var _userPlayCount: Int?
+    private var _overallPlayCount: Int?
+    private var _coverUrl: String?
     
+    var albumName: String {
+        return _albumName!
+    }
     var trackCount: Int {
         return tracks.count
     }
     
     var tracks: [Track] {
-        return _tracks
+        return _tracks!
     }
     
-    var runningTime: String {
-        return _runningTime
+    var releaseDate: String {
+        return _releaseDate!
     }
     
     var userPlayCount: Int {
-        return _userPlayCount
+        return _userPlayCount!
     }
     
     var overallPlayCount: Int {
-        return _overallPlayCount
+        return _overallPlayCount!
     }
     
     var coverUrl: String {
-        return _coverUrl
+        return _coverUrl!
     }
+    
+    /** 
+     
+     Use this initializer for parse method user.getTopAlbums
+     
+     */
+    
+    init(name: String, userPlaycount: Int, albumArtist: String, imageUrl: String) {
+        self._albumName = name
+        self._userPlayCount = userPlayCount
+        self._albumArtist = albumArtist
+    }
+    
+    
     
 }
