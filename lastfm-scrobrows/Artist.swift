@@ -19,6 +19,7 @@ class Artist {
     private var _topAlbums: [Album]!
     private var _relatedTags: [String]?
     private var _biography: String?
+    private var _imageUrl: String?
     
     var artistName: String! {
         if _artistName == nil {
@@ -72,6 +73,10 @@ class Artist {
             _biography = ""
         }
         return _biography!
+    }
+    
+    var imageUrl: String {
+        return _imageUrl!
     }
     
     /** 

@@ -42,7 +42,7 @@ class LastfmDataService: NSObject {
         }
     }
     
-    /** 
+    /**
      This method retrieves the current logged user (if exists) and returns an optional LastfmUser object or nil
      - returns: LastfmUser?
      */
@@ -59,7 +59,7 @@ class LastfmDataService: NSObject {
         
     }
 
- // USER parser functions
+ // USER parser methods
     
     func userGetTopAlbums(amount: Int, json: JSON) -> [Album] {
         
@@ -78,6 +78,8 @@ class LastfmDataService: NSObject {
         
         return albumsArray
     }
+    
+    
     
     func userGetTopArtists(amount: Int, json: JSON) -> [Artist] {
         
@@ -120,14 +122,21 @@ class LastfmDataService: NSObject {
             let track = Track(trackname: trackName!, duration: duration!, userPlaycount: userPlaycount!, artistName: Artist(name: artistName!))
             
             tracks.append(track)
-            
         }
-        
         return tracks
     }
     
+    // ARTIST parser methods
     
-    
+//    func artistGetInfo(json: JSON) -> [Artist] {
+//        
+//        let artistName = json["artist"]["name"].string
+//        let imageUrl = json["artist"]["image"][3]["#text"].string
+//        let playcount = json["artist"]["stats"]["playcount"].string
+//        let listeners = json["artist"]["stats"]["listeners"].string
+//        
+//        
+//    }
 }
 
 

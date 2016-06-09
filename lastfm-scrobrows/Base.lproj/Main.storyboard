@@ -269,7 +269,7 @@
                         <outlet property="userAvatarImage" destination="Pto-d1-LgO" id="WwL-BO-IKR"/>
                         <outlet property="userNameLabel" destination="tq8-MD-ON3" id="QV2-xv-Zqf"/>
                         <outlet property="usernameTextField" destination="bvl-Oq-Gl6" id="VMz-97-KiF"/>
-                        <segue destination="hih-uE-fyj" kind="show" identifier="MainMenu" id="LqZ-TD-ScD"/>
+                        <segue destination="hih-uE-fyj" kind="show" identifier="ArtistListVC" id="LqZ-TD-ScD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -511,7 +511,7 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BeL-Y0-VA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="309.5" y="330.5"/>
+            <point key="canvasLocation" x="320.5" y="330.5"/>
         </scene>
     </scenes>
     <resources>
