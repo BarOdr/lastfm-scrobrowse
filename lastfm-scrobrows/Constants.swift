@@ -20,8 +20,8 @@ let LASTFM_BASE_URL = "https://ws.audioscrobbler.com/2.0/?"
 let LASTFM_API_KEY = "c00c40405d802400d6d8d933ae91bfc2"
 let LASTFM_SECRET = "fe0b37c94fc1dd374bde905508379fe1"
 let LASTFM_GET_MOBILE_SESSION = "auth.getMobileSession"
-let LASTFM_GET = Alamofire.Method.GET
-let LASTM_POST = Alamofire.Method.POST
+let GET = Alamofire.Method.GET
+let POST = Alamofire.Method.POST
 
 //Typealiases
 

@@ -128,14 +128,22 @@ class LastfmDataService: NSObject {
     
     // ARTIST parser methods
     
-//    func artistGetInfo(json: JSON) -> [Artist] {
+//    func artistGetInfo(artist: Artist?, json: JSON) -> Artist {
 //        
+//        
+//        if artist == nil {
+//            
+//        }
+//        let tags = ""
 //        let artistName = json["artist"]["name"].string
 //        let imageUrl = json["artist"]["image"][3]["#text"].string
 //        let playcount = json["artist"]["stats"]["playcount"].string
 //        let listeners = json["artist"]["stats"]["listeners"].string
 //        
-//        
+//        for i in 0...4 {
+//            let tag = json["artist"]["tags"]["tag"][i]["name"].string
+//            tags.stringByAppendingString(" \(tag)")
+//        }
 //    }
 }
 

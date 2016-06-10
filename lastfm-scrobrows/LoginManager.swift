@@ -55,15 +55,6 @@ class LoginManager: NSObject {
         NSUserDefaults.standardUserDefaults().synchronize()
         print("User data removed from NSUserDefaults")
     }
-    /**
-     This method creates a request string for user authentication. The API key is inserted automatically; should it ever change, it will adapt to the new key as specified in API_KEY constant.
-     - parameter username: Username (String)
-     - parameter pwd: User password (String)
-     - parameter hash: api_sig required by Last.fm API. Use requestHash method to generate the hash.
-     - parameter method: Name of the method. Typically, you will want to use LASTFM_GET_MOBILE_SESSION constant as a parameter, unless Last.fm API requirements change.
-     
-     - returns: Request string (String)
-    */
     
     /**
      This method saves the logged in user's username and secret key to NSUserDefaults, accordingly for keys:

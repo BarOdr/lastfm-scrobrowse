@@ -10,13 +10,13 @@ import Foundation
 
 class Artist {
     
-    private var _artistName: String!
-    private var _artistImgUrl: String!
-    private var _listenersCount: Int!
-    private var _scrobblesCount: Int!
+    private var _artistName: String?
+    private var _artistImgUrl: String?
+    private var _listenersCount: Int?
+    private var _scrobblesCount: Int?
     private var _userPlaycount: Int?
-    private var _topTracks: [Track]!
-    private var _topAlbums: [Album]!
+    private var _topTracks: [Track]?
+    private var _topAlbums: [Album]?
     private var _relatedTags: [String]?
     private var _biography: String?
     private var _imageUrl: String?
@@ -29,24 +29,26 @@ class Artist {
     }
     
     var artistImgUrl: String {
-        if _artistImgUrl == nil {
-            _artistImgUrl = ""
+        get {
+            return _imageUrl!
         }
-        return _artistImgUrl
+        set {
+            _imageUrl = artistImgUrl
+        }
     }
     
     var listenersCount: Int {
         if _listenersCount == nil {
             _listenersCount = 0
         }
-        return _listenersCount
+        return _listenersCount!
     }
     
     var scrobblesCount: Int {
         if _scrobblesCount == nil {
             _scrobblesCount = 0
         }
-        return _scrobblesCount
+        return _scrobblesCount!
     }
     
     var userPlaycount: Int {
@@ -54,11 +56,11 @@ class Artist {
     }
     
     var topTracks: [Track] {
-        return _topTracks
+        return _topTracks!
     }
     
     var topAlbums: [Album] {
-        return _topAlbums
+        return _topAlbums!
     }
     
     var relatedTags: [String] {
@@ -95,6 +97,10 @@ class Artist {
     
     init(name: String) {
         self._artistName = name
+    }
+    
+    init() {
+        
     }
     
 }

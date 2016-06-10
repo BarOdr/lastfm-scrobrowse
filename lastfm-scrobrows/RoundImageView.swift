@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserAvatarImageView: UIImageView {
+class RoundImageView: UIImageView {
 
     override func awakeFromNib() {
         

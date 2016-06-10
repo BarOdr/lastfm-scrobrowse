@@ -262,5 +262,10 @@ class ViewController: UIViewController {
             return false
         }
     }
+    
+    func test() {
+        let artist = Artist()
+        artist.artistImgUrl = ""
+    }
 
 }
