@@ -569,32 +569,13 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                                 </constraints>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W7f-YJ-1P0">
-                                <rect key="frame" x="0.0" y="414" width="375" height="253"/>
-                                <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Wa-LA-KBb">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="253"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="253" id="91b-6c-nou"/>
-                                        </constraints>
-                                    </tableView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="3Wa-LA-KBb" firstAttribute="leading" secondItem="W7f-YJ-1P0" secondAttribute="leading" id="fZF-oo-AjD"/>
-                                    <constraint firstAttribute="height" constant="253" id="jSg-ca-RjQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="3Wa-LA-KBb" secondAttribute="trailing" id="uU6-6p-8tr"/>
-                                    <constraint firstAttribute="bottom" secondItem="3Wa-LA-KBb" secondAttribute="bottom" id="yUZ-aj-JfR"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ns-aG-EBt">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7ns-aG-EBt">
                                 <rect key="frame" x="0.0" y="204" width="375" height="208"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Vtm-am-KYj">
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Vtm-am-KYj">
                                         <rect key="frame" x="76" y="173" width="375" height="35"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vh3-CR-szZ">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vh3-CR-szZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="17" id="Grg-z8-4vk"/>
@@ -605,7 +586,7 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="soul | female vocalist | jazz | belgian | songwriter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="MZC-xj-Qcz">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="soul | female vocalist | jazz | belgian | songwriter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="MZC-xj-Qcz">
                                                 <rect key="frame" x="0.0" y="17" width="375" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="18" id="eHT-cG-I8f"/>
@@ -716,22 +697,30 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                                     <constraint firstItem="Vtm-am-KYj" firstAttribute="leading" secondItem="7ns-aG-EBt" secondAttribute="leading" id="sgp-ZU-DHx"/>
                                 </constraints>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5rE-Py-iVR">
+                                <rect key="frame" x="0.0" y="417" width="375" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="Mug-io-eEi"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="67n-gm-mfb" kind="show" id="0z6-DW-dqy"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7ns-aG-EBt" firstAttribute="leading" secondItem="5mf-g9-NLn" secondAttribute="leading" id="06P-jF-wdT"/>
-                            <constraint firstAttribute="trailing" secondItem="W7f-YJ-1P0" secondAttribute="trailing" id="3zc-nC-b1u"/>
                             <constraint firstItem="tpf-XL-qyH" firstAttribute="top" secondItem="cuC-ba-llt" secondAttribute="bottom" id="4AH-QY-avj"/>
                             <constraint firstItem="jcK-Uo-zl5" firstAttribute="leading" secondItem="5mf-g9-NLn" secondAttribute="leading" id="AFp-vl-5yq"/>
-                            <constraint firstItem="W7f-YJ-1P0" firstAttribute="top" secondItem="7ns-aG-EBt" secondAttribute="bottom" constant="2" id="KHm-GO-cp6"/>
+                            <constraint firstAttribute="trailing" secondItem="5rE-Py-iVR" secondAttribute="trailing" id="HNc-x6-S1F"/>
                             <constraint firstItem="cuC-ba-llt" firstAttribute="leading" secondItem="5mf-g9-NLn" secondAttribute="leading" id="PbM-bG-tgO"/>
                             <constraint firstItem="jcK-Uo-zl5" firstAttribute="top" secondItem="5mf-g9-NLn" secondAttribute="top" id="XvR-Ad-3xz"/>
                             <constraint firstAttribute="trailing" secondItem="7ns-aG-EBt" secondAttribute="trailing" id="cl3-en-PRJ"/>
                             <constraint firstItem="cuC-ba-llt" firstAttribute="top" secondItem="5mf-g9-NLn" secondAttribute="top" id="iqv-MF-JsM"/>
+                            <constraint firstItem="tpf-XL-qyH" firstAttribute="top" secondItem="5rE-Py-iVR" secondAttribute="bottom" id="kYs-jt-zsE"/>
                             <constraint firstAttribute="trailing" secondItem="cuC-ba-llt" secondAttribute="trailing" id="m1v-mQ-cx6"/>
                             <constraint firstAttribute="trailing" secondItem="jcK-Uo-zl5" secondAttribute="trailing" id="o9B-SQ-4lj"/>
-                            <constraint firstItem="W7f-YJ-1P0" firstAttribute="leading" secondItem="5mf-g9-NLn" secondAttribute="leading" id="pdF-pe-2fr"/>
-                            <constraint firstItem="tpf-XL-qyH" firstAttribute="top" secondItem="W7f-YJ-1P0" secondAttribute="bottom" id="qhy-46-S7X"/>
+                            <constraint firstItem="5rE-Py-iVR" firstAttribute="leading" secondItem="5mf-g9-NLn" secondAttribute="leading" id="vhG-Yd-nVm"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -739,6 +728,177 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FzQ-oy-VKX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="743.5" y="330.5"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="If2-0r-nak">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="67n-gm-mfb" sceneMemberID="viewController">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="250"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bJS-7J-IsL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="743.5" y="988"/>
+        </scene>
+        <!--Artist Details Page-->
+        <scene sceneID="Wbt-fE-xIj">
+            <objects>
+                <viewController storyboardIdentifier="ArtistGeneralInfo" id="PF3-z2-oYw" customClass="ArtistDetailsPage" customModule="lastfm_scrobrows" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Rv-NH-bDc"/>
+                        <viewControllerLayoutGuide type="bottom" id="748-CZ-qyh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mgr-5r-wVG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sU9-eU-0FC">
+                                <rect key="frame" x="173" y="114" width="29" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sU9-eU-0FC" firstAttribute="centerX" secondItem="mgr-5r-wVG" secondAttribute="centerX" id="faM-z3-XOY"/>
+                            <constraint firstItem="sU9-eU-0FC" firstAttribute="centerY" secondItem="mgr-5r-wVG" secondAttribute="centerY" id="nIq-0b-PFI"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="250"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WSQ-Xh-yMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="453.5" y="1455"/>
+        </scene>
+        <!--Artist Details Page-->
+        <scene sceneID="yOd-qP-kci">
+            <objects>
+                <viewController storyboardIdentifier="ArtistTopSongs" id="6TE-2b-gTE" customClass="ArtistDetailsPage" customModule="lastfm_scrobrows" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ctS-DX-Tby"/>
+                        <viewControllerLayoutGuide type="bottom" id="rrT-o3-EiX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c8a-KA-70d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Songs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZc-pJ-GQl">
+                                <rect key="frame" x="163" y="114" width="49" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RZc-pJ-GQl" firstAttribute="centerY" secondItem="c8a-KA-70d" secondAttribute="centerY" id="2kX-fZ-Fsn"/>
+                            <constraint firstItem="RZc-pJ-GQl" firstAttribute="centerX" secondItem="c8a-KA-70d" secondAttribute="centerX" id="TSF-uN-QKj"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="250"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8x7-aQ-ASr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="884.5" y="1455"/>
+        </scene>
+        <!--Artist Details Page-->
+        <scene sceneID="gqm-OG-kzd">
+            <objects>
+                <viewController storyboardIdentifier="ArtistTopAlbums" id="dlI-MM-mTE" customClass="ArtistDetailsPage" customModule="lastfm_scrobrows" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="S9a-YM-Ol0"/>
+                        <viewControllerLayoutGuide type="bottom" id="anA-Ge-rFL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LU7-cU-06E">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Albums" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfY-3S-w9a">
+                                <rect key="frame" x="158" y="114" width="58" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kfY-3S-w9a" firstAttribute="centerY" secondItem="LU7-cU-06E" secondAttribute="centerY" id="Nho-hl-y6d"/>
+                            <constraint firstItem="kfY-3S-w9a" firstAttribute="centerX" secondItem="LU7-cU-06E" secondAttribute="centerX" id="kqw-40-0tf"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="250"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wjD-Xq-Qr8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1305.5" y="1455"/>
+        </scene>
+        <!--Artist Details Page-->
+        <scene sceneID="2Ni-c4-Cvu">
+            <objects>
+                <viewController storyboardIdentifier="ArtistBio" id="xVJ-v8-Ba6" customClass="ArtistDetailsPage" customModule="lastfm_scrobrows" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tUZ-fJ-3uZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cu3-f3-uDP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="m0X-vi-lpr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ct4-AO-nJ3">
+                                <rect key="frame" x="175" y="114" width="25" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ct4-AO-nJ3" firstAttribute="centerY" secondItem="m0X-vi-lpr" secondAttribute="centerY" id="lUk-BR-PGS"/>
+                            <constraint firstItem="ct4-AO-nJ3" firstAttribute="centerX" secondItem="m0X-vi-lpr" secondAttribute="centerX" id="uvC-km-8DV"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="250"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uVq-8F-OEy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1713.5" y="1455"/>
+        </scene>
+        <!--Artist Details Page-->
+        <scene sceneID="k4G-Ux-s0i">
+            <objects>
+                <viewController storyboardIdentifier="ArtistConcerts" id="a5H-Il-kyg" customClass="ArtistDetailsPage" customModule="lastfm_scrobrows" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nw6-nS-S8u"/>
+                        <viewControllerLayoutGuide type="bottom" id="3ld-m8-BIm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aFb-Se-WbI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Concerts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19E-CR-ubH">
+                                <rect key="frame" x="152" y="114" width="71" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="19E-CR-ubH" firstAttribute="centerY" secondItem="aFb-Se-WbI" secondAttribute="centerY" id="MOT-NU-p35"/>
+                            <constraint firstItem="19E-CR-ubH" firstAttribute="centerX" secondItem="aFb-Se-WbI" secondAttribute="centerX" id="jYa-Xg-C8K"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="250"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tw9-Sn-SDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2135.5" y="1455"/>
         </scene>
     </scenes>
     <resources>
