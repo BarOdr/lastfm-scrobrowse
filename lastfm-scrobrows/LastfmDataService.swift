@@ -51,7 +51,10 @@ class LastfmDataService: NSObject {
         let username = NSUserDefaults.standardUserDefaults().valueForKey(STORED_USERNAME) as? String
         let secret = NSUserDefaults.standardUserDefaults().valueForKey(STORED_USER_SECRET_KEY) as? String
         if username != nil && secret != nil {
-            let user = LastfmUser(name: username!, secret: secret!)
+            
+            let user = LastfmUser()
+            user.username = username!
+            user.secret = secret!
             return user
         } else {
             return nil
@@ -115,14 +118,24 @@ class LastfmDataService: NSObject {
     
     func userGetUserInfo(json: JSON) -> LastfmUser {
         
-        let name = json["user"]["name"].string
-        let realname = json["user"]["realname"].string
-        let userImageUrl = json["user"]["image"][2]["#text"].string
-        let userPlaycount = json["user"]["playcount"].int
-        let userRegistrationDate = json["user"]["registered"]["#text"].double
+        let user = LastfmUser()
         
-        let user = LastfmUser(name: name!, realname: realname!, userImageUrl: userImageUrl!, userPlaycount: userPlaycount!, userRegistrationDate: userRegistrationDate!)
-        
+        if let name = json["user"]["name"].string {
+            user.username = name
+        }
+        if let realname = json["user"]["realname"].string {
+            user.realName = realname
+        }
+        if let userImageUrl = json["user"]["image"][2]["#text"].string {
+            user.userImageUrl = userImageUrl
+        }
+        if let userPlaycount = json["user"]["playcount"].int {
+            user.playcount = userPlaycount
+        }
+        if let userRegistrationDate = json["user"]["registered"]["#text"].double {
+            user.registeredUnixtime = userRegistrationDate
+        }
+
         return user
     }
     
@@ -134,10 +147,20 @@ class LastfmDataService: NSObject {
             
             let track = Track()
             
-            let trackName = json["toptracks"]["track"][i]["name"].string
-            let duration = json["toptracks"]["track"][i]["duration"].string
-            let userPlaycount = json["toptracks"]["track"][i]["playcount"].string
-            let artistName = json["toptracks"]["track"][i]["artist"]["name"].string
+            if let trackName = json["toptracks"]["track"][i]["name"].string {
+                track.trackName = trackName
+            }
+            if let duration = json["toptracks"]["track"][i]["duration"].string {
+                track.duration = duration
+            }
+            if let userPlaycount = json["toptracks"]["track"][i]["playcount"].string {
+                track.userPlayCount = userPlaycount
+            }
+            if let artistName = json["toptracks"]["track"][i]["artist"]["name"].string {
+                let artist = Artist()
+                artist.artistName = artistName
+                track.artist = artist
+            }
 
             tracks.append(track)
         }

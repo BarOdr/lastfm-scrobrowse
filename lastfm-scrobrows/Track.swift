@@ -73,4 +73,16 @@ class Track {
             _artist = artist
         }
     }
+    
+    var duration: String {
+        get {
+            if _duration == nil {
+                _duration = ""
+            }
+            return _duration
+        }
+        set {
+            _duration = duration
+        }
+    }
 }

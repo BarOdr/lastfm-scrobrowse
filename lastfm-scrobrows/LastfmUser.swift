@@ -77,6 +77,18 @@ class LastfmUser {
             _registeredUnixtime = registeredUnixtime
         }
     }
+    
+    var userImageUrl: String {
+        get {
+            if _userImageUrl == nil {
+                _userImageUrl = ""
+            }
+            return _userImageUrl!
+        }
+        set {
+            _userImageUrl = userImageUrl
+        }
+    }
     var registeredString: String {
         return Helper.registrationDateFromUnixTime(_registeredUnixtime!)
     }
