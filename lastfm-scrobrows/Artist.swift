@@ -13,94 +13,110 @@ class Artist {
     private var _artistName: String?
     private var _artistImgUrl: String?
     private var _listenersCount: Int?
-    private var _scrobblesCount: Int?
+    private var _playcount: Int?
     private var _userPlaycount: Int?
     private var _topTracks: [Track]?
     private var _topAlbums: [Album]?
     private var _relatedTags: [String]?
     private var _biography: String?
-    private var _imageUrl: String?
     
     var artistName: String! {
-        if _artistName == nil {
-            _artistName = ""
+        get {
+            if _artistName == nil {
+                _artistName = ""
+            }
+            return _artistName
         }
-        return _artistName
+        set {
+            _artistName = artistName
+        }
     }
     
     var artistImgUrl: String {
         get {
-            return _imageUrl!
+            if _artistImgUrl == nil {
+                _artistImgUrl = ""
+            }
+            return _artistImgUrl!
         }
         set {
-            _imageUrl = artistImgUrl
+            _artistImgUrl = artistImgUrl
         }
     }
     
     var listenersCount: Int {
-        if _listenersCount == nil {
-            _listenersCount = 0
+        get {
+            if _listenersCount == nil {
+                _listenersCount = 0
+            }
+            return _listenersCount!
         }
-        return _listenersCount!
+        set {
+            _listenersCount = listenersCount
+        }
     }
     
-    var scrobblesCount: Int {
-        if _scrobblesCount == nil {
-            _scrobblesCount = 0
+    var playcount: Int {
+        get {
+            if _playcount == nil {
+                _playcount = 0
+            }
+            return _playcount!
         }
-        return _scrobblesCount!
+        set {
+            _playcount = playcount
+        }
     }
     
     var userPlaycount: Int {
-        return _userPlaycount!
+        get {
+            if _userPlaycount == nil {
+                _userPlaycount = 0
+            }
+            return _userPlaycount!
+        }
+        set {
+            _userPlaycount = userPlaycount
+        }
     }
     
     var topTracks: [Track] {
-        return _topTracks!
+        get {
+            return _topTracks!
+        }
+        set {
+            _topTracks = topTracks
+        }
     }
     
     var topAlbums: [Album] {
-        return _topAlbums!
+        get {
+            return _topAlbums!
+        }
+        set {
+            _topAlbums = topAlbums
+        }
     }
     
     var relatedTags: [String] {
-        if _relatedTags == nil {
-            _relatedTags = []
+        get {
+            return _relatedTags!
         }
-        return _relatedTags!
+        set {
+            _relatedTags = relatedTags
+        }
     }
     
     var biography: String {
-        if _biography == nil {
-            _biography = ""
+        get {
+            if _biography == nil {
+                _biography = "No biography yet."
+            }
+            return _biography!
         }
-        return _biography!
-    }
-    
-    var imageUrl: String {
-        return _imageUrl!
-    }
-    
-    /** 
-     Use this initializer for parse method userGetTopArtists
-     */
-    
-    init(name: String, userPlaycount: Int, imageUrl: String) {
-        self._artistName = name
-        self._userPlaycount = userPlaycount
-        self._artistImgUrl = imageUrl
-    }
-    
-    /**
-     Use this initializer for parse method userGetTopTracks or other track related parse methods for "Artist" field where you only provide the artist name for a track object.
-     */
-    
-    init(name: String) {
-        self._artistName = name
-    }
-    
-    init() {
-        
+        set {
+            _biography = biography
+        }
     }
     
 }

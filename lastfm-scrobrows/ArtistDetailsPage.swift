@@ -9,13 +9,11 @@
 import UIKit
 
 class ArtistDetailsPage: UIViewController {
-
-    @IBOutlet weak var pageControl: UIPageControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.blackColor()
+        view.backgroundColor = UIColor.lightGrayColor().colorWithAlphaComponent(0.4)
         // Do any additional setup after loading the view.
     }
 

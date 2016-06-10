@@ -10,6 +10,9 @@ import UIKit
 
 class ArtistDetailsPageVC: UIPageViewController {
 
+    
+    let test = 23
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -91,5 +94,14 @@ extension ArtistDetailsPageVC: UIPageViewControllerDataSource {
         return orderedViewControllers[nextIndex]
         
         }
+    
+//    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+//        return orderedViewControllers.count
+//    }
+//    
+//    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+//        
+//            return 0
+//    }
     
 }

@@ -12,42 +12,65 @@ class Track {
     
     private var _trackName: String?
     private var _userPlayCount: String?
-    private var _overallPlayCount: Int?
+    private var _overallPlayCount: String?
     private var _userLove: Bool?
     private var _duration: String?
     private var _artist: Artist?
     
     var trackName: String {
-        if _trackName == nil {
-            _trackName = ""
+        get {
+            if _trackName == nil {
+                _trackName = ""
+            }
+            return _trackName!
         }
-        return _trackName!
+        set {
+            _trackName = trackName
+        }
     }
     
     var userLove: Bool {
-        return _userLove!
+        get {
+            if _userLove == nil {
+                _userLove = false
+            }
+            return _userLove!
+        }
+        set {
+            _userLove = userLove
+        }
     }
     
     var userPlayCount: String {
-        return _userPlayCount!
+        get {
+            if _userPlayCount == nil {
+                _userPlayCount = ""
+            }
+            return _userPlayCount!
+        }
+        set {
+            _userPlayCount = userPlayCount
+        }
     }
     
-    var overallPlayCount: Int {
-        return _overallPlayCount!
+    var overallPlayCount: String {
+        get {
+            if _overallPlayCount == nil {
+                _overallPlayCount = ""
+            }
+            return _overallPlayCount!
+        }
+        set {
+            _overallPlayCount = overallPlayCount
+        }
     }
     
     var artist: Artist {
-        return _artist!
-    }
-    
-    /**
-     Use this initializer for parse method userGetTopArtists
-     */
-    
-    init(trackname: String, duration: String, userPlaycount: String, artistName: Artist) {
-        self._trackName = trackname
-        self._duration = duration
-        self._userPlayCount = userPlaycount
-        self._artist = artist
+        get {
+            return _artist!
+        }
+        set {
+            _artist = artist
+        }
     }
 }

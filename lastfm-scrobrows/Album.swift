@@ -19,44 +19,83 @@ class Album {
     private var _coverUrl: String?
     
     var albumName: String {
-        return _albumName!
+        get {
+            if _albumName == nil {
+                _albumName = ""
+            }
+            return _albumName!
+        }
+        set {
+            _albumName = albumName
+        }
+    }
+    
+    var albumArtist: String {
+        get {
+            if _albumArtist == nil {
+                _albumArtist = ""
+            }
+            return _albumArtist!
+        }
+        set {
+            _albumArtist = albumArtist
+        }
     }
     var trackCount: Int {
-        return tracks.count
+        get {
+            if _tracks == nil {
+                return 0
+            }
+            return tracks.count
+        }
     }
     
     var tracks: [Track] {
-        return _tracks!
+        get {
+            return _tracks!
+        }
+        set {
+            _tracks = tracks
+        }
     }
     
     var releaseDate: String {
-        return _releaseDate!
+        get {
+            if _releaseDate == nil {
+                _releaseDate = "Unknown"
+            }
+            return _releaseDate!
+        }
+        set {
+            _releaseDate = releaseDate
+        }
     }
     
     var userPlayCount: Int {
-        return _userPlayCount!
+        get {
+            
+            return _userPlayCount!
+        }
+        set {
+            _userPlayCount = userPlayCount
+        }
     }
     
     var overallPlayCount: Int {
-        return _overallPlayCount!
+        get {
+            return _overallPlayCount!
+        }
+        set {
+            _overallPlayCount = overallPlayCount
+        }
     }
     
     var coverUrl: String {
-        return _coverUrl!
+        get {
+            return _coverUrl!
+        }
+        set {
+            _coverUrl = coverUrl
+        }
     }
-    
-    /** 
-     
-     Use this initializer for parse method user.getTopAlbums
-     
-     */
-    
-    init(name: String, userPlaycount: Int, albumArtist: String, imageUrl: String) {
-        self._albumName = name
-        self._userPlayCount = userPlayCount
-        self._albumArtist = albumArtist
-    }
-    
-    
-    
 }

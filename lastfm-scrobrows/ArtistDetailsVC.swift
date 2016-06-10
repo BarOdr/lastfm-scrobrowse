@@ -11,13 +11,13 @@ import UIKit
 class ArtistDetailsVC: UIViewController {
 
     
+    @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var container: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
     }
 
     override func didReceiveMemoryWarning() {

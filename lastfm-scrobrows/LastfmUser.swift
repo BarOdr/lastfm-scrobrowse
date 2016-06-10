@@ -15,45 +15,69 @@ class LastfmUser {
     private var _secret: String?
     private var _userImageUrl: String?
     private var _playcount: Int?
-    private var _registered: Double?
+    private var _registeredUnixtime: Double?
     
     
     var username: String {
-        return _username!
+        get {
+            if _username == nil {
+                _username = ""
+            }
+            return _username!
+        }
+        set {
+            _username = username
+        }
     }
     
     var secret: String {
-        return _secret!
+        get {
+            if _secret == nil {
+                _secret = ""
+            }
+            return _secret!
+        }
+        set {
+            _secret = secret
+        }
     }
     
     var realName: String {
-        return _realName!
+        get {
+            if _realName == nil {
+                _realName = ""
+            }
+            return _realName!
+        }
+        set {
+            _realName = realName
+        }
     }
     
     var playcount: Int {
-        return _playcount!
+        get {
+            if _playcount == nil {
+                _playcount = 0
+            }
+            return _playcount!
+        }
+        set {
+            _playcount = playcount
+        }
     }
     
-    var registered: String {
-        return Helper.registrationDateFromUnixTime(_registered!)
+    var registeredUnixtime: Double {
+        get {
+            if _registeredUnixtime == nil {
+                _registeredUnixtime = 0.0
+            }
+            return _registeredUnixtime!
+        }
+        set {
+            _registeredUnixtime = registeredUnixtime
+        }
     }
-    
-    init(name: String, secret: String) {
-        self._username = name
-        self._secret = secret
-        
+    var registeredString: String {
+        return Helper.registrationDateFromUnixTime(_registeredUnixtime!)
     }
-    
-    /** 
-     Use this initializer for parse method userGetUserInfo
-     */
-    
-    init(name: String, realname: String, userImageUrl: String, userPlaycount: Int, userRegistrationDate: Double) {
-        self._username = name
-        self._realName = realname
-        self._userImageUrl = userImageUrl
-        self._playcount = userPlaycount
-        self._registered = userRegistrationDate
-    }
-    
 }

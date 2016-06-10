@@ -526,7 +526,7 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selah1" translatesAutoresizingMaskIntoConstraints="NO" id="cuC-ba-llt">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selah3" translatesAutoresizingMaskIntoConstraints="NO" id="cuC-ba-llt">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jcK-Uo-zl5">
@@ -550,11 +550,28 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                                                 <action selector="logoutBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Igy-IG-AC0"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selah Sue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="KV9-V6-UjM">
+                                            <rect key="frame" x="71" y="27" width="233" height="29.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="233" id="PLX-1R-fVa"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="KV9-V6-UjM" firstAttribute="centerX" secondItem="QCG-9D-UBv" secondAttribute="centerX" id="3n5-LH-Pd9"/>
+                                        <constraint firstAttribute="bottom" secondItem="KV9-V6-UjM" secondAttribute="bottom" constant="3.5" id="FhC-le-Cil"/>
                                         <constraint firstAttribute="bottom" secondItem="3RD-Yc-rQN" secondAttribute="bottom" id="ICX-wl-Y74"/>
+                                        <constraint firstItem="KV9-V6-UjM" firstAttribute="centerY" secondItem="QCG-9D-UBv" secondAttribute="centerY" id="j3f-Em-D3U"/>
                                         <constraint firstItem="3RD-Yc-rQN" firstAttribute="leading" secondItem="QCG-9D-UBv" secondAttribute="leading" constant="8" id="wF5-5y-xMP"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="j3f-Em-D3U"/>
+                                        </mask>
+                                    </variation>
                                 </view>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="cQa-q5-JVZ"/>
@@ -568,8 +585,8 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                                     <constraint firstAttribute="height" constant="45" id="wwe-ii-Eaj"/>
                                 </constraints>
                             </imageView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JQZ-sZ-KtV">
-                                <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JQZ-sZ-KtV">
+                                <rect key="frame" x="0.0" y="399" width="375" height="267"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="255" id="IG4-NR-TNv"/>
                                 </constraints>
@@ -582,6 +599,9 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                                     <segue destination="67n-gm-mfb" kind="embed" id="Nft-8e-KBo"/>
                                 </connections>
                             </containerView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="yDe-cQ-3y3">
+                                <rect key="frame" x="168" y="355" width="39" height="37"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -591,10 +611,12 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                             <constraint firstItem="jcK-Uo-zl5" firstAttribute="leading" secondItem="5mf-g9-NLn" secondAttribute="leading" id="AFp-vl-5yq"/>
                             <constraint firstItem="JQZ-sZ-KtV" firstAttribute="leading" secondItem="5mf-g9-NLn" secondAttribute="leading" id="Cny-NG-ABi"/>
                             <constraint firstItem="ZVn-g7-d1J" firstAttribute="trailing" secondItem="5mf-g9-NLn" secondAttribute="trailingMargin" id="JTW-Se-VGh"/>
+                            <constraint firstItem="yDe-cQ-3y3" firstAttribute="centerX" secondItem="5mf-g9-NLn" secondAttribute="centerX" id="O4S-Ca-bTR"/>
                             <constraint firstItem="cuC-ba-llt" firstAttribute="leading" secondItem="5mf-g9-NLn" secondAttribute="leading" id="PbM-bG-tgO"/>
+                            <constraint firstItem="JQZ-sZ-KtV" firstAttribute="top" secondItem="yDe-cQ-3y3" secondAttribute="bottom" constant="8" id="UJc-hR-xcd"/>
                             <constraint firstItem="jcK-Uo-zl5" firstAttribute="top" secondItem="5mf-g9-NLn" secondAttribute="top" id="XvR-Ad-3xz"/>
                             <constraint firstItem="ZVn-g7-d1J" firstAttribute="top" secondItem="jcK-Uo-zl5" secondAttribute="bottom" constant="8" id="hUx-bQ-Jol"/>
-                            <constraint firstItem="JQZ-sZ-KtV" firstAttribute="height" secondItem="5mf-g9-NLn" secondAttribute="height" multiplier="0.5" id="hYJ-Fd-JDY"/>
+                            <constraint firstItem="JQZ-sZ-KtV" firstAttribute="height" secondItem="5mf-g9-NLn" secondAttribute="height" multiplier="0.4" id="hYJ-Fd-JDY"/>
                             <constraint firstItem="cuC-ba-llt" firstAttribute="top" secondItem="5mf-g9-NLn" secondAttribute="top" id="iqv-MF-JsM"/>
                             <constraint firstAttribute="trailing" secondItem="cuC-ba-llt" secondAttribute="trailing" id="m1v-mQ-cx6"/>
                             <constraint firstAttribute="trailing" secondItem="jcK-Uo-zl5" secondAttribute="trailing" id="o9B-SQ-4lj"/>
@@ -603,6 +625,7 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="container" destination="JQZ-sZ-KtV" id="Rwj-hj-kVd"/>
+                        <outlet property="pageControl" destination="yDe-cQ-3y3" id="eDr-CI-LFv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FzQ-oy-VKX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -745,17 +768,11 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                                     <constraint firstItem="zKu-fE-jsI" firstAttribute="top" secondItem="Ykj-Qd-HrC" secondAttribute="top" id="pve-gc-2Or"/>
                                 </constraints>
                             </stackView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="wh8-id-l3a">
-                                <rect key="frame" x="147" y="0.0" width="80" height="37"/>
-                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="0.35482219827586209" colorSpace="calibratedRGB"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="250"/>
-                    <connections>
-                        <outlet property="pageControl" destination="wh8-id-l3a" id="zkS-37-kp5"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WSQ-Xh-yMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -897,6 +914,6 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
         <image name="profileimg" width="1154" height="1154"/>
         <image name="sampleartist" width="836" height="844"/>
         <image name="scrobbles" width="100" height="100"/>
-        <image name="selah1" width="840" height="970"/>
+        <image name="selah3" width="1706" height="1486"/>
     </resources>
 </document>
