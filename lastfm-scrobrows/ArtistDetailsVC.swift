@@ -1,5 +1,5 @@
 //
-//  ArtistDetailsPage.swift
+//  ArtistDetailsVC.swift
 //  lastfm-scrobrows
 //
 //  Created by Bartosz Odrzywołek on 10/06/16.
@@ -8,15 +8,16 @@
 
 import UIKit
 
-class ArtistDetailsPage: UIViewController {
+class ArtistDetailsVC: UIViewController {
 
-    @IBOutlet weak var pageControl: UIPageControl!
+    
+    @IBOutlet weak var container: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.blackColor()
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {

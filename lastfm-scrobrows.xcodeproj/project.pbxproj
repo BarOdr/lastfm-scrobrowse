@@ -23,6 +23,7 @@
 		CC50D1711D09ECF50081C0BC /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50D1701D09ECF50081C0BC /* Helper.swift */; };
 		CC50D1751D0AFAC80081C0BC /* ArtistDetailsPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50D1741D0AFAC80081C0BC /* ArtistDetailsPageVC.swift */; };
 		CC50D1771D0AFE4B0081C0BC /* ArtistDetailsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50D1761D0AFE4B0081C0BC /* ArtistDetailsPage.swift */; };
+		CC50D17A1D0B034A0081C0BC /* ArtistDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50D1791D0B034A0081C0BC /* ArtistDetailsVC.swift */; };
 		CC8844071D0849C2007E9FB6 /* ArtistListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8844061D0849C2007E9FB6 /* ArtistListVC.swift */; };
 		CC8844091D084AA9007E9FB6 /* ArtistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8844081D084AA9007E9FB6 /* ArtistCell.swift */; };
 		CC88440B1D087C44007E9FB6 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC88440A1D087C44007E9FB6 /* Artist.swift */; };
@@ -54,6 +55,7 @@
 		CC50D1701D09ECF50081C0BC /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		CC50D1741D0AFAC80081C0BC /* ArtistDetailsPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistDetailsPageVC.swift; sourceTree = "<group>"; };
 		CC50D1761D0AFE4B0081C0BC /* ArtistDetailsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistDetailsPage.swift; sourceTree = "<group>"; };
+		CC50D1791D0B034A0081C0BC /* ArtistDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistDetailsVC.swift; sourceTree = "<group>"; };
 		CC8844061D0849C2007E9FB6 /* ArtistListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistListVC.swift; sourceTree = "<group>"; };
 		CC8844081D084AA9007E9FB6 /* ArtistCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistCell.swift; sourceTree = "<group>"; };
 		CC88440A1D087C44007E9FB6 /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
@@ -130,10 +132,9 @@
 		CC1A72941D043F4D00DB04BC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CC50D1781D0B03290081C0BC /* ArtistDetails */,
 				CC1A72841D043E6A00DB04BC /* ViewController.swift */,
 				CC8844061D0849C2007E9FB6 /* ArtistListVC.swift */,
-				CC50D1741D0AFAC80081C0BC /* ArtistDetailsPageVC.swift */,
-				CC50D1761D0AFE4B0081C0BC /* ArtistDetailsPage.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -185,6 +186,16 @@
 				CC8844101D0881FF007E9FB6 /* LastfmDataService.swift */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		CC50D1781D0B03290081C0BC /* ArtistDetails */ = {
+			isa = PBXGroup;
+			children = (
+				CC50D1791D0B034A0081C0BC /* ArtistDetailsVC.swift */,
+				CC50D1741D0AFAC80081C0BC /* ArtistDetailsPageVC.swift */,
+				CC50D1761D0AFE4B0081C0BC /* ArtistDetailsPage.swift */,
+			);
+			name = ArtistDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +330,7 @@
 				CC8844071D0849C2007E9FB6 /* ArtistListVC.swift in Sources */,
 				CC50D1751D0AFAC80081C0BC /* ArtistDetailsPageVC.swift in Sources */,
 				CC1A72A91D0483A600DB04BC /* LastfmUser.swift in Sources */,
+				CC50D17A1D0B034A0081C0BC /* ArtistDetailsVC.swift in Sources */,
 				CC50D1711D09ECF50081C0BC /* Helper.swift in Sources */,
 				CC50D16F1D09AF430081C0BC /* RoundImageView.swift in Sources */,
 				CC50D1771D0AFE4B0081C0BC /* ArtistDetailsPage.swift in Sources */,

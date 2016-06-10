@@ -14,6 +14,10 @@ class ArtistDetailsPageVC: UIPageViewController {
         super.viewDidLoad()
 
         dataSource = self
+        
+        if let firstViewController = orderedViewControllers.first {
+            setViewControllers([firstViewController], direction: .Forward, animated: true, completion: nil)
+        }
     }
 
     private(set) lazy var orderedViewControllers: [UIViewController] = {
@@ -32,6 +36,7 @@ class ArtistDetailsPageVC: UIPageViewController {
     }
 
 
+
     /*
     // MARK: - Navigation
 
@@ -47,11 +52,44 @@ class ArtistDetailsPageVC: UIPageViewController {
 extension ArtistDetailsPageVC: UIPageViewControllerDataSource {
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        return nil
+        
+        guard let vcIndex = orderedViewControllers.indexOf(viewController) else {
+            return nil
+        }
+        
+        let previousIndex = vcIndex - 1
+        
+        guard previousIndex >= 0 else {
+            return nil
+        }
+        
+        guard orderedViewControllers.count > previousIndex else {
+            return nil
+        }
+        
+        return orderedViewControllers[previousIndex]
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        return nil
-    }
+        
+        guard let vcIndex = orderedViewControllers.indexOf(viewController) else {
+            return nil
+        }
+        
+        let nextIndex = vcIndex + 1
+        
+        let orderedViewControllersCount = orderedViewControllers.count
+        
+        guard nextIndex != orderedViewControllersCount else {
+            return nil
+        }
+        
+        guard orderedViewControllersCount > nextIndex else {
+            return nil
+        }
+        
+        return orderedViewControllers[nextIndex]
+        
+        }
     
 }
