@@ -36,4 +36,5 @@ extension UIView {
             self.alpha = 0.0
             }, completion: nil)
     }
+    
 }

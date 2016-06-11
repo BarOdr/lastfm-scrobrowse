@@ -9,22 +9,20 @@
 import UIKit
 
 class ArtistDetailsVC: UIViewController {
-
     
-    @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var container: UIView!
+    @IBOutlet weak var heartImg: UIButton!
+    @IBOutlet weak var pinImg: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+//
+//    func changePageControlIndex(notification: NSNotification) {
+//        print(notification.userInfo!["pageControlIndex"])
+//    }
 
     /*
     // MARK: - Navigation
@@ -36,4 +34,11 @@ class ArtistDetailsVC: UIViewController {
     }
     */
 
+    @IBAction func loveBtnPressed(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func pinBtnPressed(sender: AnyObject) {
+        
+    }
 }

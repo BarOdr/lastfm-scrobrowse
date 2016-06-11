@@ -54,6 +54,7 @@ class ArtistDetailsPageVC: UIPageViewController {
 
 extension ArtistDetailsPageVC: UIPageViewControllerDataSource {
     
+
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         
         guard let vcIndex = orderedViewControllers.indexOf(viewController) else {
@@ -70,6 +71,7 @@ extension ArtistDetailsPageVC: UIPageViewControllerDataSource {
             return nil
         }
         
+        postNotificationToChangePageControlPage(previousIndex)
         return orderedViewControllers[previousIndex]
     }
     
@@ -91,10 +93,19 @@ extension ArtistDetailsPageVC: UIPageViewControllerDataSource {
             return nil
         }
         
+        postNotificationToChangePageControlPage(nextIndex)
+        print(nextIndex)
         return orderedViewControllers[nextIndex]
         
         }
     
+    //NOT WORKING YET//
+    
+    func postNotificationToChangePageControlPage(changeTo: Int) {
+        
+        let dictionary = ["pageControlIndex":  changeTo]
+        NSNotificationCenter.defaultCenter().postNotificationName("changePageControlIndex", object: nil, userInfo: dictionary)
+    }
 //    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
 //        return orderedViewControllers.count
 //    }
