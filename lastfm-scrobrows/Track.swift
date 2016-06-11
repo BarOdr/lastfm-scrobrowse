@@ -12,6 +12,7 @@ class Track {
     
     private var _trackName: String?
     private var _userPlayCount: String?
+    private var _listenerCount: String?
     private var _overallPlayCount: String?
     private var _userLove: Bool?
     private var _duration: String?
@@ -85,4 +86,40 @@ class Track {
             _duration = duration
         }
     }
+    
+    var listenerCount: String {
+        get {
+            if _listenerCount == nil {
+                _listenerCount = "0"
+            }
+            return _listenerCount!
+        }
+        set {
+            _listenerCount = listenerCount  
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

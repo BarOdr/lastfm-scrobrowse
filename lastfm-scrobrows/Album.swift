@@ -11,11 +11,11 @@ import Foundation
 class Album {
     
     private var _albumName: String?
-    private var _albumArtist: String?
+    private var _albumArtist: Artist?
     private var _tracks: [Track]?
     private var _releaseDate: String?
-    private var _userPlayCount: Int?
-    private var _overallPlayCount: Int?
+    private var _userPlayCount: String?
+    private var _overallPlayCount: String?
     private var _coverUrl: String?
     
     var albumName: String {
@@ -30,10 +30,10 @@ class Album {
         }
     }
     
-    var albumArtist: String {
+    var albumArtist: Artist {
         get {
             if _albumArtist == nil {
-                _albumArtist = ""
+                _albumArtist = Artist()
             }
             return _albumArtist!
         }
@@ -71,7 +71,7 @@ class Album {
         }
     }
     
-    var userPlayCount: Int {
+    var userPlayCount: String {
         get {
             
             return _userPlayCount!
@@ -81,7 +81,7 @@ class Album {
         }
     }
     
-    var overallPlayCount: Int {
+    var overallPlayCount: String {
         get {
             return _overallPlayCount!
         }

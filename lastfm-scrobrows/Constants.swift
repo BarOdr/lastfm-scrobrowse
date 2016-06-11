@@ -35,8 +35,10 @@ let LASTFM_STATS = "stats"
 let LASTFM_LISTENERS = "listeners"
 let LASTFM_USERPLAYCOUNT = "userplaycount"
 let LASTFM_SIMILAR = "similar"
+let LASTFM_SIMILARARTISTS = "similarartists"
 let LASTFM_ONTOUR = "ontour"
 let LASTFM_REGISTERED = "registered"
+let LASTFM_MATCH = "match"
 
 
 // Request string's components constants

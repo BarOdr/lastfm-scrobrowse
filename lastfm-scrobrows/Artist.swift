@@ -21,6 +21,7 @@ class Artist {
     private var _relatedTags: [String]?
     private var _biography: String?
     private var _onTour: String?
+    private var _match: String?
     
     var artistName: String! {
         get {
@@ -153,5 +154,35 @@ class Artist {
             _similarArtists = similarArtists
         }
     }
+    
+    var match: String {
+        
+        get {
+            if _match == nil {
+                _match = "0"
+            }
+            return _match!
+        }
+        set {
+            _match = match
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }

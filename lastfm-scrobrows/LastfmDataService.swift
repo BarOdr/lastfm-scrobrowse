@@ -75,18 +75,18 @@ class LastfmDataService: NSObject {
             if let name = json[LASTFM_TOPALBUMS][LASTFM_ALBUM][i][LASTFM_NAME].string {
                album.albumName = name
             }
-            if let userPlayCount = json[LASTFM_TOPALBUMS][LASTFM_ALBUM][i][LASTFM_PLAYCOUNT].int {
+            if let userPlayCount = json[LASTFM_TOPALBUMS][LASTFM_ALBUM][i][LASTFM_PLAYCOUNT].string {
                 album.userPlayCount = userPlayCount
             }
             if let albumArtist = json[LASTFM_TOPALBUMS][LASTFM_ALBUM][i][LASTFM_ARTIST][LASTFM_NAME].string {
-                album.albumArtist = albumArtist
+                let artist = Artist()
+                artist.artistName = albumArtist
+                album.albumArtist = artist
             }
             if let imageUrl = json[LASTFM_TOPALBUMS][LASTFM_ALBUM][i][LASTFM_IMAGE][3][LASTFM_TEXT].string {
                 album.coverUrl = imageUrl
             }
-            
             albumsArray.append(album)
-            
             }
         
         return albumsArray
@@ -225,25 +225,92 @@ class LastfmDataService: NSObject {
         var similarArtists = [Artist]()
         
         for i in 0...2 {
-            
             let artist = Artist()
-            
             if let similarName = json[LASTFM_ARTIST][LASTFM_SIMILAR][LASTFM_ARTIST][i][LASTFM_NAME].string {
-
                 artist.artistName = similarName
             }
-            
                 if let similarImageUrl = json[LASTFM_ARTIST][LASTFM_SIMILAR][LASTFM_ARTIST][LASTFM_IMAGE][2][LASTFM_TEXT].string {
                         artist.artistImgUrl = similarImageUrl
             }
             similarArtists.append(artist)
         }
-        
         artist.similarArtists = similarArtists
         return artist
- 
+    }
+    
+    func artistGetTopTracks(amount: Int, json: JSON) -> [Track] {
+        
+        let tracks = [Track]()
+        
+        for i in 0...amount - 1 {
+            
+            let track = Track()
+            
+            if let trackName = json[LASTFM_TOPTRACKS][LASTFM_TRACK][i][LASTFM_NAME].string {
+                track.trackName = trackName
+            }
+            if let trackPlaycount = json[LASTFM_TOPTRACKS][LASTFM_TRACK][i][LASTFM_PLAYCOUNT].string {
+                track.overallPlayCount = trackPlaycount
+            }
+            if let listenersCount = json[LASTFM_TOPTRACKS][LASTFM_TRACK][i][LASTFM_LISTENERS].string {
+                track.listenerCount = listenersCount
+            }
+            if let trackArtist = json[LASTFM_TOPTRACKS][LASTFM_TRACK][i][LASTM_ARTIST][LASTFM_NAME].string {
+                let artist = Artist()
+                artist.artistName = trackArtist
+                track.artist = artist
+            }
+        }
+        return tracks
     }
 
+    func artistGetTopAlbums(amount: Int, json: JSON) -> [Album] {
+        
+        let albums = [Album]()
+        
+        for i in 0...amount - 1 {
+            
+            let album = Album()
+            
+            if let albumName = json[LASTFM_TOPALBUMS][LASTFM_ALBUM][i][LASTFM_NAME].string {
+                album.albumName = albumName
+            }
+            if let playcount = json[LASTFM_TOPALBUMS][LASTFM_ALBUM][i][LASTFM_PLAYCOUNT].string {
+                album.overallPlayCount = playcount
+            }
+            if let artist =  json[LASTFM_TOPALBUMS][LASTFM_ALBUM][i][LASTM_ARTIST][LASTFM_NAME].string {
+                let albumArtist = Artist()
+                albumArtist.artistName = artist
+                album.albumArtist = albumArtist
+            }
+            if let albumCoverUrl = json[LASTFM_TOPALBUMS][LASTFM_ALBUM][i][LASTFM_IMAGE][2][LASTFM_TEXT].string {
+                album.coverUrl = albumCoverUrl
+            }
+        }
+        return albums
+    }
+    
+    func artistGetSimilarArtists(amount: Int, json: JSON) -> [Artist] {
+        
+        let artists = [Artist]()
+        
+        for i in 0...amount - 1 {
+            
+            let artist = Artist()
+            
+            if let artistName = json[LASTFM_SIMILARARTISTS][LASTM_ARTIST][i][LASTFM_NAME].string {
+                artist.artistName = artistName
+            }
+            if let imageUrl = json[LASTFM_SIMILARARTISTS][LASTM_ARTIST][i][LASTFM_IMAGE][3][LASTFM_TEXT].string  {
+                artist.artistImgUrl = imageUrl
+            }
+            if let match = json[LASTFM_SIMILARARTISTS][LASTM_ARTIST][i][LASTFM_MATCH].string {
+                artist.match = match
+            }
+        }
+        
+        return artists
+    }  
 }
 
 
