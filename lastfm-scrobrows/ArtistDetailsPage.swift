@@ -13,7 +13,7 @@ class ArtistDetailsPage: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.lightGrayColor().colorWithAlphaComponent(0.4)
+        view.backgroundColor = UIColor.darkGrayColor().colorWithAlphaComponent(0.4)
         // Do any additional setup after loading the view.
     }
 

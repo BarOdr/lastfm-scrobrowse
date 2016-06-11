@@ -79,7 +79,7 @@ class Track {
             if _duration == nil {
                 _duration = ""
             }
-            return _duration
+            return _duration!
         }
         set {
             _duration = duration

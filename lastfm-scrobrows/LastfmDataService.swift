@@ -71,16 +71,17 @@ class LastfmDataService: NSObject {
         for i in 0...amount - 1 {
             
             let album = Album()
-            if let name = json["topalbums"]["album"][i]["name"].string {
-                album.albumName = name
+            
+            if let name = json[LASTFM_TOPALBUMS][LASTFM_ALBUM][i][LASTFM_NAME].string {
+               album.albumName = name
             }
-            if let userPlayCount = json["topalbums"]["album"][i]["playcount"].int {
+            if let userPlayCount = json[LASTFM_TOPALBUMS][LASTFM_ALBUM][i][LASTFM_PLAYCOUNT].int {
                 album.userPlayCount = userPlayCount
             }
-            if let albumArtist = json["topalbums"]["album"][i]["artist"]["name"].string {
+            if let albumArtist = json[LASTFM_TOPALBUMS][LASTFM_ALBUM][i][LASTFM_ARTIST][LASTFM_NAME].string {
                 album.albumArtist = albumArtist
             }
-            if let imageUrl = json["topalbums"]["album"][i]["image"][3]["#text"].string {
+            if let imageUrl = json[LASTFM_TOPALBUMS][LASTFM_ALBUM][i][LASTFM_IMAGE][3][LASTFM_TEXT].string {
                 album.coverUrl = imageUrl
             }
             
@@ -101,13 +102,13 @@ class LastfmDataService: NSObject {
             
             let artist = Artist()
             
-            if let name = json["topartists"]["artist"][i]["name"].string {
+            if let name = json[LASTFM_TOPARTISTS][LASTM_ARTIST][i][LASTFM_NAME].string {
                 artist.artistName = name
             }
-            if let userPlaycount = json["topartists"]["artist"][i]["playcount"].int {
+            if let userPlaycount = json[LASTFM_TOPARTISTS][LASTM_ARTIST][i][LASTFM_PLAYCOUNT].string {
                 artist.userPlaycount = userPlaycount
             }
-            if let imageUrl = json["topartists"]["artist"][i]["image"][3]["#text"].string {
+            if let imageUrl = json[LASTFM_TOPARTISTS][LASTM_ARTIST][i][LASTFM_IMAGE][3][LASTFM_TEXT].string {
                 artist.artistImgUrl = imageUrl
             }
             
@@ -116,23 +117,52 @@ class LastfmDataService: NSObject {
         return artistsArray
     }
     
+    func userGetTopTracks(amount: Int, json: JSON) -> [Track] {
+        
+        var tracksArray = [Track]()
+        
+        for i in 0...amount {
+            
+            let track = Track()
+            
+            if let name = json[LASTFM_TOPTRACKS][LASTFM_TRACK][i][LASTFM_NAME].string {
+                track.trackName = name
+            }
+            if let duration = json[LASTFM_TOPTRACKS][LASTFM_TRACK][i][LASTFM_DURATION].string {
+                track.duration = duration
+            }
+            if let userPlayCount = json[LASTFM_TOPTRACKS][LASTFM_TRACK][i][LASTFM_PLAYCOUNT].string {
+                track.userPlayCount = userPlayCount
+            }
+            if let artistName = json[LASTFM_TOPTRACKS][LASTFM_TRACK][i][LASTFM_ARTIST].string {
+                let artist = Artist()
+                artist.artistName = artistName
+                track.artist = artist
+            }
+            
+            tracksArray.append(track)
+        }
+        
+        return tracksArray
+    }
+    
     func userGetUserInfo(json: JSON) -> LastfmUser {
         
         let user = LastfmUser()
         
-        if let name = json["user"]["name"].string {
+        if let name = json[LASTFM_USER][LASTFM_NAME].string {
             user.username = name
         }
-        if let realname = json["user"]["realname"].string {
+        if let realname = json[LASTFM_USER][LASTFM_REALNAME].string {
             user.realName = realname
         }
-        if let userImageUrl = json["user"]["image"][2]["#text"].string {
+        if let userImageUrl = json[LASTFM_USER][LASTFM_IMAGE][2][LASTFM_TEXT].string {
             user.userImageUrl = userImageUrl
         }
-        if let userPlaycount = json["user"]["playcount"].int {
+        if let userPlaycount = json[LASTFM_USER][LASTFM_PLAYCOUNT].int {
             user.playcount = userPlaycount
         }
-        if let userRegistrationDate = json["user"]["registered"]["#text"].double {
+        if let userRegistrationDate = json[LASTFM_USER][LASTFM_REGISTERED][LASTFM_TEXT].double {
             user.registeredUnixtime = userRegistrationDate
         }
 
@@ -147,16 +177,16 @@ class LastfmDataService: NSObject {
             
             let track = Track()
             
-            if let trackName = json["toptracks"]["track"][i]["name"].string {
+            if let trackName = json[LASTFM_TOPTRACKS][LASTFM_TRACK][i][LASTFM_NAME].string {
                 track.trackName = trackName
             }
-            if let duration = json["toptracks"]["track"][i]["duration"].string {
+            if let duration = json[LASTFM_TOPTRACKS][LASTFM_TRACK][i][LASTFM_DURATION].string {
                 track.duration = duration
             }
-            if let userPlaycount = json["toptracks"]["track"][i]["playcount"].string {
+            if let userPlaycount = json[LASTFM_TOPTRACKS][LASTFM_TRACK][i][LASTFM_PLAYCOUNT].string {
                 track.userPlayCount = userPlaycount
             }
-            if let artistName = json["toptracks"]["track"][i]["artist"]["name"].string {
+            if let artistName = json[LASTFM_TOPTRACKS][LASTFM_TRACK][i][LASTM_ARTIST][LASTFM_NAME].string {
                 let artist = Artist()
                 artist.artistName = artistName
                 track.artist = artist
@@ -169,23 +199,51 @@ class LastfmDataService: NSObject {
     
     // ARTIST parser methods
     
-//    func artistGetInfo(artist: Artist?, json: JSON) -> Artist {
-//        
-//        
-//        if artist == nil {
-//            
-//        }
-//        let tags = ""
-//        let artistName = json["artist"]["name"].string
-//        let imageUrl = json["artist"]["image"][3]["#text"].string
-//        let playcount = json["artist"]["stats"]["playcount"].string
-//        let listeners = json["artist"]["stats"]["listeners"].string
-//        
-//        for i in 0...4 {
-//            let tag = json["artist"]["tags"]["tag"][i]["name"].string
-//            tags.stringByAppendingString(" \(tag)")
-//        }
-//    }
+    func artistGetInfo(json: JSON) -> Artist {
+    
+        let artist = Artist()
+        
+        if let artistName = json[LASTM_ARTIST][LASTFM_NAME].string {
+            artist.artistName = artistName
+        }
+        if let imageUrl = json[LASTM_ARTIST][LASTFM_IMAGE][3][LASTFM_TEXT].string {
+            artist.artistImgUrl = imageUrl
+        }
+        if let onTour = json[LASTM_ARTIST][LASTFM_ONTOUR].string {
+            artist.onTour = onTour
+        }
+        if let listenerCount = json[LASTM_ARTIST][LASTFM_STATS][LASTFM_LISTENERS].string {
+            artist.listenersCount = listenerCount
+        }
+        if let playcount = json[LASTM_ARTIST][LASTFM_STATS][LASTFM_PLAYCOUNT].string {
+            artist.playcount = playcount
+        }
+        if let userPlaycount = json[LASTM_ARTIST][LASTFM_STATS][LASTFM_USERPLAYCOUNT].string {
+            artist.userPlaycount = userPlaycount
+        }
+        
+        var similarArtists = [Artist]()
+        
+        for i in 0...2 {
+            
+            let artist = Artist()
+            
+            if let similarName = json[LASTFM_ARTIST][LASTFM_SIMILAR][LASTFM_ARTIST][i][LASTFM_NAME].string {
+
+                artist.artistName = similarName
+            }
+            
+                if let similarImageUrl = json[LASTFM_ARTIST][LASTFM_SIMILAR][LASTFM_ARTIST][LASTFM_IMAGE][2][LASTFM_TEXT].string {
+                        artist.artistImgUrl = similarImageUrl
+            }
+            similarArtists.append(artist)
+        }
+        
+        artist.similarArtists = similarArtists
+        return artist
+ 
+    }
+
 }
 
 

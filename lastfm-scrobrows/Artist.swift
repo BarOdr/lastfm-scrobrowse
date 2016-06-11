@@ -12,13 +12,15 @@ class Artist {
     
     private var _artistName: String?
     private var _artistImgUrl: String?
-    private var _listenersCount: Int?
-    private var _playcount: Int?
-    private var _userPlaycount: Int?
+    private var _listenersCount: String?
+    private var _playcount: String?
+    private var _userPlaycount: String?
     private var _topTracks: [Track]?
     private var _topAlbums: [Album]?
+    private var _similarArtists: [Artist]?
     private var _relatedTags: [String]?
     private var _biography: String?
+    private var _onTour: String?
     
     var artistName: String! {
         get {
@@ -44,10 +46,10 @@ class Artist {
         }
     }
     
-    var listenersCount: Int {
+    var listenersCount: String {
         get {
             if _listenersCount == nil {
-                _listenersCount = 0
+                _listenersCount = "0"
             }
             return _listenersCount!
         }
@@ -56,10 +58,10 @@ class Artist {
         }
     }
     
-    var playcount: Int {
+    var playcount: String {
         get {
             if _playcount == nil {
-                _playcount = 0
+                _playcount = "0"
             }
             return _playcount!
         }
@@ -68,10 +70,10 @@ class Artist {
         }
     }
     
-    var userPlaycount: Int {
+    var userPlaycount: String {
         get {
             if _userPlaycount == nil {
-                _userPlaycount = 0
+                _userPlaycount = "0"
             }
             return _userPlaycount!
         }
@@ -82,6 +84,9 @@ class Artist {
     
     var topTracks: [Track] {
         get {
+            if _topTracks == nil {
+                _topTracks = [Track]()
+            }
             return _topTracks!
         }
         set {
@@ -91,6 +96,9 @@ class Artist {
     
     var topAlbums: [Album] {
         get {
+            if _topAlbums == nil {
+                _topAlbums = [Album]()
+            }
             return _topAlbums!
         }
         set {
@@ -100,6 +108,9 @@ class Artist {
     
     var relatedTags: [String] {
         get {
+            if _relatedTags == nil {
+                _relatedTags = [String]()
+            }
             return _relatedTags!
         }
         set {
@@ -116,6 +127,30 @@ class Artist {
         }
         set {
             _biography = biography
+        }
+    }
+    
+    var onTour: String {
+        get {
+            if _onTour == nil {
+                _onTour = "0"
+            }
+            return _onTour!
+        }
+        set {
+            _onTour = onTour
+        }
+    }
+    
+    var similarArtists: [Artist] {
+        get {
+            if _similarArtists == nil {
+                _similarArtists = [Artist]()
+            }
+            return _similarArtists!
+        }
+        set {
+            _similarArtists = similarArtists
         }
     }
     
