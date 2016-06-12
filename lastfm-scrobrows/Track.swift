@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Track {
+class Track {
     
     private var _trackName: String?
     private var _userPlayCount: String?
@@ -19,7 +19,7 @@ struct Track {
     private var _artist: Artist?
     
     var trackName: String {
-        mutating get {
+        get {
             if _trackName == nil {
                 _trackName = ""
             }
@@ -31,7 +31,7 @@ struct Track {
     }
     
     var userLove: Bool {
-       mutating get {
+        get {
             if _userLove == nil {
                 _userLove = false
             }
@@ -43,7 +43,7 @@ struct Track {
     }
     
     var userPlayCount: String {
-        mutating get {
+        get {
             if _userPlayCount == nil {
                 _userPlayCount = ""
             }
@@ -55,7 +55,7 @@ struct Track {
     }
     
     var overallPlayCount: String {
-        mutating get {
+        get {
             if _overallPlayCount == nil {
                 _overallPlayCount = ""
             }
@@ -76,7 +76,7 @@ struct Track {
     }
     
     var duration: String {
-        mutating get {
+        get {
             if _duration == nil {
                 _duration = ""
             }
@@ -88,7 +88,7 @@ struct Track {
     }
     
     var listenerCount: String {
-        mutating get {
+        get {
             if _listenerCount == nil {
                 _listenerCount = "0"
             }
@@ -97,6 +97,34 @@ struct Track {
         set {
             _listenerCount = listenerCount  
         }
+    }
+    
+    func setTrackName(trackName: String) {
+        _trackName = trackName
+    }
+    
+    func setUserPlayCount(playCount: String) {
+        _userPlayCount = playCount
+    }
+    
+    func setListenersCount(listenersCount: String) {
+        _listenerCount = listenersCount
+    }
+    
+    func setOverallPlayCount(count: String) {
+        _overallPlayCount = count
+    }
+    
+    func setUserLove(love: Bool) {
+        _userLove = love
+    }
+    
+    func setDuration(duration: String) {
+        _duration = duration
+    }
+    
+    func setArtist(artist: Artist) {
+        _artist = artist
     }
 }
 

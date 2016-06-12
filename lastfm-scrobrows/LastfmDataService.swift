@@ -12,6 +12,9 @@ import SwiftyJSON
 
 class LastfmDataService: NSObject {
     
+    deinit {
+        print("LastfmDataService is being deinitialized")
+    }
     
     /** 
      This method performs a web request. This is a flexible data task, which allows to obtain any kind of data from last.fm to be handled in completion handler.
@@ -23,17 +26,16 @@ class LastfmDataService: NSObject {
      
      */
     
-    //ADD parsing function as a parameter!
-    func lastfmDownloadTask(type: Alamofire.Method, parameters: Dictionary<String, AnyObject>, completion: LastfmDownloadComplete ) {
+    func lastfmDownloadTask(type: Alamofire.Method, parameters: Dictionary<String, AnyObject>, completion: LastfmDownloadComplete) {
         
         Alamofire.request(type, LASTFM_BASE_URL, parameters: parameters).response { (request, response, data, error) in
             
             if error == nil {
                 
                 if let data = data {
-                    let json = JSON(data)
+                    let json = JSON(data: data)
                     print(json)
-                    // parsing function taking data as parameter
+                    completion(objectFromParser: json)
                 }
 
             } else {
@@ -42,25 +44,6 @@ class LastfmDataService: NSObject {
         }
     }
     
-    /**
-     This method retrieves the current logged user (if exists) and returns an optional LastfmUser object or nil
-     - returns: LastfmUser?
-     */
-    
-    func getCurrentUser() -> LastfmUser? {
-        let username = NSUserDefaults.standardUserDefaults().valueForKey(STORED_USERNAME) as? String
-        let secret = NSUserDefaults.standardUserDefaults().valueForKey(STORED_USER_SECRET_KEY) as? String
-        if username != nil && secret != nil {
-            
-            let user = LastfmUser()
-            user.username = username!
-            user.secret = secret!
-            return user
-        } else {
-            return nil
-        }
-        
-    }
 
  // USER parser methods
     
@@ -100,16 +83,20 @@ class LastfmDataService: NSObject {
         
         for i in 0...amount - 1 {
             
-            var artist = Artist()
+            let artist = Artist()
             
             if let name = json[LASTFM_TOPARTISTS][LASTM_ARTIST][i][LASTFM_NAME].string {
-                artist.artistName = name
+                artist.setName(name)
+                print("name is \(name)")
+                print("and saved name is: \(artist.artistName)")
             }
             if let userPlaycount = json[LASTFM_TOPARTISTS][LASTM_ARTIST][i][LASTFM_PLAYCOUNT].string {
                 artist.userPlaycount = userPlaycount
+                print("Playcount is \(userPlaycount)")
             }
-            if let imageUrl = json[LASTFM_TOPARTISTS][LASTM_ARTIST][i][LASTFM_IMAGE][3][LASTFM_TEXT].string {
+            if let imageUrl = json[LASTFM_TOPARTISTS][LASTM_ARTIST][i][LASTFM_IMAGE][4][LASTFM_TEXT].string {
                 artist.artistImgUrl = imageUrl
+                print("Image url is \(imageUrl)")
             }
             
             artistsArray.append(artist)
@@ -135,7 +122,7 @@ class LastfmDataService: NSObject {
                 track.userPlayCount = userPlayCount
             }
             if let artistName = json[LASTFM_TOPTRACKS][LASTFM_TRACK][i][LASTFM_ARTIST].string {
-                var artist = Artist()
+                let artist = Artist()
                 artist.artistName = artistName
                 track.artist = artist
             }
@@ -187,7 +174,7 @@ class LastfmDataService: NSObject {
                 track.userPlayCount = userPlaycount
             }
             if let artistName = json[LASTFM_TOPTRACKS][LASTFM_TRACK][i][LASTM_ARTIST][LASTFM_NAME].string {
-                var artist = Artist()
+                let artist = Artist()
                 artist.artistName = artistName
                 track.artist = artist
             }
@@ -201,7 +188,7 @@ class LastfmDataService: NSObject {
     
     func artistGetInfo(json: JSON) -> Artist {
     
-        var artist = Artist()
+        let artist = Artist()
         
         if let artistName = json[LASTM_ARTIST][LASTFM_NAME].string {
             artist.artistName = artistName
@@ -225,7 +212,7 @@ class LastfmDataService: NSObject {
         var similarArtists = [Artist]()
         
         for i in 0...2 {
-            var artist = Artist()
+            let artist = Artist()
             if let similarName = json[LASTFM_ARTIST][LASTFM_SIMILAR][LASTFM_ARTIST][i][LASTFM_NAME].string {
                 artist.artistName = similarName
             }
@@ -256,10 +243,12 @@ class LastfmDataService: NSObject {
                 track.listenerCount = listenersCount
             }
             if let trackArtist = json[LASTFM_TOPTRACKS][LASTFM_TRACK][i][LASTM_ARTIST][LASTFM_NAME].string {
-                var artist = Artist()
+                let artist = Artist()
                 artist.artistName = trackArtist
                 track.artist = artist
             }
+            
+            tracks.append(track)
         }
         return tracks
     }
@@ -279,13 +268,15 @@ class LastfmDataService: NSObject {
                 album.overallPlayCount = playcount
             }
             if let artist =  json[LASTFM_TOPALBUMS][LASTFM_ALBUM][i][LASTM_ARTIST][LASTFM_NAME].string {
-                var albumArtist = Artist()
+                let albumArtist = Artist()
                 albumArtist.artistName = artist
                 album.albumArtist = albumArtist
             }
             if let albumCoverUrl = json[LASTFM_TOPALBUMS][LASTFM_ALBUM][i][LASTFM_IMAGE][2][LASTFM_TEXT].string {
                 album.coverUrl = albumCoverUrl
             }
+            
+            albums.append(album)
         }
         return albums
     }
@@ -296,7 +287,7 @@ class LastfmDataService: NSObject {
         
         for i in 0...amount - 1 {
             
-            var artist = Artist()
+            let artist = Artist()
             
             if let artistName = json[LASTFM_SIMILARARTISTS][LASTM_ARTIST][i][LASTFM_NAME].string {
                 artist.artistName = artistName
@@ -307,6 +298,8 @@ class LastfmDataService: NSObject {
             if let match = json[LASTFM_SIMILARARTISTS][LASTM_ARTIST][i][LASTFM_MATCH].string {
                 artist.match = match
             }
+            
+            artists.append(artist)
         }
         
         return artists

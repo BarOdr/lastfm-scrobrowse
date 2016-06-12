@@ -7,13 +7,81 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class API: NSObject {
     
     private let loginManager: LoginManager
+    private let lastfmDataService: LastfmDataService
     
+    deinit {
+        print("Api is being deinitialized")
+    }
     override init() {
         loginManager = LoginManager()
+        lastfmDataService = LastfmDataService()
+    }
+    
+    func lastfmDownloadTask(type: Alamofire.Method, parameters: Dictionary<String, AnyObject>, completion: LastfmDownloadComplete) {
+        return lastfmDataService.lastfmDownloadTask(type, parameters: parameters, completion: completion)
+    }
+    
+    func userGetTopAlbums(amount: Int, json: JSON) -> [Album] {
+        return lastfmDataService.userGetTopAlbums(amount, json: json)
+    }
+    
+    func userGetTopTracks(amount: Int, json: JSON) -> [Track] {
+        return lastfmDataService.artistGetTopTracks(amount, json: json)
+    }
+    
+    func userGetTopArtists(amount: Int, json: JSON) -> [Artist] {
+        return lastfmDataService.userGetTopArtists(amount, json: json)
+    }
+    
+    func userGetUserInfo(json: JSON) -> LastfmUser {
+        return lastfmDataService.userGetUserInfo(json)
+    }
+    
+    func userGetRecentTracks(amount: Int, json: JSON) -> [Track] {
+        return lastfmDataService.userGetRecentTracks(amount, json: json)
+    }
+    
+    func artistGetInfo(json: JSON) -> Artist {
+        return lastfmDataService.artistGetInfo(json)
+    }
+    
+    func artistGetTopTracks(amount: Int, json: JSON) -> [Track] {
+        return lastfmDataService.artistGetTopTracks(amount, json: json)
+    }
+    
+    func artistGetTopAlbums(amount: Int, json: JSON) -> [Album] {
+        return lastfmDataService.artistGetTopAlbums(amount, json: json)
+    }
+    
+    func artistGetSimilarArtists(amount: Int, json: JSON) -> [Artist] {
+        return lastfmDataService.artistGetSimilarArtists(amount, json: json)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //////////////////////// LOGIN MANAGER METHODS ///////////////////////////
+    
+    /**
+     This method retrieves the current logged user (if exists) and returns an optional LastfmUser object or nil
+     - returns: LastfmUser?
+     */
+    
+    func getCurrentUser() -> LastfmUser? {
+        return loginManager.getCurrentUser()
     }
     /**
      This method removes user credentials from NSUserDefaults. Use this method to clean user data after logging out.

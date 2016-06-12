@@ -10,6 +10,7 @@ import UIKit
 
 class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    let ds = LastfmDataService()
     
     @IBOutlet weak var tableView: UITableView!
     

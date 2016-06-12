@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 
 // User credentials constants
@@ -48,6 +49,6 @@ let POST = Alamofire.Method.POST
 
 //Typealiases
 
-typealias LastfmDownloadComplete = (objectFromParser: AnyObject) -> Void
+typealias LastfmDownloadComplete = (objectFromParser: JSON) -> Void
 typealias UserLoginComplete = (userSecret: String, userName: String) -> Void
 typealias CompletionHandler = () -> Void

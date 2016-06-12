@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Artist {
+class Artist {
     
     private var _artistName: String?
     private var _artistImgUrl: String?
@@ -23,12 +23,12 @@ struct Artist {
     private var _onTour: String?
     private var _match: String?
     
-    var artistName: String! {
-        mutating get {
+    var artistName: String {
+        get {
             if _artistName == nil {
                 _artistName = ""
             }
-            return _artistName
+            return _artistName!
         }
         set {
             _artistName = artistName
@@ -36,7 +36,7 @@ struct Artist {
     }
     
     var artistImgUrl: String {
-        mutating get {
+        get {
             if _artistImgUrl == nil {
                 _artistImgUrl = ""
             }
@@ -48,7 +48,7 @@ struct Artist {
     }
     
     var listenersCount: String {
-        mutating get {
+        get {
             if _listenersCount == nil {
                 _listenersCount = "0"
             }
@@ -60,7 +60,7 @@ struct Artist {
     }
     
     var playcount: String {
-        mutating get {
+        get {
             if _playcount == nil {
                 _playcount = "0"
             }
@@ -72,7 +72,7 @@ struct Artist {
     }
     
     var userPlaycount: String {
-        mutating get {
+        get {
             if _userPlaycount == nil {
                 _userPlaycount = "0"
             }
@@ -84,7 +84,7 @@ struct Artist {
     }
     
     var topTracks: [Track] {
-        mutating get {
+        get {
             if _topTracks == nil {
                 _topTracks = [Track]()
             }
@@ -96,7 +96,7 @@ struct Artist {
     }
     
     var topAlbums: [Album] {
-        mutating get {
+        get {
             if _topAlbums == nil {
                 _topAlbums = [Album]()
             }
@@ -108,7 +108,7 @@ struct Artist {
     }
     
     var relatedTags: [String] {
-        mutating get {
+        get {
             if _relatedTags == nil {
                 _relatedTags = [String]()
             }
@@ -120,7 +120,7 @@ struct Artist {
     }
     
     var biography: String {
-        mutating get {
+        get {
             if _biography == nil {
                 _biography = "No biography yet."
             }
@@ -132,7 +132,7 @@ struct Artist {
     }
     
     var onTour: String {
-        mutating get {
+        get {
             if _onTour == nil {
                 _onTour = "0"
             }
@@ -144,7 +144,7 @@ struct Artist {
     }
     
     var similarArtists: [Artist] {
-        mutating get {
+        get {
             if _similarArtists == nil {
                 _similarArtists = [Artist]()
             }
@@ -156,7 +156,7 @@ struct Artist {
     }
     
     var match: String {        
-        mutating get {
+        get {
             if _match == nil {
                 _match = "0"
             }
@@ -167,21 +167,52 @@ struct Artist {
         }
     }
     
+    func setName(name: String) {
+        _artistName = name
+    }
     
+    func setImgUrl(url: String) {
+        _artistImgUrl = url
+    }
     
+    func setListenersCount(count: String) {
+        _listenersCount = count
+    }
     
+    func setPlaycount(count: String) {
+        _playcount = count
+    }
     
+    func setUserPlaycount(count: String) {
+        _userPlaycount = count
+    }
     
+    func setTopTracks(tracks: [Track]) {
+        _topTracks = tracks
+    }
     
+    func setTopAlbums(albums: [Album]) {
+        _topAlbums = albums
+    }
     
+    func setSimilarArtists(artists: [Artist]) {
+        _similarArtists = artists
+    }
     
+    func setTags(tags: [String]) {
+        _relatedTags = tags
+    }
     
+    func setBiography(bio: String) {
+        _biography = bio
+    }
     
+    func setOnTour(onTour: String) {
+        _onTour = onTour
+    }
     
-    
-    
-    
-    
-    
-    
+    func setMatch(match: String) {
+        _match = match
+    }
+  
 }

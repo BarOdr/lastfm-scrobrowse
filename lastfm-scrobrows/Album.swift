@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Album {
+class Album {
     
     private var _albumName: String?
     private var _albumArtist: Artist?
@@ -19,7 +19,7 @@ struct Album {
     private var _coverUrl: String?
     
     var albumName: String {
-        mutating get {
+        get {
             if _albumName == nil {
                 _albumName = ""
             }
@@ -31,7 +31,7 @@ struct Album {
     }
     
     var albumArtist: Artist {
-        mutating get {
+        get {
             if _albumArtist == nil {
                 _albumArtist = Artist()
             }
@@ -60,7 +60,7 @@ struct Album {
     }
     
     var releaseDate: String {
-        mutating get {
+        get {
             if _releaseDate == nil {
                 _releaseDate = "Unknown"
             }
@@ -97,5 +97,29 @@ struct Album {
         set {
             _coverUrl = coverUrl
         }
+    }
+    
+    func setName(name: String) {
+        _albumName = name
+    }
+    
+    func setAlbumArtist(artist: Artist) {
+        _albumArtist = artist
+    }
+    
+    func setReleaseDate(date: String) {
+        _releaseDate = date
+    }
+    
+    func setUserPlaycount(count: String) {
+        _userPlayCount = count
+    }
+    
+    func setOverallPlaycount(count: String) {
+        _overallPlayCount = count
+    }
+    
+    func setCoverUrl(url: String) {
+        _coverUrl = url
     }
 }

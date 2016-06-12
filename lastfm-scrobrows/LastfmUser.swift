@@ -16,6 +16,7 @@ class LastfmUser {
     private var _userImageUrl: String?
     private var _playcount: Int?
     private var _registeredUnixtime: Double?
+    private var _userFavouriteArtists: [Artist]?
     
     
     var username: String {
@@ -91,5 +92,17 @@ class LastfmUser {
     }
     var registeredString: String {
         return Helper.registrationDateFromUnixTime(_registeredUnixtime!)
+    }
+    
+    var userFavouriteArtists: [Artist] {
+        get {
+            if _userFavouriteArtists == nil {
+                _userFavouriteArtists = [Artist]()
+            }
+            return _userFavouriteArtists!
+        }
+        set {
+            _userFavouriteArtists = userFavouriteArtists
+        }
     }
 }

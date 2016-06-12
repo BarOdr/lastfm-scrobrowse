@@ -13,7 +13,27 @@ import SwiftyJSON
 
 class LoginManager: NSObject {
 
-    /** 
+    
+    /**
+     This method retrieves the current logged user (if exists) and returns an optional LastfmUser object or nil
+     - returns: LastfmUser?
+     */
+    
+    func getCurrentUser() -> LastfmUser? {
+        let username = NSUserDefaults.standardUserDefaults().valueForKey(STORED_USERNAME) as? String
+        let secret = NSUserDefaults.standardUserDefaults().valueForKey(STORED_USER_SECRET_KEY) as? String
+        if username != nil && secret != nil {
+            
+            let user = LastfmUser()
+            user.username = username!
+            user.secret = secret!
+            return user
+        } else {
+            return nil
+        }
+    }
+    
+    /**
      This method sends a POST request to Last.fm API to obtain user secret key (default key lifetime: infinite by default). You can then use the obtained secret key as well as the username in the trailing closure
      
      - parameter user: an object of type LastfmUser

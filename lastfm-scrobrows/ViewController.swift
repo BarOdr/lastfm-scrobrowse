@@ -8,6 +8,7 @@
 
 import UIKit
 import CryptoSwift
+import SwiftyJSON
 
 let loginFailedMessageTitle = "Oops! Something went wrong"
 let loginFailedMessage = "Make sure you enter correct username and password"
@@ -32,12 +33,22 @@ class ViewController: UIViewController {
     
     var currentUser: LastfmUser?
     
+    var userInitialTopTenArtists = [Artist]()
+    var userFavouriteArtists = [Artist]()
+    
     let api = API()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        api.lastfmDownloadTask(GET, parameters: PARAM_DICT_USER_GETTOPARTISTS) { (objectFromParser) in
+        
+            print(objectFromParser)
+            self.userInitialTopTenArtists = self.api.userGetTopArtists(15, json: objectFromParser)
+            print(self.userInitialTopTenArtists[0].artistName)
+            print("name was printed?")
+        }
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -67,7 +78,11 @@ class ViewController: UIViewController {
      */
     
     @IBAction func goToLibrary(sender: AnyObject) {
-        goToLibrary()
+        
+        let topartistname = userInitialTopTenArtists[0].artistName
+        print("User top top loved is : \(topartistname)")
+        print(userInitialTopTenArtists[0].artistName)
+//        goToLibrary()
     }
     
     @IBAction func scrobbleTracks(sender: UIButton) {
@@ -264,10 +279,7 @@ class ViewController: UIViewController {
             return false
         }
     }
+
     
-    func test() {
-        var artist = Artist()
-        artist.artistImgUrl = ""
-    }
 
 }
