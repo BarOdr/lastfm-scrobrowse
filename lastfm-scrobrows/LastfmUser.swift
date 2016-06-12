@@ -14,7 +14,7 @@ class LastfmUser {
     private var _realName: String?
     private var _secret: String?
     private var _userImageUrl: String?
-    private var _playcount: Int?
+    private var _playcount: String?
     private var _registeredUnixtime: Double?
     private var _userFavouriteArtists: [Artist]?
     
@@ -55,10 +55,10 @@ class LastfmUser {
         }
     }
     
-    var playcount: Int {
+    var playcount: String {
         get {
             if _playcount == nil {
-                _playcount = 0
+                _playcount = ""
             }
             return _playcount!
         }
@@ -104,5 +104,33 @@ class LastfmUser {
         set {
             _userFavouriteArtists = userFavouriteArtists
         }
+    }
+    
+    func setUsername(name: String) {
+        _username = name
+    }
+    
+    func setRealName(name: String) {
+        _realName = name
+    }
+    
+    func setSecret(secret: String) {
+        _secret = secret
+    }
+    
+    func setImageUrl(url: String) {
+        _userImageUrl = url
+    }
+    
+    func setPlaycount(count: String) {
+        _playcount = playcount
+    }
+    
+    func setRegisterUnixtime(time: Double) {
+        _registeredUnixtime = time
+    }
+    
+    func setUserFavouriteArtists(artists: [Artist]) {
+        _userFavouriteArtists = artists
     }
 }

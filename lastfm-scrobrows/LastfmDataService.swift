@@ -53,21 +53,21 @@ class LastfmDataService: NSObject {
         
         for i in 0...amount - 1 {
             
-            var album = Album()
+            let album = Album()
             
             if let name = json[LASTFM_TOPALBUMS][LASTFM_ALBUM][i][LASTFM_NAME].string {
-               album.albumName = name
+               album.setName(name)
             }
             if let userPlayCount = json[LASTFM_TOPALBUMS][LASTFM_ALBUM][i][LASTFM_PLAYCOUNT].string {
-                album.userPlayCount = userPlayCount
+                album.setUserPlaycount(userPlayCount)
             }
             if let albumArtist = json[LASTFM_TOPALBUMS][LASTFM_ALBUM][i][LASTFM_ARTIST][LASTFM_NAME].string {
-                var artist = Artist()
-                artist.artistName = albumArtist
+                let artist = Artist()
+                artist.setName(albumArtist)
                 album.albumArtist = artist
             }
             if let imageUrl = json[LASTFM_TOPALBUMS][LASTFM_ALBUM][i][LASTFM_IMAGE][3][LASTFM_TEXT].string {
-                album.coverUrl = imageUrl
+                album.setCoverUrl(imageUrl)
             }
             albumsArray.append(album)
             }
@@ -91,11 +91,11 @@ class LastfmDataService: NSObject {
                 print("and saved name is: \(artist.artistName)")
             }
             if let userPlaycount = json[LASTFM_TOPARTISTS][LASTM_ARTIST][i][LASTFM_PLAYCOUNT].string {
-                artist.userPlaycount = userPlaycount
+                artist.setUserPlaycount(userPlaycount)
                 print("Playcount is \(userPlaycount)")
             }
             if let imageUrl = json[LASTFM_TOPARTISTS][LASTM_ARTIST][i][LASTFM_IMAGE][4][LASTFM_TEXT].string {
-                artist.artistImgUrl = imageUrl
+                artist.setImgUrl(imageUrl)
                 print("Image url is \(imageUrl)")
             }
             
@@ -110,21 +110,21 @@ class LastfmDataService: NSObject {
         
         for i in 0...amount {
             
-            var track = Track()
+            let track = Track()
             
             if let name = json[LASTFM_TOPTRACKS][LASTFM_TRACK][i][LASTFM_NAME].string {
-                track.trackName = name
+                track.setTrackName(name)
             }
             if let duration = json[LASTFM_TOPTRACKS][LASTFM_TRACK][i][LASTFM_DURATION].string {
-                track.duration = duration
+                track.setDuration(duration)
             }
             if let userPlayCount = json[LASTFM_TOPTRACKS][LASTFM_TRACK][i][LASTFM_PLAYCOUNT].string {
-                track.userPlayCount = userPlayCount
+                track.setUserPlayCount(userPlayCount)
             }
             if let artistName = json[LASTFM_TOPTRACKS][LASTFM_TRACK][i][LASTFM_ARTIST].string {
                 let artist = Artist()
-                artist.artistName = artistName
-                track.artist = artist
+                artist.setName(artistName)
+                track.setArtist(artist)
             }
             
             tracksArray.append(track)
@@ -138,19 +138,19 @@ class LastfmDataService: NSObject {
         let user = LastfmUser()
         
         if let name = json[LASTFM_USER][LASTFM_NAME].string {
-            user.username = name
+            user.setUsername(name)
         }
         if let realname = json[LASTFM_USER][LASTFM_REALNAME].string {
-            user.realName = realname
+            user.setRealName(realname)
         }
         if let userImageUrl = json[LASTFM_USER][LASTFM_IMAGE][2][LASTFM_TEXT].string {
-            user.userImageUrl = userImageUrl
+            user.setImageUrl(userImageUrl)
         }
-        if let userPlaycount = json[LASTFM_USER][LASTFM_PLAYCOUNT].int {
-            user.playcount = userPlaycount
+        if let userPlaycount = json[LASTFM_USER][LASTFM_PLAYCOUNT].string {
+            user.setPlaycount(userPlaycount)
         }
         if let userRegistrationDate = json[LASTFM_USER][LASTFM_REGISTERED][LASTFM_TEXT].double {
-            user.registeredUnixtime = userRegistrationDate
+            user.setRegisterUnixtime(userRegistrationDate)
         }
 
         return user
@@ -162,21 +162,21 @@ class LastfmDataService: NSObject {
         
         for i in 0...amount - 1 {
             
-            var track = Track()
+            let track = Track()
             
             if let trackName = json[LASTFM_TOPTRACKS][LASTFM_TRACK][i][LASTFM_NAME].string {
-                track.trackName = trackName
+                track.setTrackName(trackName)
             }
             if let duration = json[LASTFM_TOPTRACKS][LASTFM_TRACK][i][LASTFM_DURATION].string {
-                track.duration = duration
+                track.setDuration(duration)
             }
             if let userPlaycount = json[LASTFM_TOPTRACKS][LASTFM_TRACK][i][LASTFM_PLAYCOUNT].string {
-                track.userPlayCount = userPlaycount
+                track.setUserPlayCount(userPlaycount)
             }
             if let artistName = json[LASTFM_TOPTRACKS][LASTFM_TRACK][i][LASTM_ARTIST][LASTFM_NAME].string {
                 let artist = Artist()
-                artist.artistName = artistName
-                track.artist = artist
+                artist.setName(artistName)
+                track.setArtist(artist)
             }
 
             tracks.append(track)
@@ -191,22 +191,22 @@ class LastfmDataService: NSObject {
         let artist = Artist()
         
         if let artistName = json[LASTM_ARTIST][LASTFM_NAME].string {
-            artist.artistName = artistName
+            artist.setName(artistName)
         }
         if let imageUrl = json[LASTM_ARTIST][LASTFM_IMAGE][3][LASTFM_TEXT].string {
-            artist.artistImgUrl = imageUrl
+            artist.setImgUrl(imageUrl)
         }
         if let onTour = json[LASTM_ARTIST][LASTFM_ONTOUR].string {
-            artist.onTour = onTour
+            artist.setOnTour(onTour)
         }
         if let listenerCount = json[LASTM_ARTIST][LASTFM_STATS][LASTFM_LISTENERS].string {
-            artist.listenersCount = listenerCount
+            artist.setListenersCount(listenerCount)
         }
         if let playcount = json[LASTM_ARTIST][LASTFM_STATS][LASTFM_PLAYCOUNT].string {
-            artist.playcount = playcount
+            artist.setPlaycount(playcount)
         }
         if let userPlaycount = json[LASTM_ARTIST][LASTFM_STATS][LASTFM_USERPLAYCOUNT].string {
-            artist.userPlaycount = userPlaycount
+            artist.setUserPlaycount(userPlaycount)
         }
         
         var similarArtists = [Artist]()
@@ -214,14 +214,14 @@ class LastfmDataService: NSObject {
         for i in 0...2 {
             let artist = Artist()
             if let similarName = json[LASTFM_ARTIST][LASTFM_SIMILAR][LASTFM_ARTIST][i][LASTFM_NAME].string {
-                artist.artistName = similarName
+                artist.setName(similarName)
             }
                 if let similarImageUrl = json[LASTFM_ARTIST][LASTFM_SIMILAR][LASTFM_ARTIST][LASTFM_IMAGE][2][LASTFM_TEXT].string {
-                        artist.artistImgUrl = similarImageUrl
+                        artist.setImgUrl(similarImageUrl)
             }
             similarArtists.append(artist)
         }
-        artist.similarArtists = similarArtists
+        artist.setSimilarArtists(similarArtists)
         return artist
     }
     
@@ -231,21 +231,21 @@ class LastfmDataService: NSObject {
         
         for i in 0...amount - 1 {
             
-            var track = Track()
+            let track = Track()
             
             if let trackName = json[LASTFM_TOPTRACKS][LASTFM_TRACK][i][LASTFM_NAME].string {
-                track.trackName = trackName
+                track.setTrackName(trackName)
             }
             if let trackPlaycount = json[LASTFM_TOPTRACKS][LASTFM_TRACK][i][LASTFM_PLAYCOUNT].string {
-                track.overallPlayCount = trackPlaycount
+                track.setOverallPlayCount(trackPlaycount)
             }
             if let listenersCount = json[LASTFM_TOPTRACKS][LASTFM_TRACK][i][LASTFM_LISTENERS].string {
-                track.listenerCount = listenersCount
+                track.setListenersCount(listenersCount)
             }
             if let trackArtist = json[LASTFM_TOPTRACKS][LASTFM_TRACK][i][LASTM_ARTIST][LASTFM_NAME].string {
                 let artist = Artist()
-                artist.artistName = trackArtist
-                track.artist = artist
+                artist.setName(trackArtist)
+                track.setArtist(artist)
             }
             
             tracks.append(track)
@@ -259,21 +259,21 @@ class LastfmDataService: NSObject {
         
         for i in 0...amount - 1 {
             
-            var album = Album()
+            let album = Album()
             
             if let albumName = json[LASTFM_TOPALBUMS][LASTFM_ALBUM][i][LASTFM_NAME].string {
-                album.albumName = albumName
+                album.setName(albumName)
             }
             if let playcount = json[LASTFM_TOPALBUMS][LASTFM_ALBUM][i][LASTFM_PLAYCOUNT].string {
-                album.overallPlayCount = playcount
+                album.setOverallPlaycount(playcount)
             }
             if let artist =  json[LASTFM_TOPALBUMS][LASTFM_ALBUM][i][LASTM_ARTIST][LASTFM_NAME].string {
                 let albumArtist = Artist()
-                albumArtist.artistName = artist
-                album.albumArtist = albumArtist
+                albumArtist.setName(artist)
+                album.setAlbumArtist(albumArtist)
             }
             if let albumCoverUrl = json[LASTFM_TOPALBUMS][LASTFM_ALBUM][i][LASTFM_IMAGE][2][LASTFM_TEXT].string {
-                album.coverUrl = albumCoverUrl
+                album.setCoverUrl(albumCoverUrl)
             }
             
             albums.append(album)
@@ -290,13 +290,13 @@ class LastfmDataService: NSObject {
             let artist = Artist()
             
             if let artistName = json[LASTFM_SIMILARARTISTS][LASTM_ARTIST][i][LASTFM_NAME].string {
-                artist.artistName = artistName
+                artist.setName(artistName)
             }
             if let imageUrl = json[LASTFM_SIMILARARTISTS][LASTM_ARTIST][i][LASTFM_IMAGE][3][LASTFM_TEXT].string  {
-                artist.artistImgUrl = imageUrl
+                artist.setImgUrl(imageUrl)
             }
             if let match = json[LASTFM_SIMILARARTISTS][LASTM_ARTIST][i][LASTFM_MATCH].string {
-                artist.match = match
+                artist.setMatch(match)
             }
             
             artists.append(artist)
