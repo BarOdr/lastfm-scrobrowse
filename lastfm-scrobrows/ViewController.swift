@@ -32,6 +32,8 @@ class ViewController: UIViewController {
     
     var currentUser: LastfmUser?
     
+    let api = API()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

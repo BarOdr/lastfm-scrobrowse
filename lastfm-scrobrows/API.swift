@@ -10,16 +10,16 @@ import UIKit
 
 class API: NSObject {
 
-    class var sharedInstance: API {
-        
-        
-        struct Singleton {
-            static let instance = API()
-            private init() {
-            }
-        }
-        return Singleton.instance
-    }
+//    class var sharedInstance: API {
+//        
+//        
+//        struct Singleton {
+//            static let instance = API()
+//            private init() {
+//            }
+//        }
+//        return Singleton.instance
+//    }
     
     private let loginManager: LoginManager
     
