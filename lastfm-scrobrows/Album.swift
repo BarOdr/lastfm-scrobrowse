@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Album {
+struct Album {
     
     private var _albumName: String?
     private var _albumArtist: Artist?
@@ -19,7 +19,7 @@ class Album {
     private var _coverUrl: String?
     
     var albumName: String {
-        get {
+        mutating get {
             if _albumName == nil {
                 _albumName = ""
             }
@@ -31,7 +31,7 @@ class Album {
     }
     
     var albumArtist: Artist {
-        get {
+        mutating get {
             if _albumArtist == nil {
                 _albumArtist = Artist()
             }
@@ -60,7 +60,7 @@ class Album {
     }
     
     var releaseDate: String {
-        get {
+        mutating get {
             if _releaseDate == nil {
                 _releaseDate = "Unknown"
             }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Artist {
+struct Artist {
     
     private var _artistName: String?
     private var _artistImgUrl: String?
@@ -24,7 +24,7 @@ class Artist {
     private var _match: String?
     
     var artistName: String! {
-        get {
+        mutating get {
             if _artistName == nil {
                 _artistName = ""
             }
@@ -36,7 +36,7 @@ class Artist {
     }
     
     var artistImgUrl: String {
-        get {
+        mutating get {
             if _artistImgUrl == nil {
                 _artistImgUrl = ""
             }
@@ -48,7 +48,7 @@ class Artist {
     }
     
     var listenersCount: String {
-        get {
+        mutating get {
             if _listenersCount == nil {
                 _listenersCount = "0"
             }
@@ -60,7 +60,7 @@ class Artist {
     }
     
     var playcount: String {
-        get {
+        mutating get {
             if _playcount == nil {
                 _playcount = "0"
             }
@@ -72,7 +72,7 @@ class Artist {
     }
     
     var userPlaycount: String {
-        get {
+        mutating get {
             if _userPlaycount == nil {
                 _userPlaycount = "0"
             }
@@ -84,7 +84,7 @@ class Artist {
     }
     
     var topTracks: [Track] {
-        get {
+        mutating get {
             if _topTracks == nil {
                 _topTracks = [Track]()
             }
@@ -96,7 +96,7 @@ class Artist {
     }
     
     var topAlbums: [Album] {
-        get {
+        mutating get {
             if _topAlbums == nil {
                 _topAlbums = [Album]()
             }
@@ -108,7 +108,7 @@ class Artist {
     }
     
     var relatedTags: [String] {
-        get {
+        mutating get {
             if _relatedTags == nil {
                 _relatedTags = [String]()
             }
@@ -120,7 +120,7 @@ class Artist {
     }
     
     var biography: String {
-        get {
+        mutating get {
             if _biography == nil {
                 _biography = "No biography yet."
             }
@@ -132,7 +132,7 @@ class Artist {
     }
     
     var onTour: String {
-        get {
+        mutating get {
             if _onTour == nil {
                 _onTour = "0"
             }
@@ -144,7 +144,7 @@ class Artist {
     }
     
     var similarArtists: [Artist] {
-        get {
+        mutating get {
             if _similarArtists == nil {
                 _similarArtists = [Artist]()
             }
@@ -155,9 +155,8 @@ class Artist {
         }
     }
     
-    var match: String {
-        
-        get {
+    var match: String {        
+        mutating get {
             if _match == nil {
                 _match = "0"
             }

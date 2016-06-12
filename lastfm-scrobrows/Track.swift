@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Track {
+struct Track {
     
     private var _trackName: String?
     private var _userPlayCount: String?
@@ -19,7 +19,7 @@ class Track {
     private var _artist: Artist?
     
     var trackName: String {
-        get {
+        mutating get {
             if _trackName == nil {
                 _trackName = ""
             }
@@ -31,7 +31,7 @@ class Track {
     }
     
     var userLove: Bool {
-        get {
+       mutating get {
             if _userLove == nil {
                 _userLove = false
             }
@@ -43,7 +43,7 @@ class Track {
     }
     
     var userPlayCount: String {
-        get {
+        mutating get {
             if _userPlayCount == nil {
                 _userPlayCount = ""
             }
@@ -55,7 +55,7 @@ class Track {
     }
     
     var overallPlayCount: String {
-        get {
+        mutating get {
             if _overallPlayCount == nil {
                 _overallPlayCount = ""
             }
@@ -76,7 +76,7 @@ class Track {
     }
     
     var duration: String {
-        get {
+        mutating get {
             if _duration == nil {
                 _duration = ""
             }
@@ -88,7 +88,7 @@ class Track {
     }
     
     var listenerCount: String {
-        get {
+        mutating get {
             if _listenerCount == nil {
                 _listenerCount = "0"
             }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ldx-p2-N1m">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hih-uE-fyj">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -353,17 +353,17 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8w9-cD-XuH">
                                                             <rect key="frame" x="0.0" y="0.0" width="55" height="32"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3iW-Nx-Mws">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="55" height="17"/>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3iW-Nx-Mws">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="55" height="16"/>
                                                                     <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="listeners" translatesAutoresizingMaskIntoConstraints="NO" id="b7P-UN-bfR">
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="listeners" translatesAutoresizingMaskIntoConstraints="NO" id="b7P-UN-bfR">
                                                                             <rect key="frame" x="0.0" y="1" width="15" height="15"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="15" id="AEE-pH-1i1"/>
                                                                                 <constraint firstAttribute="height" constant="15" id="Xsc-oo-dkl"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="326.4k" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="fUu-NM-lIr">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="326.4k" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="fUu-NM-lIr">
                                                                             <rect key="frame" x="15" y="1" width="40" height="16"/>
                                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -371,23 +371,26 @@
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9YT-lm-aUt">
-                                                                    <rect key="frame" x="0.0" y="17" width="55" height="16"/>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9YT-lm-aUt">
+                                                                    <rect key="frame" x="0.0" y="16" width="55" height="16"/>
                                                                     <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="scrobbles" translatesAutoresizingMaskIntoConstraints="NO" id="hp4-vQ-RE6">
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scrobbles" translatesAutoresizingMaskIntoConstraints="NO" id="hp4-vQ-RE6">
                                                                             <rect key="frame" x="0.0" y="1" width="15" height="15"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="15" id="WWB-ps-gWe"/>
                                                                                 <constraint firstAttribute="width" constant="15" id="agB-QO-hTF"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="326.4k" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="bho-w8-f4l">
-                                                                            <rect key="frame" x="15" y="0.0" width="40" height="16"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="326.4k" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="bho-w8-f4l">
+                                                                            <rect key="frame" x="15" y="1" width="40" height="16"/>
                                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="16" id="7sy-6z-Hdf"/>
+                                                                    </constraints>
                                                                 </stackView>
                                                             </subviews>
                                                         </stackView>
@@ -418,13 +421,13 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" distribution="fillEqually" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="wvv-3M-eX7">
                                                             <rect key="frame" x="168" y="0.0" width="84" height="32"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Raggamufin" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="1uF-Hy-zzv">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Raggamufin" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="1uF-Hy-zzv">
                                                                     <rect key="frame" x="13" y="0.0" width="71" height="16"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Reason (2015)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="7Dm-by-8F3">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Reason (2015)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="7Dm-by-8F3">
                                                                     <rect key="frame" x="0.0" y="16" width="84" height="16"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -526,7 +529,7 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selah3" translatesAutoresizingMaskIntoConstraints="NO" id="cuC-ba-llt">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selah2" translatesAutoresizingMaskIntoConstraints="NO" id="cuC-ba-llt">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jcK-Uo-zl5">
@@ -559,12 +562,21 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileimg" translatesAutoresizingMaskIntoConstraints="NO" id="ZVn-g7-d1J" customClass="RoundImageView" customModule="lastfm_scrobrows" customModuleProvider="target">
+                                            <rect key="frame" x="332" y="17" width="35" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="35" id="cbB-1r-brg"/>
+                                                <constraint firstAttribute="height" constant="35" id="qdf-cD-xSE"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="KV9-V6-UjM" firstAttribute="centerX" secondItem="QCG-9D-UBv" secondAttribute="centerX" id="3n5-LH-Pd9"/>
                                         <constraint firstAttribute="bottom" secondItem="KV9-V6-UjM" secondAttribute="bottom" constant="3.5" id="FhC-le-Cil"/>
                                         <constraint firstAttribute="bottom" secondItem="3RD-Yc-rQN" secondAttribute="bottom" id="ICX-wl-Y74"/>
                                         <constraint firstItem="KV9-V6-UjM" firstAttribute="centerY" secondItem="QCG-9D-UBv" secondAttribute="centerY" id="j3f-Em-D3U"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ZVn-g7-d1J" secondAttribute="bottom" id="lPp-HJ-4Vx"/>
+                                        <constraint firstItem="ZVn-g7-d1J" firstAttribute="trailing" secondItem="QCG-9D-UBv" secondAttribute="trailingMargin" id="tA3-HA-KDI"/>
                                         <constraint firstItem="3RD-Yc-rQN" firstAttribute="leading" secondItem="QCG-9D-UBv" secondAttribute="leading" constant="8" id="wF5-5y-xMP"/>
                                     </constraints>
                                     <variation key="default">
@@ -578,15 +590,8 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                                 </constraints>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileimg" translatesAutoresizingMaskIntoConstraints="NO" id="ZVn-g7-d1J" customClass="RoundImageView" customModule="lastfm_scrobrows" customModuleProvider="target">
-                                <rect key="frame" x="314" y="68" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="sk7-NY-CDo"/>
-                                    <constraint firstAttribute="height" constant="45" id="wwe-ii-Eaj"/>
-                                </constraints>
-                            </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JQZ-sZ-KtV">
-                                <rect key="frame" x="0.0" y="412" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="378" width="375" height="233.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="255" id="IG4-NR-TNv"/>
                                 </constraints>
@@ -605,8 +610,8 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lq3-cc-oGy">
-                                            <rect key="frame" x="288" y="15" width="26" height="26"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lq3-cc-oGy">
+                                            <rect key="frame" x="293" y="13.5" width="26" height="26"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="35" id="6P3-2D-sX8"/>
                                                 <constraint firstAttribute="width" constant="35" id="BfQ-Pr-16i"/>
@@ -628,8 +633,8 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                                                 <action selector="pinBtnPressed:" destination="Ldx-p2-N1m" eventType="touchUpInside" id="kG7-SY-6zA"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRx-k6-DKV">
-                                            <rect key="frame" x="322" y="7" width="40" height="40"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRx-k6-DKV">
+                                            <rect key="frame" x="327" y="7" width="40" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="imK-tw-QEU"/>
                                                 <constraint firstAttribute="height" constant="40" id="rz8-VT-whp"/>
@@ -674,13 +679,13 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                                 <blurEffect style="light"/>
                             </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jie-kf-TTg">
-                                <rect key="frame" x="0.0" y="357" width="375" height="55"/>
+                                <rect key="frame" x="0.0" y="323" width="375" height="55"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BMU-UM-w0f">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="BMU-UM-w0f">
                                         <rect key="frame" x="28" y="17" width="319" height="22"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Etf-Uw-Gjy">
-                                                <rect key="frame" x="0.0" y="0.0" width="64" height="22"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="66" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="64" id="Ib1-di-cuO"/>
                                                     <constraint firstAttribute="height" constant="22" id="iny-wc-3jQ"/>
@@ -688,9 +693,14 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="Ib1-di-cuO"/>
+                                                    </mask>
+                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Songs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5V9-uw-YFy">
-                                                <rect key="frame" x="64" y="0.0" width="64" height="22"/>
+                                                <rect key="frame" x="66" y="0.0" width="78.5" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="6Ol-yc-isv"/>
                                                     <constraint firstAttribute="width" constant="64" id="N4K-PC-wQn"/>
@@ -698,9 +708,14 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="N4K-PC-wQn"/>
+                                                    </mask>
+                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Albums" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0u-cx-5tG">
-                                                <rect key="frame" x="128" y="0.0" width="64" height="22"/>
+                                                <rect key="frame" x="144.5" y="0.0" width="93" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="64" id="7xb-YZ-H4Q"/>
                                                     <constraint firstAttribute="height" constant="22" id="Evj-4q-yM3"/>
@@ -708,9 +723,14 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="7xb-YZ-H4Q"/>
+                                                    </mask>
+                                                </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIP-k9-qns">
-                                                <rect key="frame" x="192" y="0.0" width="64" height="22"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Similar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIP-k9-qns">
+                                                <rect key="frame" x="237.5" y="0.0" width="81.5" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="3oU-TS-vEo"/>
                                                     <constraint firstAttribute="width" constant="64" id="G4n-04-uuz"/>
@@ -718,16 +738,11 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Similar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rvc-OC-YjW">
-                                                <rect key="frame" x="256" y="0.0" width="63" height="22"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="64" id="XV5-eS-c3Q"/>
-                                                    <constraint firstAttribute="height" constant="22" id="g5e-of-MUd"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="G4n-04-uuz"/>
+                                                    </mask>
+                                                </variation>
                                             </label>
                                         </subviews>
                                     </stackView>
@@ -751,11 +766,9 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                             <constraint firstItem="jcK-Uo-zl5" firstAttribute="leading" secondItem="5mf-g9-NLn" secondAttribute="leading" id="AFp-vl-5yq"/>
                             <constraint firstAttribute="trailing" secondItem="Jie-kf-TTg" secondAttribute="trailing" id="B21-Kn-28A"/>
                             <constraint firstItem="JQZ-sZ-KtV" firstAttribute="leading" secondItem="5mf-g9-NLn" secondAttribute="leading" id="Cny-NG-ABi"/>
-                            <constraint firstItem="ZVn-g7-d1J" firstAttribute="trailing" secondItem="5mf-g9-NLn" secondAttribute="trailingMargin" id="JTW-Se-VGh"/>
                             <constraint firstItem="cuC-ba-llt" firstAttribute="leading" secondItem="5mf-g9-NLn" secondAttribute="leading" id="PbM-bG-tgO"/>
                             <constraint firstItem="jcK-Uo-zl5" firstAttribute="top" secondItem="5mf-g9-NLn" secondAttribute="top" id="XvR-Ad-3xz"/>
-                            <constraint firstItem="ZVn-g7-d1J" firstAttribute="top" secondItem="jcK-Uo-zl5" secondAttribute="bottom" constant="8" id="hUx-bQ-Jol"/>
-                            <constraint firstItem="JQZ-sZ-KtV" firstAttribute="height" secondItem="5mf-g9-NLn" secondAttribute="height" multiplier="0.3" id="hYJ-Fd-JDY"/>
+                            <constraint firstItem="JQZ-sZ-KtV" firstAttribute="height" secondItem="5mf-g9-NLn" secondAttribute="height" multiplier="0.35" id="hYJ-Fd-JDY"/>
                             <constraint firstItem="cuC-ba-llt" firstAttribute="top" secondItem="5mf-g9-NLn" secondAttribute="top" id="iqv-MF-JsM"/>
                             <constraint firstAttribute="trailing" secondItem="cuC-ba-llt" secondAttribute="trailing" id="m1v-mQ-cx6"/>
                             <constraint firstAttribute="trailing" secondItem="czj-4A-lL6" secondAttribute="trailing" id="mdl-kp-AWU"/>
@@ -829,7 +842,19 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                                     <constraint firstAttribute="height" constant="35" id="IjH-gf-czy"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ykj-Qd-HrC">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUf-NC-oWw">
+                                <rect key="frame" x="8" y="48" width="359" height="151"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Selah Sue was born Sanne Putseys on 3rd May 1989 in Leuven, Belgium. She is a singer-songwriter, who combines multiple musical styles like folk, soul and reggae.
+Selah started playing classic guitar when she was 15. When she was 17, she participated in an open mic night in 'Het Depot', a small venue in Leuven. Organiser of the event and successful Belgian singer Milow (born Jonathan Vandenbroeck) saw her perform and asked her to be his support act..
+Her playlist consists of some covers (most notably The Zutons' Valerie), but mainly of her own songs. Late 2008 saw the release of the Black Part Love EP with six of them. This EP can be listened to integrally at her official website, www.selahsue.be. Thanks to multiple media and support appearances for the likes of Jamie Lidell, Novastar, Simply Red and Prince, Selah Sue is steadily gaining fame and respect.
+On occasions she features as a vocalist for dubstep formation Addicted Kru Sound in local venues.
+She's recently been named by the Rolling Stone magazine as one of the New Faces of 2012.</mutableString>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ykj-Qd-HrC">
                                 <rect key="frame" x="8" y="0.0" width="359" height="50"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bBV-kS-dqM">
@@ -845,7 +870,7 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                                                             <constraint firstAttribute="width" constant="20" id="xvC-em-bcy"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="326.4k" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Num-Vc-pm1" customClass="LabelOnDimmedBackground" customModule="lastfm_scrobrows" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="326.4k" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Num-Vc-pm1" customClass="LabelOnDimmedBackground" customModule="lastfm_scrobrows" customModuleProvider="target">
                                                         <rect key="frame" x="25" y="5" width="55" height="20"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -931,9 +956,13 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="tUP-20-Zp2" secondAttribute="trailing" constant="8" id="8Py-j8-3ji"/>
                             <constraint firstItem="748-CZ-qyh" firstAttribute="top" secondItem="tUP-20-Zp2" secondAttribute="bottom" constant="8" id="A09-LA-z6g"/>
+                            <constraint firstItem="dUf-NC-oWw" firstAttribute="top" secondItem="Ykj-Qd-HrC" secondAttribute="bottom" constant="8" id="BP2-pB-Xzb"/>
+                            <constraint firstAttribute="trailing" secondItem="dUf-NC-oWw" secondAttribute="trailing" constant="8" id="C6s-M6-MgH"/>
                             <constraint firstItem="Ykj-Qd-HrC" firstAttribute="leading" secondItem="mgr-5r-wVG" secondAttribute="leading" constant="8" id="HQa-YY-V9T"/>
                             <constraint firstItem="Ykj-Qd-HrC" firstAttribute="top" secondItem="mgr-5r-wVG" secondAttribute="top" id="PL6-uY-3VA"/>
+                            <constraint firstItem="dUf-NC-oWw" firstAttribute="leading" secondItem="mgr-5r-wVG" secondAttribute="leading" constant="8" id="PfU-uj-th3"/>
                             <constraint firstItem="tUP-20-Zp2" firstAttribute="leading" secondItem="mgr-5r-wVG" secondAttribute="leading" constant="8" id="iuf-bI-jbs"/>
+                            <constraint firstItem="tUP-20-Zp2" firstAttribute="top" secondItem="dUf-NC-oWw" secondAttribute="bottom" constant="8" id="m8l-VQ-7jA"/>
                             <constraint firstAttribute="trailing" secondItem="Ykj-Qd-HrC" secondAttribute="trailing" constant="8" id="xNm-Qc-Th3"/>
                         </constraints>
                     </view>
@@ -962,11 +991,32 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Awb-lI-HIk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArtistCell" id="Sph-Wd-4rh">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sph-Wd-4rh" id="Zrg-5z-Ar4">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="RZc-pJ-GQl" firstAttribute="centerY" secondItem="c8a-KA-70d" secondAttribute="centerY" id="2kX-fZ-Fsn"/>
+                            <constraint firstAttribute="trailing" secondItem="Awb-lI-HIk" secondAttribute="trailing" id="Dd5-XZ-zFn"/>
                             <constraint firstItem="RZc-pJ-GQl" firstAttribute="centerX" secondItem="c8a-KA-70d" secondAttribute="centerX" id="TSF-uN-QKj"/>
+                            <constraint firstItem="rrT-o3-EiX" firstAttribute="top" secondItem="Awb-lI-HIk" secondAttribute="bottom" id="UKn-tE-C28"/>
+                            <constraint firstItem="Awb-lI-HIk" firstAttribute="top" secondItem="c8a-KA-70d" secondAttribute="top" id="c0x-h2-d6J"/>
+                            <constraint firstItem="Awb-lI-HIk" firstAttribute="leading" secondItem="c8a-KA-70d" secondAttribute="leading" id="jba-jM-pDP"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -994,11 +1044,31 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VBY-Xt-Pma">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aOJ-Vp-LFe">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aOJ-Vp-LFe" id="wGo-Td-gMf">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="VBY-Xt-Pma" firstAttribute="leading" secondItem="LU7-cU-06E" secondAttribute="leading" id="9bk-TA-iIw"/>
                             <constraint firstItem="kfY-3S-w9a" firstAttribute="centerY" secondItem="LU7-cU-06E" secondAttribute="centerY" id="Nho-hl-y6d"/>
+                            <constraint firstItem="VBY-Xt-Pma" firstAttribute="top" secondItem="LU7-cU-06E" secondAttribute="top" id="ZCt-9t-Etl"/>
                             <constraint firstItem="kfY-3S-w9a" firstAttribute="centerX" secondItem="LU7-cU-06E" secondAttribute="centerX" id="kqw-40-0tf"/>
+                            <constraint firstAttribute="trailing" secondItem="VBY-Xt-Pma" secondAttribute="trailing" id="pmq-s0-BYv"/>
+                            <constraint firstItem="anA-Ge-rFL" firstAttribute="top" secondItem="VBY-Xt-Pma" secondAttribute="bottom" id="x1r-gl-mpE"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -1026,10 +1096,29 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cO3-ow-ntE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dxC-yw-j4g">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dxC-yw-j4g" id="tuI-9a-VrK">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="cO3-ow-ntE" firstAttribute="top" secondItem="m0X-vi-lpr" secondAttribute="top" id="LpX-k9-ZRi"/>
+                            <constraint firstAttribute="trailing" secondItem="cO3-ow-ntE" secondAttribute="trailing" id="WXk-sb-LUr"/>
+                            <constraint firstItem="Cu3-f3-uDP" firstAttribute="top" secondItem="cO3-ow-ntE" secondAttribute="bottom" id="WsB-he-qJJ"/>
                             <constraint firstItem="ct4-AO-nJ3" firstAttribute="centerY" secondItem="m0X-vi-lpr" secondAttribute="centerY" id="lUk-BR-PGS"/>
+                            <constraint firstItem="cO3-ow-ntE" firstAttribute="leading" secondItem="m0X-vi-lpr" secondAttribute="leading" id="rcz-vu-9oR"/>
                             <constraint firstItem="ct4-AO-nJ3" firstAttribute="centerX" secondItem="m0X-vi-lpr" secondAttribute="centerX" id="uvC-km-8DV"/>
                         </constraints>
                     </view>
@@ -1058,11 +1147,30 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I7p-Sj-tP2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="G5C-Zj-FmN">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G5C-Zj-FmN" id="PWz-bL-gfO">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="19E-CR-ubH" firstAttribute="centerY" secondItem="aFb-Se-WbI" secondAttribute="centerY" id="MOT-NU-p35"/>
+                            <constraint firstAttribute="trailing" secondItem="I7p-Sj-tP2" secondAttribute="trailing" id="ZqJ-iD-NgG"/>
+                            <constraint firstItem="I7p-Sj-tP2" firstAttribute="leading" secondItem="aFb-Se-WbI" secondAttribute="leading" id="gVn-j6-GNg"/>
+                            <constraint firstItem="I7p-Sj-tP2" firstAttribute="top" secondItem="aFb-Se-WbI" secondAttribute="top" id="hlL-Ho-4kZ"/>
                             <constraint firstItem="19E-CR-ubH" firstAttribute="centerX" secondItem="aFb-Se-WbI" secondAttribute="centerX" id="jYa-Xg-C8K"/>
+                            <constraint firstItem="3ld-m8-BIm" firstAttribute="top" secondItem="I7p-Sj-tP2" secondAttribute="bottom" id="lsd-oC-mYR"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -1084,6 +1192,6 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
         <image name="sampleartist" width="836" height="844"/>
         <image name="scrobbles" width="100" height="100"/>
         <image name="scrobbles-white" width="100" height="100"/>
-        <image name="selah3" width="1706" height="1486"/>
+        <image name="selah2" width="1656" height="1490"/>
     </resources>
 </document>
