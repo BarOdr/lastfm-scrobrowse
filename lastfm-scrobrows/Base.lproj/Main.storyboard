@@ -306,11 +306,20 @@
                                             <action selector="logoutBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1A4-U3-WYq"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZ6-yy-yFR">
+                                        <rect key="frame" x="321" y="30" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="testbtn:" destination="hih-uE-fyj" eventType="touchUpInside" id="v2D-8x-qcV"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.8840144231" green="0.8840144231" blue="0.8840144231" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="n7j-LZ-EAX" firstAttribute="top" secondItem="mXX-Pa-oTz" secondAttribute="top" constant="8" id="ObQ-y2-PcC"/>
+                                    <constraint firstAttribute="trailing" secondItem="xZ6-yy-yFR" secondAttribute="trailing" constant="8" id="XPb-xv-ENm"/>
                                     <constraint firstAttribute="bottom" secondItem="n7j-LZ-EAX" secondAttribute="bottom" constant="8" id="Z2K-1v-7ok"/>
+                                    <constraint firstAttribute="bottom" secondItem="xZ6-yy-yFR" secondAttribute="bottom" id="fHc-L4-hXd"/>
                                     <constraint firstAttribute="height" constant="60" id="yDg-Rz-yeA"/>
                                     <constraint firstItem="n7j-LZ-EAX" firstAttribute="leading" secondItem="mXX-Pa-oTz" secondAttribute="leading" constant="8" id="zZM-Uj-uB7"/>
                                 </constraints>
@@ -421,13 +430,13 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" distribution="fillEqually" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="wvv-3M-eX7">
                                                             <rect key="frame" x="168" y="0.0" width="84" height="32"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Raggamufin" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="1uF-Hy-zzv">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Raggamufin" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="1uF-Hy-zzv">
                                                                     <rect key="frame" x="13" y="0.0" width="71" height="16"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Reason (2015)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="7Dm-by-8F3">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Reason (2015)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="7Dm-by-8F3">
                                                                     <rect key="frame" x="0.0" y="16" width="84" height="16"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>

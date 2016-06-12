@@ -12,13 +12,17 @@ class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     let ds = LastfmDataService()
     
+    var artistsArray = [Artist]()
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tableView.delegate = self
         tableView.dataSource = self
+        
+        print("There is \(artistsArray.count) artists in the array")
 
     }
 
@@ -27,11 +31,19 @@ class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return artistsArray.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        if let cell = tableView.dequeueReusableCellWithIdentifier("ArtistCell") as? ArtistCell {
+            
+            let artist = artistsArray[indexPath.row]
+            cell.configureCell(artist)
+            return cell
+            
+        } else {
+            return ArtistCell()
+        }
     }
     
     func tableView(tableView: UITableView, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -42,4 +54,7 @@ class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func testbtn(sender: AnyObject) {
+        print(artistsArray[0].listenersCount)
+    }
 }

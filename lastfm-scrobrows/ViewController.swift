@@ -43,10 +43,8 @@ class ViewController: UIViewController {
         
         api.lastfmDownloadTask(GET, parameters: PARAM_DICT_USER_GETTOPARTISTS) { (objectFromParser) in
         
-            print(objectFromParser)
-            self.userInitialTopTenArtists = self.api.userGetTopArtists(15, json: objectFromParser)
+            self.userInitialTopTenArtists = self.api.userGetTopArtists(40, json: objectFromParser)
             print(self.userInitialTopTenArtists[0].artistName)
-            print("name was printed?")
         }
         
     }
@@ -78,11 +76,9 @@ class ViewController: UIViewController {
      */
     
     @IBAction func goToLibrary(sender: AnyObject) {
+        storyboard?.instantiateViewControllerWithIdentifier("ArtistListVC")
         
-        let topartistname = userInitialTopTenArtists[0].artistName
-        print("User top top loved is : \(topartistname)")
-        print(userInitialTopTenArtists[0].artistName)
-//        goToLibrary()
+        goToLibrary()
     }
     
     @IBAction func scrobbleTracks(sender: UIButton) {
@@ -101,8 +97,9 @@ class ViewController: UIViewController {
      */
     
     func goToLibrary() {
-        let artistListVC = storyboard?.instantiateViewControllerWithIdentifier("ArtistListVC")
-        presentViewController(artistListVC!, animated: true, completion: nil)
+        let artistListVC = storyboard?.instantiateViewControllerWithIdentifier("ArtistListVC") as! ArtistListVC
+        artistListVC.artistsArray = userInitialTopTenArtists
+        presentViewController(artistListVC, animated: true, completion: nil)
     }
     
     /**

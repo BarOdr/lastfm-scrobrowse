@@ -34,7 +34,6 @@ class LastfmDataService: NSObject {
                 
                 if let data = data {
                     let json = JSON(data: data)
-                    print(json)
                     completion(objectFromParser: json)
                 }
 
