@@ -76,7 +76,7 @@ class ViewController: UIViewController {
     
     @IBAction func logoutBtnPressed(sender: AnyObject) {
         clearTextFields()
-        API.sharedInstance.logOut()
+        api.logOut()
         showLoginControls()
         hideMainControls()
     }
@@ -103,7 +103,7 @@ class ViewController: UIViewController {
         
         indicateActivity()
         
-        API.sharedInstance.logInAttempt(username, password: password) { userSecret, username in
+        api.logInAttempt(username, password: password) { userSecret, username in
             
             if  username != "" && userSecret != "" {
                 self.loginSucceeded(username, userSecretKey: userSecret)
@@ -127,7 +127,7 @@ class ViewController: UIViewController {
     
     func loginSucceeded(username: String, userSecretKey: String) {
         if self.rememberMeSwitch.on {
-            API.sharedInstance.saveUser(username, userSecretKey: userSecretKey)
+            api.saveUser(username, userSecretKey: userSecretKey)
         }
         self.stopIndicatingActivity()
         self.hideLoginControls()
@@ -266,7 +266,7 @@ class ViewController: UIViewController {
     }
     
     func test() {
-        let artist = Artist()
+        var artist = Artist()
         artist.artistImgUrl = ""
     }
 
