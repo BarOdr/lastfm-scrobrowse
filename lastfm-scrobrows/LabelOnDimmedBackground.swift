@@ -15,4 +15,5 @@ class LabelOnDimmedBackground: UILabel {
         textColor = UIColor.whiteColor()
     }
 
+
 }

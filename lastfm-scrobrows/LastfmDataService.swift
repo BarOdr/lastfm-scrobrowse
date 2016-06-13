@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 class LastfmDataService: NSObject {
+        
     
     deinit {
         print("LastfmDataService is being deinitialized")
@@ -43,6 +44,30 @@ class LastfmDataService: NSObject {
         }
     }
     
+    
+    // Image downloader
+    
+    func imagesDownloader(artists: [Artist], complete: ImagesDownloaded) {
+        
+        for artist in artists {
+            
+            let imgUrl = artist.artistImgUrl
+            Alamofire.request(.GET, imgUrl).responseImage { (response) in
+                
+                if let image = response.result.value {
+                    artist._artistImg = image
+                    print("Image for \(artist.artistName) downloaded: \(image)")
+                }
+            }
+        }
+        complete(artists: artists)
+    }
+    
+    func imageFromData(data: NSData) -> UIImage {
+        print(data)
+        let image = UIImage(data: data)
+        return image!
+    }
 
  // USER parser methods
     
@@ -86,16 +111,12 @@ class LastfmDataService: NSObject {
             
             if let name = json[LASTFM_TOPARTISTS][LASTM_ARTIST][i][LASTFM_NAME].string {
                 artist.setName(name)
-                print("name is \(name)")
-                print("and saved name is: \(artist.artistName)")
             }
             if let userPlaycount = json[LASTFM_TOPARTISTS][LASTM_ARTIST][i][LASTFM_PLAYCOUNT].string {
                 artist.setUserPlaycount(userPlaycount)
-                print("Playcount is \(userPlaycount)")
             }
             if let imageUrl = json[LASTFM_TOPARTISTS][LASTM_ARTIST][i][LASTFM_IMAGE][4][LASTFM_TEXT].string {
                 artist.setImgUrl(imageUrl)
-                print("Image url is \(imageUrl)")
             }
             
             artistsArray.append(artist)
@@ -302,7 +323,9 @@ class LastfmDataService: NSObject {
         }
         
         return artists
-    }  
+    }
+    
+    
 }
 
 

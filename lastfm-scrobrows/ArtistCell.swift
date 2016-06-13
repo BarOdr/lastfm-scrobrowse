@@ -10,18 +10,14 @@ import UIKit
 
 class ArtistCell: UITableViewCell {
     
-    
-    @IBOutlet weak var artistImage: UIImageView!
     @IBOutlet weak var artistNameLabel: UILabel!
-    @IBOutlet weak var listenersCountLabel: UILabel!
-    @IBOutlet weak var scrobblesCountLabel: UILabel!
-    @IBOutlet weak var topTrackLabel: UILabel!
-    @IBOutlet weak var topAlbumLabel: UILabel!
-    @IBOutlet weak var topTagsLabel: UILabel!
+    @IBOutlet weak var artistImage: RoundImageView!
     
+  
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        artistImage.clipsToBounds = true
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -33,11 +29,8 @@ class ArtistCell: UITableViewCell {
     func configureCell(artist: Artist) {
         
         artistNameLabel.text = artist.artistName
-        listenersCountLabel.text = artist.listenersCount
-        scrobblesCountLabel.text = artist.playcount
-//        topTrackLabel.text = artist.topTracks[0].trackName
-//        topAlbumLabel.text = artist.topAlbums[0].albumName
-//        topTagsLabel.text = artist.relatedTags[0]
+        artistImage.image = artist._artistImg
+
     }
 
 }

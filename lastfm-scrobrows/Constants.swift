@@ -50,5 +50,6 @@ let POST = Alamofire.Method.POST
 //Typealiases
 
 typealias LastfmDownloadComplete = (objectFromParser: JSON) -> Void
+typealias ImagesDownloaded = (artists: [Artist]) -> Void
 typealias UserLoginComplete = (userSecret: String, userName: String) -> Void
 typealias CompletionHandler = () -> Void

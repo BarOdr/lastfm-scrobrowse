@@ -9,6 +9,8 @@
 import UIKit
 import CryptoSwift
 import SwiftyJSON
+import AlamofireImage
+import Alamofire
 
 let loginFailedMessageTitle = "Oops! Something went wrong"
 let loginFailedMessage = "Make sure you enter correct username and password"
@@ -29,6 +31,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var loginControlsStackView: UIStackView!
     @IBOutlet weak var userAvatarImage: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
+    
+    @IBOutlet weak var testImage: UIImageView!
     // Variables
     
     var currentUser: LastfmUser?
@@ -40,12 +44,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        api.lastfmDownloadTask(GET, parameters: PARAM_DICT_USER_GETTOPARTISTS) { (objectFromParser) in
-        
-            self.userInitialTopTenArtists = self.api.userGetTopArtists(40, json: objectFromParser)
-            print(self.userInitialTopTenArtists[0].artistName)
-        }
         
     }
     
@@ -76,11 +74,36 @@ class ViewController: UIViewController {
      */
     
     @IBAction func goToLibrary(sender: AnyObject) {
-        storyboard?.instantiateViewControllerWithIdentifier("ArtistListVC")
         
-        goToLibrary()
+        api.lastfmDownloadTask(GET, parameters: PARAM_DICT_USER_GETTOPARTISTS) { (objectFromParser) in
+            
+            self.userInitialTopTenArtists = self.api.userGetTopArtists(40, json: objectFromParser)
+            print(self.userInitialTopTenArtists[0].artistName)
+        
+            self.api.imagesDownloader(self.userInitialTopTenArtists, complete: { (artists) in
+                
+                self.userInitialTopTenArtists = artists
+                self.goToArtistList()
+            })
+  
+        }
+        
+        
+        
     }
     
+    @IBAction func testBtnPressed(sender: AnyObject) {
+        
+        Alamofire.request(.GET, "https://pixabay.com/static/uploads/photo/2015/10/01/21/39/background-image-967820_960_720.jpg").responseImage { (response) in
+            
+            if let image = response.result.value {
+                print("Image downloaded: \(image)")
+                self.testImage.image = image
+            }
+        }
+        
+        
+    }
     @IBAction func scrobbleTracks(sender: UIButton) {
         
     }
@@ -96,7 +119,7 @@ class ViewController: UIViewController {
      This method instatiates and presents ArtistListVC
      */
     
-    func goToLibrary() {
+    func goToArtistList() {
         let artistListVC = storyboard?.instantiateViewControllerWithIdentifier("ArtistListVC") as! ArtistListVC
         artistListVC.artistsArray = userInitialTopTenArtists
         presentViewController(artistListVC, animated: true, completion: nil)

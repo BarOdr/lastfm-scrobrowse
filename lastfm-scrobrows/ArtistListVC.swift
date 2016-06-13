@@ -10,6 +10,7 @@ import UIKit
 
 class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
     let ds = LastfmDataService()
     
     var artistsArray = [Artist]()
@@ -35,12 +36,11 @@ class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         if let cell = tableView.dequeueReusableCellWithIdentifier("ArtistCell") as? ArtistCell {
-            
             let artist = artistsArray[indexPath.row]
             cell.configureCell(artist)
             return cell
-            
         } else {
             return ArtistCell()
         }
@@ -50,6 +50,12 @@ class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         return true
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let vc = storyboard?.instantiateViewControllerWithIdentifier("ArtistDetailsVC") as! ArtistDetailsVC
+        vc.artist = artistsArray[indexPath.row]
+        presentViewController(vc, animated: true, completion: nil)
+        
+    }
     @IBAction func backBtnPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }

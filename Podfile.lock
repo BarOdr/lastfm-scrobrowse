@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (3.4.0)
+  - AlamofireImage (2.4.0):
+    - Alamofire (~> 3.3)
   - CryptoSwift (0.4.1)
   - Firebase (3.2.0):
     - Firebase/Core (= 3.2.0)
@@ -22,6 +24,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 3.4)
+  - AlamofireImage (~> 2.0)
   - CryptoSwift
   - Firebase
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
@@ -37,6 +40,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
+  AlamofireImage: 87408b652e0f5ae5fe364035f15aea8b9b24c77e
   CryptoSwift: 25b5aff3f260967391f8fff2e9abe4254d2c6fd5
   Firebase: 6d4012da1598732a2b43f16d8355eca90f94ed59
   FirebaseAnalytics: 6f75b04e6bfb8e0b6e9ef298e04c24eea3b13863
@@ -46,6 +50,6 @@ SPEC CHECKSUMS:
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: b9e12f15be00fae6b467a25ae598be8c46833a00
+PODFILE CHECKSUM: 7d9e9edcbc73433e6a919c35909c0f14e1b383f4
 
 COCOAPODS: 1.0.0

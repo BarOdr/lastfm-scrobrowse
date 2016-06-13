@@ -33,6 +33,7 @@
 		CC88440D1D087D8B007E9FB6 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC88440C1D087D8B007E9FB6 /* Track.swift */; };
 		CC88440F1D087D93007E9FB6 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC88440E1D087D93007E9FB6 /* Album.swift */; };
 		CC8844111D0881FF007E9FB6 /* LastfmDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8844101D0881FF007E9FB6 /* LastfmDataService.swift */; };
+		CCAB2FCC1D0F63D40054F1DE /* Scrobbler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAB2FCB1D0F63D40054F1DE /* Scrobbler.swift */; };
 		E7AC1EFF62CE36C1F7D0A0EC /* Pods_lastfm_scrobrows.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3F720B321E04120BDCC17E /* Pods_lastfm_scrobrows.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		CC88440C1D087D8B007E9FB6 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		CC88440E1D087D93007E9FB6 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		CC8844101D0881FF007E9FB6 /* LastfmDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastfmDataService.swift; sourceTree = "<group>"; };
+		CCAB2FCB1D0F63D40054F1DE /* Scrobbler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scrobbler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 				CC1A72A61D046A1A00DB04BC /* LoginManager.swift */,
 				CC8844101D0881FF007E9FB6 /* LastfmDataService.swift */,
 				CC21840A1D0D92E70057CAD8 /* RequestParametersDictionaries.swift */,
+				CCAB2FCB1D0F63D40054F1DE /* Scrobbler.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				CC50D1711D09ECF50081C0BC /* Helper.swift in Sources */,
 				CC50D16F1D09AF430081C0BC /* RoundImageView.swift in Sources */,
 				CC50D1771D0AFE4B0081C0BC /* ArtistDetailsPage.swift in Sources */,
+				CCAB2FCC1D0F63D40054F1DE /* Scrobbler.swift in Sources */,
 				CC1A72B21D04EFE200DB04BC /* MainControlButton.swift in Sources */,
 				CC21840B1D0D92E70057CAD8 /* RequestParametersDictionaries.swift in Sources */,
 				CC1A72831D043E6A00DB04BC /* AppDelegate.swift in Sources */,

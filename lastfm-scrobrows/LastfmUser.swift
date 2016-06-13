@@ -17,6 +17,9 @@ class LastfmUser {
     private var _playcount: String?
     private var _registeredUnixtime: Double?
     private var _userFavouriteArtists: [Artist]?
+    private var _userTopTracks: [Track]?
+    private var _userTopArtists: [Artist]?
+    private var _userFriends: [LastfmUser]?
     
     
     var username: String {
@@ -103,6 +106,24 @@ class LastfmUser {
         }
         set {
             _userFavouriteArtists = userFavouriteArtists
+        }
+    }
+    
+    var userTopTracks: [Track] {
+        get {
+            return _userTopTracks!
+        }
+    }
+    
+    var userTopArtists: [Artist] {
+        get {
+            return _userTopArtists!
+        }
+    }
+    
+    var userFriends: [LastfmUser] {
+        get {
+            return _userFriends!
         }
     }
     

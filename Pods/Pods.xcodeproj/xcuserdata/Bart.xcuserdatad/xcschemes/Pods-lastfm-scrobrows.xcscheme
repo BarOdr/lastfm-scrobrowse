@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4CE155E72A999C5103687D01663DFC8B"
+               BlueprintIdentifier = "4477AB10D421427C73896413707831C2"
                BuildableName = "Pods_lastfm_scrobrows.framework"
                BlueprintName = "Pods-lastfm-scrobrows"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4CE155E72A999C5103687D01663DFC8B"
+            BlueprintIdentifier = "4477AB10D421427C73896413707831C2"
             BuildableName = "Pods_lastfm_scrobrows.framework"
             BlueprintName = "Pods-lastfm-scrobrows"
             ReferencedContainer = "container:Pods.xcodeproj">
