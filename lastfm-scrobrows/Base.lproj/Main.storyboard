@@ -755,10 +755,17 @@
         <!--Artist Details PageVC-->
         <scene sceneID="If2-0r-nak">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="67n-gm-mfb" customClass="ArtistDetailsPageVC" customModule="lastfm_scrobrows" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="67n-gm-mfb" customClass="ArtistDetailsPageVC" customModule="lastfm_scrobrows" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="PF3-z2-oYw" kind="show" identifier="ToArtistDetailsGeneralVC" id="Rkt-z3-BTJ"/>
+                        <segue destination="6TE-2b-gTE" kind="show" identifier="ToArtistDetailsSongsVC" id="Wn3-wk-Q5L"/>
+                        <segue destination="dlI-MM-mTE" kind="show" identifier="ToArtistDetailsAlbumsVC" id="3G9-0t-Gwh"/>
+                        <segue destination="a5H-Il-kyg" kind="show" identifier="ToArtistDetailsConcertsVC" id="B6o-lp-Xsr"/>
+                    </connections>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJS-7J-IsL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="743.5" y="937.5"/>
+            <point key="canvasLocation" x="686.5" y="976.75"/>
         </scene>
         <!--Artist Details General InfoVC-->
         <scene sceneID="Wbt-fE-xIj">
@@ -1093,7 +1100,7 @@ She's recently been named by the Rolling Stone magazine as one of the New Faces 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tw9-Sn-SDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1844.5" y="1463"/>
+            <point key="canvasLocation" x="1755.5" y="1455"/>
         </scene>
     </scenes>
     <resources>

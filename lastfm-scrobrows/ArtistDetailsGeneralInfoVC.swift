@@ -31,16 +31,14 @@ class ArtistDetailsGeneralInfoVC: UIViewController {
         view.backgroundColor = UIColor.darkGrayColor().colorWithAlphaComponent(0.4)
 
         // Do any additional setup after loading the view.
+        print("Artist named \(selectedArtist.artistName) passed to general info vc - success!")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func artistGeneralIsItThere() {
-        
-    }
+
 
     /*
     // MARK: - Navigation

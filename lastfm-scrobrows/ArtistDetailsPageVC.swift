@@ -26,6 +26,7 @@ class ArtistDetailsPageVC: UIPageViewController {
         }
         
         
+        
     }
 
     private(set) lazy var orderedViewControllers: [UIViewController] = {
@@ -40,10 +41,33 @@ class ArtistDetailsPageVC: UIPageViewController {
     
     
     private func newArtistDetailPageVCPage(detail: String) -> UIViewController {
-        return UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Artist\(detail)")
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Artist\(detail)")
+        return vc
         
     }
+    
+    private func instantiateChildViewControllers() -> [UIViewController] {
+        var viewControllers = [UIViewController]()
+        let generalInfoVC = storyboard?.instantiateViewControllerWithIdentifier("ArtistDetailsGeneralInfoVC") as? ArtistDetailsGeneralInfoVC
+        viewControllers.append(generalInfoVC!)
+        return viewControllers
+    }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if let embeddedVC = segue.destinationViewController as? ArtistDetailsGeneralInfoVC where segue.identifier == "ToArtistDetailsGeneralInfo" {
+            embeddedVC.selectedArtist = selectedArtist
+            
+        } else if let embeddedVC = segue.destinationViewController as? ArtistDetailsSongsVC where segue.identifier == "ToArtistDetailsSongsVC" {
+            embeddedVC.selectedArtist = selectedArtist
+            
+        } else if let embeddedVC = segue.destinationViewController as? ArtistDetailsAlbumsVC where segue.identifier == "ToArtistDetailsAlbumsVC" {
+            embeddedVC.selectedArtist = selectedArtist
+            
+        } else if let embeddedVC = segue.destinationViewController as? ArtistDetailsConcertsVC where segue.identifier == "ToArtistDetailsConcertsVC" {
+            embeddedVC.selectedArtist = selectedArtist
+        }
+    }
     
 
     /*

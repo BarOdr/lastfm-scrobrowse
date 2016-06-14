@@ -10,6 +10,8 @@ import UIKit
 
 class ArtistDetailsConcertsVC: UIViewController {
 
+    var selectedArtist = Artist()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.darkGrayColor().colorWithAlphaComponent(0.4)
