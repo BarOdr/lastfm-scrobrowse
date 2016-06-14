@@ -16,5 +16,7 @@ class Helper {
         dateFormatter.dateFormat = "MMM d y"
         let timeStr = dateFormatter.stringFromDate(date)
         return timeStr
+        
+        
     }
 }

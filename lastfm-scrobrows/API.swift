@@ -23,6 +23,18 @@ class API: NSObject {
         lastfmDataService = LastfmDataService()
     }
     
+    func generateParametersForArtistMethods(method: String, apiKey: String, artist: String, username: String) -> Dictionary<String, String> {
+        return lastfmDataService.generateParametersForArtistMethods(method, apiKey: apiKey, artist: artist, username: username)
+    }
+    
+    func generateParametersForAlbumOrTrackMethods(method: String, apiKey: String, username: String, artist: String, albumOrTrack: String) -> Dictionary<String, String> {
+        return lastfmDataService.generateParametersForAlbumOrTrackMethods(method, apiKey: apiKey, username: username, artist: artist, albumOrTrack: albumOrTrack)
+    }
+    
+    func generateParametersForUserMethods(method: String, apiKey: String, user: String, period: String, limit: String, page: String) -> Dictionary<String, String> {
+        return generateParametersForUserMethods(method, apiKey: apiKey, user: user, period: period, limit: limit, page: page)
+    }
+    
     func imagesDownloader(artists: [Artist], complete: ImagesDownloaded) {
         return lastfmDataService.imagesDownloader(artists, complete: complete)
     }
@@ -66,16 +78,7 @@ class API: NSObject {
     func artistGetSimilarArtists(amount: Int, json: JSON) -> [Artist] {
         return lastfmDataService.artistGetSimilarArtists(amount, json: json)
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     //////////////////////// LOGIN MANAGER METHODS ///////////////////////////
     

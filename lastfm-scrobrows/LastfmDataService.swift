@@ -325,7 +325,29 @@ class LastfmDataService: NSObject {
         return artists
     }
     
+    func generateParametersForUserMethods(method: String, apiKey: String, user: String, period: String, limit: String, page: String) -> Dictionary<String, String> {
+        
+        let parameters = [KEY_METHOD: method, KEY_APIKEY: apiKey, KEY_USER: user, KEY_PERIOD: period, KEY_PAGE: page]
+        return parameters
+    }
     
+    func generateParametersForAlbumOrTrackMethods(method: String, apiKey: String, username: String, artist: String, albumOrTrack: String) -> Dictionary<String, String> {
+        
+        var albumOrTrack = ""
+        if method == PARAM_TRACK_GET_INFO {
+            albumOrTrack = KEY_TRACK
+        } else {
+            albumOrTrack = KEY_ALBUM
+        }
+        let parameters = [KEY_METHOD: method, KEY_APIKEY: apiKey, KEY_USERNAME: username, KEY_ARTIST: artist, albumOrTrack: albumOrTrack]
+        return parameters
+    }
+    
+    func generateParametersForArtistMethods(method: String, apiKey: String, artist: String, username: String) -> Dictionary<String, String> {
+        
+        let parameters = [KEY_METHOD: method, KEY_APIKEY: apiKey, KEY_ARTIST: artist, KEY_USERNAME: username]
+        return parameters
+    }
 }
 
 

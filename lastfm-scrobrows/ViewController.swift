@@ -41,6 +41,7 @@ class ViewController: UIViewController {
     var userFavouriteArtists = [Artist]()
     
     let api = API()
+    let last = LastfmDataService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,21 +75,21 @@ class ViewController: UIViewController {
      */
     
     @IBAction func goToLibrary(sender: AnyObject) {
-        
-        api.lastfmDownloadTask(GET, parameters: PARAM_DICT_USER_GETTOPARTISTS) { (objectFromParser) in
-            
-            self.userInitialTopTenArtists = self.api.userGetTopArtists(40, json: objectFromParser)
-            print(self.userInitialTopTenArtists[0].artistName)
-        
-            self.api.imagesDownloader(self.userInitialTopTenArtists, complete: { (artists) in
-                
-                self.userInitialTopTenArtists = artists
-                self.goToArtistList()
-            })
-  
-        }
-        
-        
+//        
+//        api.lastfmDownloadTask(GET, parameters: PARAM_DICT_USER_GETTOPARTISTS) { (objectFromParser) in
+//            
+//            self.userInitialTopTenArtists = self.api.userGetTopArtists(40, json: objectFromParser)
+//            print(self.userInitialTopTenArtists[0].artistName)
+//        
+//            self.api.imagesDownloader(self.userInitialTopTenArtists, complete: { (artists) in
+//                
+//                self.userInitialTopTenArtists = artists
+//                self.goToArtistList()
+//            })
+//  
+//        }
+//        
+//        
         
     }
     
