@@ -32,7 +32,9 @@ let LASTFM_TOPARTISTS = "topartists"
 let LASTFM_TRACK = "track"
 let LASTFM_ARTIST = "artist"
 let LASTFM_ALBUM = "album"
+let LASTFM_CONTENT = "content"
 let LASTFM_STATS = "stats"
+let LASTFM_BIO = "bio"
 let LASTFM_LISTENERS = "listeners"
 let LASTFM_USERPLAYCOUNT = "userplaycount"
 let LASTFM_SIMILAR = "similar"
@@ -49,7 +51,7 @@ let POST = Alamofire.Method.POST
 
 //Typealiases
 
-typealias LastfmDownloadComplete = (objectFromParser: JSON) -> Void
+typealias LastfmDownloadComplete = (json: JSON) -> Void
 typealias ImagesDownloaded = (artists: [Artist]) -> Void
 typealias UserLoginComplete = (userSecret: String, userName: String) -> Void
 typealias CompletionHandler = () -> Void

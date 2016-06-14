@@ -555,7 +555,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lq3-cc-oGy">
-                                            <rect key="frame" x="293" y="13.5" width="26" height="26"/>
+                                            <rect key="frame" x="293" y="13" width="26" height="26"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="35" id="6P3-2D-sX8"/>
                                                 <constraint firstAttribute="width" constant="35" id="BfQ-Pr-16i"/>
@@ -659,7 +659,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Albums" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0u-cx-5tG">
-                                                <rect key="frame" x="144.5" y="0.0" width="93" height="22"/>
+                                                <rect key="frame" x="144" y="0.0" width="93" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="64" id="7xb-YZ-H4Q"/>
                                                     <constraint firstAttribute="height" constant="22" id="Evj-4q-yM3"/>
@@ -674,7 +674,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Similar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIP-k9-qns">
-                                                <rect key="frame" x="237.5" y="0.0" width="81.5" height="22"/>
+                                                <rect key="frame" x="237" y="0.0" width="81.5" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="3oU-TS-vEo"/>
                                                     <constraint firstAttribute="width" constant="64" id="G4n-04-uuz"/>
@@ -699,6 +699,13 @@
                                     <constraint firstAttribute="trailingMargin" secondItem="BMU-UM-w0f" secondAttribute="trailing" constant="20" id="f8j-5I-kHD"/>
                                 </constraints>
                             </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Q1B-zx-sqU">
+                                <rect key="frame" x="50" y="90" width="293" height="197"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -711,13 +718,17 @@
                             <constraint firstAttribute="trailing" secondItem="Jie-kf-TTg" secondAttribute="trailing" id="B21-Kn-28A"/>
                             <constraint firstItem="JQZ-sZ-KtV" firstAttribute="leading" secondItem="5mf-g9-NLn" secondAttribute="leading" id="Cny-NG-ABi"/>
                             <constraint firstItem="cuC-ba-llt" firstAttribute="leading" secondItem="5mf-g9-NLn" secondAttribute="leading" id="PbM-bG-tgO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Q1B-zx-sqU" secondAttribute="trailing" constant="16" id="R6s-OC-9tO"/>
                             <constraint firstItem="jcK-Uo-zl5" firstAttribute="top" secondItem="5mf-g9-NLn" secondAttribute="top" id="XvR-Ad-3xz"/>
+                            <constraint firstItem="Jie-kf-TTg" firstAttribute="top" secondItem="Q1B-zx-sqU" secondAttribute="bottom" constant="36" id="cSM-oC-6ca"/>
                             <constraint firstItem="JQZ-sZ-KtV" firstAttribute="height" secondItem="5mf-g9-NLn" secondAttribute="height" multiplier="0.35" id="hYJ-Fd-JDY"/>
                             <constraint firstItem="cuC-ba-llt" firstAttribute="top" secondItem="5mf-g9-NLn" secondAttribute="top" id="iqv-MF-JsM"/>
                             <constraint firstAttribute="trailing" secondItem="cuC-ba-llt" secondAttribute="trailing" id="m1v-mQ-cx6"/>
                             <constraint firstAttribute="trailing" secondItem="czj-4A-lL6" secondAttribute="trailing" id="mdl-kp-AWU"/>
+                            <constraint firstItem="Q1B-zx-sqU" firstAttribute="leading" secondItem="5mf-g9-NLn" secondAttribute="leadingMargin" constant="34" id="n8E-6M-h0x"/>
                             <constraint firstItem="Jie-kf-TTg" firstAttribute="leading" secondItem="5mf-g9-NLn" secondAttribute="leading" id="nRM-qW-8TA"/>
                             <constraint firstAttribute="trailing" secondItem="jcK-Uo-zl5" secondAttribute="trailing" id="o9B-SQ-4lj"/>
+                            <constraint firstItem="Q1B-zx-sqU" firstAttribute="top" secondItem="jcK-Uo-zl5" secondAttribute="bottom" constant="30" id="pja-Fm-Qbc"/>
                             <constraint firstItem="JQZ-sZ-KtV" firstAttribute="top" secondItem="Jie-kf-TTg" secondAttribute="bottom" id="wrY-2j-wmX"/>
                             <constraint firstItem="czj-4A-lL6" firstAttribute="leading" secondItem="5mf-g9-NLn" secondAttribute="leading" id="xFD-ST-Atf"/>
                         </constraints>
@@ -734,6 +745,7 @@
                         <outlet property="container" destination="JQZ-sZ-KtV" id="Rwj-hj-kVd"/>
                         <outlet property="heartImg" destination="ZRx-k6-DKV" id="WlM-2g-Wjc"/>
                         <outlet property="pinImg" destination="Lq3-cc-oGy" id="1fY-0J-UvK"/>
+                        <outlet property="testTextView" destination="Q1B-zx-sqU" id="7oW-xu-Vww"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FzQ-oy-VKX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -748,10 +760,10 @@
             </objects>
             <point key="canvasLocation" x="743.5" y="937.5"/>
         </scene>
-        <!--Artist Details Page-->
+        <!--Artist Details General InfoVC-->
         <scene sceneID="Wbt-fE-xIj">
             <objects>
-                <viewController storyboardIdentifier="ArtistGeneralInfo" id="PF3-z2-oYw" customClass="ArtistDetailsPage" customModule="lastfm_scrobrows" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ArtistGeneralInfo" id="PF3-z2-oYw" customClass="ArtistDetailsGeneralInfoVC" customModule="lastfm_scrobrows" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4Rv-NH-bDc"/>
                         <viewControllerLayoutGuide type="bottom" id="748-CZ-qyh"/>
@@ -914,15 +926,23 @@ She's recently been named by the Rolling Stone magazine as one of the New Faces 
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="250"/>
+                    <connections>
+                        <outlet property="bioTextView" destination="dUf-NC-oWw" id="Gth-Zr-hc2"/>
+                        <outlet property="listenersCountLabel" destination="Num-Vc-pm1" id="Si3-fo-URS"/>
+                        <outlet property="playcountLabel" destination="DpH-BY-8gw" id="7mz-7F-xjj"/>
+                        <outlet property="tagsLabel" destination="SxS-JC-aX3" id="bOO-sI-6NJ"/>
+                        <outlet property="topAlbumLabel" destination="flO-RE-JUQ" id="8kG-Uo-RuK"/>
+                        <outlet property="topArtistLabel" destination="bJ2-TP-c0w" id="xQg-9c-aVj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WSQ-Xh-yMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="431.5" y="1455"/>
         </scene>
-        <!--Artist Details Page-->
+        <!--Artist Details SongsVC-->
         <scene sceneID="yOd-qP-kci">
             <objects>
-                <viewController storyboardIdentifier="ArtistTopSongs" id="6TE-2b-gTE" customClass="ArtistDetailsPage" customModule="lastfm_scrobrows" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ArtistTopSongs" id="6TE-2b-gTE" customClass="ArtistDetailsSongsVC" customModule="lastfm_scrobrows" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ctS-DX-Tby"/>
                         <viewControllerLayoutGuide type="bottom" id="rrT-o3-EiX"/>
@@ -972,10 +992,10 @@ She's recently been named by the Rolling Stone magazine as one of the New Faces 
             </objects>
             <point key="canvasLocation" x="884.5" y="1455"/>
         </scene>
-        <!--Artist Details Page-->
+        <!--Artist Details AlbumsVC-->
         <scene sceneID="gqm-OG-kzd">
             <objects>
-                <viewController storyboardIdentifier="ArtistTopAlbums" id="dlI-MM-mTE" customClass="ArtistDetailsPage" customModule="lastfm_scrobrows" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ArtistTopAlbums" id="dlI-MM-mTE" customClass="ArtistDetailsAlbumsVC" customModule="lastfm_scrobrows" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="S9a-YM-Ol0"/>
                         <viewControllerLayoutGuide type="bottom" id="anA-Ge-rFL"/>
@@ -1024,61 +1044,10 @@ She's recently been named by the Rolling Stone magazine as one of the New Faces 
             </objects>
             <point key="canvasLocation" x="1305.5" y="1455"/>
         </scene>
-        <!--Artist Details Page-->
-        <scene sceneID="2Ni-c4-Cvu">
-            <objects>
-                <viewController storyboardIdentifier="ArtistBio" id="xVJ-v8-Ba6" customClass="ArtistDetailsPage" customModule="lastfm_scrobrows" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="tUZ-fJ-3uZ"/>
-                        <viewControllerLayoutGuide type="bottom" id="Cu3-f3-uDP"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="m0X-vi-lpr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ct4-AO-nJ3">
-                                <rect key="frame" x="175" y="114" width="25" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cO3-ow-ntE">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dxC-yw-j4g">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dxC-yw-j4g" id="tuI-9a-VrK">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="cO3-ow-ntE" firstAttribute="top" secondItem="m0X-vi-lpr" secondAttribute="top" id="LpX-k9-ZRi"/>
-                            <constraint firstAttribute="trailing" secondItem="cO3-ow-ntE" secondAttribute="trailing" id="WXk-sb-LUr"/>
-                            <constraint firstItem="Cu3-f3-uDP" firstAttribute="top" secondItem="cO3-ow-ntE" secondAttribute="bottom" id="WsB-he-qJJ"/>
-                            <constraint firstItem="ct4-AO-nJ3" firstAttribute="centerY" secondItem="m0X-vi-lpr" secondAttribute="centerY" id="lUk-BR-PGS"/>
-                            <constraint firstItem="cO3-ow-ntE" firstAttribute="leading" secondItem="m0X-vi-lpr" secondAttribute="leading" id="rcz-vu-9oR"/>
-                            <constraint firstItem="ct4-AO-nJ3" firstAttribute="centerX" secondItem="m0X-vi-lpr" secondAttribute="centerX" id="uvC-km-8DV"/>
-                        </constraints>
-                    </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="250"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uVq-8F-OEy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1713.5" y="1455"/>
-        </scene>
-        <!--Artist Details Page-->
+        <!--Artist Details ConcertsVC-->
         <scene sceneID="k4G-Ux-s0i">
             <objects>
-                <viewController storyboardIdentifier="ArtistConcerts" id="a5H-Il-kyg" customClass="ArtistDetailsPage" customModule="lastfm_scrobrows" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ArtistConcerts" id="a5H-Il-kyg" customClass="ArtistDetailsConcertsVC" customModule="lastfm_scrobrows" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Nw6-nS-S8u"/>
                         <viewControllerLayoutGuide type="bottom" id="3ld-m8-BIm"/>
@@ -1124,7 +1093,7 @@ She's recently been named by the Rolling Stone magazine as one of the New Faces 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tw9-Sn-SDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2135.5" y="1455"/>
+            <point key="canvasLocation" x="1844.5" y="1463"/>
         </scene>
     </scenes>
     <resources>

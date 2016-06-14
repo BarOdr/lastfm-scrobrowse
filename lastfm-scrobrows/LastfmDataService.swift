@@ -27,15 +27,18 @@ class LastfmDataService: NSObject {
      
      */
     
-    func lastfmDownloadTask(type: Alamofire.Method, parameters: Dictionary<String, AnyObject>, completion: LastfmDownloadComplete) {
+    func lastfmDownloadTask(type: Alamofire.Method, parameters: Dictionary<String, String>, completion: LastfmDownloadComplete) {
         
+        print(parameters)
         Alamofire.request(type, LASTFM_BASE_URL, parameters: parameters).response { (request, response, data, error) in
+            
+            print("Request is: \(request)")
             
             if error == nil {
                 
                 if let data = data {
                     let json = JSON(data: data)
-                    completion(objectFromParser: json)
+                    completion(json: json)
                 }
 
             } else {
@@ -206,9 +209,7 @@ class LastfmDataService: NSObject {
     
     // ARTIST parser methods
     
-    func artistGetInfo(json: JSON) -> Artist {
-    
-        let artist = Artist()
+    func artistGetInfo(artist: Artist, json: JSON) -> Artist {
         
         if let artistName = json[LASTM_ARTIST][LASTFM_NAME].string {
             artist.setName(artistName)
@@ -228,7 +229,9 @@ class LastfmDataService: NSObject {
         if let userPlaycount = json[LASTM_ARTIST][LASTFM_STATS][LASTFM_USERPLAYCOUNT].string {
             artist.setUserPlaycount(userPlaycount)
         }
-        
+        if let bio = json[LASTFM_ARTIST][LASTFM_BIO][LASTFM_CONTENT].string {
+            artist.setBiography(bio)
+        }
         var similarArtists = [Artist]()
         
         for i in 0...2 {
@@ -326,26 +329,27 @@ class LastfmDataService: NSObject {
     }
     
     func generateParametersForUserMethods(method: String, apiKey: String, user: String, period: String, limit: String, page: String) -> Dictionary<String, String> {
-        
-        let parameters = [KEY_METHOD: method, KEY_APIKEY: apiKey, KEY_USER: user, KEY_PERIOD: period, KEY_PAGE: page]
+        let parameters: Dictionary<String, String>
+        parameters = [KEY_METHOD: method, KEY_APIKEY: apiKey, KEY_USER: user, KEY_PERIOD: period, KEY_PAGE: page, KEY_FORMAT: PARAM_JSON]
         return parameters
     }
     
     func generateParametersForAlbumOrTrackMethods(method: String, apiKey: String, username: String, artist: String, albumOrTrack: String) -> Dictionary<String, String> {
         
+        let parameters: Dictionary<String, String>
         var albumOrTrack = ""
         if method == PARAM_TRACK_GET_INFO {
             albumOrTrack = KEY_TRACK
         } else {
             albumOrTrack = KEY_ALBUM
         }
-        let parameters = [KEY_METHOD: method, KEY_APIKEY: apiKey, KEY_USERNAME: username, KEY_ARTIST: artist, albumOrTrack: albumOrTrack]
+        parameters = [KEY_METHOD: method, KEY_APIKEY: apiKey, KEY_USERNAME: username, KEY_ARTIST: artist, albumOrTrack: albumOrTrack, KEY_FORMAT: PARAM_JSON]
         return parameters
     }
     
     func generateParametersForArtistMethods(method: String, apiKey: String, artist: String, username: String) -> Dictionary<String, String> {
-        
-        let parameters = [KEY_METHOD: method, KEY_APIKEY: apiKey, KEY_ARTIST: artist, KEY_USERNAME: username]
+        let parameters: Dictionary<String, String>
+        parameters = [KEY_METHOD: method, KEY_APIKEY: apiKey, KEY_ARTIST: artist, KEY_USERNAME: username, KEY_FORMAT: PARAM_JSON]
         return parameters
     }
 }

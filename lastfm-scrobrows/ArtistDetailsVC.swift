@@ -15,17 +15,18 @@ class ArtistDetailsVC: UIViewController {
     @IBOutlet weak var pinImg: UIButton!
     @IBOutlet weak var artistImage: UIImageView!
     @IBOutlet weak var artistNameLabel: UILabel!
-    
-    let scrobbler = Scrobbler()
+    @IBOutlet weak var testTextView: UITextView!
     
     var artist = Artist()
+    
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         artistImage.image = artist._artistImg
         artistNameLabel.text = artist.artistName
-        
-        
+        testTextView.text = artist.biography
         
         
         // Do any additional setup after loading the view.

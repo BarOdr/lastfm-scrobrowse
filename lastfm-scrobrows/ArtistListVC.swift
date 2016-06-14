@@ -12,8 +12,10 @@ class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     
     let ds = LastfmDataService()
+    let api = API()
     
     var artistsArray = [Artist]()
+    var currentUser = LastfmUser()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -51,10 +53,15 @@ class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let vc = storyboard?.instantiateViewControllerWithIdentifier("ArtistDetailsVC") as! ArtistDetailsVC
-        vc.artist = artistsArray[indexPath.row]
-        presentViewController(vc, animated: true, completion: nil)
-        
+        var selectedArtist = artistsArray[indexPath.row]
+        let username = currentUser.username
+        let paramsDict = api.generateParametersForArtistMethods(PARAM_ARTIST_GET_INFO, apiKey: LASTFM_API_KEY, artist: selectedArtist.artistName, username: username)
+        api.lastfmDownloadTask(.GET, parameters: paramsDict) { (json) in
+            selectedArtist = self.api.artistGetInfo(selectedArtist, json: json)
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("ArtistDetailsVC") as! ArtistDetailsVC
+            vc.artist = selectedArtist
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
     }
     @IBAction func backBtnPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)

@@ -39,7 +39,7 @@ class API: NSObject {
         return lastfmDataService.imagesDownloader(artists, complete: complete)
     }
     
-    func lastfmDownloadTask(type: Alamofire.Method, parameters: Dictionary<String, AnyObject>, completion: LastfmDownloadComplete) {
+    func lastfmDownloadTask(type: Alamofire.Method, parameters: Dictionary<String, String>, completion: LastfmDownloadComplete) {
         return lastfmDataService.lastfmDownloadTask(type, parameters: parameters, completion: completion)
     }
     
@@ -63,8 +63,8 @@ class API: NSObject {
         return lastfmDataService.userGetRecentTracks(amount, json: json)
     }
     
-    func artistGetInfo(json: JSON) -> Artist {
-        return lastfmDataService.artistGetInfo(json)
+    func artistGetInfo(artist: Artist, json: JSON) -> Artist {
+        return lastfmDataService.artistGetInfo(artist, json: json)
     }
     
     func artistGetTopTracks(amount: Int, json: JSON) -> [Track] {

@@ -28,17 +28,16 @@ class ArtistDetailsPageVC: UIPageViewController {
             self.newArtistDetailPageVCPage("GeneralInfo"),
             self.newArtistDetailPageVCPage("TopSongs"),
             self.newArtistDetailPageVCPage("TopAlbums"),
-            self.newArtistDetailPageVCPage("TopSongs"),
-            self.newArtistDetailPageVCPage("Bio"),
             self.newArtistDetailPageVCPage("Concerts")
         ]
     }()
     
+
     private func newArtistDetailPageVCPage(detail: String) -> UIViewController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Artist\(detail)")
     }
 
-
+    
 
     /*
     // MARK: - Navigation
@@ -92,10 +91,7 @@ extension ArtistDetailsPageVC: UIPageViewControllerDataSource {
         guard orderedViewControllersCount > nextIndex else {
             return nil
         }
-        
-        postNotificationToChangePageControlPage(nextIndex)
-        print(nextIndex)
-        return orderedViewControllers[nextIndex]
+                return orderedViewControllers[nextIndex]
         
         }
     

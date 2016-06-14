@@ -13,18 +13,18 @@ class Scrobbler: NSObject {
 
     let songsQuery = MPMediaQuery.songsQuery()
 
-    func scrobble(since: NSDate) {
-        let timeInterval = since.timeIntervalSince1970
-        let songsArray: [MPMediaItem] = songsQuery.items!
-        let songsNSarray: NSArray = NSArray(array: songsArray)
-        
-        for song in songsArray {
-            if let lastPlayed = song.lastPlayedDate {
-                print("Song title: \(song.title), played date: \(lastPlayed)")
-            }
-        }
-        
-    }
+//    func scrobble(since: NSDate) {
+//        let timeInterval = since.timeIntervalSince1970
+//        let songsArray: [MPMediaItem] = songsQuery.items!
+//        let songsNSarray: NSArray = NSArray(array: songsArray)
+//        
+//        for song in songsArray {
+//            if let lastPlayed = song.lastPlayedDate {
+//                print("Song title: \(song.title), played date: \(lastPlayed)")
+//            }
+//        }
+//        
+//    }
     
 //    func getPlaysSince(since:NSDate, onSuccess: (tracks: [MPMediaItem])->(), onFail: (error: NSError?)->()) {
 //        

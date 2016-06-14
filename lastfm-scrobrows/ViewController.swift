@@ -46,6 +46,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let user = api.getCurrentUser() {
+            currentUser = user
+            print("User logged in and loaded")
+            print(currentUser?.username)
+            print("Username is \(currentUser!.username)")
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -75,36 +81,24 @@ class ViewController: UIViewController {
      */
     
     @IBAction func goToLibrary(sender: AnyObject) {
-//        
-//        api.lastfmDownloadTask(GET, parameters: PARAM_DICT_USER_GETTOPARTISTS) { (objectFromParser) in
-//            
-//            self.userInitialTopTenArtists = self.api.userGetTopArtists(40, json: objectFromParser)
-//            print(self.userInitialTopTenArtists[0].artistName)
-//        
-//            self.api.imagesDownloader(self.userInitialTopTenArtists, complete: { (artists) in
-//                
-//                self.userInitialTopTenArtists = artists
-//                self.goToArtistList()
-//            })
-//  
-//        }
-//        
-//        
         
+
+        let parameters = last.generateParametersForUserMethods(PARAM_USER_GET_TOP_ARTISTS, apiKey: LASTFM_API_KEY, user: "\(currentUser!.username)", period: "", limit: "", page: "")
+        print(parameters)
+        api.lastfmDownloadTask(GET, parameters: parameters) { (json) in
+            
+            self.userInitialTopTenArtists = self.api.userGetTopArtists(40, json: json)
+            print(self.userInitialTopTenArtists[0].artistName)
+        
+            self.api.imagesDownloader(self.userInitialTopTenArtists, complete: { (artists) in
+                
+                
+                self.userInitialTopTenArtists = artists
+                self.goToArtistList()
+            })
+        }
     }
     
-    @IBAction func testBtnPressed(sender: AnyObject) {
-        
-        Alamofire.request(.GET, "https://pixabay.com/static/uploads/photo/2015/10/01/21/39/background-image-967820_960_720.jpg").responseImage { (response) in
-            
-            if let image = response.result.value {
-                print("Image downloaded: \(image)")
-                self.testImage.image = image
-            }
-        }
-        
-        
-    }
     @IBAction func scrobbleTracks(sender: UIButton) {
         
     }
@@ -116,12 +110,13 @@ class ViewController: UIViewController {
         hideMainControls()
     }
     
-    /** 
+    /**
      This method instatiates and presents ArtistListVC
      */
     
     func goToArtistList() {
         let artistListVC = storyboard?.instantiateViewControllerWithIdentifier("ArtistListVC") as! ArtistListVC
+        artistListVC.currentUser = currentUser!
         artistListVC.artistsArray = userInitialTopTenArtists
         presentViewController(artistListVC, animated: true, completion: nil)
     }
@@ -265,9 +260,9 @@ class ViewController: UIViewController {
         self.loginControlsStackView.hidden = true
     }
     
-    /** 
-     This method shows the activity indicator and starts its animation.
-    */
+    /**
+     This method shows the activity indicator and stops its animation.
+     */
     
     func indicateActivity() {
         activityIndicator.fadeIn(0.3)
@@ -288,13 +283,14 @@ class ViewController: UIViewController {
      This method checks if user credentials:
      - user's secet key
      - user's username
-     are stored in NSUserDefaults.
+     are stored in NSUserDefaults. It also sets currentUser.
      - returns: Bool
      */
     
     func userLoggedIn() -> Bool {
         if NSUserDefaults.standardUserDefaults().valueForKey(STORED_USER_SECRET_KEY) != nil
         && NSUserDefaults.standardUserDefaults().valueForKey(STORED_USERNAME) != nil {
+
             return true
         } else {
             return false

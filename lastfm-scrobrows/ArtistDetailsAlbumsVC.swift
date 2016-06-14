@@ -1,19 +1,19 @@
 //
-//  ArtistDetailsPage.swift
+//  ArtistDetailsAlbumsVC.swift
 //  lastfm-scrobrows
 //
-//  Created by Bartosz Odrzywołek on 10/06/16.
+//  Created by Bartosz Odrzywołek on 14/06/16.
 //  Copyright © 2016 Bartosz. All rights reserved.
 //
 
 import UIKit
 
-class ArtistDetailsPage: UIViewController {
-    
+class ArtistDetailsAlbumsVC: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
         view.backgroundColor = UIColor.darkGrayColor().colorWithAlphaComponent(0.4)
+
         // Do any additional setup after loading the view.
     }
 

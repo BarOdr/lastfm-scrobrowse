@@ -25,8 +25,8 @@ class LoginManager: NSObject {
         if username != nil && secret != nil {
             
             let user = LastfmUser()
-            user.username = username!
-            user.secret = secret!
+            user.setUsername(username!)
+            user.setSecret(secret!)
             return user
         } else {
             return nil
