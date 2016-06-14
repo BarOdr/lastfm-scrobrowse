@@ -22,7 +22,6 @@ class ArtistDetailsVC: UIViewController {
         
         super.viewDidLoad()
 
-        artistImage.image = artist._artistImg
         artistNameLabel.text = artist.artistName
         
         

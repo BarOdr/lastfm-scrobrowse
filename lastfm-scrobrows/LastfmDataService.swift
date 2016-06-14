@@ -48,25 +48,42 @@ class LastfmDataService: NSObject {
     // Image downloader
     
     func imagesDownloader(artists: [Artist], complete: ImagesDownloaded) {
-        
+                
         for artist in artists {
             
-            if let cachedImage = CacheService.imageCache.objectForKey(artist.artistName) {
-                artist.setArtistImg(cachedImage as! UIImage)
-            } else {
-                let imgUrl = artist.artistImgUrl
-                Alamofire.request(.GET, imgUrl).responseImage { (response) in
-                    
-                    if let image = response.result.value {
-                        artist._artistImg = image
-                        print("Image for \(artist.artistName) downloaded: \(image)")
-                        CacheService.imageCache.setObject(image, forKey: artist.artistName)
-                        print("Image for \(artist.artistName) is now cached.")
-                    }
-                }
+            if CacheService.imageCache.objectForKey(artist.artistName) == nil {
+                imageAlamofireRequest(artist)
+                print("Attempt to download image for: \(artist.artistName)")
             }
         }
+        
         complete(artists: artists)
+    }
+
+
+    
+    func imageAlamofireRequest(artist: Artist) {
+        let url = artist.artistImgUrl
+        
+        Alamofire.request(.GET, url).responseImage { (response) in
+            switch response.result {
+            case .Success(let img):
+                CacheService.imageCache.setObject(img, forKey: url)
+                
+            case .Failure(let error):
+                print("Image download for \(artist.artistName) failed. Error: \(error)")
+                self.imageAlamofireRequest(artist)
+            }
+        }
+    }
+    
+    func urlsDictionaryFromArtistsArray(artists: [Artist]) -> [String] {
+        
+        var urlsDictionary = [String]()
+        for artist in artists {
+            urlsDictionary.append(artist.artistImgUrl)
+        }
+        return urlsDictionary
     }
     
     func imageFromData(data: NSData) -> UIImage {

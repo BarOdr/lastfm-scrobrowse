@@ -13,7 +13,6 @@ class Artist {
     
     private var _artistName: String?
     private var _artistImgUrl: String?
-    var _artistImg: UIImage?
     private var _listenersCount: String?
     private var _playcount: String?
     private var _userPlaycount: String?
@@ -49,18 +48,6 @@ class Artist {
         }
     }
     
-    var artistImg: UIImage {
-        get {
-            if _artistImg != nil {
-                print("Artist image is nil!!!!")
-                _artistImg = UIImage(named: "selah1")
-            }
-            return _artistImg!
-        }
-        set {
-            _artistImg = artistImg
-        }
-    }
     var listenersCount: String {
         get {
             if _listenersCount == nil {
@@ -187,10 +174,6 @@ class Artist {
     
     func setImgUrl(url: String) {
         _artistImgUrl = url
-    }
-    
-    func setArtistImg(image: UIImage) {
-        _artistImg = image
     }
     
     func setListenersCount(count: String) {

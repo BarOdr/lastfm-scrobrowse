@@ -10,6 +10,8 @@ import UIKit
 
 class ArtistCell: UITableViewCell {
     
+    let lastfmDataService = LastfmDataService()
+    
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var artistImage: RoundImageView!
     
@@ -29,7 +31,13 @@ class ArtistCell: UITableViewCell {
     func configureCell(artist: Artist) {
         
         artistNameLabel.text = artist.artistName
-        artistImage.image = artist._artistImg
+        
+        if let image = CacheService.imageCache.objectForKey(artist.artistName) {
+            artistImage.image = image as? UIImage
+        } else {
+            lastfmDataService.imageAlamofireRequest(artist)
+            configureCell(artist)
+        }
 
     }
 

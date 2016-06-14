@@ -88,14 +88,13 @@ class ViewController: UIViewController {
         api.lastfmDownloadTask(GET, parameters: parameters) { (json) in
             
             self.userInitialTopTenArtists = self.api.userGetTopArtists(40, json: json)
-            print(self.userInitialTopTenArtists[0].artistName)
-        
-            self.api.imagesDownloader(self.userInitialTopTenArtists, complete: { (artists) in
-                
-                
-                self.userInitialTopTenArtists = artists
-                self.goToArtistList()
-            })
+            
+            for artist in self.userInitialTopTenArtists {
+                print(artist.artistName)
+            }
+
+            self.goToArtistList()
+
         }
     }
     
@@ -119,6 +118,7 @@ class ViewController: UIViewController {
         artistListVC.currentUser = currentUser!
         artistListVC.artistsArray = userInitialTopTenArtists
         presentViewController(artistListVC, animated: true, completion: nil)
+        print("Go to artist list")
     }
     
     /**
