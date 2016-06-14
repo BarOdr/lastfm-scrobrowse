@@ -10,17 +10,22 @@ import UIKit
 
 class ArtistDetailsPageVC: UIPageViewController {
 
-    
-    let test = 23
+    var selectedArtist = Artist()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         dataSource = self
         
+        
+        print("Name in page view controller is : \(selectedArtist.artistName)")
+        
+        
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController], direction: .Forward, animated: true, completion: nil)
         }
+        
+        
     }
 
     private(set) lazy var orderedViewControllers: [UIViewController] = {
@@ -32,9 +37,11 @@ class ArtistDetailsPageVC: UIPageViewController {
         ]
     }()
     
-
+    
+    
     private func newArtistDetailPageVCPage(detail: String) -> UIViewController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Artist\(detail)")
+        
     }
 
     

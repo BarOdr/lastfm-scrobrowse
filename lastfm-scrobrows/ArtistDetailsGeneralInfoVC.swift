@@ -10,6 +10,8 @@ import UIKit
 
 class ArtistDetailsGeneralInfoVC: UIViewController {
 
+    var selectedArtist = Artist()
+    
     @IBOutlet weak var tagsLabel: LabelOnDimmedBackground!
     @IBOutlet weak var playcountLabel: LabelOnDimmedBackground!
     @IBOutlet weak var listenersCountLabel: LabelOnDimmedBackground!
@@ -17,7 +19,13 @@ class ArtistDetailsGeneralInfoVC: UIViewController {
     @IBOutlet weak var topArtistLabel: LabelOnDimmedBackground!
     @IBOutlet weak var bioTextView: UITextView!
     
-
+    convenience init() {
+        self.init()
+        print("Artist general info VC is being initialized")
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.darkGrayColor().colorWithAlphaComponent(0.4)

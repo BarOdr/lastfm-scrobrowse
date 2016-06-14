@@ -19,7 +19,6 @@ class ArtistDetailsVC: UIViewController {
     
     var artist = Artist()
     
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -57,4 +56,9 @@ class ArtistDetailsVC: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let embeddedVC = segue.destinationViewController as? ArtistDetailsPageVC where segue.identifier == "ToArtistDetailsPageVC" {
+            embeddedVC.selectedArtist = artist
+        }
+    }
 }

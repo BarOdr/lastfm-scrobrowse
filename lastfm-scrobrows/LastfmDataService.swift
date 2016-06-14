@@ -29,10 +29,7 @@ class LastfmDataService: NSObject {
     
     func lastfmDownloadTask(type: Alamofire.Method, parameters: Dictionary<String, String>, completion: LastfmDownloadComplete) {
         
-        print(parameters)
         Alamofire.request(type, LASTFM_BASE_URL, parameters: parameters).response { (request, response, data, error) in
-            
-            print("Request is: \(request)")
             
             if error == nil {
                 

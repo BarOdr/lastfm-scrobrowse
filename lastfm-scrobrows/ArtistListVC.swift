@@ -17,6 +17,16 @@ class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     var artistsArray = [Artist]()
     var currentUser = LastfmUser()
     
+    
+    convenience init() {
+        self.init()
+        
+        print("ArtistListVC is being initialized")
+    }
+    deinit {
+        print("artistListVC is being deinitialized")
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -53,10 +63,13 @@ class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
         var selectedArtist = artistsArray[indexPath.row]
         let username = currentUser.username
         let paramsDict = api.generateParametersForArtistMethods(PARAM_ARTIST_GET_INFO, apiKey: LASTFM_API_KEY, artist: selectedArtist.artistName, username: username)
+        
         api.lastfmDownloadTask(.GET, parameters: paramsDict) { (json) in
+            
             selectedArtist = self.api.artistGetInfo(selectedArtist, json: json)
             let vc = self.storyboard?.instantiateViewControllerWithIdentifier("ArtistDetailsVC") as! ArtistDetailsVC
             vc.artist = selectedArtist
@@ -66,8 +79,5 @@ class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     @IBAction func backBtnPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
-    
-    @IBAction func testbtn(sender: AnyObject) {
-        print(artistsArray[0].listenersCount)
-    }
+
 }
