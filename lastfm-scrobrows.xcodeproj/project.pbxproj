@@ -37,6 +37,7 @@
 		CCAB2FD01D1052720054F1DE /* ArtistDetailsSongsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAB2FCF1D1052720054F1DE /* ArtistDetailsSongsVC.swift */; };
 		CCAB2FD21D1052820054F1DE /* ArtistDetailsAlbumsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAB2FD11D1052810054F1DE /* ArtistDetailsAlbumsVC.swift */; };
 		CCAB2FD41D1052960054F1DE /* ArtistDetailsConcertsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAB2FD31D1052960054F1DE /* ArtistDetailsConcertsVC.swift */; };
+		CCAB2FDA1D10B7AD0054F1DE /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAB2FD91D10B7AD0054F1DE /* CacheService.swift */; };
 		E7AC1EFF62CE36C1F7D0A0EC /* Pods_lastfm_scrobrows.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3F720B321E04120BDCC17E /* Pods_lastfm_scrobrows.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		CCAB2FCF1D1052720054F1DE /* ArtistDetailsSongsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistDetailsSongsVC.swift; sourceTree = "<group>"; };
 		CCAB2FD11D1052810054F1DE /* ArtistDetailsAlbumsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistDetailsAlbumsVC.swift; sourceTree = "<group>"; };
 		CCAB2FD31D1052960054F1DE /* ArtistDetailsConcertsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistDetailsConcertsVC.swift; sourceTree = "<group>"; };
+		CCAB2FD91D10B7AD0054F1DE /* CacheService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,9 +160,9 @@
 			children = (
 				CC1A72AF1D04DF8700DB04BC /* UIViewExtensions.swift */,
 				CC1A72B11D04EFE200DB04BC /* MainControlButton.swift */,
-				CC8844081D084AA9007E9FB6 /* ArtistCell.swift */,
 				CC50D16E1D09AF430081C0BC /* RoundImageView.swift */,
 				CC2184081D0C435A0057CAD8 /* LabelOnDimmedBackground.swift */,
+				CC8844081D084AA9007E9FB6 /* ArtistCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -202,6 +204,7 @@
 				CC8844101D0881FF007E9FB6 /* LastfmDataService.swift */,
 				CC21840A1D0D92E70057CAD8 /* RequestParametersDictionaries.swift */,
 				CCAB2FCB1D0F63D40054F1DE /* Scrobbler.swift */,
+				CCAB2FD91D10B7AD0054F1DE /* CacheService.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				CC1A72A71D046A1A00DB04BC /* LoginManager.swift in Sources */,
 				CC1A72B01D04DF8700DB04BC /* UIViewExtensions.swift in Sources */,
 				CCAB2FCE1D10525F0054F1DE /* ArtistDetailsGeneralInfoVC.swift in Sources */,
+				CCAB2FDA1D10B7AD0054F1DE /* CacheService.swift in Sources */,
 				CC1A72851D043E6A00DB04BC /* ViewController.swift in Sources */,
 				CC8844071D0849C2007E9FB6 /* ArtistListVC.swift in Sources */,
 				CCAB2FD01D1052720054F1DE /* ArtistDetailsSongsVC.swift in Sources */,

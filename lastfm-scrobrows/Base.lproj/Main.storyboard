@@ -699,13 +699,6 @@
                                     <constraint firstAttribute="trailingMargin" secondItem="BMU-UM-w0f" secondAttribute="trailing" constant="20" id="f8j-5I-kHD"/>
                                 </constraints>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Q1B-zx-sqU">
-                                <rect key="frame" x="50" y="90" width="293" height="197"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -718,17 +711,13 @@
                             <constraint firstAttribute="trailing" secondItem="Jie-kf-TTg" secondAttribute="trailing" id="B21-Kn-28A"/>
                             <constraint firstItem="JQZ-sZ-KtV" firstAttribute="leading" secondItem="5mf-g9-NLn" secondAttribute="leading" id="Cny-NG-ABi"/>
                             <constraint firstItem="cuC-ba-llt" firstAttribute="leading" secondItem="5mf-g9-NLn" secondAttribute="leading" id="PbM-bG-tgO"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Q1B-zx-sqU" secondAttribute="trailing" constant="16" id="R6s-OC-9tO"/>
                             <constraint firstItem="jcK-Uo-zl5" firstAttribute="top" secondItem="5mf-g9-NLn" secondAttribute="top" id="XvR-Ad-3xz"/>
-                            <constraint firstItem="Jie-kf-TTg" firstAttribute="top" secondItem="Q1B-zx-sqU" secondAttribute="bottom" constant="36" id="cSM-oC-6ca"/>
                             <constraint firstItem="JQZ-sZ-KtV" firstAttribute="height" secondItem="5mf-g9-NLn" secondAttribute="height" multiplier="0.35" id="hYJ-Fd-JDY"/>
                             <constraint firstItem="cuC-ba-llt" firstAttribute="top" secondItem="5mf-g9-NLn" secondAttribute="top" id="iqv-MF-JsM"/>
                             <constraint firstAttribute="trailing" secondItem="cuC-ba-llt" secondAttribute="trailing" id="m1v-mQ-cx6"/>
                             <constraint firstAttribute="trailing" secondItem="czj-4A-lL6" secondAttribute="trailing" id="mdl-kp-AWU"/>
-                            <constraint firstItem="Q1B-zx-sqU" firstAttribute="leading" secondItem="5mf-g9-NLn" secondAttribute="leadingMargin" constant="34" id="n8E-6M-h0x"/>
                             <constraint firstItem="Jie-kf-TTg" firstAttribute="leading" secondItem="5mf-g9-NLn" secondAttribute="leading" id="nRM-qW-8TA"/>
                             <constraint firstAttribute="trailing" secondItem="jcK-Uo-zl5" secondAttribute="trailing" id="o9B-SQ-4lj"/>
-                            <constraint firstItem="Q1B-zx-sqU" firstAttribute="top" secondItem="jcK-Uo-zl5" secondAttribute="bottom" constant="30" id="pja-Fm-Qbc"/>
                             <constraint firstItem="JQZ-sZ-KtV" firstAttribute="top" secondItem="Jie-kf-TTg" secondAttribute="bottom" id="wrY-2j-wmX"/>
                             <constraint firstItem="czj-4A-lL6" firstAttribute="leading" secondItem="5mf-g9-NLn" secondAttribute="leading" id="xFD-ST-Atf"/>
                         </constraints>
@@ -745,7 +734,6 @@
                         <outlet property="container" destination="JQZ-sZ-KtV" id="Rwj-hj-kVd"/>
                         <outlet property="heartImg" destination="ZRx-k6-DKV" id="WlM-2g-Wjc"/>
                         <outlet property="pinImg" destination="Lq3-cc-oGy" id="1fY-0J-UvK"/>
-                        <outlet property="testTextView" destination="Q1B-zx-sqU" id="7oW-xu-Vww"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FzQ-oy-VKX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -807,7 +795,7 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                                     <constraint firstAttribute="height" constant="35" id="IjH-gf-czy"/>
                                 </constraints>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUf-NC-oWw">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUf-NC-oWw">
                                 <rect key="frame" x="8" y="48" width="359" height="151"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Selah Sue was born Sanne Putseys on 3rd May 1989 in Leuven, Belgium. She is a singer-songwriter, who combines multiple musical styles like folk, soul and reggae.
@@ -818,6 +806,7 @@ She's recently been named by the Rolling Stone magazine as one of the New Faces 
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ykj-Qd-HrC">
                                 <rect key="frame" x="8" y="0.0" width="359" height="50"/>

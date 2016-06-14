@@ -15,7 +15,6 @@ class ArtistDetailsVC: UIViewController {
     @IBOutlet weak var pinImg: UIButton!
     @IBOutlet weak var artistImage: UIImageView!
     @IBOutlet weak var artistNameLabel: UILabel!
-    @IBOutlet weak var testTextView: UITextView!
     
     var artist = Artist()
     
@@ -25,7 +24,6 @@ class ArtistDetailsVC: UIViewController {
 
         artistImage.image = artist._artistImg
         artistNameLabel.text = artist.artistName
-        testTextView.text = artist.biography
         
         
         // Do any additional setup after loading the view.

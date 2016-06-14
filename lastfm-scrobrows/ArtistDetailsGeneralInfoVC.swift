@@ -22,9 +22,7 @@ class ArtistDetailsGeneralInfoVC: UIViewController {
     convenience init() {
         self.init()
         print("Artist general info VC is being initialized")
-        
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +30,7 @@ class ArtistDetailsGeneralInfoVC: UIViewController {
 
         // Do any additional setup after loading the view.
         print("Artist named \(selectedArtist.artistName) passed to general info vc - success!")
+        configureUI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,7 +38,21 @@ class ArtistDetailsGeneralInfoVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func configureUI() {
+        var tagString = ""
+        
+        for tag in selectedArtist.relatedTags {
+            tagString.stringByAppendingString("\(tag)|")
+        }
+        tagsLabel.text = tagString
+        playcountLabel.text = selectedArtist.playcount
+        listenersCountLabel.text = selectedArtist.listenersCount
+        bioTextView.text = selectedArtist.biography
+        bioTextView.font = bioTextView.font?.fontWithSize(17)
+        bioTextView.textColor = UIColor.whiteColor()
 
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -49,5 +62,4 @@ class ArtistDetailsGeneralInfoVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

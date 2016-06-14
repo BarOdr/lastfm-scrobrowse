@@ -51,12 +51,18 @@ class LastfmDataService: NSObject {
         
         for artist in artists {
             
-            let imgUrl = artist.artistImgUrl
-            Alamofire.request(.GET, imgUrl).responseImage { (response) in
-                
-                if let image = response.result.value {
-                    artist._artistImg = image
-                    print("Image for \(artist.artistName) downloaded: \(image)")
+            if let cachedImage = CacheService.imageCache.objectForKey(artist.artistName) {
+                artist.setArtistImg(cachedImage as! UIImage)
+            } else {
+                let imgUrl = artist.artistImgUrl
+                Alamofire.request(.GET, imgUrl).responseImage { (response) in
+                    
+                    if let image = response.result.value {
+                        artist._artistImg = image
+                        print("Image for \(artist.artistName) downloaded: \(image)")
+                        CacheService.imageCache.setObject(image, forKey: artist.artistName)
+                        print("Image for \(artist.artistName) is now cached.")
+                    }
                 }
             }
         }

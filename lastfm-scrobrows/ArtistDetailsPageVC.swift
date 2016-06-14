@@ -21,6 +21,7 @@ class ArtistDetailsPageVC: UIPageViewController {
         print("Name in page view controller is : \(selectedArtist.artistName)")
         
         
+        
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController], direction: .Forward, animated: true, completion: nil)
         }
@@ -32,17 +33,18 @@ class ArtistDetailsPageVC: UIPageViewController {
     private(set) lazy var orderedViewControllers: [UIViewController] = {
         return [
             self.newArtistDetailPageVCPage("GeneralInfo"),
-            self.newArtistDetailPageVCPage("TopSongs"),
-            self.newArtistDetailPageVCPage("TopAlbums"),
-            self.newArtistDetailPageVCPage("Concerts")
+//            self.newArtistDetailPageVCPage("TopSongs"),
+//            self.newArtistDetailPageVCPage("TopAlbums"),
+//            self.newArtistDetailPageVCPage("Concerts")
         ]
     }()
     
     
     
     private func newArtistDetailPageVCPage(detail: String) -> UIViewController {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Artist\(detail)")
-        return vc
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Artist\(detail)") as? ArtistDetailsGeneralInfoVC
+        vc?.selectedArtist = selectedArtist
+        return vc!
         
     }
     
