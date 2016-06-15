@@ -20,8 +20,8 @@ class LoginManager: NSObject {
      */
     
     func getCurrentUser() -> LastfmUser? {
-        let username = NSUserDefaults.standardUserDefaults().valueForKey(STORED_USERNAME) as? String
-        let secret = NSUserDefaults.standardUserDefaults().valueForKey(STORED_USER_SECRET_KEY) as? String
+        let username = NSUserDefaults.standardUserDefaults().objectForKey(STORED_USERNAME) as? String
+        let secret = NSUserDefaults.standardUserDefaults().objectForKey(STORED_USER_SECRET_KEY) as? String
         if username != nil && secret != nil {
             
             let user = LastfmUser()
