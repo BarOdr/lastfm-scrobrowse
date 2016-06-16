@@ -39,6 +39,7 @@ class LastfmDataService: NSObject {
                 }
 
             } else {
+                
                 print(error)
             }
         }
@@ -52,8 +53,9 @@ class LastfmDataService: NSObject {
         for artist in artists {
             
             if CacheService.imageCache.objectForKey(artist.artistName) == nil {
-                imageAlamofireRequest(artist)
-                print("Attempt to download image for: \(artist.artistName)")
+                imageAlamofireRequest(artist, completion: { image in
+                    
+                })
             }
         }
         
@@ -62,17 +64,20 @@ class LastfmDataService: NSObject {
 
 
     
-    func imageAlamofireRequest(artist: Artist) {
+    func imageAlamofireRequest(artist: Artist, completion: ImageDownloadComplete) {
         let url = artist.artistImgUrl
         
         Alamofire.request(.GET, url).responseImage { (response) in
             switch response.result {
             case .Success(let img):
                 CacheService.imageCache.setObject(img, forKey: url)
+                completion(img: img)
                 
             case .Failure(let error):
                 print("Image download for \(artist.artistName) failed. Error: \(error)")
-                self.imageAlamofireRequest(artist)
+                self.imageAlamofireRequest(artist, completion: { _ in 
+                    print("Image download for \(artist.artistName): retry")
+                })
             }
         }
     }

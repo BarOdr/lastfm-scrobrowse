@@ -17,12 +17,6 @@ class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     var artistsArray = [Artist]()
     var currentUser = LastfmUser()
     
-    
-    convenience init() {
-        self.init()
-        
-        print("ArtistListVC is being initialized")
-    }
     deinit {
         print("artistListVC is being deinitialized")
     }
@@ -65,17 +59,31 @@ class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         var selectedArtist = artistsArray[indexPath.row]
-        let username = currentUser.username
-        let paramsDict = api.generateParametersForArtistMethods(PARAM_ARTIST_GET_INFO, apiKey: LASTFM_API_KEY, artist: selectedArtist.artistName, username: username)
-        
-        api.lastfmDownloadTask(.GET, parameters: paramsDict) { (json) in
+        if let cachedArtist = CacheService.artistCache.objectForKey(selectedArtist.artistName) as? Artist {
+            print("Loaded \(cachedArtist.artistName) from cache")
+            goToDetails(cachedArtist)
+        } else {
+            let username = currentUser.username
+            let paramsDict = api.generateParametersForArtistMethods(PARAM_ARTIST_GET_INFO, apiKey: LASTFM_API_KEY, artist: selectedArtist.artistName, username: username)
             
-            selectedArtist = self.api.artistGetInfo(selectedArtist, json: json)
-            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("ArtistDetailsVC") as! ArtistDetailsVC
-            vc.artist = selectedArtist
-            self.presentViewController(vc, animated: true, completion: nil)
+            api.lastfmDownloadTask(.GET, parameters: paramsDict) { (json) in
+                
+                
+                selectedArtist = self.api.artistGetInfo(selectedArtist, json: json)
+                CacheService.artistCache.setObject(selectedArtist, forKey: selectedArtist.artistName)
+                print("Saved \(selectedArtist.artistName) to cache")
+                self.goToDetails(selectedArtist)
+            }
         }
     }
+    
+    
+    func goToDetails(artist: Artist) {
+        let vc = storyboard?.instantiateViewControllerWithIdentifier(VIEWCONTR_ARTIST_DETAILS_VC) as! ArtistDetailsVC
+        vc.artist = artist
+        presentViewController(vc, animated: true, completion: nil)
+    }
+    
     @IBAction func backBtnPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }

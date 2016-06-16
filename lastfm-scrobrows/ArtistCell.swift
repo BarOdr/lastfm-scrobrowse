@@ -30,15 +30,19 @@ class ArtistCell: UITableViewCell {
     
     func configureCell(artist: Artist) {
         
+        
         artistNameLabel.text = artist.artistName
         
-        if let image = CacheService.imageCache.objectForKey(artist.artistName) {
-            artistImage.image = image as? UIImage
+        self.artistImage.image = nil
+        if let cachedImage = CacheService.imageCache.objectForKey(artist.artistImgUrl) {
+            artistImage.image = cachedImage as? UIImage
+            artistImage.fadeIn(1.5)
         } else {
-            lastfmDataService.imageAlamofireRequest(artist)
-            configureCell(artist)
+            lastfmDataService.imageAlamofireRequest(artist, completion: { (img) in
+                self.artistImage.image = img
+                self.artistImage.fadeIn(1.5)
+            })
         }
-
+        
     }
-
 }

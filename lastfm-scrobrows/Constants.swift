@@ -54,4 +54,8 @@ let POST = Alamofire.Method.POST
 typealias LastfmDownloadComplete = (json: JSON) -> Void
 typealias ImagesDownloaded = (artists: [Artist]) -> Void
 typealias UserLoginComplete = (userSecret: String, userName: String) -> Void
-typealias CompletionHandler = () -> Void
+typealias ImageDownloadComplete = (img: UIImage) -> Void
+
+// View controllers' identifiers
+
+let VIEWCONTR_ARTIST_DETAILS_VC = "ArtistDetailsVC"

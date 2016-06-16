@@ -17,13 +17,20 @@ class ArtistDetailsVC: UIViewController {
     @IBOutlet weak var artistNameLabel: UILabel!
     
     var artist = Artist()
+    let lastfmDataService = LastfmDataService()
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
 
         artistNameLabel.text = artist.artistName
-        
+        if let cachedImage = CacheService.imageCache.objectForKey(artist.artistImgUrl) {
+            artistImage.image = cachedImage as? UIImage
+        } else {
+            lastfmDataService.imageAlamofireRequest(artist, completion: { (img) in
+                self.artistImage.image = img
+            })
+        }
         
         // Do any additional setup after loading the view.
     }

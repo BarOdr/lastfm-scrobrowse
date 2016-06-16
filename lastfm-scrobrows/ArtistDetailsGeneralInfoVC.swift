@@ -42,7 +42,7 @@ class ArtistDetailsGeneralInfoVC: UIViewController {
         var tagString = ""
         
         for tag in selectedArtist.relatedTags {
-            tagString.stringByAppendingString("\(tag)|")
+            tagString = tagString.stringByAppendingString("\(tag)|")
         }
         tagsLabel.text = tagString
         playcountLabel.text = selectedArtist.playcount

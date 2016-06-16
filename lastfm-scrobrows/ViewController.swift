@@ -82,20 +82,27 @@ class ViewController: UIViewController {
     
     @IBAction func goToLibrary(sender: AnyObject) {
         
-
-        let parameters = last.generateParametersForUserMethods(PARAM_USER_GET_TOP_ARTISTS, apiKey: LASTFM_API_KEY, user: "\(currentUser!.username)", period: "", limit: "", page: "")
-        print(parameters)
-        api.lastfmDownloadTask(GET, parameters: parameters) { (json) in
-            
-            self.userInitialTopTenArtists = self.api.userGetTopArtists(40, json: json)
-            
-            for artist in self.userInitialTopTenArtists {
-                print(artist.artistName)
-            }
-
+        if let cachedArtists = CacheService.artistCache.objectForKey("userArtists")  {
+            self.userInitialTopTenArtists = cachedArtists as! [Artist]
             self.goToArtistList()
+        } else {
 
+            let parameters = last.generateParametersForUserMethods(PARAM_USER_GET_TOP_ARTISTS, apiKey: LASTFM_API_KEY, user: "\(currentUser!.username)", period: "", limit: "", page: "")
+            
+            print(parameters)
+            
+            api.lastfmDownloadTask(GET, parameters: parameters) { (json) in
+                
+                self.userInitialTopTenArtists = self.api.userGetTopArtists(40, json: json)
+                
+                CacheService.artistCache.setObject(self.userInitialTopTenArtists, forKey: "userArtists")
+                for artist in self.userInitialTopTenArtists {
+                    print(artist.artistName)
+                }
+                self.goToArtistList()
+            }
         }
+
     }
     
     @IBAction func scrobbleTracks(sender: UIButton) {

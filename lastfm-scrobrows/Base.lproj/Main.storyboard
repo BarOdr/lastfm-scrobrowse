@@ -329,18 +329,6 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selah3" translatesAutoresizingMaskIntoConstraints="NO" id="hyR-V0-fZD">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="141"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="88" id="5zf-9P-ro0"/>
-                                                        <constraint firstAttribute="height" constant="141" id="Fzz-C1-dHH"/>
-                                                        <constraint firstAttribute="height" constant="88" id="YUc-lU-5Xq"/>
-                                                    </constraints>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="5zf-9P-ro0"/>
-                                                            <exclude reference="Fzz-C1-dHH"/>
-                                                            <exclude reference="YUc-lU-5Xq"/>
-                                                        </mask>
-                                                    </variation>
                                                 </imageView>
                                                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sFI-cy-p7Z">
                                                     <rect key="frame" x="0.0" y="101" width="375" height="40"/>
@@ -410,6 +398,7 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
+                                                    <exclude reference="4lj-Iq-QPZ"/>
                                                     <exclude reference="Nml-wz-TLD"/>
                                                     <exclude reference="W7h-F6-wSB"/>
                                                     <exclude reference="bUL-qi-UgP"/>
@@ -804,7 +793,7 @@ Her playlist consists of some covers (most notably The Zutons' Valerie), but mai
 On occasions she features as a vocalist for dubstep formation Addicted Kru Sound in local venues.
 She's recently been named by the Rolling Stone magazine as one of the New Faces of 2012.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
