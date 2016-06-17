@@ -59,3 +59,8 @@ typealias ImageDownloadComplete = (img: UIImage) -> Void
 // View controllers' identifiers
 
 let VIEWCONTR_ARTIST_DETAILS_VC = "ArtistDetailsVC"
+let VIEWCONTR_ARTIST_GENERAL_INFO_VC = "ArtistGeneralInfo"
+let VIEWCONTR_ARTIST_TOP_SONGS_VC = "ArtistTopSongs"
+let VIEWCONTR_ARTIST_TOP_ALBUMS_VC = "ArtistTopAlbums"
+let VIEWCONTR_ARTIST_CONCERTS_VC = "ArtistConcerts"
+

@@ -17,26 +17,15 @@ class ArtistDetailsPageVC: UIPageViewController {
 
         dataSource = self
         
-        
         print("Name in page view controller is : \(selectedArtist.artistName)")
-        
-        
         
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController], direction: .Forward, animated: true, completion: nil)
-        }
-        
-        
-        
+        }  
     }
 
     private(set) lazy var orderedViewControllers: [UIViewController] = {
-        return [
-            self.newArtistDetailPageVCPage("GeneralInfo"),
-//            self.newArtistDetailPageVCPage("TopSongs"),
-//            self.newArtistDetailPageVCPage("TopAlbums"),
-//            self.newArtistDetailPageVCPage("Concerts")
-        ]
+        return self.instantiateChildViewControllers()
     }()
     
     
@@ -50,27 +39,25 @@ class ArtistDetailsPageVC: UIPageViewController {
     
     private func instantiateChildViewControllers() -> [UIViewController] {
         var viewControllers = [UIViewController]()
-        let generalInfoVC = storyboard?.instantiateViewControllerWithIdentifier("ArtistDetailsGeneralInfoVC") as? ArtistDetailsGeneralInfoVC
-        viewControllers.append(generalInfoVC!)
-        return viewControllers
-    }
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if let embeddedVC = segue.destinationViewController as? ArtistDetailsGeneralInfoVC where segue.identifier == "ToArtistDetailsGeneralInfo" {
-            embeddedVC.selectedArtist = selectedArtist
-            
-        } else if let embeddedVC = segue.destinationViewController as? ArtistDetailsSongsVC where segue.identifier == "ToArtistDetailsSongsVC" {
-            embeddedVC.selectedArtist = selectedArtist
-            
-        } else if let embeddedVC = segue.destinationViewController as? ArtistDetailsAlbumsVC where segue.identifier == "ToArtistDetailsAlbumsVC" {
-            embeddedVC.selectedArtist = selectedArtist
-            
-        } else if let embeddedVC = segue.destinationViewController as? ArtistDetailsConcertsVC where segue.identifier == "ToArtistDetailsConcertsVC" {
-            embeddedVC.selectedArtist = selectedArtist
-        }
-    }
-    
+        let generalInfoVC = storyboard?.instantiateViewControllerWithIdentifier(VIEWCONTR_ARTIST_GENERAL_INFO_VC) as? ArtistDetailsGeneralInfoVC
+        generalInfoVC?.selectedArtist = self.selectedArtist
+        viewControllers.append(generalInfoVC!)
+        
+        let topSongsVC = storyboard?.instantiateViewControllerWithIdentifier(VIEWCONTR_ARTIST_TOP_SONGS_VC) as? ArtistDetailsSongsVC
+        topSongsVC?.selectedArtist = self.selectedArtist
+        viewControllers.append(topSongsVC!)
+        
+        let topAlbumsVC = storyboard?.instantiateViewControllerWithIdentifier(VIEWCONTR_ARTIST_TOP_ALBUMS_VC) as? ArtistDetailsAlbumsVC
+        topAlbumsVC?.selectedArtist = self.selectedArtist
+        viewControllers.append(topAlbumsVC!)
+        
+        let concertsVC = storyboard?.instantiateViewControllerWithIdentifier(VIEWCONTR_ARTIST_CONCERTS_VC) as? ArtistDetailsConcertsVC
+        concertsVC?.selectedArtist = self.selectedArtist
+        viewControllers.append(concertsVC!)
+        
+        return viewControllers
+    }    
 
     /*
     // MARK: - Navigation
@@ -103,7 +90,6 @@ extension ArtistDetailsPageVC: UIPageViewControllerDataSource {
             return nil
         }
         
-        postNotificationToChangePageControlPage(previousIndex)
         return orderedViewControllers[previousIndex]
     }
     
@@ -127,21 +113,5 @@ extension ArtistDetailsPageVC: UIPageViewControllerDataSource {
                 return orderedViewControllers[nextIndex]
         
         }
-    
-    //NOT WORKING YET//
-    
-    func postNotificationToChangePageControlPage(changeTo: Int) {
-        
-        let dictionary = ["pageControlIndex":  changeTo]
-        NSNotificationCenter.defaultCenter().postNotificationName("changePageControlIndex", object: nil, userInfo: dictionary)
-    }
-//    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-//        return orderedViewControllers.count
-//    }
-//    
-//    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-//        
-//            return 0
-//    }
     
 }
