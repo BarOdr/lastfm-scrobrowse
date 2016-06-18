@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ArtistDetailsSongsVC: UIViewController {
+class ArtistDetailsSongsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var tableView: UITableView!
 
     var selectedArtist = Artist()
     let api = API()
@@ -16,29 +17,35 @@ class ArtistDetailsSongsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.delegate = self
+        tableView.dataSource = self
         
+        print("This is top songs vc speaking. Current artist is \(selectedArtist.artistName)")
         view.backgroundColor = UIColor.darkGrayColor().colorWithAlphaComponent(0.4)
-
         
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        for track in selectedArtist.topTracks {
+            print("Top track: \(track.trackName)")
+        }
+        
     }
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return selectedArtist.topTracks.count
+    }
 
-    func downloadTopTracks() -> [Track] {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        if let cell = tableView.dequeueReusableCellWithIdentifier("TrackCell") as? TrackCell {
+            cell.configureCell(selectedArtist.topTracks[indexPath.row])
+            return cell
+        } else {
+            return TrackCell()
+        }
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

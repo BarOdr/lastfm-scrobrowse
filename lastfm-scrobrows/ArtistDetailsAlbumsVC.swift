@@ -16,7 +16,9 @@ class ArtistDetailsAlbumsVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.darkGrayColor().colorWithAlphaComponent(0.4)
 
-        // Do any additional setup after loading the view.
+        for album in selectedArtist.topAlbums {
+            print("Top album: \(album.albumName)")
+        }
     }
 
     override func didReceiveMemoryWarning() {

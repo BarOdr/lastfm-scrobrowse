@@ -45,8 +45,8 @@
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="v8y-gt-uo9">
                                         <rect key="frame" x="177" y="417" width="20" height="20"/>
                                     </activityIndicatorView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTh-cu-2zY">
-                                        <rect key="frame" x="8" y="12" width="65" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTh-cu-2zY">
+                                        <rect key="frame" x="8" y="12" width="62" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="58K-bs-igb"/>
                                             <constraint firstAttribute="width" constant="62" id="t51-Vp-AEA"/>
@@ -162,10 +162,10 @@
                                                         <rect key="frame" x="0.0" y="102" width="315" height="50"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Hqh-mF-wZN">
-                                                                <rect key="frame" x="0.0" y="0.0" width="158" height="50"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="157.5" height="50"/>
                                                                 <subviews>
                                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Mp-q7-Hcx">
-                                                                        <rect key="frame" x="55" y="0.0" width="51" height="31"/>
+                                                                        <rect key="frame" x="54" y="0.0" width="51" height="31"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="31" id="7Px-9Q-I2k"/>
                                                                             <constraint firstAttribute="width" constant="49" id="ROR-PX-Hu0"/>
@@ -181,7 +181,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ra3-6v-Wep">
-                                                                <rect key="frame" x="158" y="0.0" width="158" height="50"/>
+                                                                <rect key="frame" x="157" y="0.0" width="157.5" height="50"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                                                 <state key="normal" title="Log in">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -327,9 +327,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="141"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selah3" translatesAutoresizingMaskIntoConstraints="NO" id="hyR-V0-fZD">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="141"/>
-                                                </imageView>
                                                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sFI-cy-p7Z">
                                                     <rect key="frame" x="0.0" y="101" width="375" height="40"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Wg6-Pu-1h0">
@@ -379,6 +376,9 @@
                                                     </constraints>
                                                     <blurEffect style="light"/>
                                                 </visualEffectView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selah3" translatesAutoresizingMaskIntoConstraints="NO" id="hyR-V0-fZD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="141"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -543,17 +543,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lq3-cc-oGy">
-                                            <rect key="frame" x="293" y="13" width="26" height="26"/>
+                                        <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lq3-cc-oGy">
+                                            <rect key="frame" x="305" y="16" width="20" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="35" id="6P3-2D-sX8"/>
                                                 <constraint firstAttribute="width" constant="35" id="BfQ-Pr-16i"/>
                                                 <constraint firstAttribute="width" constant="33" id="Eks-e6-O2h"/>
-                                                <constraint firstAttribute="width" constant="26" id="eD7-2a-zG1"/>
-                                                <constraint firstAttribute="height" constant="26" id="mTF-cM-uah"/>
+                                                <constraint firstAttribute="width" constant="20" id="eD7-2a-zG1"/>
+                                                <constraint firstAttribute="height" constant="20" id="mTF-cM-uah"/>
                                                 <constraint firstAttribute="height" constant="33" id="sSO-2v-LqD"/>
                                             </constraints>
-                                            <state key="normal" image="pin-filled"/>
+                                            <state key="normal" image="pin-white-filled"/>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="6P3-2D-sX8"/>
@@ -564,17 +564,6 @@
                                             </variation>
                                             <connections>
                                                 <action selector="pinBtnPressed:" destination="Ldx-p2-N1m" eventType="touchUpInside" id="kG7-SY-6zA"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRx-k6-DKV">
-                                            <rect key="frame" x="327" y="7" width="40" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="40" id="imK-tw-QEU"/>
-                                                <constraint firstAttribute="height" constant="40" id="rz8-VT-whp"/>
-                                            </constraints>
-                                            <state key="normal" image="heart-empty"/>
-                                            <connections>
-                                                <action selector="loveBtnPressed:" destination="Ldx-p2-N1m" eventType="touchUpInside" id="n2b-bb-nGj"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZvA-MV-XMI">
@@ -596,13 +585,24 @@
                                                 </mask>
                                             </variation>
                                         </button>
+                                        <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRx-k6-DKV">
+                                            <rect key="frame" x="337" y="12" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="imK-tw-QEU"/>
+                                                <constraint firstAttribute="height" constant="30" id="rz8-VT-whp"/>
+                                            </constraints>
+                                            <state key="normal" image="heart-white-empty"/>
+                                            <connections>
+                                                <action selector="loveBtnPressed:" destination="Ldx-p2-N1m" eventType="touchUpInside" id="n2b-bb-nGj"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Lq3-cc-oGy" firstAttribute="centerY" secondItem="ZvA-MV-XMI" secondAttribute="centerY" id="0kR-xe-1Cb"/>
                                         <constraint firstItem="ZRx-k6-DKV" firstAttribute="centerY" secondItem="ZvA-MV-XMI" secondAttribute="centerY" id="1Ri-dw-KfW"/>
                                         <constraint firstItem="ZRx-k6-DKV" firstAttribute="centerY" secondItem="yEi-xT-ouv" secondAttribute="centerY" id="MyQ-s3-8ta"/>
                                         <constraint firstAttribute="trailing" secondItem="ZRx-k6-DKV" secondAttribute="trailing" constant="8" id="t7r-hN-nJh"/>
-                                        <constraint firstItem="ZRx-k6-DKV" firstAttribute="leading" secondItem="Lq3-cc-oGy" secondAttribute="trailing" constant="8" id="tns-4r-Yp0"/>
+                                        <constraint firstItem="ZRx-k6-DKV" firstAttribute="leading" secondItem="Lq3-cc-oGy" secondAttribute="trailing" constant="12" id="tns-4r-Yp0"/>
                                         <constraint firstItem="ZvA-MV-XMI" firstAttribute="leading" secondItem="yEi-xT-ouv" secondAttribute="leading" constant="8" id="wbo-QE-Vhl"/>
                                     </constraints>
                                 </view>
@@ -648,7 +648,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Albums" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0u-cx-5tG">
-                                                <rect key="frame" x="144" y="0.0" width="93" height="22"/>
+                                                <rect key="frame" x="144.5" y="0.0" width="93" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="64" id="7xb-YZ-H4Q"/>
                                                     <constraint firstAttribute="height" constant="22" id="Evj-4q-yM3"/>
@@ -663,7 +663,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Similar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIP-k9-qns">
-                                                <rect key="frame" x="237" y="0.0" width="81.5" height="22"/>
+                                                <rect key="frame" x="237.5" y="0.0" width="81.5" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="3oU-TS-vEo"/>
                                                     <constraint firstAttribute="width" constant="64" id="G4n-04-uuz"/>
@@ -785,7 +785,7 @@ soulfemale vocalistsjazzsinger-songwriterbelgianreggae</string>
                                 </constraints>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUf-NC-oWw">
-                                <rect key="frame" x="8" y="48" width="359" height="151"/>
+                                <rect key="frame" x="8" y="58" width="359" height="141"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Selah Sue was born Sanne Putseys on 3rd May 1989 in Leuven, Belgium. She is a singer-songwriter, who combines multiple musical styles like folk, soul and reggae.
 Selah started playing classic guitar when she was 15. When she was 17, she participated in an open mic night in 'Het Depot', a small venue in Leuven. Organiser of the event and successful Belgian singer Milow (born Jonathan Vandenbroeck) saw her perform and asked her to be his support act..
@@ -797,34 +797,34 @@ She's recently been named by the Rolling Stone magazine as one of the New Faces 
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ykj-Qd-HrC">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ykj-Qd-HrC">
                                 <rect key="frame" x="8" y="0.0" width="359" height="50"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bBV-kS-dqM">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="bBV-kS-dqM">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rm4-7N-vIt">
-                                                <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rm4-7N-vIt">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="27"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="listeners-white" translatesAutoresizingMaskIntoConstraints="NO" id="CTQ-8H-2bT">
-                                                        <rect key="frame" x="0.0" y="5" width="20" height="20"/>
+                                                    <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="listeners-white" translatesAutoresizingMaskIntoConstraints="NO" id="CTQ-8H-2bT">
+                                                        <rect key="frame" x="0.0" y="3" width="20" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="K1y-ne-lj0"/>
                                                             <constraint firstAttribute="width" constant="20" id="xvC-em-bcy"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="326.4k" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Num-Vc-pm1" customClass="LabelOnDimmedBackground" customModule="lastfm_scrobrows" customModuleProvider="target">
-                                                        <rect key="frame" x="25" y="5" width="55" height="20"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="326.4k" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Num-Vc-pm1" customClass="LabelOnDimmedBackground" customModule="lastfm_scrobrows" customModuleProvider="target">
+                                                        <rect key="frame" x="25" y="3" width="55" height="20"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lLX-W5-Hja">
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lLX-W5-Hja">
                                                 <rect key="frame" x="0.0" y="30" width="80" height="20"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scrobbles-white" translatesAutoresizingMaskIntoConstraints="NO" id="0TG-1c-Tdd">
+                                                    <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scrobbles-white" translatesAutoresizingMaskIntoConstraints="NO" id="0TG-1c-Tdd">
                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="5xU-KE-DTc"/>
@@ -838,58 +838,96 @@ She's recently been named by the Rolling Stone magazine as one of the New Faces 
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="oYp-M1-sQo"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="1Yi-3D-ti7"/>
                                         </constraints>
                                     </stackView>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zKu-fE-jsI" userLabel="Line View">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zKu-fE-jsI" userLabel="Line View">
                                         <rect key="frame" x="85" y="0.0" width="1" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="Lgs-No-RJe"/>
                                         </constraints>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="aaa-O7-a5b">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="aaa-O7-a5b">
                                         <rect key="frame" x="91" y="0.0" width="85" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Top album:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="gU6-6A-BqX" customClass="LabelOnDimmedBackground" customModule="lastfm_scrobrows" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="85" height="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top album:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="gU6-6A-BqX" customClass="LabelOnDimmedBackground" customModule="lastfm_scrobrows" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="85" height="23.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="DiV-Fw-fvf"/>
+                                                    <constraint firstAttribute="width" constant="85" id="nCV-4w-1uG"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="DiV-Fw-fvf"/>
+                                                    </mask>
+                                                </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Top track:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="pwF-fE-htz" customClass="LabelOnDimmedBackground" customModule="lastfm_scrobrows" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="30" width="76" height="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top track:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="pwF-fE-htz" customClass="LabelOnDimmedBackground" customModule="lastfm_scrobrows" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="26.5" width="85" height="23.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="e9U-Lu-eYr"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="e9U-Lu-eYr"/>
+                                                    </mask>
+                                                </variation>
                                             </label>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="pwF-fE-htz" firstAttribute="width" secondItem="gU6-6A-BqX" secondAttribute="width" id="Sye-2G-cQy"/>
                                             <constraint firstAttribute="width" constant="85" id="do6-CZ-k6R"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="z0F-rc-XV8">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="bottom" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="z0F-rc-XV8">
                                         <rect key="frame" x="181" y="0.0" width="178" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Reason (2015)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="flO-RE-JUQ" customClass="LabelOnDimmedBackground" customModule="lastfm_scrobrows" customModuleProvider="target">
-                                                <rect key="frame" x="69" y="0.0" width="109" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reason (2015)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="flO-RE-JUQ" customClass="LabelOnDimmedBackground" customModule="lastfm_scrobrows" customModuleProvider="target">
+                                                <rect key="frame" x="69" y="0.0" width="109" height="23.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="afz-u9-c1i"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="afz-u9-c1i"/>
+                                                    </mask>
+                                                </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Raggamufin" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="bJ2-TP-c0w" customClass="LabelOnDimmedBackground" customModule="lastfm_scrobrows" customModuleProvider="target">
-                                                <rect key="frame" x="86" y="25" width="92" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Raggamufin" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="bJ2-TP-c0w" customClass="LabelOnDimmedBackground" customModule="lastfm_scrobrows" customModuleProvider="target">
+                                                <rect key="frame" x="86" y="26" width="92" height="23.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="TFK-be-ut6"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="TFK-be-ut6"/>
+                                                    </mask>
+                                                </variation>
                                             </label>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ngj-i8-Uyz"/>
                                     <constraint firstAttribute="bottom" secondItem="zKu-fE-jsI" secondAttribute="bottom" id="gZm-5K-AuS"/>
                                     <constraint firstItem="zKu-fE-jsI" firstAttribute="top" secondItem="Ykj-Qd-HrC" secondAttribute="top" id="pve-gc-2Or"/>
                                 </constraints>
@@ -936,35 +974,91 @@ She's recently been named by the Rolling Stone magazine as one of the New Faces 
                         <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Songs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZc-pJ-GQl">
-                                <rect key="frame" x="163" y="114" width="49" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Awb-lI-HIk">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="35" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Awb-lI-HIk">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="1" alpha="0.74816810344827589" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArtistCell" id="Sph-Wd-4rh">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TrackCell" rowHeight="35" id="Sph-Wd-4rh" customClass="TrackCell" customModule="lastfm_scrobrows" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="35"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sph-Wd-4rh" id="Zrg-5z-Ar4">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="34.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Painful like" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nut-bO-qxd">
+                                                    <rect key="frame" x="8" y="8" width="238" height="19"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="aUH-UB-4jc">
+                                                    <rect key="frame" x="254" y="7" width="75" height="20"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scrobbles-white" translatesAutoresizingMaskIntoConstraints="NO" id="BrF-iT-MkD">
+                                                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="DGe-7J-dJb"/>
+                                                                <constraint firstAttribute="width" constant="20" id="Z9f-Qg-UET"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="326.4k" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="pAO-MQ-Vmb" customClass="LabelOnDimmedBackground" customModule="lastfm_scrobrows" customModuleProvider="target">
+                                                            <rect key="frame" x="25" y="0.0" width="50" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="50" id="hZ3-0u-Lfe"/>
+                                                                <constraint firstAttribute="height" constant="20" id="leb-kD-f7b"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <variation key="default">
+                                                                <mask key="constraints">
+                                                                    <exclude reference="leb-kD-f7b"/>
+                                                                </mask>
+                                                            </variation>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="pAO-MQ-Vmb" secondAttribute="trailing" id="21i-nh-HZk"/>
+                                                        <constraint firstAttribute="width" constant="75" id="XiC-XW-FDU"/>
+                                                        <constraint firstAttribute="height" constant="20" id="bhA-em-fCm"/>
+                                                        <constraint firstItem="pAO-MQ-Vmb" firstAttribute="top" secondItem="aUH-UB-4jc" secondAttribute="top" id="bqT-Qj-5IJ"/>
+                                                        <constraint firstAttribute="bottom" secondItem="pAO-MQ-Vmb" secondAttribute="bottom" id="jif-pY-P6V"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-white-empty" translatesAutoresizingMaskIntoConstraints="NO" id="L3g-Op-3Do">
+                                                    <rect key="frame" x="337" y="2" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="P8a-JW-9GT"/>
+                                                        <constraint firstAttribute="width" constant="30" id="yXe-TU-S6t"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="L3g-Op-3Do" firstAttribute="centerY" secondItem="nut-bO-qxd" secondAttribute="centerY" id="0pz-OQ-hQ9"/>
+                                                <constraint firstItem="L3g-Op-3Do" firstAttribute="trailing" secondItem="Zrg-5z-Ar4" secondAttribute="trailingMargin" id="JfK-h6-BJ9"/>
+                                                <constraint firstItem="nut-bO-qxd" firstAttribute="centerY" secondItem="Zrg-5z-Ar4" secondAttribute="centerY" id="R6n-J7-whM"/>
+                                                <constraint firstItem="nut-bO-qxd" firstAttribute="leading" secondItem="Zrg-5z-Ar4" secondAttribute="leadingMargin" id="Rnz-jd-Ynx"/>
+                                                <constraint firstItem="aUH-UB-4jc" firstAttribute="centerY" secondItem="nut-bO-qxd" secondAttribute="centerY" id="TuF-ew-34q"/>
+                                                <constraint firstItem="aUH-UB-4jc" firstAttribute="leading" secondItem="nut-bO-qxd" secondAttribute="trailing" constant="8" id="XST-MW-4R6"/>
+                                                <constraint firstItem="L3g-Op-3Do" firstAttribute="leading" secondItem="aUH-UB-4jc" secondAttribute="trailing" constant="8" id="hkQ-vF-iQp"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="loveImage" destination="L3g-Op-3Do" id="d0O-gy-Lgn"/>
+                                            <outlet property="playcountLabel" destination="pAO-MQ-Vmb" id="VeR-O9-v7z"/>
+                                            <outlet property="trackNameLabel" destination="nut-bO-qxd" id="mZk-yz-TTb"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RZc-pJ-GQl" firstAttribute="centerY" secondItem="c8a-KA-70d" secondAttribute="centerY" id="2kX-fZ-Fsn"/>
                             <constraint firstAttribute="trailing" secondItem="Awb-lI-HIk" secondAttribute="trailing" id="Dd5-XZ-zFn"/>
-                            <constraint firstItem="RZc-pJ-GQl" firstAttribute="centerX" secondItem="c8a-KA-70d" secondAttribute="centerX" id="TSF-uN-QKj"/>
                             <constraint firstItem="rrT-o3-EiX" firstAttribute="top" secondItem="Awb-lI-HIk" secondAttribute="bottom" id="UKn-tE-C28"/>
                             <constraint firstItem="Awb-lI-HIk" firstAttribute="top" secondItem="c8a-KA-70d" secondAttribute="top" id="c0x-h2-d6J"/>
                             <constraint firstItem="Awb-lI-HIk" firstAttribute="leading" secondItem="c8a-KA-70d" secondAttribute="leading" id="jba-jM-pDP"/>
@@ -972,6 +1066,9 @@ She's recently been named by the Rolling Stone magazine as one of the New Faces 
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="250"/>
+                    <connections>
+                        <outlet property="tableView" destination="Awb-lI-HIk" id="oKT-XP-D9v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8x7-aQ-ASr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1052,7 +1149,7 @@ She's recently been named by the Rolling Stone magazine as one of the New Faces 
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="G5C-Zj-FmN">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AlbumCell" id="G5C-Zj-FmN" customClass="AlbumCell" customModule="lastfm_scrobrows" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G5C-Zj-FmN" id="PWz-bL-gfO">
@@ -1082,11 +1179,11 @@ She's recently been named by the Rolling Stone magazine as one of the New Faces 
         </scene>
     </scenes>
     <resources>
-        <image name="heart-empty" width="100" height="100"/>
+        <image name="heart-white-empty" width="100" height="100"/>
         <image name="last-logo-white" width="900" height="269"/>
         <image name="listeners-white" width="100" height="100"/>
         <image name="loginbg3" width="1958" height="1208"/>
-        <image name="pin-filled" width="100" height="100"/>
+        <image name="pin-white-filled" width="100" height="100"/>
         <image name="profileimg" width="1154" height="1154"/>
         <image name="sampleartist" width="836" height="844"/>
         <image name="scrobbles-white" width="100" height="100"/>
