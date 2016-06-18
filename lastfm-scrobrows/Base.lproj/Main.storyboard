@@ -327,58 +327,38 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="141"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selah3" translatesAutoresizingMaskIntoConstraints="NO" id="hyR-V0-fZD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="141"/>
+                                                </imageView>
                                                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sFI-cy-p7Z">
                                                     <rect key="frame" x="0.0" y="101" width="375" height="40"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Wg6-Pu-1h0">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selah Sue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="gy6-HH-qKV">
-                                                                <rect key="frame" x="12" y="0.0" width="351" height="40"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="38" id="BLj-Ve-TPM"/>
-                                                                    <constraint firstAttribute="height" constant="38" id="Lna-4z-lRT"/>
-                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="v2c-sh-mEx"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
-                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <nil key="highlightedColor"/>
-                                                                <variation key="default">
-                                                                    <mask key="constraints">
-                                                                        <exclude reference="BLj-Ve-TPM"/>
-                                                                        <exclude reference="Lna-4z-lRT"/>
-                                                                        <exclude reference="v2c-sh-mEx"/>
-                                                                    </mask>
-                                                                </variation>
-                                                            </label>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="gy6-HH-qKV" firstAttribute="top" secondItem="Wg6-Pu-1h0" secondAttribute="top" id="1Ni-gG-z7J"/>
-                                                            <constraint firstItem="gy6-HH-qKV" firstAttribute="leading" secondItem="Wg6-Pu-1h0" secondAttribute="leading" constant="15" id="DKB-qO-GEx"/>
-                                                            <constraint firstAttribute="trailing" secondItem="gy6-HH-qKV" secondAttribute="trailing" constant="15" id="J6i-xf-bqT"/>
-                                                            <constraint firstItem="gy6-HH-qKV" firstAttribute="leading" secondItem="Wg6-Pu-1h0" secondAttribute="leading" constant="12" id="Lxa-kC-a61"/>
-                                                            <constraint firstItem="gy6-HH-qKV" firstAttribute="top" secondItem="Wg6-Pu-1h0" secondAttribute="top" id="Oc9-mG-sFf"/>
-                                                            <constraint firstAttribute="bottom" secondItem="gy6-HH-qKV" secondAttribute="bottom" id="UoF-Pg-WQx"/>
-                                                            <constraint firstAttribute="bottom" secondItem="gy6-HH-qKV" secondAttribute="bottom" id="mGg-Vz-3Gt"/>
-                                                            <constraint firstAttribute="trailing" secondItem="gy6-HH-qKV" secondAttribute="trailing" constant="12" id="nCF-nQ-YVu"/>
-                                                        </constraints>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="1Ni-gG-z7J"/>
-                                                                <exclude reference="DKB-qO-GEx"/>
-                                                                <exclude reference="J6i-xf-bqT"/>
-                                                                <exclude reference="UoF-Pg-WQx"/>
-                                                            </mask>
-                                                        </variation>
                                                     </view>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="Qa9-1B-Zdb"/>
                                                     </constraints>
                                                     <blurEffect style="light"/>
                                                 </visualEffectView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selah3" translatesAutoresizingMaskIntoConstraints="NO" id="hyR-V0-fZD">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="141"/>
-                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selah Sue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="gy6-HH-qKV">
+                                                    <rect key="frame" x="123.5" y="103.5" width="128.5" height="35.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="38" id="BLj-Ve-TPM"/>
+                                                        <constraint firstAttribute="height" constant="38" id="Lna-4z-lRT"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="v2c-sh-mEx"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="BLj-Ve-TPM"/>
+                                                            <exclude reference="Lna-4z-lRT"/>
+                                                            <exclude reference="v2c-sh-mEx"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -387,6 +367,8 @@
                                                 <constraint firstItem="hyR-V0-fZD" firstAttribute="centerY" secondItem="CUn-rl-aKQ" secondAttribute="centerY" id="4lj-Iq-QPZ"/>
                                                 <constraint firstAttribute="bottom" secondItem="hyR-V0-fZD" secondAttribute="bottom" id="BtA-mw-wh7"/>
                                                 <constraint firstItem="hyR-V0-fZD" firstAttribute="leading" secondItem="CUn-rl-aKQ" secondAttribute="leading" id="DWW-Rd-gwa"/>
+                                                <constraint firstItem="gy6-HH-qKV" firstAttribute="centerX" secondItem="sFI-cy-p7Z" secondAttribute="centerX" id="JwK-he-8Fp"/>
+                                                <constraint firstItem="gy6-HH-qKV" firstAttribute="centerY" secondItem="sFI-cy-p7Z" secondAttribute="centerY" id="NT1-aV-C0k"/>
                                                 <constraint firstItem="hyR-V0-fZD" firstAttribute="top" secondItem="CUn-rl-aKQ" secondAttribute="topMargin" constant="2" id="Nml-wz-TLD"/>
                                                 <constraint firstAttribute="bottom" secondItem="sFI-cy-p7Z" secondAttribute="bottom" id="PdE-RW-1SU"/>
                                                 <constraint firstItem="hyR-V0-fZD" firstAttribute="top" secondItem="CUn-rl-aKQ" secondAttribute="topMargin" id="W7h-F6-wSB"/>
