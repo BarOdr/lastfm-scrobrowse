@@ -13,6 +13,7 @@ class ArtistDetailsPageVC: UIPageViewController {
     var selectedArtist = Artist()
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         dataSource = self

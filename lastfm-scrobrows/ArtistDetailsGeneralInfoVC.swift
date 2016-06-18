@@ -28,22 +28,16 @@ class ArtistDetailsGeneralInfoVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.darkGrayColor().colorWithAlphaComponent(0.4)
 
-        // Do any additional setup after loading the view.
         print("Artist named \(selectedArtist.artistName) passed to general info vc - success!")
         configureUI()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(animated: Bool) {
+        print("bebooooooooooxonooos")
+        
     }
-
+    
     func configureUI() {
-//        var tagString = ""
-//        
-//        for tag in selectedArtist.relatedTags {
-//            tagString = tagString.stringByAppendingString("\(tag)|")
-//        }
         
         let playcount = selectedArtist.playcount
         let listenersCount = selectedArtist.listenersCount
@@ -60,14 +54,4 @@ class ArtistDetailsGeneralInfoVC: UIViewController {
         bioTextView.textColor = UIColor.whiteColor()
 
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }

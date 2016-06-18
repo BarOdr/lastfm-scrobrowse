@@ -505,20 +505,6 @@
                                 </constraints>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JQZ-sZ-KtV">
-                                <rect key="frame" x="0.0" y="378" width="375" height="233.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="255" id="IG4-NR-TNv"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="IG4-NR-TNv"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <segue destination="67n-gm-mfb" kind="embed" identifier="ToArtistDetailsPageVC" id="Nft-8e-KBo"/>
-                                </connections>
-                            </containerView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czj-4A-lL6">
                                 <rect key="frame" x="0.0" y="612" width="375" height="55"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="yEi-xT-ouv">
@@ -670,6 +656,20 @@
                                     <constraint firstAttribute="trailingMargin" secondItem="BMU-UM-w0f" secondAttribute="trailing" constant="20" id="f8j-5I-kHD"/>
                                 </constraints>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JQZ-sZ-KtV">
+                                <rect key="frame" x="0.0" y="378" width="375" height="233.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="255" id="IG4-NR-TNv"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="IG4-NR-TNv"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="67n-gm-mfb" kind="embed" identifier="ToArtistDetailsPageVC" id="Nft-8e-KBo"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -681,6 +681,7 @@
                             <constraint firstItem="jcK-Uo-zl5" firstAttribute="leading" secondItem="5mf-g9-NLn" secondAttribute="leading" id="AFp-vl-5yq"/>
                             <constraint firstAttribute="trailing" secondItem="Jie-kf-TTg" secondAttribute="trailing" id="B21-Kn-28A"/>
                             <constraint firstItem="JQZ-sZ-KtV" firstAttribute="leading" secondItem="5mf-g9-NLn" secondAttribute="leading" id="Cny-NG-ABi"/>
+                            <constraint firstItem="Jie-kf-TTg" firstAttribute="top" secondItem="jcK-Uo-zl5" secondAttribute="bottom" id="J8G-1i-fdH"/>
                             <constraint firstItem="cuC-ba-llt" firstAttribute="leading" secondItem="5mf-g9-NLn" secondAttribute="leading" id="PbM-bG-tgO"/>
                             <constraint firstItem="jcK-Uo-zl5" firstAttribute="top" secondItem="5mf-g9-NLn" secondAttribute="top" id="XvR-Ad-3xz"/>
                             <constraint firstItem="JQZ-sZ-KtV" firstAttribute="height" secondItem="5mf-g9-NLn" secondAttribute="height" multiplier="0.35" id="hYJ-Fd-JDY"/>
@@ -694,7 +695,14 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="J8G-1i-fdH"/>
                                 <exclude reference="6j5-5q-Vun"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="J8G-1i-fdH"/>
+                                <exclude reference="hYJ-Fd-JDY"/>
                             </mask>
                         </variation>
                     </view>

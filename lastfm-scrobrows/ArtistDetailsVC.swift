@@ -16,6 +16,12 @@ class ArtistDetailsVC: UIViewController {
     @IBOutlet weak var artistImage: UIImageView!
     @IBOutlet weak var artistNameLabel: UILabel!
     
+    var visiblePage = 0 {
+        didSet {
+            
+        }
+    }
+    
     var artist = Artist()
     
     override func viewDidLoad() {
@@ -26,6 +32,7 @@ class ArtistDetailsVC: UIViewController {
         artistImage.image = artist._image
         
         // Do any additional setup after loading the view.
+        
     }
 
     deinit {
