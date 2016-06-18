@@ -30,6 +30,7 @@ class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         tableView.dataSource = self
         
         print("There is \(artistsArray.count) artists in the array")
+        tableView.reloadData()
 
     }
     

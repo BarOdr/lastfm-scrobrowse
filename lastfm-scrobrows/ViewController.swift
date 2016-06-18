@@ -85,20 +85,23 @@ class ViewController: UIViewController {
         if let cachedArtists = CacheService.artistCache.objectForKey("userArtists")  {
             self.userInitialTopTenArtists = cachedArtists as! [Artist]
             self.goToArtistList()
+            
         } else {
-
+            
             let parameters = last.generateParametersForUserMethods(PARAM_USER_GET_TOP_ARTISTS, apiKey: LASTFM_API_KEY, user: "\(currentUser!.username)", period: "", limit: "", page: "")
             
             api.lastfmDownloadTask(GET, parameters: parameters) { (json) in
                 
-                self.userInitialTopTenArtists = self.api.userGetTopArtists(40, json: json)
+                self.userInitialTopTenArtists = self.api.userGetTopArtists(50, json: json)
                 
                 CacheService.artistCache.setObject(self.userInitialTopTenArtists, forKey: "userArtists")
                 
                 for artist in self.userInitialTopTenArtists {
                     print(artist.artistName)
                 }
-                self.last.imagesDownloader(self.userInitialTopTenArtists, complete: { (artists) in
+                self.api.imagesDownloader(self.userInitialTopTenArtists, complete: { (artists) in
+                    
+                    self.userInitialTopTenArtists = artists
                     self.goToArtistList()
                 })
             }

@@ -24,13 +24,7 @@ class ArtistDetailsVC: UIViewController {
         super.viewDidLoad()
 
         artistNameLabel.text = artist.artistName
-        if let cachedImage = CacheService.imageCache.objectForKey(artist.artistImgUrl) {
-            artistImage.image = cachedImage as? UIImage
-        } else {
-            lastfmDataService.imageAlamofireRequest(artist, completion: { (img) in
-                self.artistImage.image = img
-            })
-        }
+        artistImage.image = artist._image
         
         // Do any additional setup after loading the view.
     }

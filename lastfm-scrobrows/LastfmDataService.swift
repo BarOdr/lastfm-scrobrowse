@@ -12,7 +12,6 @@ import SwiftyJSON
 
 class LastfmDataService: NSObject {
     
-    let group = dispatch_group_create()
 
     deinit {
         print("LastfmDataService is being deinitialized")
@@ -58,20 +57,18 @@ class LastfmDataService: NSObject {
      - complete: (artists: [Artist]) -> Void. A new, updated with artist images, array, may be used in the completion handler.
      
      */
+    
     func imagesDownloader(artists: [Artist], complete: ImagesDownloaded) {
         
         for artist in artists {
             
-            dispatch_group_enter(group)
-            
             let cachedImage = CacheService.imageCache.objectForKey(artist.artistImgUrl) as? UIImage
             
             if cachedImage == nil {
-                print("\(artist.artistName) image downloaded and saved to cache")
                 imageAlamofireRequest(artist, completion: { image in
                     artist.setImage(image)
+                    print("\(artist.artistName) image downloaded and saved to cache")
                     CacheService.imageCache.setObject(image, forKey: artist.artistImgUrl)
-                    dispatch_group_leave(self.group)
                 })
             } else {
                 artist.setImage(cachedImage!)
@@ -93,26 +90,21 @@ class LastfmDataService: NSObject {
     
     func imageAlamofireRequest(artist: Artist, completion: ImageDownloadComplete) {
         let url = artist.artistImgUrl
-        var trialsCount = 0
         
-        if trialsCount <= 3 {
-            Alamofire.request(.GET, url).responseImage { (response) in
-                switch response.result {
-                case .Success(let img):
-                    CacheService.imageCache.setObject(img, forKey: url)
+        Alamofire.request(.GET, url).responseImage { (response) in
+            switch response.result {
+            case .Success(let img):
+                CacheService.imageCache.setObject(img, forKey: url)
+                completion(img: img)
+                
+            case .Failure(let error):
+                print("Image download for \(artist.artistName) failed. Error: \(error)")
+                print("Image download for \(artist.artistName): retry")
+                self.imageAlamofireRequest(artist, completion: { img in
                     completion(img: img)
-                    
-                case .Failure(let error):
-                    trialsCount += 1
-                    print("Image download for \(artist.artistName) failed. Error: \(error)")
-                    print("Image download for \(artist.artistName): retry")
-                    self.imageAlamofireRequest(artist, completion: { img in
-                        completion(img: img)
-                    })
-                }
+                })
+                
             }
-        } else {
-            completion(img: UIImage())
         }
     }
     
