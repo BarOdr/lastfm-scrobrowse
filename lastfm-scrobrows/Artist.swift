@@ -171,7 +171,7 @@ class Artist {
     
     var image: UIImage {
         get {
-            self.setImage(UIImage(named: "selah1")!)
+//            self.setImage(UIImage(named: "selah1")!)
             return _image!
         }
     }

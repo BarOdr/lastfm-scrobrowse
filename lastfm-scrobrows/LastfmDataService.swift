@@ -12,7 +12,8 @@ import SwiftyJSON
 
 class LastfmDataService: NSObject {
     
-    
+    let group = dispatch_group_create()
+
     deinit {
         print("LastfmDataService is being deinitialized")
     }
@@ -61,15 +62,20 @@ class LastfmDataService: NSObject {
         
         for artist in artists {
             
+            dispatch_group_enter(group)
+            
             let cachedImage = CacheService.imageCache.objectForKey(artist.artistImgUrl) as? UIImage
             
             if cachedImage == nil {
+                print("\(artist.artistName) image downloaded and saved to cache")
                 imageAlamofireRequest(artist, completion: { image in
                     artist.setImage(image)
                     CacheService.imageCache.setObject(image, forKey: artist.artistImgUrl)
+                    dispatch_group_leave(self.group)
                 })
             } else {
                 artist.setImage(cachedImage!)
+                print("\(artist.artistName) image set from cache")
             }
         }
         

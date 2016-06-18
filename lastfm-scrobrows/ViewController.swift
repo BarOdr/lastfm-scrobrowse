@@ -122,7 +122,6 @@ class ViewController: UIViewController {
      */
     
     func goToArtistList() {
-        print("Go to artist list")
         let artistListVC = storyboard?.instantiateViewControllerWithIdentifier("ArtistListVC") as! ArtistListVC
         artistListVC.currentUser = currentUser!
         artistListVC.artistsArray = userInitialTopTenArtists

@@ -32,6 +32,10 @@ class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         print("There is \(artistsArray.count) artists in the array")
 
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        tableView.reloadData()
+    }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
