@@ -23,11 +23,11 @@ class API: NSObject {
         lastfmDataService = LastfmDataService()
     }
     
-    func generateParametersForArtistMethods(method: String, apiKey: String, artist: String, username: String) -> Dictionary<String, String> {
+    func generateParametersForArtistMethods(method: String, apiKey: String, artist: Artist, username: String) -> Dictionary<String, String> {
         return lastfmDataService.generateParametersForArtistMethods(method, apiKey: apiKey, artist: artist, username: username)
     }
     
-    func generateParametersForAlbumOrTrackMethods(method: String, apiKey: String, username: String, artist: String, albumOrTrack: String) -> Dictionary<String, String> {
+    func generateParametersForAlbumOrTrackMethods(method: String, apiKey: String, username: String, artist: Artist, albumOrTrack: String) -> Dictionary<String, String> {
         return lastfmDataService.generateParametersForAlbumOrTrackMethods(method, apiKey: apiKey, username: username, artist: artist, albumOrTrack: albumOrTrack)
     }
     

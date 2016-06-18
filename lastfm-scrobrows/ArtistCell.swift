@@ -32,17 +32,7 @@ class ArtistCell: UITableViewCell {
         
         
         artistNameLabel.text = artist.artistName
-        
-        self.artistImage.image = nil
-        if let cachedImage = CacheService.imageCache.objectForKey(artist.artistImgUrl) {
-            artistImage.image = cachedImage as? UIImage
-            artistImage.fadeIn(1.5)
-        } else {
-            lastfmDataService.imageAlamofireRequest(artist, completion: { (img) in
-                self.artistImage.image = img
-                self.artistImage.fadeIn(1.5)
-            })
-        }
+        artistImage.image = artist.image
         
     }
 }

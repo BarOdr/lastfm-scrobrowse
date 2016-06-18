@@ -11,7 +11,7 @@ import UIKit
 class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
-    let ds = LastfmDataService()
+//    let ds = LastfmDataService()
     let api = API()
     
     var artistsArray = [Artist]()
@@ -64,7 +64,7 @@ class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             goToDetails(cachedArtist)
         } else {
             let username = currentUser.username
-            let paramsDict = api.generateParametersForArtistMethods(PARAM_ARTIST_GET_INFO, apiKey: LASTFM_API_KEY, artist: selectedArtist.artistName, username: username)
+            let paramsDict = api.generateParametersForArtistMethods(PARAM_ARTIST_GET_INFO, apiKey: LASTFM_API_KEY, artist: selectedArtist, username: username)
             
             api.lastfmDownloadTask(.GET, parameters: paramsDict) { (json) in
                 

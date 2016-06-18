@@ -23,6 +23,7 @@ class Artist {
     private var _biography: String?
     private var _onTour: String?
     private var _match: String?
+    private var _image: UIImage?
     
     var artistName: String {
         get {
@@ -168,6 +169,13 @@ class Artist {
         }
     }
     
+    var image: UIImage {
+        get {
+            self.setImage(UIImage(named: "selah1")!)
+            return _image!
+        }
+    }
+    
     func setName(name: String) {
         _artistName = name
     }
@@ -214,6 +222,10 @@ class Artist {
     
     func setMatch(match: String) {
         _match = match
+    }
+    
+    func setImage(img: UIImage) {
+        _image = img
     }
   
     

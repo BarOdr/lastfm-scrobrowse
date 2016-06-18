@@ -89,17 +89,18 @@ class ViewController: UIViewController {
 
             let parameters = last.generateParametersForUserMethods(PARAM_USER_GET_TOP_ARTISTS, apiKey: LASTFM_API_KEY, user: "\(currentUser!.username)", period: "", limit: "", page: "")
             
-            print(parameters)
-            
             api.lastfmDownloadTask(GET, parameters: parameters) { (json) in
                 
                 self.userInitialTopTenArtists = self.api.userGetTopArtists(40, json: json)
                 
                 CacheService.artistCache.setObject(self.userInitialTopTenArtists, forKey: "userArtists")
+                
                 for artist in self.userInitialTopTenArtists {
                     print(artist.artistName)
                 }
-                self.goToArtistList()
+                self.last.imagesDownloader(self.userInitialTopTenArtists, complete: { (artists) in
+                    self.goToArtistList()
+                })
             }
         }
 
@@ -121,11 +122,11 @@ class ViewController: UIViewController {
      */
     
     func goToArtistList() {
+        print("Go to artist list")
         let artistListVC = storyboard?.instantiateViewControllerWithIdentifier("ArtistListVC") as! ArtistListVC
         artistListVC.currentUser = currentUser!
         artistListVC.artistsArray = userInitialTopTenArtists
         presentViewController(artistListVC, animated: true, completion: nil)
-        print("Go to artist list")
     }
     
     /**
