@@ -18,5 +18,29 @@ class Helper {
         return timeStr
     }
     
+
+    static func formattedPlaycount(playcount: String) -> String {
+        
+        let number = Double(playcount)
+        
+        if number <= 1000 {
+            return "\(number!)"
+            
+        } else if number > 1000 && number < 10000 {
+            let dividedNumber = number! / 1000
+            return String(format: "%.3f", dividedNumber)
+            
+        } else if number >= 10000 && number < 1000000 {
+            let dividedNumber = number! / 1000
+            return String(format: "%.1fK", dividedNumber)
+            
+        } else if number >= 1000000 {
+            let dividedNumber = number! / 1000000
+            return String(format: "%.1fM", dividedNumber)
+            
+        } else {
+            return String(number)
+        }
+    }
     
 }

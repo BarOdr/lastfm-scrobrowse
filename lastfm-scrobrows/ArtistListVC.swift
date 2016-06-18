@@ -76,8 +76,22 @@ class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                 
                 selectedArtist = self.api.artistGetInfo(selectedArtist, json: json)
                 CacheService.artistCache.setObject(selectedArtist, forKey: selectedArtist.artistName)
-                print("Saved \(selectedArtist.artistName) to cache")
-                self.goToDetails(selectedArtist)
+                print("Saved \(selectedArtist.artistName) to cache without details")
+                
+                let paramsDict = self.api.generateParametersForArtistMethods(PARAM_ARTIST_GET_TOPALBUMS, apiKey: LASTFM_API_KEY, artist: selectedArtist, username: username)
+                
+                self.api.lastfmDownloadTask(GET, parameters: paramsDict, completion: { (json) in
+                    let topAlbums = self.api.artistGetTopAlbums(1, json: json)
+                    selectedArtist.setTopAlbums(topAlbums)
+                    
+                    let paramsDict = self.api.generateParametersForArtistMethods(PARAM_ARTIST_GET_TOPTRACKS, apiKey: LASTFM_API_KEY, artist: selectedArtist, username: username)
+                    self.api.lastfmDownloadTask(GET, parameters: paramsDict, completion: { (json) in
+                        let tracks = self.api.artistGetTopTracks(1, json: json)
+                        selectedArtist.setTopTracks(tracks)
+                        
+                        self.goToDetails(selectedArtist)
+                    })
+                })
             }
         }
     }

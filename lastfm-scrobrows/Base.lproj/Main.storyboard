@@ -813,7 +813,7 @@ She's recently been named by the Rolling Stone magazine as one of the New Faces 
                                                             <constraint firstAttribute="width" constant="20" id="xvC-em-bcy"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="326.4k" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Num-Vc-pm1" customClass="LabelOnDimmedBackground" customModule="lastfm_scrobrows" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="326.4k" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Num-Vc-pm1" customClass="LabelOnDimmedBackground" customModule="lastfm_scrobrows" customModuleProvider="target">
                                                         <rect key="frame" x="25" y="5" width="55" height="20"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -831,7 +831,7 @@ She's recently been named by the Rolling Stone magazine as one of the New Faces 
                                                             <constraint firstAttribute="height" constant="20" id="hfD-YH-Xmc"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="326.4k" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="DpH-BY-8gw" customClass="LabelOnDimmedBackground" customModule="lastfm_scrobrows" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="326.4k" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="DpH-BY-8gw" customClass="LabelOnDimmedBackground" customModule="lastfm_scrobrows" customModuleProvider="target">
                                                         <rect key="frame" x="25" y="0.0" width="55" height="20"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -852,7 +852,7 @@ She's recently been named by the Rolling Stone magazine as one of the New Faces 
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="aaa-O7-a5b">
-                                        <rect key="frame" x="91" y="0.0" width="100" height="50"/>
+                                        <rect key="frame" x="91" y="0.0" width="85" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Top album:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="gU6-6A-BqX" customClass="LabelOnDimmedBackground" customModule="lastfm_scrobrows" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="85" height="30"/>
@@ -868,20 +868,20 @@ She's recently been named by the Rolling Stone magazine as one of the New Faces 
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="do6-CZ-k6R"/>
+                                            <constraint firstAttribute="width" constant="85" id="do6-CZ-k6R"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="z0F-rc-XV8">
-                                        <rect key="frame" x="196" y="0.0" width="163" height="50"/>
+                                        <rect key="frame" x="181" y="0.0" width="178" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Reason (2015)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="flO-RE-JUQ" customClass="LabelOnDimmedBackground" customModule="lastfm_scrobrows" customModuleProvider="target">
-                                                <rect key="frame" x="54" y="0.0" width="109" height="25"/>
+                                                <rect key="frame" x="69" y="0.0" width="109" height="25"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Raggamufin" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="bJ2-TP-c0w" customClass="LabelOnDimmedBackground" customModule="lastfm_scrobrows" customModuleProvider="target">
-                                                <rect key="frame" x="71" y="25" width="92" height="25"/>
+                                                <rect key="frame" x="86" y="25" width="92" height="25"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -917,7 +917,7 @@ She's recently been named by the Rolling Stone magazine as one of the New Faces 
                         <outlet property="playcountLabel" destination="DpH-BY-8gw" id="7mz-7F-xjj"/>
                         <outlet property="tagsLabel" destination="SxS-JC-aX3" id="bOO-sI-6NJ"/>
                         <outlet property="topAlbumLabel" destination="flO-RE-JUQ" id="8kG-Uo-RuK"/>
-                        <outlet property="topArtistLabel" destination="bJ2-TP-c0w" id="xQg-9c-aVj"/>
+                        <outlet property="topTrackLabel" destination="bJ2-TP-c0w" id="MGO-Lp-Nop"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WSQ-Xh-yMd" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -16,7 +16,7 @@ class ArtistDetailsGeneralInfoVC: UIViewController {
     @IBOutlet weak var playcountLabel: LabelOnDimmedBackground!
     @IBOutlet weak var listenersCountLabel: LabelOnDimmedBackground!
     @IBOutlet weak var topAlbumLabel: LabelOnDimmedBackground!
-    @IBOutlet weak var topArtistLabel: LabelOnDimmedBackground!
+    @IBOutlet weak var topTrackLabel: LabelOnDimmedBackground!
     @IBOutlet weak var bioTextView: UITextView!
     
     convenience init() {
@@ -39,16 +39,24 @@ class ArtistDetailsGeneralInfoVC: UIViewController {
     }
 
     func configureUI() {
-        var tagString = ""
+//        var tagString = ""
+//        
+//        for tag in selectedArtist.relatedTags {
+//            tagString = tagString.stringByAppendingString("\(tag)|")
+//        }
         
-        for tag in selectedArtist.relatedTags {
-            tagString = tagString.stringByAppendingString("\(tag)|")
-        }
-        tagsLabel.text = tagString
-        playcountLabel.text = selectedArtist.playcount
-        listenersCountLabel.text = selectedArtist.listenersCount
+        let playcount = selectedArtist.playcount
+        let listenersCount = selectedArtist.listenersCount
+        
+        let formattedPlayc = Helper.formattedPlaycount(playcount)
+        let formattedListCount = Helper.formattedPlaycount(listenersCount)
+        tagsLabel.text = "Here are the artist's top tags!"
+        playcountLabel.text = formattedPlayc
+        listenersCountLabel.text = formattedListCount
+        topAlbumLabel.text = selectedArtist.topAlbums[0].albumName
+        topTrackLabel.text = selectedArtist.topTracks[0].trackName
         bioTextView.text = selectedArtist.biography
-        bioTextView.font = bioTextView.font?.fontWithSize(17)
+        bioTextView.font = bioTextView.font?.fontWithSize(20)
         bioTextView.textColor = UIColor.whiteColor()
 
     }

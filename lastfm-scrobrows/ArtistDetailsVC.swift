@@ -17,7 +17,6 @@ class ArtistDetailsVC: UIViewController {
     @IBOutlet weak var artistNameLabel: UILabel!
     
     var artist = Artist()
-    let lastfmDataService = LastfmDataService()
     
     override func viewDidLoad() {
         

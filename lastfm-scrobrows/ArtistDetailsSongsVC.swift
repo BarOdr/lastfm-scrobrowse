@@ -11,12 +11,15 @@ import UIKit
 class ArtistDetailsSongsVC: UIViewController {
 
     var selectedArtist = Artist()
+    let api = API()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         view.backgroundColor = UIColor.darkGrayColor().colorWithAlphaComponent(0.4)
 
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,6 +28,9 @@ class ArtistDetailsSongsVC: UIViewController {
     }
     
 
+    func downloadTopTracks() -> [Track] {
+        
+    }
     /*
     // MARK: - Navigation
 

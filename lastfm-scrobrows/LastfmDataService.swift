@@ -46,7 +46,6 @@ class LastfmDataService: NSObject {
     }
     
     
-    
     /**
      This method iterates through an Artists array and downloads images for them.
      
