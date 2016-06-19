@@ -66,12 +66,12 @@ class ArtistDetailsSimilarVC: UIViewController, UITableViewDelegate, UITableView
         api.lastfmDownloadTask(GET, parameters: params) { (json) in
             
             newArtist = self.api.artistGetInfo(newArtist, json: json)
-            
+
             let params = self.api.generateParametersForArtistMethods(PARAM_ARTIST_GET_TOPTRACKS, apiKey: LASTFM_API_KEY, artist: newArtist, username: "")
             
             self.api.lastfmDownloadTask(GET, parameters: params, completion: { (json) in
                 
-                let topTracks = self.api.userGetTopTracks(20, json: json)
+                let topTracks = self.api.artistGetTopTracks(20, json: json)
                 newArtist.setTopTracks(topTracks)
                 
                 let params = self.api.generateParametersForArtistMethods(PARAM_ARTIST_GET_TOPALBUMS, apiKey: LASTFM_API_KEY, artist: newArtist, username: "")

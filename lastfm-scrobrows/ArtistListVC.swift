@@ -22,7 +22,7 @@ class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     @IBOutlet weak var tableView: UITableView!
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -56,11 +56,7 @@ class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             return ArtistCell()
         }
     }
-    
-    func tableView(tableView: UITableView, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    
+
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         var selectedArtist = artistsArray[indexPath.row]
@@ -69,6 +65,8 @@ class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             print("Loaded \(cachedArtist.artistName) from cache")
             goToDetails(cachedArtist)
         } else {
+            
+            
             let username = currentUser.username
             let paramsDict = api.generateParametersForArtistMethods(PARAM_ARTIST_GET_INFO, apiKey: LASTFM_API_KEY, artist: selectedArtist, username: username)
             
@@ -98,10 +96,7 @@ class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             }
         }
     }
-    
-    func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-    }
+
     
     func goToDetails(artist: Artist) {
         let vc = storyboard?.instantiateViewControllerWithIdentifier(VIEWCONTR_ARTIST_DETAILS_VC) as! ArtistDetailsVC

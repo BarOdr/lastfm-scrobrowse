@@ -78,6 +78,28 @@ class LastfmDataService: NSObject {
         complete(artists: artists)
     }
     
+    func imagesDownloaderWithTableView(artists: [Artist], tableView: UITableView, complete: ImagesDownloaded) {
+        
+        for artist in artists {
+            
+            let cachedImage = CacheService.imageCache.objectForKey(artist.artistImgUrl) as? UIImage
+            
+            if cachedImage == nil {
+                imageAlamofireRequest(artist.artistImgUrl, completion: { image in
+                    artist.setImage(image)
+                    print("\(artist.artistName) image downloaded and saved to cache")
+                    CacheService.imageCache.setObject(image, forKey: artist.artistImgUrl)
+                    tableView.reloadData()
+                })
+            } else {
+                artist.setImage(cachedImage!)
+                print("\(artist.artistName) image set from cache")
+                tableView.reloadData()
+            }
+        }
+        
+        complete(artists: artists)
+    }
     
     /**
      This method performs an Alamofire request to fetch an image from an url. Should the request fail, the method will retry, 3 times in total. Should the request fail three times, a default image will be provided, which will NOT be saved to imageCache.
@@ -371,7 +393,7 @@ class LastfmDataService: NSObject {
         if let artistName = json[LASTM_ARTIST][LASTFM_NAME].string {
             artist.setName(artistName)
         }
-        if let imageUrl = json[LASTM_ARTIST][LASTFM_IMAGE][3][LASTFM_TEXT].string {
+        if let imageUrl = json[LASTM_ARTIST][LASTFM_IMAGE][4][LASTFM_TEXT].string {
             artist.setImgUrl(imageUrl)
         }
         if let onTour = json[LASTM_ARTIST][LASTFM_ONTOUR].string {
@@ -396,7 +418,7 @@ class LastfmDataService: NSObject {
             if let similarName = json[LASTFM_ARTIST][LASTFM_SIMILAR][LASTFM_ARTIST][i][LASTFM_NAME].string {
                 artist.setName(similarName)
             }
-            if let similarImageUrl = json[LASTFM_ARTIST][LASTFM_SIMILAR][LASTFM_ARTIST][i][LASTFM_IMAGE][2][LASTFM_TEXT].string {
+            if let similarImageUrl = json[LASTFM_ARTIST][LASTFM_SIMILAR][LASTFM_ARTIST][i][LASTFM_IMAGE][5][LASTFM_TEXT].string {
                 artist.setImgUrl(similarImageUrl)
             }
             similarArtists.append(artist)

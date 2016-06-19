@@ -18,6 +18,7 @@ class SimilarArtistCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        artistImage.clipsToBounds = true
         // Initialization code
     }
 

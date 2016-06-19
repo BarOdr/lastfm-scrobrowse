@@ -351,7 +351,7 @@
                                                     <blurEffect style="light"/>
                                                 </visualEffectView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selah Sue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="gy6-HH-qKV">
-                                                    <rect key="frame" x="123.5" y="103.5" width="128.5" height="35.5"/>
+                                                    <rect key="frame" x="123" y="103" width="128.5" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="38" id="BLj-Ve-TPM"/>
                                                         <constraint firstAttribute="height" constant="38" id="Lna-4z-lRT"/>
@@ -368,6 +368,19 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WBc-DJ-PL4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="101"/>
+                                                    <subviews>
+                                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="g8I-lu-Fjt">
+                                                            <rect key="frame" x="177" y="41" width="20" height="20"/>
+                                                        </activityIndicatorView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="0.50134698275862066" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="g8I-lu-Fjt" firstAttribute="centerX" secondItem="WBc-DJ-PL4" secondAttribute="centerX" id="0yN-yk-Eyv"/>
+                                                        <constraint firstItem="g8I-lu-Fjt" firstAttribute="centerY" secondItem="WBc-DJ-PL4" secondAttribute="centerY" id="qjx-9E-WLy"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -377,14 +390,18 @@
                                                 <constraint firstAttribute="bottom" secondItem="hyR-V0-fZD" secondAttribute="bottom" id="BtA-mw-wh7"/>
                                                 <constraint firstItem="hyR-V0-fZD" firstAttribute="leading" secondItem="CUn-rl-aKQ" secondAttribute="leading" id="DWW-Rd-gwa"/>
                                                 <constraint firstItem="gy6-HH-qKV" firstAttribute="centerX" secondItem="sFI-cy-p7Z" secondAttribute="centerX" id="JwK-he-8Fp"/>
+                                                <constraint firstItem="WBc-DJ-PL4" firstAttribute="leading" secondItem="CUn-rl-aKQ" secondAttribute="leading" id="K0j-H8-Gk4"/>
                                                 <constraint firstItem="gy6-HH-qKV" firstAttribute="centerY" secondItem="sFI-cy-p7Z" secondAttribute="centerY" id="NT1-aV-C0k"/>
                                                 <constraint firstItem="hyR-V0-fZD" firstAttribute="top" secondItem="CUn-rl-aKQ" secondAttribute="topMargin" constant="2" id="Nml-wz-TLD"/>
                                                 <constraint firstAttribute="bottom" secondItem="sFI-cy-p7Z" secondAttribute="bottom" id="PdE-RW-1SU"/>
+                                                <constraint firstItem="sFI-cy-p7Z" firstAttribute="top" secondItem="WBc-DJ-PL4" secondAttribute="bottom" id="PeB-vB-k0l"/>
                                                 <constraint firstItem="hyR-V0-fZD" firstAttribute="top" secondItem="CUn-rl-aKQ" secondAttribute="topMargin" id="W7h-F6-wSB"/>
+                                                <constraint firstAttribute="trailing" secondItem="WBc-DJ-PL4" secondAttribute="trailing" id="YIM-ZG-bWX"/>
                                                 <constraint firstAttribute="bottom" secondItem="hyR-V0-fZD" secondAttribute="bottom" id="bUL-qi-UgP"/>
                                                 <constraint firstItem="hyR-V0-fZD" firstAttribute="top" secondItem="CUn-rl-aKQ" secondAttribute="top" id="dpn-In-HSy"/>
                                                 <constraint firstItem="hyR-V0-fZD" firstAttribute="top" secondItem="CUn-rl-aKQ" secondAttribute="top" id="nT4-mW-LTL"/>
                                                 <constraint firstAttribute="trailing" secondItem="sFI-cy-p7Z" secondAttribute="trailing" id="nXk-MM-1ox"/>
+                                                <constraint firstItem="WBc-DJ-PL4" firstAttribute="top" secondItem="CUn-rl-aKQ" secondAttribute="top" id="qEz-ks-5Vz"/>
                                                 <constraint firstItem="sFI-cy-p7Z" firstAttribute="leading" secondItem="CUn-rl-aKQ" secondAttribute="leading" id="sRK-Lh-2Dm"/>
                                             </constraints>
                                             <variation key="default">
@@ -399,8 +416,10 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="activityIndicator" destination="g8I-lu-Fjt" id="sA9-rp-7he"/>
                                             <outlet property="artistImage" destination="hyR-V0-fZD" id="uUG-gq-nhS"/>
                                             <outlet property="artistNameLabel" destination="gy6-HH-qKV" id="V0g-gy-lpT"/>
+                                            <outlet property="dimView" destination="WBc-DJ-PL4" id="Ahf-5a-dni"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

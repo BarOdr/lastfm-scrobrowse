@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Helper {
     
@@ -18,7 +19,43 @@ class Helper {
         return timeStr
     }
     
-
+    /**
+     This method turns the activity indication on or off.
+     
+     - Parameter active: Bool
+     */
+    
+    static func activity(active: Bool, dimView: UIView, indicator: UIActivityIndicatorView) {
+        if active {
+            indicateActivity(dimView, indicator: indicator)
+        } else {
+            stopIndicatingActivity(dimView, indicator: indicator)
+        }
+    }
+    
+    /**
+     This method shows the activity indicator and stops its animation.
+     */
+    
+    static func indicateActivity(dimView: UIView, indicator: UIActivityIndicatorView) {
+        dimView.alpha = 0
+        dimView.hidden = false
+        dimView.fadeIn(0.2)
+        indicator.fadeIn(0.3)
+        indicator.startAnimating()
+    }
+    
+    /**
+     This method shows the activity indicator and stops its animation.
+     */
+    
+    static func stopIndicatingActivity(dimView: UIView, indicator: UIActivityIndicatorView) {
+        indicator.fadeOut(0.3)
+        indicator.stopAnimating()
+        dimView.fadeOut(0.2)
+        dimView.hidden = false
+    }
+    
     static func formattedPlaycount(playcount: String) -> String {
         
         let number = Double(playcount)
@@ -47,6 +84,12 @@ class Helper {
         
         let stringNumber = String(playcount)
         return formattedPlaycount(stringNumber)
+    }
+    
+    static func formattedTagString(tags: [String]) -> String {
+        
+        
+        return ""
     }
     
 }

@@ -92,7 +92,7 @@ class ViewController: UIViewController {
             
         } else {
             
-            indicateActivity()
+            indicateActivity(dimView, indicator: activityIndicator)
 
             let parameters = last.generateParametersForUserMethods(PARAM_USER_GET_TOP_ARTISTS, apiKey: LASTFM_API_KEY, user: "\(currentUser!.username)", period: "", limit: "", page: "")
             
@@ -105,11 +105,17 @@ class ViewController: UIViewController {
                 for artist in self.userInitialTopTenArtists {
                     print(artist.artistName)
                 }
-                self.api.imagesDownloader(self.userInitialTopTenArtists, complete: { (artists) in
+                
+                let tableView = self.goToArtistList()
+                
+                self.last.imagesDownloaderWithTableView(self.userInitialTopTenArtists, tableView: tableView, complete: { (artists) in
                     
-                    self.userInitialTopTenArtists = artists
-                    self.goToArtistList()
                 })
+//                self.api.imagesDownloader(self.userInitialTopTenArtists, complete: { (artists) in
+//                    
+//                    self.userInitialTopTenArtists = artists
+//                    self.goToArtistList()
+//                })
             }
         }
 
@@ -130,12 +136,13 @@ class ViewController: UIViewController {
      This method instatiates and presents ArtistListVC
      */
     
-    func goToArtistList() {
+    func goToArtistList() -> UITableView {
         let artistListVC = storyboard?.instantiateViewControllerWithIdentifier("ArtistListVC") as! ArtistListVC
         artistListVC.currentUser = currentUser!
         artistListVC.artistsArray = userInitialTopTenArtists
-        activity(false)
+        activity(false, dimView: dimView, indicator: activityIndicator)
         presentViewController(artistListVC, animated: true, completion: nil)
+        return artistListVC.tableView
     }
     
     /**
@@ -149,7 +156,7 @@ class ViewController: UIViewController {
         
         loginBtn.userInteractionEnabled = false
         
-        activity(true)
+        activity(true, dimView: dimView, indicator: activityIndicator)
         
         api.logInAttempt(username, password: password) { userSecret, username in
             
@@ -177,7 +184,7 @@ class ViewController: UIViewController {
         if self.rememberMeSwitch.on {
             api.saveUser(username, userSecretKey: userSecretKey)
         }
-        self.activity(false)
+        self.activity(false, dimView: dimView, indicator: activityIndicator)
         self.hideLoginControls()
         self.showMainControls()
     }
@@ -191,7 +198,7 @@ class ViewController: UIViewController {
     */
     
     func loginFailed(messageTitle: String, message: String) {
-        self.activity(false)
+        self.activity(false, dimView: dimView, indicator: activityIndicator)
         self.showErrorAlert(messageTitle, msg: message)
         self.clearTextFields()
         self.loginBtn.userInteractionEnabled = true
@@ -283,11 +290,11 @@ class ViewController: UIViewController {
      - Parameter active: Bool
      */
     
-    func activity(active: Bool) {
+    func activity(active: Bool, dimView: UIView, indicator: UIActivityIndicatorView) {
         if active {
-            indicateActivity()
+            indicateActivity(dimView, indicator: indicator)
         } else {
-            stopIndicatingActivity()
+            stopIndicatingActivity(dimView, indicator: indicator)
         }
     }
     
@@ -295,7 +302,7 @@ class ViewController: UIViewController {
      This method shows the activity indicator and stops its animation.
      */
     
-    func indicateActivity() {
+    func indicateActivity(dimView: UIView, indicator: UIActivityIndicatorView) {
         dimView.alpha = 0
         dimView.hidden = false
         dimView.fadeIn(0.2)
@@ -307,7 +314,7 @@ class ViewController: UIViewController {
      This method shows the activity indicator and stops its animation.
      */
     
-    func stopIndicatingActivity() {
+    func stopIndicatingActivity(dimView: UIView, indicator: UIActivityIndicatorView) {
         self.activityIndicator.fadeOut(0.3)
         self.activityIndicator.stopAnimating()
         dimView.fadeOut(0.2)
