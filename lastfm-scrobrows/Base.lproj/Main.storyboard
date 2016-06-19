@@ -1108,7 +1108,7 @@ She's recently been named by the Rolling Stone magazine as one of the New Faces 
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="last-logo-red" translatesAutoresizingMaskIntoConstraints="NO" id="xQK-1p-DdK">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="last-logo" translatesAutoresizingMaskIntoConstraints="NO" id="xQK-1p-DdK">
                                                     <rect key="frame" x="8" y="9" width="65" height="65"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="65" id="SOQ-6G-mpy"/>
@@ -1208,89 +1208,46 @@ She's recently been named by the Rolling Stone magazine as one of the New Faces 
                         <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="83" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HES-Ju-n0O">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="83" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lgn-wl-BXt">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" showsReorderControl="YES" accessoryType="disclosureIndicator" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="AlbumCell" rowHeight="83" id="tYd-yO-v8M" customClass="AlbumCell" customModule="lastfm_scrobrows" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SimilarArtistCell" id="u3T-w0-xlI" customClass="SimilarArtistCell" customModule="lastfm_scrobrows" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tYd-yO-v8M" id="5js-LW-Sbt">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="82.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u3T-w0-xlI" id="zOO-h2-TuY">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="82.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Olympia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gcs-HB-7lH">
-                                                    <rect key="frame" x="81" y="32" width="170" height="19"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="last-logo" translatesAutoresizingMaskIntoConstraints="NO" id="fnW-04-ElM">
+                                                    <rect key="frame" x="16" y="7" width="65" height="68"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="68" id="3xJ-1i-ozm"/>
+                                                        <constraint firstAttribute="width" constant="65" id="Yyl-tG-lWh"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Smashing Pumpkins" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7E-PO-ec2">
+                                                    <rect key="frame" x="89" y="27.5" width="278" height="29"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="last-logo-red" translatesAutoresizingMaskIntoConstraints="NO" id="aWR-QU-QJq">
-                                                    <rect key="frame" x="8" y="9" width="65" height="65"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="65" id="UWE-Au-SeO"/>
-                                                        <constraint firstAttribute="height" constant="65" id="aBb-2Y-3Aa"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tS4-Rs-a14">
-                                                    <rect key="frame" x="259" y="32" width="75" height="20"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scrobbles-white" translatesAutoresizingMaskIntoConstraints="NO" id="6n6-rf-A5n">
-                                                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="NNY-5I-aqg"/>
-                                                                <constraint firstAttribute="width" constant="20" id="vte-Gn-Fkx"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="326.4k" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="MRs-WJ-QbA" customClass="LabelOnDimmedBackground" customModule="lastfm_scrobrows" customModuleProvider="target">
-                                                            <rect key="frame" x="25" y="0.0" width="50" height="20"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="eYj-xO-TEm"/>
-                                                                <constraint firstAttribute="width" constant="50" id="fyI-kV-WWA"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <variation key="default">
-                                                                <mask key="constraints">
-                                                                    <exclude reference="eYj-xO-TEm"/>
-                                                                </mask>
-                                                            </variation>
-                                                        </label>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="MRs-WJ-QbA" firstAttribute="top" secondItem="tS4-Rs-a14" secondAttribute="top" id="BRY-uf-w4s"/>
-                                                        <constraint firstAttribute="width" constant="75" id="PVU-sV-hlg"/>
-                                                        <constraint firstAttribute="bottom" secondItem="MRs-WJ-QbA" secondAttribute="bottom" id="PlU-nk-HmB"/>
-                                                        <constraint firstAttribute="height" constant="20" id="bRi-Xu-DVH"/>
-                                                        <constraint firstAttribute="trailing" secondItem="MRs-WJ-QbA" secondAttribute="trailing" id="cft-i4-Yg0"/>
-                                                    </constraints>
-                                                </stackView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="Gcs-HB-7lH" firstAttribute="centerY" secondItem="5js-LW-Sbt" secondAttribute="centerY" id="4eB-2U-mEs"/>
-                                                <constraint firstItem="tS4-Rs-a14" firstAttribute="leading" secondItem="Gcs-HB-7lH" secondAttribute="trailing" constant="8" id="RJR-5f-d6n"/>
-                                                <constraint firstItem="aWR-QU-QJq" firstAttribute="leading" secondItem="5js-LW-Sbt" secondAttribute="leading" constant="8" id="VO9-f9-wd0"/>
-                                                <constraint firstItem="tS4-Rs-a14" firstAttribute="trailing" secondItem="5js-LW-Sbt" secondAttribute="trailingMargin" id="VZv-2V-Wrd"/>
-                                                <constraint firstItem="tS4-Rs-a14" firstAttribute="centerY" secondItem="Gcs-HB-7lH" secondAttribute="centerY" id="cOp-hs-mUS"/>
-                                                <constraint firstItem="Gcs-HB-7lH" firstAttribute="leading" secondItem="aWR-QU-QJq" secondAttribute="trailing" constant="8" id="hKS-0J-MQC"/>
-                                                <constraint firstItem="Gcs-HB-7lH" firstAttribute="centerY" secondItem="aWR-QU-QJq" secondAttribute="centerY" id="lPC-yK-kQW"/>
-                                                <constraint firstItem="Gcs-HB-7lH" firstAttribute="leading" secondItem="5js-LW-Sbt" secondAttribute="leadingMargin" id="q0t-s1-J1A"/>
+                                                <constraint firstItem="n7E-PO-ec2" firstAttribute="leading" secondItem="fnW-04-ElM" secondAttribute="trailing" constant="8" id="2CN-Oz-jIS"/>
+                                                <constraint firstItem="fnW-04-ElM" firstAttribute="leading" secondItem="zOO-h2-TuY" secondAttribute="leadingMargin" constant="8" id="6P3-RX-6Ks"/>
+                                                <constraint firstItem="n7E-PO-ec2" firstAttribute="trailing" secondItem="zOO-h2-TuY" secondAttribute="trailingMargin" id="ZAS-Nk-ZLX"/>
+                                                <constraint firstItem="n7E-PO-ec2" firstAttribute="centerY" secondItem="zOO-h2-TuY" secondAttribute="centerY" id="oo0-fy-aNS"/>
+                                                <constraint firstItem="fnW-04-ElM" firstAttribute="centerY" secondItem="zOO-h2-TuY" secondAttribute="centerY" id="rj4-6u-anj"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="q0t-s1-J1A"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <outlet property="albumImage" destination="aWR-QU-QJq" id="ciN-0O-XAv"/>
-                                            <outlet property="albumNameLabel" destination="Gcs-HB-7lH" id="J8w-sg-OJn"/>
-                                            <outlet property="playcountLabel" destination="MRs-WJ-QbA" id="67H-iX-wSl"/>
+                                            <outlet property="artistImage" destination="fnW-04-ElM" id="CDb-uF-b1p"/>
+                                            <outlet property="artistNameLabel" destination="n7E-PO-ec2" id="3mP-ON-LhB"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1298,17 +1255,16 @@ She's recently been named by the Rolling Stone magazine as one of the New Faces 
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="HES-Ju-n0O" firstAttribute="leading" secondItem="Nog-HW-Xyz" secondAttribute="leading" id="4IJ-ce-1EU"/>
-                            <constraint firstItem="HES-Ju-n0O" firstAttribute="top" secondItem="Nog-HW-Xyz" secondAttribute="top" id="7em-KC-7eW"/>
-                            <constraint firstAttribute="trailing" secondItem="HES-Ju-n0O" secondAttribute="trailing" id="GPb-0x-yzL"/>
-                            <constraint firstItem="HES-Ju-n0O" firstAttribute="leading" secondItem="Nog-HW-Xyz" secondAttribute="leading" id="Uad-4Y-ATZ"/>
-                            <constraint firstItem="dmq-uZ-uJN" firstAttribute="top" secondItem="HES-Ju-n0O" secondAttribute="bottom" id="zRh-bF-sEZ"/>
+                            <constraint firstItem="lgn-wl-BXt" firstAttribute="leading" secondItem="Nog-HW-Xyz" secondAttribute="leading" id="5aG-pK-wK6"/>
+                            <constraint firstItem="lgn-wl-BXt" firstAttribute="top" secondItem="LHR-E1-49v" secondAttribute="bottom" id="7cz-r3-yPg"/>
+                            <constraint firstAttribute="trailing" secondItem="lgn-wl-BXt" secondAttribute="trailing" id="P6P-K7-I6W"/>
+                            <constraint firstItem="dmq-uZ-uJN" firstAttribute="top" secondItem="lgn-wl-BXt" secondAttribute="bottom" id="t2f-Q6-oQk"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="250"/>
                     <connections>
-                        <outlet property="tableView" destination="HES-Ju-n0O" id="N4z-UQ-8cQ"/>
+                        <outlet property="tableView" destination="lgn-wl-BXt" id="Hih-Sp-Mi0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qSK-U4-Yx0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1318,7 +1274,7 @@ She's recently been named by the Rolling Stone magazine as one of the New Faces 
     </scenes>
     <resources>
         <image name="heart-white-empty" width="100" height="100"/>
-        <image name="last-logo-red" width="512" height="512"/>
+        <image name="last-logo" width="512" height="512"/>
         <image name="last-logo-white" width="900" height="269"/>
         <image name="listeners-white" width="100" height="100"/>
         <image name="loginbg3" width="1958" height="1208"/>

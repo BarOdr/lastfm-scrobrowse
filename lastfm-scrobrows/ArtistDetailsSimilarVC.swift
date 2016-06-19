@@ -10,6 +10,8 @@ import UIKit
 
 class ArtistDetailsSimilarVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+//    @IBOutlet weak var tableView: UITableView!
+    
     @IBOutlet weak var tableView: UITableView!
     
     var selectedArtist = Artist()
@@ -23,6 +25,7 @@ class ArtistDetailsSimilarVC: UIViewController, UITableViewDelegate, UITableView
         view.backgroundColor = UIColor.darkGrayColor().colorWithAlphaComponent(0.4)
 
         // Do any additional setup after loading the view.
+        print("This is artist details similar vc! Obey! And listen, that the selected artist is \(selectedArtist.artistName) and similar artists are \(selectedArtist.similarArtists[0])")
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -39,15 +42,16 @@ class ArtistDetailsSimilarVC: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return selectedArtist.similarArtists.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCellWithIdentifier("ArtistCell") as? ArtistCell {
-            print("Returning cell")
+        if let cell = tableView.dequeueReusableCellWithIdentifier("SimilarArtistCell") as? SimilarArtistCell {
+            cell.similarArtist = selectedArtist.similarArtists[indexPath.row]
+            cell.configureCell()
             return cell
         } else {
-            return ArtistCell()
+            return SimilarArtistCell()
         }
     }
     /*

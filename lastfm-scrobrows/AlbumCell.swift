@@ -30,8 +30,6 @@ class AlbumCell: UITableViewCell {
 
     }
     
-    
-    
     func configureCell() {
         
         api.imageAlamofireRequest(self.album.coverUrl) { (img) in

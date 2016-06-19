@@ -150,7 +150,7 @@ class LastfmDataService: NSObject {
      - albumArtist (provides value for the artistName property of the artist)
      - coverImageUrl
      
-     - parameter amount: (Int) Amount of top albums to be appended to similar artists array
+     - parameter amount: (Int) Amount of top albums to be appended to top albums array
      - parameter json: (JSON) JSON object to parse data from.
      
      - returns: [Album] An array of Album objects.
@@ -391,17 +391,23 @@ class LastfmDataService: NSObject {
         }
         var similarArtists = [Artist]()
         
-        for i in 0...2 {
+        print(json)
+        for i in 0...4 {
             let artist = Artist()
             if let similarName = json[LASTFM_ARTIST][LASTFM_SIMILAR][LASTFM_ARTIST][i][LASTFM_NAME].string {
                 artist.setName(similarName)
+                print(artist.artistName)
+                print("Above is similar artist")
             }
-            if let similarImageUrl = json[LASTFM_ARTIST][LASTFM_SIMILAR][LASTFM_ARTIST][LASTFM_IMAGE][2][LASTFM_TEXT].string {
+            if let similarImageUrl = json[LASTFM_ARTIST][LASTFM_SIMILAR][LASTFM_ARTIST][i][LASTFM_IMAGE][2][LASTFM_TEXT].string {
                 artist.setImgUrl(similarImageUrl)
+                print(artist.artistImgUrl)
             }
             similarArtists.append(artist)
         }
+        
         artist.setSimilarArtists(similarArtists)
+
         return artist
     }
     

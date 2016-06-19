@@ -98,7 +98,7 @@ class ViewController: UIViewController {
             
             api.lastfmDownloadTask(GET, parameters: parameters) { (json) in
                 
-                self.userInitialTopTenArtists = self.api.userGetTopArtists(2, json: json)
+                self.userInitialTopTenArtists = self.api.userGetTopArtists(10, json: json)
                 
                 CacheService.artistCache.setObject(self.userInitialTopTenArtists, forKey: "userArtists")
                 
