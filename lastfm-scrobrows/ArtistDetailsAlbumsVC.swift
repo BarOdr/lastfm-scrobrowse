@@ -26,6 +26,7 @@ class ArtistDetailsAlbumsVC: UIViewController, UITableViewDataSource, UITableVie
         for album in selectedArtist.topAlbums {
             print("Top album: \(album.albumName)")
         }
+        
     }
     
     override func viewWillAppear(animated: Bool) {

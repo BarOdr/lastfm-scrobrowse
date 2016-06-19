@@ -80,11 +80,12 @@ class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                 let paramsDict = self.api.generateParametersForArtistMethods(PARAM_ARTIST_GET_TOPALBUMS, apiKey: LASTFM_API_KEY, artist: selectedArtist, username: username)
                 
                 self.api.lastfmDownloadTask(GET, parameters: paramsDict, completion: { (json) in
-                    let topAlbums = self.api.artistGetTopAlbums(20, json: json)
+                    let topAlbums = self.api.artistGetTopAlbums(10, json: json)
                     selectedArtist.setTopAlbums(topAlbums)
                     
                     let paramsDict = self.api.generateParametersForArtistMethods(PARAM_ARTIST_GET_TOPTRACKS, apiKey: LASTFM_API_KEY, artist: selectedArtist, username: username)
                     self.api.lastfmDownloadTask(GET, parameters: paramsDict, completion: { (json) in
+                        print(json)
                         let tracks = self.api.artistGetTopTracks(20, json: json)
                         selectedArtist.setTopTracks(tracks)
                         

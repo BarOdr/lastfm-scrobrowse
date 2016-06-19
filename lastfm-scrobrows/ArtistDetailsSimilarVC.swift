@@ -12,6 +12,8 @@ class ArtistDetailsSimilarVC: UIViewController, UITableViewDelegate, UITableView
 
 //    @IBOutlet weak var tableView: UITableView!
     
+    let api = API()
+    
     @IBOutlet weak var tableView: UITableView!
     
     var selectedArtist = Artist()
@@ -52,6 +54,51 @@ class ArtistDetailsSimilarVC: UIViewController, UITableViewDelegate, UITableView
         } else {
             return SimilarArtistCell()
         }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        var newArtist = selectedArtist.similarArtists[indexPath.row]
+        
+        let params = api.generateParametersForArtistMethods(PARAM_ARTIST_GET_INFO, apiKey: LASTFM_API_KEY, artist: newArtist, username: "")
+        
+        
+        api.lastfmDownloadTask(GET, parameters: params) { (json) in
+            
+            newArtist = self.api.artistGetInfo(newArtist, json: json)
+            
+            let params = self.api.generateParametersForArtistMethods(PARAM_ARTIST_GET_TOPTRACKS, apiKey: LASTFM_API_KEY, artist: newArtist, username: "")
+            
+            self.api.lastfmDownloadTask(GET, parameters: params, completion: { (json) in
+                
+                let topTracks = self.api.userGetTopTracks(20, json: json)
+                newArtist.setTopTracks(topTracks)
+                
+                let params = self.api.generateParametersForArtistMethods(PARAM_ARTIST_GET_TOPALBUMS, apiKey: LASTFM_API_KEY, artist: newArtist, username: "")
+                
+                self.api.lastfmDownloadTask(GET, parameters: params, completion: { (json) in
+                    
+                    let topAlbums = self.api.artistGetTopAlbums(20, json: json)
+                    newArtist.setTopAlbums(topAlbums)
+                    
+                    CacheService.artistCache.setObject(newArtist, forKey: newArtist.artistName)
+                    
+                    self.api.imageAlamofireRequest(newArtist.artistImgUrl, completion: { (img) in
+                        newArtist.setImage(img)
+                        
+                        self.presentSimilarArtistDetails(newArtist)
+                    })
+                })
+            })
+            
+            
+        }
+    }
+    
+    func presentSimilarArtistDetails(artist: Artist) {
+        let vc = storyboard?.instantiateViewControllerWithIdentifier("ArtistDetailsVC") as? ArtistDetailsVC
+        vc?.artist = artist
+        presentViewController(vc!, animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation

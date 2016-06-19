@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 class Album {
     
     private var _albumName: String?
@@ -117,6 +118,7 @@ class Album {
     
     func setOverallPlaycount(count: Int) {
         _overallPlayCount = count
+        print("Overall playcount was set to \(count)")
     }
     
     func setCoverUrl(url: String) {

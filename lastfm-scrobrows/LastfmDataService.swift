@@ -391,17 +391,13 @@ class LastfmDataService: NSObject {
         }
         var similarArtists = [Artist]()
         
-        print(json)
         for i in 0...4 {
             let artist = Artist()
             if let similarName = json[LASTFM_ARTIST][LASTFM_SIMILAR][LASTFM_ARTIST][i][LASTFM_NAME].string {
                 artist.setName(similarName)
-                print(artist.artistName)
-                print("Above is similar artist")
             }
             if let similarImageUrl = json[LASTFM_ARTIST][LASTFM_SIMILAR][LASTFM_ARTIST][i][LASTFM_IMAGE][2][LASTFM_TEXT].string {
                 artist.setImgUrl(similarImageUrl)
-                print(artist.artistImgUrl)
             }
             similarArtists.append(artist)
         }
