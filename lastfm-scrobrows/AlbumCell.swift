@@ -10,6 +10,10 @@ import UIKit
 
 class AlbumCell: UITableViewCell {
 
+    @IBOutlet weak var albumNameLabel: UILabel!
+    @IBOutlet weak var playcountLabel: LabelOnDimmedBackground!
+    @IBOutlet weak var albumImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,7 +22,14 @@ class AlbumCell: UITableViewCell {
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+    }
+    
+    func configureCell(album: Album) {
+        
+        let formattedPlaycount = Helper.formattedPlaycountFromInt(album.overallPlayCount)
+//
+        albumNameLabel.text = album.albumName
+        playcountLabel.text = formattedPlaycount
     }
 
 }

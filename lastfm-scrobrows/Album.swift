@@ -15,7 +15,7 @@ class Album {
     private var _tracks: [Track]?
     private var _releaseDate: String?
     private var _userPlayCount: String?
-    private var _overallPlayCount: String?
+    private var _overallPlayCount: Int?
     private var _coverUrl: String?
     
     var albumName: String {
@@ -81,7 +81,7 @@ class Album {
         }
     }
     
-    var overallPlayCount: String {
+    var overallPlayCount: Int {
         get {
             return _overallPlayCount!
         }
@@ -115,7 +115,7 @@ class Album {
         _userPlayCount = count
     }
     
-    func setOverallPlaycount(count: String) {
+    func setOverallPlaycount(count: Int) {
         _overallPlayCount = count
     }
     

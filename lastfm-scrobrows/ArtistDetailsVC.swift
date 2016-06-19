@@ -28,6 +28,7 @@ class ArtistDetailsVC: UIViewController {
         
         super.viewDidLoad()
 
+        artistImage.clipsToBounds = true
         artistNameLabel.text = artist.artistName
         artistImage.image = artist._image
         

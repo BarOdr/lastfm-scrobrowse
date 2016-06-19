@@ -43,4 +43,10 @@ class Helper {
         }
     }
     
+    static func formattedPlaycountFromInt(playcount: Int) -> String {
+        
+        let stringNumber = String(playcount)
+        return formattedPlaycount(stringNumber)
+    }
+    
 }

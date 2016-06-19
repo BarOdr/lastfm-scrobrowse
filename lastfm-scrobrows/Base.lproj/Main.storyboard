@@ -977,12 +977,6 @@ She's recently been named by the Rolling Stone magazine as one of the New Faces 
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="34.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Painful like" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nut-bO-qxd">
-                                                    <rect key="frame" x="8" y="8" width="238" height="19"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="aUH-UB-4jc">
                                                     <rect key="frame" x="254" y="7" width="75" height="20"/>
                                                     <subviews>
@@ -1024,6 +1018,12 @@ She's recently been named by the Rolling Stone magazine as one of the New Faces 
                                                         <constraint firstAttribute="width" constant="30" id="yXe-TU-S6t"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Painful like" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nut-bO-qxd">
+                                                    <rect key="frame" x="8" y="8" width="238" height="19"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -1076,41 +1076,108 @@ She's recently been named by the Rolling Stone magazine as one of the New Faces 
                         <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Albums" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfY-3S-w9a">
-                                <rect key="frame" x="158" y="114" width="58" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VBY-Xt-Pma">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="83" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VBY-Xt-Pma">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aOJ-Vp-LFe">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" showsReorderControl="YES" accessoryType="disclosureIndicator" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="AlbumCell" rowHeight="83" id="aOJ-Vp-LFe" customClass="AlbumCell" customModule="lastfm_scrobrows" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aOJ-Vp-LFe" id="wGo-Td-gMf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="82.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Olympia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTH-D8-Rly">
+                                                    <rect key="frame" x="81" y="32" width="203" height="19"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="austra-olympia" translatesAutoresizingMaskIntoConstraints="NO" id="xQK-1p-DdK">
+                                                    <rect key="frame" x="8" y="9.5" width="65" height="65"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="65" id="SOQ-6G-mpy"/>
+                                                        <constraint firstAttribute="height" constant="65" id="crh-UF-ukX"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hte-8K-U5V">
+                                                    <rect key="frame" x="292" y="32" width="75" height="20"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scrobbles-white" translatesAutoresizingMaskIntoConstraints="NO" id="HjF-wz-iXJ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="20" id="0pq-m9-kHx"/>
+                                                                <constraint firstAttribute="height" constant="20" id="Hyk-rJ-qD4"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="326.4k" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="APB-rr-csY" customClass="LabelOnDimmedBackground" customModule="lastfm_scrobrows" customModuleProvider="target">
+                                                            <rect key="frame" x="25" y="0.0" width="50" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="50" id="3Cr-ER-KQm"/>
+                                                                <constraint firstAttribute="height" constant="20" id="NJ0-bp-JZX"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <variation key="default">
+                                                                <mask key="constraints">
+                                                                    <exclude reference="NJ0-bp-JZX"/>
+                                                                </mask>
+                                                            </variation>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="EvJ-Rg-zVQ"/>
+                                                        <constraint firstAttribute="bottom" secondItem="APB-rr-csY" secondAttribute="bottom" id="Pwl-S5-ToX"/>
+                                                        <constraint firstAttribute="trailing" secondItem="APB-rr-csY" secondAttribute="trailing" id="YOv-iY-HYE"/>
+                                                        <constraint firstAttribute="width" constant="75" id="ZqR-81-rRV"/>
+                                                        <constraint firstItem="APB-rr-csY" firstAttribute="top" secondItem="hte-8K-U5V" secondAttribute="top" id="ckz-pE-03Q"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="hte-8K-U5V" firstAttribute="trailing" secondItem="wGo-Td-gMf" secondAttribute="trailingMargin" id="0jc-pB-Ul2"/>
+                                                <constraint firstItem="hte-8K-U5V" firstAttribute="leading" secondItem="sTH-D8-Rly" secondAttribute="trailing" constant="8" id="96B-Yp-FhO"/>
+                                                <constraint firstItem="sTH-D8-Rly" firstAttribute="centerY" secondItem="xQK-1p-DdK" secondAttribute="centerY" id="EW1-JK-5Ju"/>
+                                                <constraint firstItem="hte-8K-U5V" firstAttribute="centerY" secondItem="sTH-D8-Rly" secondAttribute="centerY" id="Hug-gb-j6A"/>
+                                                <constraint firstItem="sTH-D8-Rly" firstAttribute="centerY" secondItem="wGo-Td-gMf" secondAttribute="centerY" id="OyY-m3-gAy"/>
+                                                <constraint firstItem="sTH-D8-Rly" firstAttribute="leading" secondItem="wGo-Td-gMf" secondAttribute="leadingMargin" id="jAk-QX-O4x"/>
+                                                <constraint firstItem="xQK-1p-DdK" firstAttribute="leading" secondItem="wGo-Td-gMf" secondAttribute="leading" constant="8" id="kpf-fi-jeM"/>
+                                                <constraint firstItem="sTH-D8-Rly" firstAttribute="leading" secondItem="xQK-1p-DdK" secondAttribute="trailing" constant="8" id="vGx-GY-0Up"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="jAk-QX-O4x"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="albumImage" destination="xQK-1p-DdK" id="SfL-2E-87p"/>
+                                            <outlet property="albumNameLabel" destination="sTH-D8-Rly" id="ZKk-Qc-OGy"/>
+                                            <outlet property="playcountLabel" destination="APB-rr-csY" id="Rn4-GK-SSA"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="VBY-Xt-Pma" firstAttribute="leading" secondItem="LU7-cU-06E" secondAttribute="leading" id="9bk-TA-iIw"/>
-                            <constraint firstItem="kfY-3S-w9a" firstAttribute="centerY" secondItem="LU7-cU-06E" secondAttribute="centerY" id="Nho-hl-y6d"/>
+                            <constraint firstItem="VBY-Xt-Pma" firstAttribute="leading" secondItem="LU7-cU-06E" secondAttribute="leading" id="H70-2Q-Jr7"/>
                             <constraint firstItem="VBY-Xt-Pma" firstAttribute="top" secondItem="LU7-cU-06E" secondAttribute="top" id="ZCt-9t-Etl"/>
-                            <constraint firstItem="kfY-3S-w9a" firstAttribute="centerX" secondItem="LU7-cU-06E" secondAttribute="centerX" id="kqw-40-0tf"/>
                             <constraint firstAttribute="trailing" secondItem="VBY-Xt-Pma" secondAttribute="trailing" id="pmq-s0-BYv"/>
                             <constraint firstItem="anA-Ge-rFL" firstAttribute="top" secondItem="VBY-Xt-Pma" secondAttribute="bottom" id="x1r-gl-mpE"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="250"/>
+                    <connections>
+                        <outlet property="tableView" destination="VBY-Xt-Pma" id="jwN-lL-zPB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wjD-Xq-Qr8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1169,6 +1236,7 @@ She's recently been named by the Rolling Stone magazine as one of the New Faces 
         </scene>
     </scenes>
     <resources>
+        <image name="austra-olympia" width="300" height="300"/>
         <image name="heart-white-empty" width="100" height="100"/>
         <image name="last-logo-white" width="900" height="269"/>
         <image name="listeners-white" width="100" height="100"/>

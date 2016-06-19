@@ -8,11 +8,18 @@
 
 import UIKit
 
-class ArtistDetailsAlbumsVC: UIViewController {
+class ArtistDetailsAlbumsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var tableView: UITableView!
     var selectedArtist = Artist()
 
     override func viewDidLoad() {
+        
+        view.backgroundColor = UIColor.darkGrayColor().colorWithAlphaComponent(0.4)
+
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         super.viewDidLoad()
         view.backgroundColor = UIColor.darkGrayColor().colorWithAlphaComponent(0.4)
 
@@ -26,7 +33,22 @@ class ArtistDetailsAlbumsVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        if let cell = tableView.dequeueReusableCellWithIdentifier("AlbumCell") as? AlbumCell {
+            cell.configureCell(selectedArtist.topAlbums[indexPath.row])
+            return cell
+        }
+        return AlbumCell()
+    }
     /*
     // MARK: - Navigation
 

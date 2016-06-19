@@ -472,6 +472,8 @@ class LastfmDataService: NSObject {
         
         var albums = [Album]()
         
+        print(json)
+        
         for i in 0...amount - 1 {
             
             let album = Album()
@@ -479,7 +481,7 @@ class LastfmDataService: NSObject {
             if let albumName = json[LASTFM_TOPALBUMS][LASTFM_ALBUM][i][LASTFM_NAME].string {
                 album.setName(albumName)
             }
-            if let playcount = json[LASTFM_TOPALBUMS][LASTFM_ALBUM][i][LASTFM_PLAYCOUNT].string {
+            if let playcount = json[LASTFM_TOPALBUMS][LASTFM_ALBUM][i][LASTFM_PLAYCOUNT].int {
                 album.setOverallPlaycount(playcount)
             }
             if let artist =  json[LASTFM_TOPALBUMS][LASTFM_ALBUM][i][LASTM_ARTIST][LASTFM_NAME].string {

@@ -33,6 +33,5 @@ class ArtistCell: UITableViewCell {
         
         artistNameLabel.text = artist.artistName
         artistImage.image = artist._image
-        
     }
 }
