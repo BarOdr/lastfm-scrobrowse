@@ -10,3 +10,4 @@ import Foundation
 
 ////////// Variables controlling changes in page view controller //////////////
 
+var currentPageView = 0

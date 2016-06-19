@@ -55,6 +55,8 @@ class LoginManager: NSObject {
         }
     }
     
+    
+    
     /** 
      This method removes user credentials from NSUserDefaults. Use this method to clean user data after logging out.
      - parameter CompletionHandler: allows you to perform some tasks when the logout is complete.

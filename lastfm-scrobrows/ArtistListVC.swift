@@ -98,6 +98,9 @@ class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         }
     }
     
+    func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
     
     func goToDetails(artist: Artist) {
         let vc = storyboard?.instantiateViewControllerWithIdentifier(VIEWCONTR_ARTIST_DETAILS_VC) as! ArtistDetailsVC

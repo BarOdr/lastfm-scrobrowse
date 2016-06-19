@@ -8,7 +8,13 @@
 
 import UIKit
 
+
+
 class AlbumCell: UITableViewCell {
+
+    let api = API()
+    var album = Album()
+    
 
     @IBOutlet weak var albumNameLabel: UILabel!
     @IBOutlet weak var playcountLabel: LabelOnDimmedBackground!
@@ -16,7 +22,7 @@ class AlbumCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -24,12 +30,19 @@ class AlbumCell: UITableViewCell {
 
     }
     
-    func configureCell(album: Album) {
+    
+    
+    func configureCell() {
+        
+        api.imageAlamofireRequest(self.album.coverUrl) { (img) in
+            self.albumImage.image = img
+        }
         
         let formattedPlaycount = Helper.formattedPlaycountFromInt(album.overallPlayCount)
-//
         albumNameLabel.text = album.albumName
         playcountLabel.text = formattedPlaycount
+        
+        
+        
     }
-
 }

@@ -33,6 +33,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     
     @IBOutlet weak var testImage: UIImageView!
+    @IBOutlet weak var dimView: UIView!
+    
     // Variables
     
     var currentUser: LastfmUser?
@@ -52,6 +54,7 @@ class ViewController: UIViewController {
             print(currentUser?.username)
             print("Username is \(currentUser!.username)")
         }
+        dimView.hidden = true
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -82,17 +85,20 @@ class ViewController: UIViewController {
     
     @IBAction func goToLibrary(sender: AnyObject) {
         
+        
         if let cachedArtists = CacheService.artistCache.objectForKey("userArtists")  {
             self.userInitialTopTenArtists = cachedArtists as! [Artist]
             self.goToArtistList()
             
         } else {
             
+            indicateActivity()
+
             let parameters = last.generateParametersForUserMethods(PARAM_USER_GET_TOP_ARTISTS, apiKey: LASTFM_API_KEY, user: "\(currentUser!.username)", period: "", limit: "", page: "")
             
             api.lastfmDownloadTask(GET, parameters: parameters) { (json) in
                 
-                self.userInitialTopTenArtists = self.api.userGetTopArtists(10, json: json)
+                self.userInitialTopTenArtists = self.api.userGetTopArtists(2, json: json)
                 
                 CacheService.artistCache.setObject(self.userInitialTopTenArtists, forKey: "userArtists")
                 
@@ -128,6 +134,7 @@ class ViewController: UIViewController {
         let artistListVC = storyboard?.instantiateViewControllerWithIdentifier("ArtistListVC") as! ArtistListVC
         artistListVC.currentUser = currentUser!
         artistListVC.artistsArray = userInitialTopTenArtists
+        activity(false)
         presentViewController(artistListVC, animated: true, completion: nil)
     }
     
@@ -142,7 +149,7 @@ class ViewController: UIViewController {
         
         loginBtn.userInteractionEnabled = false
         
-        indicateActivity()
+        activity(true)
         
         api.logInAttempt(username, password: password) { userSecret, username in
             
@@ -170,7 +177,7 @@ class ViewController: UIViewController {
         if self.rememberMeSwitch.on {
             api.saveUser(username, userSecretKey: userSecretKey)
         }
-        self.stopIndicatingActivity()
+        self.activity(false)
         self.hideLoginControls()
         self.showMainControls()
     }
@@ -184,7 +191,7 @@ class ViewController: UIViewController {
     */
     
     func loginFailed(messageTitle: String, message: String) {
-        self.stopIndicatingActivity()
+        self.activity(false)
         self.showErrorAlert(messageTitle, msg: message)
         self.clearTextFields()
         self.loginBtn.userInteractionEnabled = true
@@ -271,10 +278,27 @@ class ViewController: UIViewController {
     }
     
     /**
+     This method turns the activity indication on or off.
+     
+     - Parameter active: Bool
+     */
+    
+    func activity(active: Bool) {
+        if active {
+            indicateActivity()
+        } else {
+            stopIndicatingActivity()
+        }
+    }
+    
+    /**
      This method shows the activity indicator and stops its animation.
      */
     
     func indicateActivity() {
+        dimView.alpha = 0
+        dimView.hidden = false
+        dimView.fadeIn(0.2)
         activityIndicator.fadeIn(0.3)
         activityIndicator.startAnimating()
     }
@@ -286,6 +310,8 @@ class ViewController: UIViewController {
     func stopIndicatingActivity() {
         self.activityIndicator.fadeOut(0.3)
         self.activityIndicator.stopAnimating()
+        dimView.fadeOut(0.2)
+        dimView.hidden = false
         userLoggedIn()
     }
 

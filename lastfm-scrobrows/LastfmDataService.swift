@@ -64,7 +64,7 @@ class LastfmDataService: NSObject {
             let cachedImage = CacheService.imageCache.objectForKey(artist.artistImgUrl) as? UIImage
             
             if cachedImage == nil {
-                imageAlamofireRequest(artist, completion: { image in
+                imageAlamofireRequest(artist.artistImgUrl, completion: { image in
                     artist.setImage(image)
                     print("\(artist.artistName) image downloaded and saved to cache")
                     CacheService.imageCache.setObject(image, forKey: artist.artistImgUrl)
@@ -87,25 +87,24 @@ class LastfmDataService: NSObject {
      
      */
     
-    func imageAlamofireRequest(artist: Artist, completion: ImageDownloadComplete) {
-        let url = artist.artistImgUrl
+    func imageAlamofireRequest(url: String, completion: ImageDownloadComplete) -> Alamofire.Request {
         
-        Alamofire.request(.GET, url).responseImage { (response) in
+        let request = Alamofire.request(.GET, url).responseImage { (response) in
             switch response.result {
             case .Success(let img):
                 CacheService.imageCache.setObject(img, forKey: url)
                 completion(img: img)
                 
             case .Failure(let error):
-                print("Image download for \(artist.artistName) failed. Error: \(error)")
-                print("Image download for \(artist.artistName): retry")
-                self.imageAlamofireRequest(artist, completion: { img in
-                    completion(img: img)
-                })
-                
+                print("Image download for \(url) failed. Error: \(error)")
+                print("Image download for \(url): retry")
             }
         }
+        
+        return request
     }
+    
+    
     
     /**
      This method creates an array of artist image urls.
@@ -471,9 +470,7 @@ class LastfmDataService: NSObject {
     func artistGetTopAlbums(amount: Int, json: JSON) -> [Album] {
         
         var albums = [Album]()
-        
-        print(json)
-        
+                
         for i in 0...amount - 1 {
             
             let album = Album()

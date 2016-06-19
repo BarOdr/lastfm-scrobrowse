@@ -39,6 +39,10 @@ class API: NSObject {
         return lastfmDataService.imagesDownloader(artists, complete: complete)
     }
     
+    func imageAlamofireRequest(url: String, completion: ImageDownloadComplete) -> Request {
+        return lastfmDataService.imageAlamofireRequest(url, completion: completion)
+    }
+    
     func lastfmDownloadTask(type: Alamofire.Method, parameters: Dictionary<String, String>, completion: LastfmDownloadComplete) {
         return lastfmDataService.lastfmDownloadTask(type, parameters: parameters, completion: completion)
     }

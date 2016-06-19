@@ -27,6 +27,10 @@ class ArtistDetailsAlbumsVC: UIViewController, UITableViewDataSource, UITableVie
             print("Top album: \(album.albumName)")
         }
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        currentPageView = 2
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -44,7 +48,8 @@ class ArtistDetailsAlbumsVC: UIViewController, UITableViewDataSource, UITableVie
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCellWithIdentifier("AlbumCell") as? AlbumCell {
-            cell.configureCell(selectedArtist.topAlbums[indexPath.row])
+                cell.album = selectedArtist.topAlbums[indexPath.row]
+                cell.configureCell()
             return cell
         }
         return AlbumCell()

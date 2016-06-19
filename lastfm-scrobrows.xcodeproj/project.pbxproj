@@ -40,7 +40,7 @@
 		CCAB2FCE1D10525F0054F1DE /* ArtistDetailsGeneralInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAB2FCD1D10525F0054F1DE /* ArtistDetailsGeneralInfoVC.swift */; };
 		CCAB2FD01D1052720054F1DE /* ArtistDetailsSongsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAB2FCF1D1052720054F1DE /* ArtistDetailsSongsVC.swift */; };
 		CCAB2FD21D1052820054F1DE /* ArtistDetailsAlbumsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAB2FD11D1052810054F1DE /* ArtistDetailsAlbumsVC.swift */; };
-		CCAB2FD41D1052960054F1DE /* ArtistDetailsConcertsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAB2FD31D1052960054F1DE /* ArtistDetailsConcertsVC.swift */; };
+		CCAB2FD41D1052960054F1DE /* ArtistDetailsSimilarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAB2FD31D1052960054F1DE /* ArtistDetailsSimilarVC.swift */; };
 		CCAB2FDA1D10B7AD0054F1DE /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAB2FD91D10B7AD0054F1DE /* CacheService.swift */; };
 		E7AC1EFF62CE36C1F7D0A0EC /* Pods_lastfm_scrobrows.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3F720B321E04120BDCC17E /* Pods_lastfm_scrobrows.framework */; };
 /* End PBXBuildFile section */
@@ -84,7 +84,7 @@
 		CCAB2FCD1D10525F0054F1DE /* ArtistDetailsGeneralInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistDetailsGeneralInfoVC.swift; sourceTree = "<group>"; };
 		CCAB2FCF1D1052720054F1DE /* ArtistDetailsSongsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistDetailsSongsVC.swift; sourceTree = "<group>"; };
 		CCAB2FD11D1052810054F1DE /* ArtistDetailsAlbumsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistDetailsAlbumsVC.swift; sourceTree = "<group>"; };
-		CCAB2FD31D1052960054F1DE /* ArtistDetailsConcertsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistDetailsConcertsVC.swift; sourceTree = "<group>"; };
+		CCAB2FD31D1052960054F1DE /* ArtistDetailsSimilarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistDetailsSimilarVC.swift; sourceTree = "<group>"; };
 		CCAB2FD91D10B7AD0054F1DE /* CacheService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -229,7 +229,7 @@
 				CCAB2FCD1D10525F0054F1DE /* ArtistDetailsGeneralInfoVC.swift */,
 				CCAB2FCF1D1052720054F1DE /* ArtistDetailsSongsVC.swift */,
 				CCAB2FD11D1052810054F1DE /* ArtistDetailsAlbumsVC.swift */,
-				CCAB2FD31D1052960054F1DE /* ArtistDetailsConcertsVC.swift */,
+				CCAB2FD31D1052960054F1DE /* ArtistDetailsSimilarVC.swift */,
 			);
 			name = ArtistDetails;
 			sourceTree = "<group>";
@@ -375,7 +375,7 @@
 				CC1A72A91D0483A600DB04BC /* LastfmUser.swift in Sources */,
 				CC50D17A1D0B034A0081C0BC /* ArtistDetailsVC.swift in Sources */,
 				CC50D1711D09ECF50081C0BC /* Helper.swift in Sources */,
-				CCAB2FD41D1052960054F1DE /* ArtistDetailsConcertsVC.swift in Sources */,
+				CCAB2FD41D1052960054F1DE /* ArtistDetailsSimilarVC.swift in Sources */,
 				CC2B66941D15C70A003EF266 /* AlbumCell.swift in Sources */,
 				CC50D16F1D09AF430081C0BC /* RoundImageView.swift in Sources */,
 				CCAB2FCC1D0F63D40054F1DE /* Scrobbler.swift in Sources */,

@@ -15,14 +15,18 @@ class ArtistDetailsVC: UIViewController {
     @IBOutlet weak var pinImg: UIButton!
     @IBOutlet weak var artistImage: UIImageView!
     @IBOutlet weak var artistNameLabel: UILabel!
-    
-    var visiblePage = 0 {
-        didSet {
-            
-        }
-    }
+    @IBOutlet weak var statsIndicator: UILabel!
+    @IBOutlet weak var songsIndicator: UILabel!
+    @IBOutlet weak var albumsIndicator: UILabel!
+    @IBOutlet weak var similarIndicator: UILabel!
     
     var artist = Artist()
+    
+    var currentPage = currentPageView {
+        didSet(page) {
+            changePageIndicator(page)
+        }
+    }
     
     override func viewDidLoad() {
         
@@ -33,6 +37,7 @@ class ArtistDetailsVC: UIViewController {
         artistImage.image = artist._image
         
         // Do any additional setup after loading the view.
+        
         
     }
 
@@ -49,6 +54,12 @@ class ArtistDetailsVC: UIViewController {
     }
     */
 
+    func changePageIndicator(pageNumber: Int) {
+        if currentPage == 0 {
+            print("We are at stats")
+        } 
+    }
+    
     @IBAction func loveBtnPressed(sender: AnyObject) {
         
     }

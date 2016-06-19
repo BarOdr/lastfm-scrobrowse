@@ -9,9 +9,7 @@
 import UIKit
 
 class ArtistCell: UITableViewCell {
-    
-    let lastfmDataService = LastfmDataService()
-    
+        
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var artistImage: RoundImageView!
     

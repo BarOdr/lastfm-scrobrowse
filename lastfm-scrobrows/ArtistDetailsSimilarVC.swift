@@ -8,15 +8,25 @@
 
 import UIKit
 
-class ArtistDetailsConcertsVC: UIViewController {
+class ArtistDetailsSimilarVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     var selectedArtist = Artist()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         view.backgroundColor = UIColor.darkGrayColor().colorWithAlphaComponent(0.4)
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        currentPageView = 3
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,7 +34,22 @@ class ArtistDetailsConcertsVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 6
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCellWithIdentifier("ArtistCell") as? ArtistCell {
+            print("Returning cell")
+            return cell
+        } else {
+            return ArtistCell()
+        }
+    }
     /*
     // MARK: - Navigation
 

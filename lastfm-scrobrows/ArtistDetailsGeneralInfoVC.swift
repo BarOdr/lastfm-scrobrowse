@@ -33,7 +33,7 @@ class ArtistDetailsGeneralInfoVC: UIViewController {
     }
 
     override func viewWillAppear(animated: Bool) {
-        print("bebooooooooooxonooos")
+        currentPageView = 0
         
     }
     

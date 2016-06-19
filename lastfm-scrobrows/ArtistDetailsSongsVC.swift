@@ -26,7 +26,10 @@ class ArtistDetailsSongsVC: UIViewController, UITableViewDelegate, UITableViewDa
         for track in selectedArtist.topTracks {
             print("Top track: \(track.trackName)")
         }
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        currentPageView = 1
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

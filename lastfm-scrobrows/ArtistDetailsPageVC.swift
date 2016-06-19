@@ -22,7 +22,7 @@ class ArtistDetailsPageVC: UIPageViewController {
         
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController], direction: .Forward, animated: true, completion: nil)
-        }  
+        }
     }
 
     private(set) lazy var orderedViewControllers: [UIViewController] = {
@@ -53,7 +53,7 @@ class ArtistDetailsPageVC: UIPageViewController {
         topAlbumsVC?.selectedArtist = self.selectedArtist
         viewControllers.append(topAlbumsVC!)
         
-        let concertsVC = storyboard?.instantiateViewControllerWithIdentifier(VIEWCONTR_ARTIST_CONCERTS_VC) as? ArtistDetailsConcertsVC
+        let concertsVC = storyboard?.instantiateViewControllerWithIdentifier(VIEWCONTR_ARTIST_SIMILAR_VC) as? ArtistDetailsSimilarVC
         concertsVC?.selectedArtist = self.selectedArtist
         viewControllers.append(concertsVC!)
         
