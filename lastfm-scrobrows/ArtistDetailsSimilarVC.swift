@@ -25,7 +25,6 @@ class ArtistDetailsSimilarVC: UIViewController, UITableViewDelegate, UITableView
         view.backgroundColor = UIColor.darkGrayColor().colorWithAlphaComponent(0.4)
 
         // Do any additional setup after loading the view.
-        print("This is artist details similar vc! Obey! And listen, that the selected artist is \(selectedArtist.artistName) and similar artists are \(selectedArtist.similarArtists[0])")
     }
     
     override func viewWillAppear(animated: Bool) {
