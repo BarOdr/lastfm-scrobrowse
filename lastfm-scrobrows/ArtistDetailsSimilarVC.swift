@@ -17,6 +17,8 @@ class ArtistDetailsSimilarVC: UIViewController, UITableViewDelegate, UITableView
     var dimView = UIView()
     var activityIndicator = UIActivityIndicatorView()
     
+    var currentPage = 3
+    
     @IBOutlet weak var tableView: UITableView!
     
     var selectedArtist = Artist()
@@ -33,8 +35,8 @@ class ArtistDetailsSimilarVC: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func viewWillAppear(animated: Bool) {
-        currentPageView = 3
-    }
+        let dictionary = ["currentPage": 3]
+        NSNotificationCenter.defaultCenter().postNotificationName("changeCurrentPage", object: nil, userInfo: dictionary)    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -12,6 +12,8 @@ class ArtistDetailsAlbumsVC: UIViewController, UITableViewDataSource, UITableVie
 
     @IBOutlet weak var tableView: UITableView!
     var selectedArtist = Artist()
+    
+    var currentPage = 2
 
     override func viewDidLoad() {
         
@@ -30,8 +32,8 @@ class ArtistDetailsAlbumsVC: UIViewController, UITableViewDataSource, UITableVie
     }
     
     override func viewWillAppear(animated: Bool) {
-        currentPageView = 2
-    }
+        let dictionary = ["currentPage": 2]
+        NSNotificationCenter.defaultCenter().postNotificationName("changeCurrentPage", object: nil, userInfo: dictionary)    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

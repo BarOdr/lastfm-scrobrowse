@@ -25,12 +25,6 @@ class ArtistDetailsVC: UIViewController {
     
     var artist = Artist()
     
-    var currentPage = currentPageView {
-        didSet(page) {
-            changePageIndicator(page)
-        }
-    }
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -41,6 +35,7 @@ class ArtistDetailsVC: UIViewController {
         
         // Do any additional setup after loading the view.
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ArtistDetailsVC.changePageIndicator(_:)), name: "changeCurrentPage", object: nil)
         Helper.activity(false, dimView: dimView, indicator: activityIndicator)
         
     }
@@ -58,11 +53,48 @@ class ArtistDetailsVC: UIViewController {
     }
     */
 
-    func changePageIndicator(pageNumber: Int) {
+    func changePageIndicator(notif: NSNotification) {
+        
+        let currentPage = notif.userInfo!["currentPage"] as? Int
+        
+        indicateCurrentPage(currentPage!)
+        
         if currentPage == 0 {
             print("We are at stats")
+        } else  if currentPage == 1 {
+            print("We are at top songs")
+        } else if currentPage == 2 {
+            print("We are at top albums")
+        } else if  currentPage == 3 {
+            print("We are at similar artists")
         }
     }
+    
+    func indicateCurrentPage(page: Int) {
+        
+        if page == 0 {
+            statsIndicator.alpha = 1
+            songsIndicator.alpha = 0.5
+            albumsIndicator.alpha = 0.5
+            similarIndicator.alpha = 0.5
+        } else if page == 1 {
+            statsIndicator.alpha = 0.5
+            songsIndicator.alpha = 1
+            albumsIndicator.alpha = 0.5
+            similarIndicator.alpha = 0.5
+        } else if page == 2 {
+            statsIndicator.alpha = 0.5
+            songsIndicator.alpha = 0.5
+            albumsIndicator.alpha = 1
+            similarIndicator.alpha = 0.5
+        } else if page == 3 {
+            statsIndicator.alpha = 0.5
+            songsIndicator.alpha = 0.5
+            albumsIndicator.alpha = 0.5
+            similarIndicator.alpha = 1
+        }
+    }
+    
     
     @IBAction func loveBtnPressed(sender: AnyObject) {
         
@@ -78,6 +110,7 @@ class ArtistDetailsVC: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let embeddedVC = segue.destinationViewController as? ArtistDetailsPageVC where segue.identifier == "ToArtistDetailsPageVC" {
+            
             embeddedVC.dimView = self.dimView
             embeddedVC.activityIndicator = self.activityIndicator
             embeddedVC.selectedArtist = artist

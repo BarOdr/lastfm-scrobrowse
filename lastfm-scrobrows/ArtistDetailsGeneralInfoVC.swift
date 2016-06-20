@@ -19,6 +19,8 @@ class ArtistDetailsGeneralInfoVC: UIViewController {
     @IBOutlet weak var topTrackLabel: LabelOnDimmedBackground!
     @IBOutlet weak var bioTextView: UITextView!
     
+    var currentPage = 0
+    
     convenience init() {
         self.init()
         print("Artist general info VC is being initialized")
@@ -33,8 +35,8 @@ class ArtistDetailsGeneralInfoVC: UIViewController {
     }
 
     override func viewWillAppear(animated: Bool) {
-        currentPageView = 0
-        
+        let dictionary = ["currentPage": 0]
+        NSNotificationCenter.defaultCenter().postNotificationName("changeCurrentPage", object: nil, userInfo: dictionary)
     }
     
     func configureUI() {

@@ -14,6 +14,7 @@ class ArtistDetailsSongsVC: UIViewController, UITableViewDelegate, UITableViewDa
     var selectedArtist = Artist()
     let api = API()
 
+    var currentPage = 1
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,8 +30,8 @@ class ArtistDetailsSongsVC: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     override func viewWillAppear(animated: Bool) {
-        currentPageView = 1
-    }
+        let dictionary = ["currentPage": 1]
+        NSNotificationCenter.defaultCenter().postNotificationName("changeCurrentPage", object: nil, userInfo: dictionary)    }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
