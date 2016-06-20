@@ -65,41 +65,48 @@ class ArtistDetailsSimilarVC: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        Helper.activity(true, dimView: dimView, indicator: activityIndicator)
         var newArtist = selectedArtist.similarArtists[indexPath.row]
-        
-        let params = api.generateParametersForArtistMethods(PARAM_ARTIST_GET_INFO, apiKey: LASTFM_API_KEY, artist: newArtist, username: "")
-        
-        
-        api.lastfmDownloadTask(GET, parameters: params) { (json) in
-            
-            newArtist = self.api.artistGetInfo(newArtist, json: json)
 
-            let params = self.api.generateParametersForArtistMethods(PARAM_ARTIST_GET_TOPTRACKS, apiKey: LASTFM_API_KEY, artist: newArtist, username: "")
+        if let cachedArtist = CacheService.artistCache.objectForKey(newArtist.artistName) as? Artist {
+            presentSimilarArtistDetails(cachedArtist)
             
-            self.api.lastfmDownloadTask(GET, parameters: params, completion: { (json) in
+        } else {
+        
+            Helper.activity(true, dimView: dimView, indicator: activityIndicator)
+            
+            let params = api.generateParametersForArtistMethods(PARAM_ARTIST_GET_INFO, apiKey: LASTFM_API_KEY, artist: newArtist, username: "")
+            
+            
+            api.lastfmDownloadTask(GET, parameters: params) { (json) in
                 
-                let topTracks = self.api.artistGetTopTracks(20, json: json)
-                newArtist.setTopTracks(topTracks)
-                
-                let params = self.api.generateParametersForArtistMethods(PARAM_ARTIST_GET_TOPALBUMS, apiKey: LASTFM_API_KEY, artist: newArtist, username: "")
+                newArtist = self.api.artistGetInfo(newArtist, json: json)
+
+                let params = self.api.generateParametersForArtistMethods(PARAM_ARTIST_GET_TOPTRACKS, apiKey: LASTFM_API_KEY, artist: newArtist, username: "")
                 
                 self.api.lastfmDownloadTask(GET, parameters: params, completion: { (json) in
                     
-                    let topAlbums = self.api.artistGetTopAlbums(20, json: json)
-                    newArtist.setTopAlbums(topAlbums)
+                    let topTracks = self.api.artistGetTopTracks(20, json: json)
+                    newArtist.setTopTracks(topTracks)
                     
-                    CacheService.artistCache.setObject(newArtist, forKey: newArtist.artistName)
+                    let params = self.api.generateParametersForArtistMethods(PARAM_ARTIST_GET_TOPALBUMS, apiKey: LASTFM_API_KEY, artist: newArtist, username: "")
                     
-                    self.api.imageAlamofireRequest(newArtist.artistImgUrl, completion: { (img) in
-                        newArtist.setImage(img)
+                    self.api.lastfmDownloadTask(GET, parameters: params, completion: { (json) in
                         
-                        self.presentSimilarArtistDetails(newArtist)
+                        let topAlbums = self.api.artistGetTopAlbums(20, json: json)
+                        newArtist.setTopAlbums(topAlbums)
+                        
+                        CacheService.artistCache.setObject(newArtist, forKey: newArtist.artistName)
+                        
+                        self.api.imageAlamofireRequest(newArtist.artistImgUrl, completion: { (img) in
+                            newArtist.setImage(img)
+                            
+                            CacheService.artistCache.setObject(newArtist, forKey: newArtist.artistName)
+                            
+                            self.presentSimilarArtistDetails(newArtist)
+                        })
                     })
                 })
-            })
-            
-            
+            }
         }
     }
     
