@@ -11,6 +11,8 @@ import UIKit
 class ArtistDetailsPageVC: UIPageViewController {
 
     var selectedArtist = Artist()
+    var dimView = UIView()
+    var activityIndicator = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         
@@ -53,9 +55,11 @@ class ArtistDetailsPageVC: UIPageViewController {
         topAlbumsVC?.selectedArtist = self.selectedArtist
         viewControllers.append(topAlbumsVC!)
         
-        let concertsVC = storyboard?.instantiateViewControllerWithIdentifier(VIEWCONTR_ARTIST_SIMILAR_VC) as? ArtistDetailsSimilarVC
-        concertsVC?.selectedArtist = self.selectedArtist
-        viewControllers.append(concertsVC!)
+        let similarVC = storyboard?.instantiateViewControllerWithIdentifier(VIEWCONTR_ARTIST_SIMILAR_VC) as? ArtistDetailsSimilarVC
+        similarVC?.selectedArtist = self.selectedArtist
+        similarVC?.dimView = self.dimView
+        similarVC?.activityIndicator = self.activityIndicator
+        viewControllers.append(similarVC!)
         
         return viewControllers
     }    

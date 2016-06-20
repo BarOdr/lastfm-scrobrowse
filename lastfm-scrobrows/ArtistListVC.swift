@@ -10,8 +10,9 @@ import UIKit
 
 class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var dimView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-//    let ds = LastfmDataService()
     let api = API()
     
     var artistsArray = [Artist]()
@@ -28,6 +29,9 @@ class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
 
         tableView.delegate = self
         tableView.dataSource = self
+        
+        dimView.hidden = true
+        activityIndicator.hidden = true
         
         print("There is \(artistsArray.count) artists in the array")
         tableView.reloadData()
@@ -66,6 +70,7 @@ class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             goToDetails(cachedArtist)
         } else {
             
+            Helper.activity(true, dimView: dimView, indicator: activityIndicator)
             
             let username = currentUser.username
             let paramsDict = api.generateParametersForArtistMethods(PARAM_ARTIST_GET_INFO, apiKey: LASTFM_API_KEY, artist: selectedArtist, username: username)
@@ -95,6 +100,10 @@ class ArtistListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                 })
             }
         }
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        Helper.activity(false, dimView: dimView, indicator: activityIndicator)
     }
 
     

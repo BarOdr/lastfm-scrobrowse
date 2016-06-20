@@ -20,6 +20,9 @@ class ArtistDetailsVC: UIViewController {
     @IBOutlet weak var albumsIndicator: UILabel!
     @IBOutlet weak var similarIndicator: UILabel!
     
+    @IBOutlet weak var dimView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     var artist = Artist()
     
     var currentPage = currentPageView {
@@ -38,6 +41,7 @@ class ArtistDetailsVC: UIViewController {
         
         // Do any additional setup after loading the view.
         
+        Helper.activity(false, dimView: dimView, indicator: activityIndicator)
         
     }
 
@@ -57,7 +61,7 @@ class ArtistDetailsVC: UIViewController {
     func changePageIndicator(pageNumber: Int) {
         if currentPage == 0 {
             print("We are at stats")
-        } 
+        }
     }
     
     @IBAction func loveBtnPressed(sender: AnyObject) {
@@ -74,6 +78,8 @@ class ArtistDetailsVC: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let embeddedVC = segue.destinationViewController as? ArtistDetailsPageVC where segue.identifier == "ToArtistDetailsPageVC" {
+            embeddedVC.dimView = self.dimView
+            embeddedVC.activityIndicator = self.activityIndicator
             embeddedVC.selectedArtist = artist
         }
     }

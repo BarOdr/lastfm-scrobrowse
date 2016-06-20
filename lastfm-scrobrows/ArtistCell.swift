@@ -12,16 +12,14 @@ class ArtistCell: UITableViewCell {
         
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var artistImage: RoundImageView!
-    @IBOutlet weak var dimView: UIView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
     
   
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         artistImage.clipsToBounds = true
-        dimView.hidden = true
-        activityIndicator.stopAnimating()
+
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

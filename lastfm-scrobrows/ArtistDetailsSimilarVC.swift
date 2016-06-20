@@ -14,6 +14,9 @@ class ArtistDetailsSimilarVC: UIViewController, UITableViewDelegate, UITableView
     
     let api = API()
     
+    var dimView = UIView()
+    var activityIndicator = UIActivityIndicatorView()
+    
     @IBOutlet weak var tableView: UITableView!
     
     var selectedArtist = Artist()
@@ -38,6 +41,10 @@ class ArtistDetailsSimilarVC: UIViewController, UITableViewDelegate, UITableView
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidDisappear(animated: Bool) {
+        Helper.activity(false, dimView: dimView, indicator: activityIndicator)
+    }
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -58,6 +65,7 @@ class ArtistDetailsSimilarVC: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
+        Helper.activity(true, dimView: dimView, indicator: activityIndicator)
         var newArtist = selectedArtist.similarArtists[indexPath.row]
         
         let params = api.generateParametersForArtistMethods(PARAM_ARTIST_GET_INFO, apiKey: LASTFM_API_KEY, artist: newArtist, username: "")
@@ -98,6 +106,8 @@ class ArtistDetailsSimilarVC: UIViewController, UITableViewDelegate, UITableView
     func presentSimilarArtistDetails(artist: Artist) {
         let vc = storyboard?.instantiateViewControllerWithIdentifier("ArtistDetailsVC") as? ArtistDetailsVC
         vc?.artist = artist
+        vc?.dimView = self.dimView
+        vc?.activityIndicator = self.activityIndicator
         presentViewController(vc!, animated: true, completion: nil)
     }
     /*

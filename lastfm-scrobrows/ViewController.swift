@@ -333,7 +333,6 @@ class ViewController: UIViewController {
     func userLoggedIn() -> Bool {
         if NSUserDefaults.standardUserDefaults().valueForKey(STORED_USER_SECRET_KEY) != nil
         && NSUserDefaults.standardUserDefaults().valueForKey(STORED_USERNAME) != nil {
-
             return true
         } else {
             return false
